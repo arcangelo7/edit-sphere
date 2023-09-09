@@ -3,26 +3,28 @@ import os
 import urllib
 
 import click
-import yaml
-from edit_sphere.filters import *
 from flask import Flask, redirect, render_template, request, session, url_for
-from flask_babel import Babel, refresh, get_translations
+from flask_babel import Babel, get_translations, refresh
 from SPARQLWrapper import JSON, SPARQLWrapper
+
+from edit_sphere.editor import Editor
+from edit_sphere.filters import *
+from config import Config
 
 app = Flask(__name__)
 
+app.config.from_object(Config)
 
 babel = Babel()
 
-with open("config.yaml", "r") as config_file:
-    config = yaml.safe_load(config_file)
 
 with open("resources/context.json", "r") as config_file:
     context = json.load(config_file)["@context"]
 
-app.secret_key = config['SECRET_KEY']
 
-sparql = SPARQLWrapper(config["SPARQL_ENDPOINT"])
+dataset_endpoint = app.config["DATASET_ENDPOINT"]
+provenance_endpoint = app.config["PROVENANCE_ENDPOINT"]
+sparql = SPARQLWrapper(dataset_endpoint)
 
 filter = Filter(context)
 
@@ -59,13 +61,14 @@ def show_triples(subject):
     triples = sparql.query().convert().get("results", {}).get("bindings", [])
     return render_template('triples.html', subject=decoded_subject, triples=triples)
 
-@app.route('/update_triple/<path:subject>/<path:predicate>', methods=['POST'])
-def update_triple(subject, predicate):
+@app.route('/update_triple', methods=['POST'])
+def update_triple():
+    subject = request.form.get('subject')
+    predicate = request.form.get('predicate')
+    old_value = request.form.get('old_value')
     new_value = request.form.get('new_value')
-    
-    # Qui dovrai aggiungere il codice per aggiornare il valore nel tuo endpoint SPARQL.
-    # Questo dipenderà dalla tua configurazione e dal tuo endpoint SPARQL.
-    
+    editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'])
+    editor.update_property(subject, predicate, old_value, new_value)    
     return redirect(url_for('show_triples', subject=subject))
 
 @app.route('/search')
@@ -113,12 +116,4 @@ def init(lang):
 def get_locale():
     return session.get('lang', 'en')
 
-babel.init_app(app=app, locale_selector=get_locale, default_translation_directories=config['BABEL_TRANSLATION_DIRECTORIES'])
-
-@app.route('/test')
-def test_translation():
-    translations = get_translations()
-    print(translations)
-    print(config['BABEL_TRANSLATION_DIRECTORIES'])
-    current_locale = get_locale()
-    return f"Locale: {current_locale}, Translation: {translations.gettext('Your original string')}"
+babel.init_app(app=app, locale_selector=get_locale, default_translation_directories=app.config['BABEL_TRANSLATION_DIRECTORIES'])

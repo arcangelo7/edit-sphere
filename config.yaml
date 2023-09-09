@@ -1,4 +1,0 @@
-SPARQL_ENDPOINT: "http://192.168.56.1:9999/blazegraph/sparql"
-LANGUAGES: ['en', 'it']
-SECRET_KEY: laiushflaosihfolaejbfvslauif
-BABEL_TRANSLATION_DIRECTORIES: ../babel/translations

@@ -22,8 +22,11 @@
                 <span class="object-value mt-4">{{ triple['object']['value'] }}</span>
             {% endif %}
             <form class="edit-form d-none"
-                action="{{ url_for('update_triple', subject=subject, predicate=triple['predicate']['value']) }}"
+                action="{{ url_for('update_triple') }}"
                 method="post">
+                <input type="hidden" name="subject" value="{{ subject }}">
+                <input type="hidden" name="predicate" value="{{ triple['predicate']['value'] }}">
+                <input type="hidden" name="old_value" value="{{ triple['object']['value'] }}">
                 <input type="text" class="form-control my-4" name="new_value" value="{{ triple['object']['value'] }}">
                 <div>
                     <button type="submit" class="btn btn-primary">{{_('Update')}}</button>
