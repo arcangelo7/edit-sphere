@@ -447,14 +447,14 @@ networkx = ["networkx (>=2.0.0,<3.0.0)"]
 
 [[package]]
 name = "rdflib-ocdm"
-version = "0.3.4"
+version = "0.3.5"
 description = ""
 category = "main"
 optional = false
 python-versions = ">=3.7.4,<4.0.0"
 files = [
-    {file = "rdflib_ocdm-0.3.4-py3-none-any.whl", hash = "sha256:c420022ea4a72d09ea0abf0fd75617f30a7f471d1c3c97087fd9cd447b6d1d5a"},
-    {file = "rdflib_ocdm-0.3.4.tar.gz", hash = "sha256:7b6af2c41ee0a8a6ba19e07f235a071dc7a2ed8253c7b1d09fcaf6ab0eb66254"},
+    {file = "rdflib_ocdm-0.3.5-py3-none-any.whl", hash = "sha256:cf39a8b1231ecf8e9a6afbd94ac5d27bb917e73f21dfa2a447198de2f9b3acc4"},
+    {file = "rdflib_ocdm-0.3.5.tar.gz", hash = "sha256:46b8b6492026ed3f0701d8e89339a8362ef2f2266f56410ddbaf62f504816066"},
 ]
 
 [package.dependencies]
@@ -583,4 +583,4 @@ watchdog = ["watchdog (>=2.3)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "82a12148d790efd56bcec861dc37ad4e142a195bd085639a70589ee43631b223"
+content-hash = "f8ceefb211d7bb692fb0900795a9f3e9b26308b7af14440870bc1b754c4be031"

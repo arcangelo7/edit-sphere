@@ -12,7 +12,7 @@ class Editor:
         self.provenance_endpoint = provenance_endpoint
         self.counter_handler = counter_handler
 
-    def update_property(self, subject: str, predicate: str, old_value: str, new_value: str) -> None:
+    def update(self, subject: str, predicate: str, old_value: str, new_value: str) -> None:
         subject = URIRef(subject)
         predicate = URIRef(predicate)
         g_set = OCDMGraph(self.counter_handler)
@@ -20,10 +20,25 @@ class Editor:
         g_set.preexisting_finished()
         for triple in g_set.triples((None, predicate, None)):
             if str(triple[2]) == old_value:
-                datatype = triple[2].datatype
+                datatype = triple[2].datatype if isinstance(triple[2], Literal) else None
                 g_set.remove(triple)
         new_value = URIRef(new_value) if validators.url(new_value) else Literal(new_value, datatype=datatype)
         g_set.add((subject, predicate, new_value))
+        self.save(g_set)
+
+    def delete(self, subject: str, predicate: str = None, value: str = None) -> None:
+        subject = URIRef(subject)
+        predicate = URIRef(predicate)
+        g_set = OCDMGraph(self.counter_handler)
+        Reader.import_entities_from_triplestore(g_set, self.dataset_endpoint, [subject])
+        g_set.preexisting_finished()
+        if predicate:
+            if value:
+                for triple in g_set.triples((None, predicate, None)):
+                    if str(value) == str(triple[2]):
+                        g_set.remove(triple)
+        if len(g_set) == 0:
+            g_set.mark_as_deleted(subject)
         self.save(g_set)
 
     def import_entity_from_triplestore(self, g_set: OCDMGraph, res_list: list):

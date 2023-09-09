@@ -68,7 +68,16 @@ def update_triple():
     old_value = request.form.get('old_value')
     new_value = request.form.get('new_value')
     editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'])
-    editor.update_property(subject, predicate, old_value, new_value)    
+    editor.update(subject, predicate, old_value, new_value)    
+    return redirect(url_for('show_triples', subject=subject))
+
+@app.route('/delete_triple', methods=['POST'])
+def delete_triple():
+    subject = request.form.get('subject')
+    predicate = request.form.get('predicate')
+    object_value = request.form.get('object')
+    editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'])
+    editor.delete(subject, predicate, object_value)
     return redirect(url_for('show_triples', subject=subject))
 
 @app.route('/search')
