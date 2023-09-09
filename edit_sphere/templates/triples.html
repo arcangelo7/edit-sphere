@@ -1,0 +1,97 @@
+{% macro render_triple(triple, subject) %}
+    <li class="list-group-item d-flex align-items-center">
+        <span class="flex-grow-1 me-5 d-flex flex-column justify-content-center p-3">
+            <span title="{{triple['predicate']['value']}}">
+                <a class="fw-bold"href="{{ (triple['predicate']['value'] | split_ns)[0][:-1] }}#{{ triple['predicate']['value'] }}" target="_blank" alt="Definition of the property {{ triple['predicate']['value'] }}">
+                    {{ triple['predicate']['value'] | human_readable_predicate }}
+                    <i class="bi bi-question-circle ml-1"></i>
+                </a>
+            </span>
+            {% if triple['object']['value'] != triple['object']['value'] | human_readable_predicate %}
+                <span title="{{ triple['object']['value'] }}" class="object-value mt-4">
+                    <a href="{{ (triple['object']['value'] | split_ns)[0][:-1] }}#{{ triple['object']['value'] }}" target="_blank" alt="Definition of the value {{ triple['object']['value'] }}">
+                        {{ triple['object']['value'] | human_readable_predicate }}
+                        <i class="bi bi-question-circle ml-1"></i>
+                    </a>
+                </span>
+            {% elif triple['object']['value'].startswith('http://') or triple['object']['value'].startswith('https://') %}
+                <span class="object-value mt-4">
+                    <a href="{{url_for('show_triples', subject=triple['object']['value']|urlencode)}}" alt="">{{ triple['object']['value'] }}</a>
+                </span>
+            {% else %}
+                <span class="object-value mt-4">{{ triple['object']['value'] }}</span>
+            {% endif %}
+            <form class="edit-form d-none"
+                action="{{ url_for('update_triple', subject=subject, predicate=triple['predicate']['value']) }}"
+                method="post">
+                <input type="text" class="form-control my-4" name="new_value" value="{{ triple['object']['value'] }}">
+                <div>
+                    <button type="submit" class="btn btn-primary">{{_('Update')}}</button>
+                    <button type="button" class="btn btn-secondary cancel-button">{{_('Cancel')}}</button>
+                </div>
+            </form>
+        </span>
+        <button class="btn btn-outline-secondary edit-button">
+            <i class="bi bi-pencil-square"></i> <!-- Icona di modifica -->
+        </button>
+    </li>
+{% endmacro %}
+
+{% extends "_base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">{{_('About')}} {{ subject | human_readable_predicate }}</h2>
+
+    {% if triples %}
+
+        {% set attributes_triples = [] %}
+        {% set links_triples = [] %}
+        {% for triple in triples %}
+            {% if triple['object']['value'] != triple['object']['value'] | human_readable_predicate or not (triple['object']['value'].startswith('http://') or triple['object']['value'].startswith('https://')) %}
+                {% set _ = attributes_triples.append(triple) %}
+            {% elif triple['object']['value'] == triple['object']['value'] | human_readable_predicate and (triple['object']['value'].startswith('http://') or triple['object']['value'].startswith('https://')) %}
+                {% set _ = links_triples.append(triple) %}
+            {% endif %}
+        {% endfor %}
+    
+        {% if attributes_triples %}
+            <h4 class="mt-5 mb-3">{{_('Attributes')}}</h4>
+            <ul class="list-group">
+                {% for triple in attributes_triples  %}
+                    {{ render_triple(triple, subject) }}
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% if links_triples %}
+            <h4 class="mt-5 mb-3">{{_('Links to other resources')}}</h4> 
+            <ul class="list-group">
+                {% for triple in links_triples %}
+                    {{ render_triple(triple, subject) }}
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% else %}
+        <p class="alert alert-warning">{{_('There is no information related to this entity in the dataset')}}</p>
+    {% endif %}
+</div>
+
+<script>
+    $(document).ready(function () {
+        function toggleEditForm(listItem) {
+            const form = listItem.find('.edit-form');
+            const valueSpan = listItem.find('.object-value');
+            form.toggleClass('d-none');
+            valueSpan.toggleClass('d-none');
+        }
+
+        $('.edit-button').click(function () {
+            toggleEditForm($(this).closest('.list-group-item'));
+        });
+
+        $('.cancel-button').click(function () {
+            toggleEditForm($(this).closest('.list-group-item'));
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,65 @@
+# English translations for .
+# Copyright (C) 2023 Arcangelo Massari
+# This file is distributed under the same license as the  project.
+# Arcangelo Massari <arcangelo.massari@unibo.it>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version:  1.0\n"
+"Report-Msgid-Bugs-To: arcangelo.massari@unibo.it\n"
+"POT-Creation-Date: 2023-09-09 15:50+0200\n"
+"PO-Revision-Date: 2023-09-09 15:01+0200\n"
+"Last-Translator: Arcangelo Massari <arcangelo.massari@unibo.it>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: edit_sphere/templates/entities.html:4
+msgid "Catalogue"
+msgstr ""
+
+#: edit_sphere/templates/entities.html:17
+msgid "Previous"
+msgstr ""
+
+#: edit_sphere/templates/entities.html:20
+msgid "Next"
+msgstr ""
+
+#: edit_sphere/templates/footer.html:15
+msgid "Language"
+msgstr ""
+
+#: edit_sphere/templates/navigation.html:14
+#: edit_sphere/templates/navigation.html:15
+msgid "Search"
+msgstr ""
+
+#: edit_sphere/templates/triples.html:29
+msgid "Update"
+msgstr ""
+
+#: edit_sphere/templates/triples.html:30
+msgid "Cancel"
+msgstr ""
+
+#: edit_sphere/templates/triples.html:44
+msgid "About"
+msgstr ""
+
+#: edit_sphere/templates/triples.html:59
+msgid "Attributes"
+msgstr ""
+
+#: edit_sphere/templates/triples.html:67
+msgid "Links to other resources"
+msgstr ""
+
+#: edit_sphere/templates/triples.html:75
+msgid "There is no information related to this entity in the dataset"
+msgstr ""
+
