@@ -1,0 +1,25 @@
+{% extends "_base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">Catalogue</h1>
+    <ul class="list-group">
+        {% for subject in subjects %}
+        <li class="list-group-item">
+            <a href="{{ url_for('show_triples', subject=subject['subject']['value']|urlencode) }}">{{
+                subject['subject']['value'] }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <nav class="mt-4">
+        <ul class="pagination">
+            <li class="page-item {% if page == 1 %}disabled{% endif %}">
+                <a class="page-link" href="{{ url_for('index', page=page-1) }}">Precedente</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="{{ url_for('index', page=page+1) }}">Successivo</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+{% endblock %}

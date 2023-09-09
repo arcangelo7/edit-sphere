@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "edit-sphere"
+version = "0.1.0"
+description = "An environment for data modification"
+authors = ["arcangelo7 <arcangelomas@gmail.com>"]
+license = "ISC"
+readme = "README.md"
+packages = [{include = "edit_sphere"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+flask = "^2.3.3"
+sparqlwrapper = "^2.0.0"
+pyyaml = "^6.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

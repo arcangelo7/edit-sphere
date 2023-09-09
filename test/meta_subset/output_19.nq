@@ -1,0 +1,1000 @@
+<https://w3id.org/oc/meta/br/064065245> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065939> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065897> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalVolume> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065825> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065273> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066192> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065264> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065275> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1974-07" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065329> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150426> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0605> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06021> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065584> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1977-03" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064899> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1994-12-01" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065461> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150753> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065240> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150199> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065771> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501521> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065881> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065880> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065328> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1927-07" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064905> <http://purl.org/dc/terms/title> "Torsion And Other Transitional Phenomena In The Regeneration Of The Cheliped Of The Lobster (Homarus Americanus)" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064909> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/064083> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065369> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0640136060> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065750> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065405> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1972-09" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065490> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065754> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501481> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065292> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150129> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065183> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0640135874> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065592> <http://purl.org/dc/terms/title> "Performance Testing Of A Book Index" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065359> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150503> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065605> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065235> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065876> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065850> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065292> <http://purl.org/dc/terms/title> "Ascertaining Activities In A Subject Area Through Bibliometric Analysis. Application Tolibrary Literature" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/069038299> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/069039359> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064883> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0640135574> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065312> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066182> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065981> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065833> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065572> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501020> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065978> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065241> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/062073> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065426> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065410> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150631> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065222> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0640135913> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065235> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1912-07-05" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066232> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065794> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065955> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065905> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064921> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065474> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150788> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065267> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065170> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/061507> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06029> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "2000-01-15" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065212> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401008> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065227> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065796> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066268> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065836> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501689> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065896> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136474> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065533> <http://purl.org/dc/terms/title> "Models For Librarians" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066238> <http://purl.org/spar/fabio/hasSequenceIdentifier> "2" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064884> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065538> <http://purl.org/dc/terms/title> "Monograph Evaluation For Acquisitions In A Large Research Library" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065522> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065313> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1972-11" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065521> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066210> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065528> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150918> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065355> <http://purl.org/dc/terms/title> "An Experimental Study Of An Amicronucleate Oxytricha. I. Study Of The Normal Animal, With An Account Of Cannibalism" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065525> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065870> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1979-07" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065338> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401305> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06024> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0622015046> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065266> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150257> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065333> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150437> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065306> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065427> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065774> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065260> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064968> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0640416> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065256> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/0615093> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06033> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0622015046> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065573> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501022> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065436> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1972-01" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065969> <http://purl.org/spar/fabio/hasSequenceIdentifier> "3" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065384> <http://purl.org/dc/terms/title> "The Functions Of Abstracts In The Initial Screening Of Technical Documents By The User" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065915> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065875> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065841> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/06101075> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065217> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401019> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065168> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/061505> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065427> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150672> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064934> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065508> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065566> <http://purl.org/dc/terms/title> "Printer's Devil And Reprint Requests" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065353> <http://purl.org/dc/terms/title> "Design Equations For Retrieval Systems Based On The Swets Model" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065885> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150722> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065350> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1913-02-20" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065301> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1974-01" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065564> <http://purl.org/dc/terms/title> "Admissibility Of Delegates To International Meetings" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065458> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150295> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066256> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066173> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065271> <http://purl.org/dc/terms/title> "Studies On The Dynamics Of Morphogenesis And Inheritance In Experimental Reproduction. II. Physiological Dominance Of Anterior Over Posterior Regions In The Regulation Of Planaria Dorotocephala" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065536> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150936> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065603> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501097> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065321> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/0640495> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065277> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401159> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065320> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150157> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065848> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065870> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065869> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065408> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150622> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065242> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401075> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065418> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150135996> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065534> <http://purl.org/dc/terms/title> "The ICSU ABInternational Classification System For Physics: Its History And Future" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06101075> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Journal> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065354> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066199> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065171> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0615023> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065506> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136084> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065315> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150391> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065305> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0640135996> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064898> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1995-04-01" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065382> <http://purl.org/dc/terms/title> "On-line Systems: Promise And Pitfalls" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065731> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06044> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/060291> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065767> <http://purl.org/dc/terms/title> "The Library Community At A Technological And Philosophical Crossroads: Necessary And Sufficient Conditions For Survival" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064896> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1916-11" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065846> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1983-09" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065913> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1975-11" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065737> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136315> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065277> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/0640451> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066264> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalIssue> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065827> <http://purl.org/dc/terms/title> "Highly Cited Old Papers And The Reasons Why They Continue To Be Cited" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065179> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066169> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065453> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065231> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065215> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150134> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065557> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065339> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064955> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0640384> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065387> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150224> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065725> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501396> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065505> <http://purl.org/dc/terms/title> "Introduction" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065884> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065389> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065264> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1973-11" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065893> <http://purl.org/dc/terms/title> "The Effect Of Parameter Uncertainties On The Predictions Of A Library Network Model" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065767> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065178> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150135756> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065418> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150652> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065518> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06035> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/060256> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065298> <http://purl.org/dc/terms/title> "Two Modes Of Computer Assisted Instruction In A Library Reference Course" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065463> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066221> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065165> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066164> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065361> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401364> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06024> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/060155> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065852> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136430> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065740> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501446> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065461> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066218> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065279> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0640135970> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065973> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065891> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065608> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501107> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065832> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136410> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065309> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150135887> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065195> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065354> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1972-09" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064903> <http://purl.org/dc/terms/title> "The Effects Of A Thyroid Diet Upon Paramaecium" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065315> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1971-03" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065475> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150791> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065742> <http://purl.org/dc/terms/title> "Human Memory Organization For Computer Programs" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065753> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1978-05" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065877> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136455> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065199> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065254> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065241> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150202> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064916> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/064090> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065800> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065827> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150664> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065356> <http://purl.org/dc/terms/title> "A Decision Theory View Of The Information Retrieval Situation" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065363> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150510> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065169> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/061506> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065789> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150626> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065723> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501392> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065813> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150650> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065358> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401358> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065301> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065377> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066197> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065808> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064935> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0640339> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065470> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066228> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065314> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150387> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065810> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501620> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065780> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065286> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401190> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06010> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06057> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065883> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/06101075> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0611033431> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06110346> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065974> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalIssue> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065276> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401158> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065473> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1976-05" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064958> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1995-05-01" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065366> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401374> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065882> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501798> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064979> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0640135670> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064979> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064970> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/0640144> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064939> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0640346> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065541> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150951> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065560> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066246> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065806> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065363> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065920> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064935> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065460> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150297> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065818> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501641> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064962> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065882> <http://purl.org/dc/terms/title> "An Information Transfer Model To Define Information Users And Outputs With Specific Application To Environmental Technology" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06030> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06030> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065469> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136047> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065347> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150474> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065913> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065829> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501672> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065547> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06044> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065842> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501701> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06101142> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalVolume> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065547> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1976-07" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066177> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/06201057> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065905> <http://purl.org/spar/fabio/hasSequenceIdentifier> "16" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06028> <http://purl.org/dc/terms/title> "Growth Inhibition Of Cervical Cancer Cells By The Human Retinoic Acid Receptor Β Gene" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0603> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/066015746> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065351> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065374> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150135952> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064908> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064938> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0640345> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065320> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065205> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/0615042> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065286> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065413> <http://purl.org/dc/terms/title> "An Experiment In Dialectic Information Systems" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065341> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065899> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066195> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066170> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065410> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150632> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065824> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501661> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065334> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065846> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065796> <http://purl.org/dc/terms/title> "Relation Of Title Length To Number Of Authors In Journal Articles" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0603> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065450> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066207> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066230> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066219> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065227> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0640135918> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065795> <http://purl.org/dc/terms/title> "Another Look At OCLC's Potential For Special Libraries" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065874> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066246> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064925> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06029> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0622015046> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065189> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065551> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066238> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065457> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066213> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065590> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066241> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065482> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150319> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065192> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0640955> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065877> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066225> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065366> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/0640540> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065953> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065441> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1973-07" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065948> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalIssue> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065922> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalIssue> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065877> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065257> <http://purl.org/dc/terms/title> "Transmission Through The Resting Egg Of Experimentally Induced Characters In Asplanchna Amphora" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065537> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150374> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065365> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150515> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065492> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150329> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065335> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401293> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065874> <http://purl.org/spar/fabio/hasSequenceIdentifier> "3" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065197> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/0615034> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065307> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150372> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065182> <http://purl.org/dc/terms/title> "Development Of An Integrated Energy Vocabulary And The Possibilities For On-line Subject Switching" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065339> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065190> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0615072> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065218> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150142> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065905> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065853> <http://purl.org/spar/fabio/hasSequenceIdentifier> "4" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065805> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065921> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/06101075> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065232> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150135810> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065249> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/0615086> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065753> <http://purl.org/dc/terms/title> "When Is A Changed State Not A Changed State? When A Theory Of Mechanics Persists In The Face Of A Theory Of Relativity" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065861> <http://purl.org/spar/fabio/hasSequenceIdentifier> "3" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064972> <http://purl.org/dc/terms/title> "Modification Of Development On The Basis Of Differential Susceptibility To Radiation. IV. Chick Embryos And Ultraviolet Radiation" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065319> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065260> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065409> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150627> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065414> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150642> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065410> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150630> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/062071> <http://purl.org/spar/fabio/hasSequenceIdentifier> "6" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065796> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066255> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065243> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065280> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064957> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064955> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065901> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065492> <http://purl.org/dc/terms/title> "A Technique Of Two-Stage Clustering Applied To Environmental And Civil Engineering And Related Methods Of Citation Analysis" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064888> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065830> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065416> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150649> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065326> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065261> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401116> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065321> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066198> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066185> <http://purl.org/spar/fabio/hasSequenceIdentifier> "4" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065887> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065885> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065902> <http://purl.org/spar/fabio/hasSequenceIdentifier> "6" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06033> <http://purl.org/dc/terms/title> "Angiogenesis And Mast Cell Density With Tryptase Activity Increase Simultaneously With Pathological Progression In B-cell non-Hodgkin's Lymphomas" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064935> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065887> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065439> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065227> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064941> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065893> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065466> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136044> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065252> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150228> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066226> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065590> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150427> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065755> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501483> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064950> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/0640124> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065266> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150258> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065368> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401380> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065449> <http://purl.org/dc/terms/title> "Building Better SDI Profiles For Users Of Large, Multidisciplinary Data Bases" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065738> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136316> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065892> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136470> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065459> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150748> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065488> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136066> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065871> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065276> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401155> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064952> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0640135643> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064961> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0640400> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065885> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065326> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065902> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065518> <http://purl.org/dc/terms/title> "Standardization Of Journal Titles In Databases" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065437> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1972-07" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065773> <http://purl.org/dc/terms/title> "Testing Of A Natural Language Retrieval System For A Full Text Knowledge Base" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065784> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501550> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065235> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0640135926> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065383> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0622015443> <http://purl.org/dc/terms/title> "International Journal Of Cancer" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064895> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065436> <http://purl.org/dc/terms/title> "Overlap In The Lists Of Journals Monitored By Biosis, CAS, And EI" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065207> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065375> <http://purl.org/dc/terms/title> "Cytological Studies Of Centrifuged Eggs" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065329> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065475> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150793> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065317> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065204> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150103> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065347> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401330> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065367> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150519> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065237> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401061> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065930> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/06101147> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065863> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501748> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06013> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06072> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065334> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065731> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501423> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065816> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065330> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065918> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065486> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1985-03" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065353> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401345> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065212> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065863> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065176> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066172> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066252> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalIssue> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064962> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0640135653> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065309> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150146> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065528> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065458> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150744> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065505> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065437> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136015> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065481> <http://purl.org/dc/terms/title> "A Comparison Of The Readability Of Synopses And Original Articles For Engineering Synopses" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064903> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065844> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065250> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/0640424> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064885> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065480> <http://purl.org/dc/terms/title> "Publication Ratings Versus Peer Ratings Of Universities" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065562> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1980-08" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0606> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06029> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06031> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/060211> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065233> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "2007-09-06" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065481> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150807> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065467> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1976-09" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065292> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1973-03" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065761> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501497> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065379> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065887> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136465> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065800> <http://purl.org/dc/terms/title> "Library Networks And Resource Sharing In The United States: An Historical And Philosophical Overview" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065830> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501676> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06029> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/060195> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065191> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0615073> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065346> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0640136037> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065191> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/0640365> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066266> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalIssue> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065321> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150404> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065771> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065867> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065839> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065572> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065493> <http://purl.org/dc/terms/title> "Title Versus Title/Abstract Text Searching In SDI Systems" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065238> <http://purl.org/dc/terms/title> "Lysophosphatidylcholine Treatment Allows Interspecies Fertilization Of Hamster Oocytes With Zona Pellucida By Human Spermatozoa" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065376> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065323> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065548> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066216> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/066016153> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0660168> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065221> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1905-08" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066197> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalIssue> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065224> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0640135915> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065240> <http://purl.org/dc/terms/title> "An Empirical Examination Of Lotka's Law" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065524> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136102> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065928> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065742> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150579> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065221> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066205> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalIssue> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065296> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066191> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065933> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/06101075> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065368> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/0640542> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065237> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "2007-09-06" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064963> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/068056201> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065347> <http://purl.org/dc/terms/title> "Role Of Steroids In Antler Growth Of Red Deer Stags" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065347> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/0640521> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065265> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0640135956> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065337> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150447> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065773> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150610> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065346> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401326> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065788> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1983-07" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065225> <http://purl.org/dc/terms/title> "An Evaluation Of Index Medicus And MEDLARS In The Field Of Ophthalmology" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065470> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065550> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150971> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065832> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065744> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501457> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065232> <http://purl.org/dc/terms/title> "The Processes Of Adaptation To Salt Solutions In Frogs" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065180> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0615046> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065196> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065922> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065847> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1984-03" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065717> <http://purl.org/dc/terms/title> "Improving Keyword Indexing" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065351> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401340> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065916> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150753> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066167> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065370> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150533> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065341> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/0640515> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064971> <http://purl.org/dc/terms/title> "The Effect Of Successive Removal Upon The Rate Of Regeneration" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065448> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150721> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0622015544> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065364> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150135942> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0610183> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065316> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1904-12" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065186> <http://purl.org/dc/terms/title> "ASIS Distinguished Lecture-1972: Operations Research And Information Science-A Common Cause" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06101018> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064948> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0640369> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065891> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066240> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06029> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/060200> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066216> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066206> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066266> <http://purl.org/spar/fabio/hasSequenceIdentifier> "2" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065352> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150485> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065368> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150524> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065427> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136005> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065345> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401322> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065717> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501376> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065912> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065871> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065462> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066220> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064892> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0640235> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065165> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061506> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065769> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065838> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066211> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065469> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150775> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064889> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06018> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "2000-01-15" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/062073> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/06201068> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065221> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1976-01" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065771> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066220> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065567> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501008> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065208> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150118> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064959> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1906-02" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065531> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150368> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06043> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/060287> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065405> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150614> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065422> <http://purl.org/dc/terms/title> "James Whitney Perry (1907–1971)" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065941> <http://purl.org/spar/fabio/hasSequenceIdentifier> "1" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065971> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065907> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065424> <http://purl.org/dc/terms/title> "The Development And Preliminary Test Of Behavior Related Dimensions Of Information Systems" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06032> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/060222> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065401> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150607> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065505> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136083> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065212> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1994-12-01" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064917> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065834> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065614> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136192> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06025> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/060164> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065774> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066259> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065604> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066244> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065223> <http://purl.org/dc/terms/title> "A Test Of Buck's Prime Number Coding Scheme" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064976> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065895> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065864> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06030> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065188> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0640944> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06015> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1999-05-01" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065390> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065197> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0640974> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06011> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1999-05-01" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065595> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136173> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065798> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136376> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065900> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066226> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065911> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066236> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065290> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065279> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065605> <http://purl.org/dc/terms/title> "Cooperation And Competition Among Library Networks" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065880> <http://purl.org/spar/fabio/hasSequenceIdentifier> "25" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065763> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066224> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065359> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1919-07" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065278> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/0640452> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065725> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501400> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065772> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1984-09" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065779> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1985-05" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064924> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0640135615> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065472> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1983-01" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064955> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0640385> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065358> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1909-11" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065903> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065483> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150320> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065258> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065315> <http://purl.org/dc/terms/title> "A Note On The Mathematical Basis Of The SLIC Index" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065440> <http://purl.org/dc/terms/title> "On Interrelationships Of The Sciences And Technology As Expressed By A Categorized List Of Journals And Modified By A Classification System" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065429> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065280> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150294> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065356> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065602> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150439> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065342> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1918-11" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065256> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0640135947> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064887> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1976-11" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065191> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065836> <http://purl.org/spar/fabio/hasSequenceIdentifier> "5" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065548> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150385> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065475> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065870> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136448> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064962> <http://purl.org/dc/terms/title> "External And Internal Influences On Indices Of Physiological Stress: II. Seasonal And Size-Related Variations In Blood Composition In Free-Living lizards,Sceloporus Occidentalis" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065406> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06030> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/060201> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065832> <http://purl.org/dc/terms/title> "Citation Ranking Versus Subjective Evaluation In The Determination Of Journal Hierachies In The Social Sciences" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065334> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401291> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065262> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150135840> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065272> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1995-06-15" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065193> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066166> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065885> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1983-05" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066268> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065459> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150296> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065412> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150135990> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065377> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1926-11" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065304> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150141> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065350> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065288> <http://purl.org/dc/terms/title> "An Algorithm For Computing Correlation Matrices" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06027> <http://purl.org/dc/terms/title> "Expression Of Von Willebrand Factor, An Endothelial Cell Marker, Is Up-Regulated By Angiogenesis Factors: A Potential Method For Objective Assessment Of Tumor Angiogenesis" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066236> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalIssue> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065784> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065881> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064890> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0640230> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065954> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065921> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065803> <http://purl.org/dc/terms/title> "The Role Of The British Library R & D Department In Supporting Library And Information Research In The United Kingdom" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065853> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150690> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065198> <http://purl.org/dc/terms/title> "An Experimental Determination Of The Speed Of Migration Of Salmon In The Columbia River" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065772> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064884> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0640209> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065458> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150746> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065592> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066264> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065167> <http://purl.org/dc/terms/title> "The Changing Environment Of Personal Information Systems" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065312> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1971-03" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065435> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1971-07" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065359> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065848> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065905> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065238> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06013> <http://purl.org/dc/terms/title> "A Simplified Regimen Of Weekly High Dose 5-Fluorouracil And Leucovorin As A 24-Hour Infusion In Patients With Advanced Colorectal Carcinoma" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065281> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150135859> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065371> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064913> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0640288> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065566> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066231> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065555> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136133> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065239> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150197> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065908> <http://purl.org/spar/fabio/hasSequenceIdentifier> "4" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065337> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401299> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065330> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1972-01" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065845> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501707> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064897> <http://purl.org/dc/terms/title> "Additional Data For The Study Of Sex-Linked Inheritance In Drosophila" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065482> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065290> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150319> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065350> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150135928> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064945> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0640362> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064892> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0640135583> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06013> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06013> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065727> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065822> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136400> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065389> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150226> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065258> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1971-07" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065289> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1905-04" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066247> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066165> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065521> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150903> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066248> <http://purl.org/spar/fabio/hasSequenceIdentifier> "1" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065349> <http://purl.org/dc/terms/title> "Managing An Uncontrolled Vocabulary Ex Post Facto" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065377> <http://purl.org/dc/terms/title> "Breaking The Communication Barrier Between Searcher And Literature File: An Interactive Guide" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064915> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1926-11" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065493> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150837> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065390> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150582> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064974> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1904-11" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065843> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501703> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065335> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150172> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0607> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06036> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065276> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066195> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065874> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065292> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150326> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065348> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/0640522> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064942> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0640135633> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065351> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401341> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065183> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/0615020> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065845> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/06101075> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06023> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/060150> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065507> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150874> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065900> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalVolume> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065486> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066238> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065482> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150808> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065254> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06016> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06093> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065781> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06015> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06088> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065167> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066164> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065848> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136426> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065472> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065861> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065545> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065409> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1974-07" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065302> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065605> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136183> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065227> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150167> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065341> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065263> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1904-08" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06101097> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065324> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150161> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06034> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/060247> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065341> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065219> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150146> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065720> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066207> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066194> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065322> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150406> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065463> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136041> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064943> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1913-02-20" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064948> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0640135639> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/062072> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/06201068> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065320> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150135898> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065846> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150683> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065947> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065413> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150135991> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065923> <http://purl.org/spar/fabio/hasSequenceIdentifier> "8" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066185> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalIssue> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065809> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501615> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065381> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150559> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065511> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150882> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065757> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1985-05" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065951> <http://purl.org/spar/fabio/hasSequenceIdentifier> "3" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065561> <http://purl.org/dc/terms/title> "Publication Indicators Of Relative Research Efforts In Physics Subfields" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065329> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150135907> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065272> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150274> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06041> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065192> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/0615029> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065814> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066263> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064975> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065915> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065551> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150388> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065215> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401014> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065270> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150267> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065547> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150384> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065305> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065975> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064944> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/0640118> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065756> <http://purl.org/dc/terms/title> "Text Compression Using Variable-To Fixed-Length Encodings" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065323> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401268> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065885> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalVolume> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065184> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064955> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065368> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150205> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065441> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150704> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065764> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501504> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065185> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0615057> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065423> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150260> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06018> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0622015046> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064911> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1917-01" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064978> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0640436> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064978> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065884> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064911> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065230> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "2007-09-06" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066228> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066202> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065192> <http://purl.org/dc/terms/title> "17Α, 20Α-Dihydroxy-4-Pregnen-3-One, Not Its 20Β Isomer, Is Produced From 17Α-Hydroxyprogesterone By Spermatozoa Of Secondary Male Groupers (Epinephelus Tauvina) Derived From Females Implanted With 17Α-Methyltestosterone" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065499> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150855> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064920> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0640303> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065364> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065855> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065718> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0611033541> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065239> <http://purl.org/dc/terms/title> "Uptake of3H-estradiol By Embryonic Crocodile Gonads During The Period Of Sexual Differentiation" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065252> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065252> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1971-09" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06025> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/060158> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065253> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065978> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065807> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065223> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401031> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065449> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1978-11" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065741> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1980-05" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06045> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/060298> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064893> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0640240> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065457> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1979-03" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06101145> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065356> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150135934> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065797> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501585> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065586> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150423> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065344> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1971-09" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065552> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150975> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064927> <http://purl.org/dc/terms/title> "Phosphorescence In Ctenophores" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065890> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064931> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065881> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065217> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065387> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065610> <http://purl.org/dc/terms/title> "Data Bases-History Of Developments And Trends" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06034> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/060246> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065217> <http://purl.org/dc/terms/title> "The Use Of Discriminant Analysis To Select Content-Bearing Words" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066204> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalVolume> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065847> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066254> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065371> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401387> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064921> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0640306> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065194> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065878> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065843> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064929> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/0640103> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065265> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065938> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065369> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150531> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065280> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065551> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065213> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06201057> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06202> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065236> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065359> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066190> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065490> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150327> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065574> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065487> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150324> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066224> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalIssue> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065288> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150315> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065902> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1980-05" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065805> <http://purl.org/dc/terms/title> "Subjective Expected Utility: A Model Of Decision-Making" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065443> <http://purl.org/dc/terms/title> "A General Statistical Model For Estimating Future Demand Levels Of Data-Base Utilization Within An Information Retrieval Organization" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065570> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136148> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065201> <http://purl.org/dc/terms/title> "A Correlation Of Bibliographic Data Elements For Use In A Generalized File Management System" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065175> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0615031> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065327> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066195> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065229> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065356> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401353> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06013> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06075> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065551> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150974> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065900> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501840> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065223> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150156> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065550> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150387> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065607> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501106> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065560> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150992> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064924> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065874> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064950> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1908-06" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065191> <http://purl.org/dc/terms/title> "Localization Of The Micromere Material In The Cytoplasm Of The Egg Of Arbacia" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065579> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501038> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065577> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1984-05" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065443> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065576> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501028> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064923> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1916-11" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065318> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065262> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150248> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065777> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066266> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0609> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06049> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0603> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06013> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065810> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066218> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06019> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/060118> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065262> <http://purl.org/dc/terms/title> "Female Reproductive Properties And Prenatal Development Of A Senescence-Accelerated Mouse Strain" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065351> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150483> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06021> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "2000-01-15" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065228> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066236> <http://purl.org/spar/fabio/hasSequenceIdentifier> "4" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065827> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1978-09" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065736> <http://purl.org/dc/terms/title> "Rationalization Of Secondary Services: Measurement Of Coverage Of Primary Journals And Overlap Between Services" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065543> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066253> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalIssue> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064886> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0607> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06041> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065282> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150299> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065853> <http://purl.org/dc/terms/title> "Data Bases—History Of Development And Trends" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065177> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06101145> <http://purl.org/spar/fabio/hasSequenceIdentifier> "270" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065244> <http://purl.org/dc/terms/title> "Studies On The Reputed Endocrine Function Of The Thymus Gland (Albino Rat)" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065533> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150927> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065383> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150566> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065274> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065904> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150741> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065194> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1994-11-01" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065410> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150247> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065613> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501120> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065827> <http://purl.org/spar/fabio/hasSequenceIdentifier> "3" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065914> <http://purl.org/spar/fabio/hasSequenceIdentifier> "3" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065748> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065566> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501005> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065600> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065216> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0640135907> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065832> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501680> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06031> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066211> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalIssue> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065442> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136020> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065299> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065192> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065209> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065852> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065759> <http://purl.org/dc/terms/title> "Information And Productivity" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065327> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401277> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06031> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/060207> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065335> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065271> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0640135962> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065604> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501098> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064885> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/064059> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065771> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136349> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065467> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150769> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065253> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066181> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065916> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1984-09" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065322> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150159> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065185> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0640938> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065255> <http://purl.org/dc/terms/title> "Key Issues In Soviet Information" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065961> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065818> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150655> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065214> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065377> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065862> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065342> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150135920> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065511> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150881> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065371> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065836> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066223> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066222> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065806> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501605> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065737> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066233> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065462> <http://purl.org/dc/terms/title> "A Visit To The Wasteland Of Federal Scientific And Technical Information Policy" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065579> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150416> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065336> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065489> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065466> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065230> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0640135921> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065809> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065744> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150581> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065578> <http://purl.org/dc/terms/title> "Use Of Library Materials In Terms Of Age" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065254> <http://purl.org/dc/terms/title> "An Experiment In Index Term Frequency" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065882> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066244> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065592> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065857> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalIssue> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065338> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065217> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/0615054> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065526> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1983-11" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065345> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065356> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150493> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065442> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150279> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/066016153> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065275> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401152> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065492> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065498> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150852> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066226> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066173> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065189> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0615069> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065575> <http://purl.org/dc/terms/title> "Evaluating Scientific Journals withJournal Citation Reports — A Case Study In Acoustics" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065182> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065379> <http://purl.org/dc/terms/title> "Anterior Pituitary And Adrenal Cortical Hormones Accelerate Or Inhibit Tadpole Hindlimb Growth And Development Depending On Stage Of Spontaneous Development Or Thyroxine Concentration In Induced Metamorphosis" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065559> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066198> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalIssue> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065855> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066242> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065916> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065608> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1978-03" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064898> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0640258> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064949> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0640135640> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065911> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065879> <http://purl.org/dc/terms/title> "Information Resources And Organizational Structure" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065210> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150123> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065254> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066178> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065327> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150420> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066202> <http://purl.org/spar/fabio/hasSequenceIdentifier> "31" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065527> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136105> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065945> <http://purl.org/spar/fabio/hasSequenceIdentifier> "3" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065569> <http://purl.org/dc/terms/title> "Some Statistical Aspects ofJASIS Publications" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06044> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/060288> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065504> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065574> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501024> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065756> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065260> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/0640434> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065780> <http://purl.org/dc/terms/title> "Automatic Text Analysis" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066239> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06025> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0622015046> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065850> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136428> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065908> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalIssue> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065893> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501823> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065220> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/0640394> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065448> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/066016259> <http://purl.org/spar/fabio/hasSequenceIdentifier> "80" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065815> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064901> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1928-02" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065369> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/0640543> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065209> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0640135900> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064936> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0640340> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065745> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501459> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065572> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501018> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065411> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150248> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066164> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalIssue> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065793> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501576> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065531> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066246> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/062075> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalIssue> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06033> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065578> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501032> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065555> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065375> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150135953> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065364> <http://purl.org/dc/terms/title> "The Experimental Modification Of Germ Cells. II. The Effect Upon The Domestic Fowl Of The Daily Inhalation Of Ethyl Alcohol And Certain Related Substances" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065840> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136418> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065863> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065396> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065539> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136117> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0607> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/0607> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065282> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150135860> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065268> <http://purl.org/dc/terms/title> "The Effects Of Anterior And Posterior Selections On Fission Rate In Pure Lines Of Paramecium Caudatum" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065808> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501611> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065542> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065585> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065892> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0622015046> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0622015544> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065856> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1978-11" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064951> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0640135642> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065899> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501839> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065307> <http://purl.org/dc/terms/title> "Scientific Elitism And The Information System Of Science" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065362> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065948> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065363> <http://purl.org/dc/terms/title> "1/71-1R Sacherschliessung An Bibliotheken Bei Einsatz Elektronischer Datenverarbeitung. (Subject Retrieval In Libraries With The Aid Of EDP.) 1970. Dietrich Roessler. Köln, Greven Verlag. 117 Pp. (Arbeiten Aus Dem Bibliothekar-Lehrinstitut Des Landes Rheinland-Westfalen, Heft 34.)" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065859> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065338> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1971-07" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065888> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065323> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065942> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065834> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065939> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065841> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066243> <http://purl.org/spar/fabio/hasSequenceIdentifier> "1" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065392> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06021> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0622015046> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066218> <http://purl.org/spar/fabio/hasSequenceIdentifier> "1" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065174> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066171> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0611033431> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Journal> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065307> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150371> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065731> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1979-05" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065878> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501787> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/069039310> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0690427> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065936> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065901> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1984-11" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065335> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150135913> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06017> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/066015861> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06026> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0622015046> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065870> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501765> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065801> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065360> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065863> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065951> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065411> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150636> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065869> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066239> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065453> <http://purl.org/dc/terms/title> "Kiviat-graphs As A Means For Displaying Performance Data For On-Line Retrieval Systems" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066252> <http://purl.org/spar/fabio/hasSequenceIdentifier> "2" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065407> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1972-03" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065173> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065257> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065579> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1980-01" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065216> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150138> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065466> <http://purl.org/dc/terms/title> "On-line Serials Collection Analysis" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065853> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065777> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136355> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065567> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150404> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06027> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/060184> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065344> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064920> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0640135611> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065351> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065945> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066223> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalIssue> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065418> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1972-09" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065876> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1985-09" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065222> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066235> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalIssue> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065184> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1910-12" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065186> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0640941> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065406> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150616> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065331> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065411> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1974-07" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065481> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136059> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066188> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065377> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401400> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065762> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065495> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06150844> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065399> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150236> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065447> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065786> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064064928> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0640320> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065791> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/06150136369> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065436> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065165> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065369> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066245> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066222> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065882> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501800> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065591> <http://purl.org/dc/terms/title> "Comparison Of Recent Acquisitions And OCLC Find Rates For Three Canadian Special Libraries" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/06041> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/069038299> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065341> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/06401314> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065554> <http://purl.org/vocab/frbr/core#embodiment> <https://w3id.org/oc/meta/re/06150391> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065449> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065182> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/Expression> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065366> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1913-08-20" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615066243> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066222> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065217> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/0615066172> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065470> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1980-05" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065224> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "2007-09-06" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065269> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1972-07" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065182> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/0615051> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065290> <http://purl.org/dc/terms/title> "The Use Of Extracts In Information Services" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065896> <http://purl.org/spar/fabio/hasSequenceIdentifier> "4" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065744> <http://purl.org/spar/pro/isDocumentContextFor> <https://w3id.org/oc/meta/ar/061501456> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065368> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/fabio/JournalArticle> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065296> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1917-07" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/0615065492> <http://prismstandard.org/namespaces/basic/2.0/publicationDate> "1983-05" <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065220> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065970> <https://w3id.org/oc/meta/br/> .
+<https://w3id.org/oc/meta/br/064065863> <http://purl.org/vocab/frbr/core#partOf> <https://w3id.org/oc/meta/br/064065862> <https://w3id.org/oc/meta/br/> .
