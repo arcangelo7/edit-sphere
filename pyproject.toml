@@ -15,6 +15,7 @@ pyyaml = "^6.0.1"
 flask-babel = "^3.1.0"
 rdflib-ocdm = "0.3.5"
 validators = "^0.22.0"
+requests = "^2.31.0"
 
 
 [build-system]

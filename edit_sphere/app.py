@@ -3,13 +3,14 @@ import os
 import urllib
 
 import click
+import requests
 from flask import Flask, redirect, render_template, request, session, url_for
-from flask_babel import Babel, get_translations, refresh
+from flask_babel import Babel, refresh
 from SPARQLWrapper import JSON, SPARQLWrapper
 
+from config import Config
 from edit_sphere.editor import Editor
 from edit_sphere.filters import *
-from config import Config
 
 app = Flask(__name__)
 
@@ -90,6 +91,16 @@ def set_language(lang_code=None):
     session['lang'] = lang_code
     refresh()
     return redirect(request.referrer or url_for('index'))
+
+@app.route('/endpoint')
+def endpoint():
+    return render_template('endpoint.html', dataset_endpoint=dataset_endpoint)
+
+@app.route('/dataset-endpoint', methods=['POST'])
+def sparql_proxy():
+    query = request.form.get('query')
+    response = requests.post(dataset_endpoint, data={'query': query}, headers={'Accept': 'application/sparql-results+json'})
+    return response.content, response.status_code, {'Content-Type': 'application/sparql-results+json'}
 
 @app.cli.group()
 def translate():

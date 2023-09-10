@@ -22,3 +22,7 @@ a {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+#yasgui {
+    height: 500px;
+}

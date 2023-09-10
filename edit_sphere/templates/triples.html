@@ -1,25 +1,25 @@
 {% macro render_triple(triple, subject) %}
     <li class="list-group-item d-flex align-items-center">
-        <span class="flex-grow-1 d-flex flex-column justify-content-center p-3">
-            <span class="ellipsis w-75" title="{{triple['predicate']['value']}}">
+        <span class="flex-grow-1 d-flex flex-column justify-content-center p-3 w-75">
+            <span class="ellipsis" title="{{triple['predicate']['value']}}">
                 <a class="fw-bold"href="{{ (triple['predicate']['value'] | split_ns)[0][:-1] }}#{{ triple['predicate']['value'] }}" target="_blank" alt="Definition of the property {{ triple['predicate']['value'] }}">
                     {{ triple['predicate']['value'] | human_readable_predicate }}
                     <i class="bi bi-question-circle ml-1"></i>
                 </a>
             </span>
             {% if triple['object']['value'] != triple['object']['value'] | human_readable_predicate %}
-                <span title="{{ triple['object']['value'] }}" class="object-value mt-4 ellipsis w-75">
+                <span title="{{ triple['object']['value'] }}" class="object-value mt-4 ellipsis">
                     <a href="{{ (triple['object']['value'] | split_ns)[0][:-1] }}#{{ triple['object']['value'] }}" target="_blank" alt="Definition of the value {{ triple['object']['value'] }}">
                         {{ triple['object']['value'] | human_readable_predicate }}
                         <i class="bi bi-question-circle ml-1"></i>
                     </a>
                 </span>
             {% elif triple['object']['value'].startswith('http://') or triple['object']['value'].startswith('https://') %}
-                <span title="{{ triple['object']['value'] }}" class="object-value mt-4 ellipsis w-75">
+                <span title="{{ triple['object']['value'] }}" class="object-value mt-4 ellipsis">
                     <a href="{{url_for('show_triples', subject=triple['object']['value']|urlencode)}}" alt="Link to the entity {{ triple['object']['value'] }}">{{ triple['object']['value'] }}</a>
                 </span>
             {% else %}
-                <span title="{{ triple['object']['value'] }}" class="object-value mt-4 ellipsis w-75">{{ triple['object']['value'] }}</span>
+                <span title="{{ triple['object']['value'] }}" class="object-value mt-4 ellipsis">{{ triple['object']['value'] }}</span>
             {% endif %}
             <form class="edit-form d-none"
                 action="{{ url_for('update_triple') }}"
@@ -34,12 +34,16 @@
                 </div>
             </form>
         </span>
-        <button class="btn btn-outline-secondary edit-button me-2">
-            <i class="bi bi-pencil-square"></i> <!-- Icona di modifica -->
-        </button>
-        <button class="btn btn-outline-danger delete-button" data-subject="{{ subject }}" data-predicate="{{ triple['predicate']['value'] }}" data-object="{{ triple['object']['value'] }}">
-            <i class="bi bi-trash"></i> <!-- Icona di cancellazione -->
-        </button>        
+        <div class="align-self-start">
+            <div class="d-flex flex-column flex-sm-row">
+                <button class="btn btn-outline-secondary edit-button m-2">
+                    <i class="bi bi-pencil-square"></i> <!-- Icona di modifica -->
+                </button>    
+                <button class="btn btn-outline-danger delete-button m-2" data-subject="{{ subject }}" data-predicate="{{ triple['predicate']['value'] }}" data-object="{{ triple['object']['value'] }}">
+                    <i class="bi bi-trash"></i> <!-- Icona di cancellazione -->
+                </button>                    
+            </div>
+        </div>
     </li>
 {% endmacro %}
 
