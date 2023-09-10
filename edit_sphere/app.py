@@ -2,6 +2,7 @@ import datetime
 import json
 import os
 import urllib
+from datetime import timezone
 
 import click
 import requests
@@ -9,9 +10,11 @@ import validators
 from flask import Flask, redirect, render_template, request, session, url_for
 from flask_babel import Babel, format_datetime, gettext, refresh
 from rdflib import Graph
+from rdflib.plugins.sparql.algebra import translateUpdate
+from rdflib.plugins.sparql.parser import parseUpdate
 from SPARQLWrapper import JSON, SPARQLWrapper
 from time_agnostic_library.agnostic_entity import AgnosticEntity
-from datetime import timezone
+
 from config import Config
 from edit_sphere.editor import Editor
 from edit_sphere.filters import *
@@ -184,7 +187,9 @@ def entity_history(entity_uri):
 def entity_version(entity_uri, timestamp):
     agnostic_entity = AgnosticEntity(res=entity_uri, config_path=app.config['CHANGE_TRACKING_CONFIG'])
     history, metadata, other_snapshots_metadata = agnostic_entity.get_state_at_time(time=(None, timestamp), include_prov_metadata=True)
-    timestamp_dt = datetime.fromisoformat(timestamp).astimezone(timezone.utc)
+    timestamp_dt = datetime.fromisoformat(timestamp)
+    if not timestamp_dt.tzinfo:
+        timestamp_dt = timestamp_dt.replace(tzinfo=timezone.utc)
     history = {k: v for k, v in history.items()}
     for key, value in metadata.items():
         value['generatedAtTime'] = datetime.fromisoformat(value['generatedAtTime']).astimezone(timezone.utc).isoformat()
@@ -212,8 +217,26 @@ def entity_version(entity_uri, timestamp):
                 break
     closest_metadata_key = min(metadata.keys(), key=lambda k: abs(datetime.fromisoformat(metadata[k]['generatedAtTime']).astimezone(timezone.utc) - timestamp_dt))
     closest_metadata = {closest_metadata_key: metadata[closest_metadata_key]}
-    
-    return render_template('entity_version.html', subject=entity_uri, triples=triples, metadata=closest_metadata, next_snapshot_timestamp=next_snapshot_timestamp, prev_snapshot_timestamp=prev_snapshot_timestamp)
+    if closest_metadata[closest_metadata_key]['hasUpdateQuery']:
+        sparql_query = closest_metadata[closest_metadata_key]['hasUpdateQuery']
+        modifications = parse_sparql_update(sparql_query)
+    else:
+        modifications = None
+
+    return render_template('entity_version.html', subject=entity_uri, triples=triples, metadata=closest_metadata, next_snapshot_timestamp=next_snapshot_timestamp, prev_snapshot_timestamp=prev_snapshot_timestamp, modifications=modifications)
+
+def parse_sparql_update(query):
+    parsed = parseUpdate(query)
+    translated = translateUpdate(parsed).algebra
+    modifications = {gettext('Deletions'): [], gettext('Additions'): []}
+
+    for operation in translated:
+        if operation.name == "DeleteData":
+            modifications[gettext('Deletions')].extend(operation.triples)
+        elif operation.name == "InsertData":
+            modifications[gettext('Additions')].extend(operation.triples)
+
+    return modifications
 
 @app.cli.group()
 def translate():

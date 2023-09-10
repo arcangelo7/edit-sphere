@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT 1.0\n"
 "Report-Msgid-Bugs-To: arcangelo.massari@unibo.it\n"
-"POT-Creation-Date: 2023-09-09 15:50+0200\n"
+"POT-Creation-Date: 2023-09-10 23:25+0200\n"
 "PO-Revision-Date: 2023-09-09 15:01+0200\n"
 "Last-Translator: Arcangelo Massari <arcangelo.massari@unibo.it>\n"
 "Language: it\n"
@@ -18,48 +18,142 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.12.1\n"
 
+#: edit_sphere/app.py:128
+msgid "Unknown"
+msgstr "Sconosciuto"
+
+#: edit_sphere/app.py:229 edit_sphere/app.py:233
+msgid "Deletions"
+msgstr "Cancellazioni"
+
+#: edit_sphere/app.py:229 edit_sphere/app.py:235
+msgid "Additions"
+msgstr "Aggiunte"
+
+#: edit_sphere/templates/endpoint.html:5
+#: edit_sphere/templates/navigation.html:13
+msgid "SPARQL Endpoint"
+msgstr "Endpoint SPARQL"
+
 #: edit_sphere/templates/entities.html:4
 msgid "Catalogue"
 msgstr "Catalogo"
 
-#: edit_sphere/templates/entities.html:17
+#: edit_sphere/templates/entities.html:18
 msgid "Previous"
 msgstr "Indietro"
 
-#: edit_sphere/templates/entities.html:20
+#: edit_sphere/templates/entities.html:40
 msgid "Next"
 msgstr "Avanti"
+
+#: edit_sphere/templates/entity_version.html:34
+msgid "Version"
+msgstr "Versione"
+
+#: edit_sphere/templates/entity_version.html:34
+msgid "of"
+msgstr "di"
+
+#: edit_sphere/templates/entity_version.html:40
+msgid "Previous version"
+msgstr "Versione precedente"
+
+#: edit_sphere/templates/entity_version.html:48
+msgid "Next version"
+msgstr "Versione successiva"
+
+#: edit_sphere/templates/entity_version.html:58
+msgid "Metadata of snapshot"
+msgstr "Metadati della versione numero"
+
+#: edit_sphere/templates/entity_version.html:61
+msgid "Generated at time"
+msgstr "Generato il"
+
+#: edit_sphere/templates/entity_version.html:63
+msgid "Invalidated at time"
+msgstr "Invalidato il"
+
+#: edit_sphere/templates/entity_version.html:65
+msgid "Attributed to"
+msgstr "Agente responsabile"
+
+#: edit_sphere/templates/entity_version.html:67
+msgid "Primary source"
+msgstr "Fonte primaria"
+
+#: edit_sphere/templates/entity_version.html:70
+msgid "Description"
+msgstr "Descrizione"
+
+#: edit_sphere/templates/entity_version.html:74
+msgid "Modifications"
+msgstr "Modifiche"
+
+#: edit_sphere/templates/entity_version.html:104
+#: edit_sphere/templates/triples.html:73
+msgid "Attributes"
+msgstr "Attributi"
+
+#: edit_sphere/templates/entity_version.html:112
+#: edit_sphere/templates/triples.html:81
+msgid "Links to other resources"
+msgstr "Collegamenti ad altre risorse"
+
+#: edit_sphere/templates/entity_version.html:120
+#: edit_sphere/templates/triples.html:89
+msgid "There is no information related to this entity in the dataset"
+msgstr "Non ci sono informazioni disponibili su questa risorsa nella banca dati"
 
 #: edit_sphere/templates/footer.html:15
 msgid "Language"
 msgstr "Lingua"
 
-#: edit_sphere/templates/navigation.html:14
-#: edit_sphere/templates/navigation.html:15
+#: edit_sphere/templates/navigation.html:10
+msgid "Go to the home"
+msgstr "Torna alla home"
+
+#: edit_sphere/templates/navigation.html:17
+#: edit_sphere/templates/navigation.html:18
 msgid "Search"
 msgstr "Cerca"
 
-#: edit_sphere/templates/triples.html:29
+#: edit_sphere/templates/triples.html:32
 msgid "Update"
 msgstr "Modifica"
 
-#: edit_sphere/templates/triples.html:30
+#: edit_sphere/templates/triples.html:33
 msgid "Cancel"
 msgstr "Annulla"
 
-#: edit_sphere/templates/triples.html:44
+#: edit_sphere/templates/triples.html:54
 msgid "About"
 msgstr "Riguardo"
 
-#: edit_sphere/templates/triples.html:59
-msgid "Attributes"
-msgstr "Attributi"
+#: edit_sphere/templates/triples.html:57
+msgid "Time machine"
+msgstr "Macchina del tempo"
 
-#: edit_sphere/templates/triples.html:67
-msgid "Links to other resources"
-msgstr "Collegamenti ad altre risorse"
+#: edit_sphere/templates/triples.html:116
+msgid "Are you sure?"
+msgstr "Sei sicuro?"
 
-#: edit_sphere/templates/triples.html:75
-msgid "There is no information related to this entity in the dataset"
-msgstr "Non ci sono informazioni disponibili su questa risorsa nella banca dati"
+#: edit_sphere/templates/triples.html:117
+msgid ""
+"You are about to delete this information. In any case, it will be "
+"possible to restore it"
+msgstr "Stai per cancellare questa informazione. Ad ogni modo, potrai ripristinarla in un secondo momento"
+
+#: edit_sphere/templates/triples.html:122
+msgid "Yes, delete it!"
+msgstr "Sì, cancella!"
+
+#: edit_sphere/templates/triples.html:131
+msgid "Deleted!"
+msgstr "Cancellato!"
+
+#: edit_sphere/templates/triples.html:132
+msgid "The data was deleted correctly"
+msgstr "La cancellazione è avvenuta correttamente"
 
