@@ -1,0 +1,107 @@
+{% macro render_triple(triple, subject) %}
+    <li class="list-group-item d-flex align-items-center">
+        <span class="flex-grow-1 d-flex flex-column justify-content-center p-3 w-75">
+            <span class="ellipsis" title="{{triple[1]}}">
+                <a class="fw-bold"href="{{ (triple[1] | split_ns)[0][:-1] }}#{{ triple[1] }}" target="_blank" alt="Definition of the property {{ triple[1] }}">
+                    {{ triple[1] | human_readable_predicate }}
+                    <i class="bi bi-question-circle ml-1"></i>
+                </a>
+            </span>
+            {% if triple[2] != triple[2] | human_readable_predicate %}
+                <span title="{{ triple[2] }}" class="object-value mt-4 ellipsis">
+                    <a href="{{ (triple[2] | split_ns)[0][:-1] }}#{{ triple[2] }}" target="_blank" alt="Definition of the value {{ triple[2] }}">
+                        {{ triple[2] | human_readable_predicate }}
+                        <i class="bi bi-question-circle ml-1"></i>
+                    </a>
+                </span>
+            {% elif triple[2].startswith('http://') or triple[2].startswith('https://') %}
+                <span title="{{ triple[2] }}" class="object-value mt-4 ellipsis">
+                    <a href="{{url_for('show_triples', subject=triple[2]|urlencode)}}" alt="Link to the entity {{ triple[2] }}">{{ triple[2] }}</a>
+                </span>
+            {% else %}
+                <span title="{{ triple[2] }}" class="object-value mt-4 ellipsis">{{ triple[2] }}</span>
+            {% endif %}
+        </span>
+    </li>
+{% endmacro %}
+
+{% extends "_base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    {% set first_snapshot_uri = metadata.keys()|first %}
+    {% set version_number = first_snapshot_uri.split('/')[-1] %}
+    <h2 class="mb-4 ellipsis">{{_('Version')}} {{ version_number }} {{_('of')}} {{ subject | human_readable_predicate }}</h2>
+
+    {# Pulsanti per navigare tra gli snapshot #}
+    <div class="mt-5 mb-5 d-flex justify-content-between">
+        {% if prev_snapshot_timestamp %}
+            <a href="{{ url_for('entity_version', entity_uri=subject, timestamp=prev_snapshot_timestamp) }}" class="btn btn-outline-primary">
+                <i class="bi bi-arrow-left"></i> {{ _('Previous version') }}
+            </a>
+        {% else %}
+            <span></span>  {# Placeholder per mantenere la spaziatura #}
+        {% endif %}
+
+        {% if next_snapshot_timestamp %}
+            <a href="{{ url_for('entity_version', entity_uri=subject, timestamp=next_snapshot_timestamp) }}" class="btn btn-outline-primary">
+                {{ _('Next version') }} <i class="bi bi-arrow-right"></i>
+            </a>
+        {% endif %}
+    </div>
+
+    <div class="row mb-5">
+        {% for snapshot_uri, meta in metadata.items() %}
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    {{_('Metadata of snapshot')}} {{ snapshot_uri.split('/')[-1] }}
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>{{_('Generated at time')}}:</strong> {{ meta['generatedAtTime'] | format_datetime }}</li>
+                    {% if meta['hadPrimarySource'] %}
+                        <li class="list-group-item"><strong>{{_('Invalidated at time')}}:</strong> {{ meta['invalidatedAtTime'] }}</li>
+                    {% endif %}
+                    <li class="list-group-item"><strong>{{_('Attributed to')}}:</strong> <a href="{{ meta['wasAttributedTo'] }}" target="_blank">{{ meta['wasAttributedTo'] }}</a></li>
+                    {% if meta['hadPrimarySource'] %}
+                    <li class="list-group-item"><strong>{{_('Primary source')}}:</strong> {{ meta['hadPrimarySource'] }}</li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% if triples %}
+
+        {% set attributes_triples = [] %}
+        {% set links_triples = [] %}
+        {% for triple in triples %}
+            {% if triple[2] != triple[2] | human_readable_predicate or not (triple[2].startswith('http://') or triple[2].startswith('https://')) %}
+                {% set _ = attributes_triples.append(triple) %}
+            {% elif triple[2] == triple[2] | human_readable_predicate and (triple[2].startswith('http://') or triple[2].startswith('https://')) %}
+                {% set _ = links_triples.append(triple) %}
+            {% endif %}
+        {% endfor %}
+    
+        {% if attributes_triples %}
+            <h4 class="mt-5 mb-3">{{_('Attributes')}}</h4>
+            <ul class="list-group">
+                {% for triple in attributes_triples  %}
+                    {{ render_triple(triple, subject) }}
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% if links_triples %}
+            <h4 class="mt-5 mb-3">{{_('Links to other resources')}}</h4> 
+            <ul class="list-group">
+                {% for triple in links_triples %}
+                    {{ render_triple(triple, subject) }}
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% else %}
+        <p class="alert alert-warning">{{_('There is no information related to this entity in the dataset')}}</p>
+    {% endif %}
+</div>
+{% endblock %}

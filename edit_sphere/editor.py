@@ -7,17 +7,19 @@ from SPARQLWrapper import POST, XML, SPARQLWrapper
 
 
 class Editor:
-    def __init__(self, dataset_endpoint: str, provenance_endpoint:str, counter_handler: CounterHandler):
+    def __init__(self, dataset_endpoint: str, provenance_endpoint:str, counter_handler: CounterHandler, resp_agent: URIRef, source: URIRef = None):
         self.dataset_endpoint = dataset_endpoint
         self.provenance_endpoint = provenance_endpoint
         self.counter_handler = counter_handler
+        self.resp_agent = resp_agent
+        self.source = source
 
     def update(self, subject: str, predicate: str, old_value: str, new_value: str) -> None:
         subject = URIRef(subject)
         predicate = URIRef(predicate)
         g_set = OCDMGraph(self.counter_handler)
         Reader.import_entities_from_triplestore(g_set, self.dataset_endpoint, [subject])
-        g_set.preexisting_finished()
+        g_set.preexisting_finished(self.resp_agent, self.source)
         for triple in g_set.triples((None, predicate, None)):
             if str(triple[2]) == old_value:
                 datatype = triple[2].datatype if isinstance(triple[2], Literal) else None
@@ -31,7 +33,7 @@ class Editor:
         predicate = URIRef(predicate)
         g_set = OCDMGraph(self.counter_handler)
         Reader.import_entities_from_triplestore(g_set, self.dataset_endpoint, [subject])
-        g_set.preexisting_finished()
+        g_set.preexisting_finished(self.resp_agent, self.source)
         if predicate:
             if value:
                 for triple in g_set.triples((None, predicate, None)):

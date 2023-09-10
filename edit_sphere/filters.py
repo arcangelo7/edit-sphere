@@ -2,6 +2,9 @@ from __future__ import annotations
 
 from typing import Tuple
 
+import dateutil
+from flask_babel import format_datetime
+
 
 class Filter:
     def __init__(self, context):
@@ -26,6 +29,10 @@ class Filter:
         else:
             return url
     
+    def human_readable_datetime(self, dt_str):
+        dt = dateutil.parser.parse(dt_str)
+        return format_datetime(dt, format='long')
+
     def split_ns(self, ns: str) -> Tuple[str, str]:
         last_part = ns.split('/')[-1].split('#')[-1]
         first_part = ns.replace(last_part, '')

@@ -1,5 +1,8 @@
 import os
-from rdflib_ocdm.counter_handler.sqlite_counter_handler import SqliteCounterHandler
+
+from rdflib import URIRef
+from rdflib_ocdm.counter_handler.sqlite_counter_handler import \
+    SqliteCounterHandler
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
@@ -10,3 +13,5 @@ class Config(object):
     COUNTER_HANDLER = SqliteCounterHandler(os.path.join(BASE_DIR, 'bear_a_counter_handler.db'))
     LANGUAGES = ['en', 'it']
     BABEL_TRANSLATION_DIRECTORIES = os.path.join(BASE_DIR, 'babel', 'translations')
+    CHANGE_TRACKING_CONFIG = os.path.join(BASE_DIR, 'change_tracking.json')
+    RESPONSIBLE_AGENT = URIRef('https://orcid.org/0000-0002-8420-0696')
