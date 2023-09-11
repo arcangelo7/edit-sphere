@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  1.0\n"
 "Report-Msgid-Bugs-To: arcangelo.massari@unibo.it\n"
-"POT-Creation-Date: 2023-09-11 15:14+0200\n"
+"POT-Creation-Date: 2023-09-11 17:38+0200\n"
 "PO-Revision-Date: 2023-09-09 15:01+0200\n"
 "Last-Translator: Arcangelo Massari <arcangelo.massari@unibo.it>\n"
 "Language: en\n"
@@ -18,39 +18,44 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.12.1\n"
 
-#: edit_sphere/app.py:140
+#: edit_sphere/app.py:140 edit_sphere/templates/entity_version.html:91
 msgid "Unknown"
 msgstr ""
 
-#: edit_sphere/app.py:151
+#: edit_sphere/app.py:150 edit_sphere/app.py:157
+#: edit_sphere/templates/entity_version.html:5
+msgid "Definition of the property"
+msgstr ""
+
+#: edit_sphere/app.py:172
 msgid "Snapshot"
 msgstr ""
 
-#: edit_sphere/app.py:153
+#: edit_sphere/app.py:174
 msgid "Responsible agent"
 msgstr ""
 
-#: edit_sphere/app.py:154 edit_sphere/templates/entity_version.html:92
+#: edit_sphere/app.py:175 edit_sphere/templates/entity_version.html:91
 msgid "Primary source"
 msgstr ""
 
-#: edit_sphere/app.py:155 edit_sphere/templates/entity_version.html:95
+#: edit_sphere/app.py:176 edit_sphere/templates/entity_version.html:93
 msgid "Description"
 msgstr ""
 
-#: edit_sphere/app.py:183
+#: edit_sphere/app.py:205
 msgid "View version"
 msgstr ""
 
-#: edit_sphere/app.py:190
+#: edit_sphere/app.py:212
 msgid "Version history for"
 msgstr ""
 
-#: edit_sphere/app.py:278 edit_sphere/app.py:282
+#: edit_sphere/app.py:300 edit_sphere/app.py:304
 msgid "Deletions"
 msgstr ""
 
-#: edit_sphere/app.py:278 edit_sphere/app.py:284
+#: edit_sphere/app.py:300 edit_sphere/app.py:306
 msgid "Additions"
 msgstr ""
 
@@ -70,6 +75,14 @@ msgstr ""
 
 #: edit_sphere/templates/entities.html:40
 msgid "Next"
+msgstr ""
+
+#: edit_sphere/templates/entity_version.html:12
+msgid "Definition of the value"
+msgstr ""
+
+#: edit_sphere/templates/entity_version.html:19
+msgid "Link to the entity"
 msgstr ""
 
 #: edit_sphere/templates/entity_version.html:34
@@ -103,18 +116,18 @@ msgid "Metadata of snapshot"
 msgstr ""
 
 #: edit_sphere/templates/entity_version.html:86
-msgid "Generated at time"
+msgid "Generation time"
 msgstr ""
 
 #: edit_sphere/templates/entity_version.html:88
-msgid "Invalidated at time"
+msgid "Invalidation time"
 msgstr ""
 
 #: edit_sphere/templates/entity_version.html:90
 msgid "Attributed to"
 msgstr ""
 
-#: edit_sphere/templates/entity_version.html:99
+#: edit_sphere/templates/entity_version.html:97
 msgid "Modifications"
 msgstr ""
 
@@ -191,4 +204,10 @@ msgstr ""
 #: edit_sphere/templates/triples.html:134
 msgid "The data was deleted correctly"
 msgstr ""
+
+#~ msgid "Generated at time"
+#~ msgstr ""
+
+#~ msgid "Invalidated at time"
+#~ msgstr ""
 

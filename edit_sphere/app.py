@@ -138,6 +138,27 @@ def entity_history(entity_uri):
         date = datetime.fromisoformat(metadata['generatedAtTime'])
         responsible_agent = f"<a href='{metadata['wasAttributedTo']}' alt='{gettext('Link to the responsible agent description')} target='_blank'>{metadata['wasAttributedTo']}</a>" if validators.url(metadata['wasAttributedTo']) else metadata['wasAttributedTo']
         primary_source = gettext('Unknown') if not metadata['hadPrimarySource'] else f"<a href='{metadata['hadPrimarySource']}' alt='{gettext('Link to the primary source description')} target='_blank'>{metadata['hadPrimarySource']}</a>" if validators.url(metadata['hadPrimarySource']) else metadata['hadPrimarySource']
+        modifications = metadata['hasUpdateQuery']
+        modification_text = ""
+        if modifications:
+            modifications = parse_sparql_update(modifications)
+            for mod_type, triples in modifications.items():
+                for triple in triples:
+                    modification_text += f"<p><strong>{mod_type}</strong>: "
+                    if filter.human_readable_predicate(triple[1]) != triple[1]:
+                        href = f"{filter.split_ns(triple[1])[0][:-1]}#{triple[1]}"
+                        alt = gettext('Definition of the property') + ' ' + triple[1]
+                        modification_text += f"<a href='{href}' alt={alt} target='_blank' title='{triple[1]}'>{filter.human_readable_predicate(triple[1])}</a>"
+                    else:
+                        modification_text += triple[1]
+                    modification_text += ' '
+                    if filter.human_readable_predicate(triple[2]) != triple[2]:
+                        href = f"{filter.split_ns(triple[2])[0][:-1]}#{triple[2]}"
+                        alt = gettext('Definition of the property') + ' ' + triple[2]
+                        modification_text += f"<a href='{href}' alt={alt} target='_blank' title='{triple[1]}'>{filter.human_readable_predicate(triple[2])}</a>"
+                    else:
+                        modification_text += triple[2]
+                    modification_text += '</p>'
         event = {
             "start_date": {
                 "year": date.year,
@@ -152,7 +173,8 @@ def entity_history(entity_uri):
                 "text": f"""
                     <p><strong>""" + gettext('Responsible agent') + f"""</strong>: {responsible_agent}</p>
                     <p><strong>""" + gettext('Primary source') + f"""</strong>: {primary_source}</p>
-                    <p><strong>""" + gettext('Description') + f"""</strong>: {metadata['description']}</p>"""
+                    <p><strong>""" + gettext('Description') + f"""</strong>: {metadata['description']}</p>
+                    {modification_text}"""
             },
             "autolink": False
         }

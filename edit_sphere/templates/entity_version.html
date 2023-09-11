@@ -2,21 +2,21 @@
     <li class="list-group-item d-flex align-items-center">
         <span class="flex-grow-1 d-flex flex-column justify-content-center p-3 w-75">
             <span class="ellipsis" title="{{triple[1]}}">
-                <a class="fw-bold"href="{{ (triple[1] | split_ns)[0][:-1] }}#{{ triple[1] }}" target="_blank" alt="Definition of the property {{ triple[1] }}">
+                <a class="fw-bold"href="{{ (triple[1] | split_ns)[0][:-1] }}#{{ triple[1] }}" target="_blank" alt="{{_('Definition of the property')}} {{ triple[1] }}">
                     {{ triple[1] | human_readable_predicate }}
                     <i class="bi bi-question-circle ml-1"></i>
                 </a>
             </span>
             {% if triple[2] != triple[2] | human_readable_predicate %}
                 <span title="{{ triple[2] }}" class="object-value mt-4 ellipsis">
-                    <a href="{{ (triple[2] | split_ns)[0][:-1] }}#{{ triple[2] }}" target="_blank" alt="Definition of the value {{ triple[2] }}">
+                    <a href="{{ (triple[2] | split_ns)[0][:-1] }}#{{ triple[2] }}" target="_blank" alt="{{_('Definition of the value')}} {{ triple[2] }}">
                         {{ triple[2] | human_readable_predicate }}
                         <i class="bi bi-question-circle ml-1"></i>
                     </a>
                 </span>
             {% elif triple[2].startswith('http://') or triple[2].startswith('https://') %}
                 <span title="{{ triple[2] }}" class="object-value mt-4 ellipsis">
-                    <a href="{{url_for('show_triples', subject=triple[2]|urlencode)}}" alt="Link to the entity {{ triple[2] }}">{{ triple[2] }}</a>
+                    <a href="{{url_for('show_triples', subject=triple[2]|urlencode)}}" alt="{{_('Link to the entity')}} {{ triple[2] }}">{{ triple[2] }}</a>
                 </span>
             {% else %}
                 <span title="{{ triple[2] }}" class="object-value mt-4 ellipsis">{{ triple[2] }}</span>
@@ -83,14 +83,12 @@
                     {{_('Metadata of snapshot')}} {{ snapshot_uri.split('/')[-1] }}
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><strong>{{_('Generated at time')}}:</strong> {{ meta['generatedAtTime'] | format_datetime }}</li>
+                    <li class="list-group-item"><strong>{{_('Generation time')}}:</strong> {{ meta['generatedAtTime'] | format_datetime }}</li>
                     {% if meta['invalidatedAtTime'] %}
-                        <li class="list-group-item"><strong>{{_('Invalidated at time')}}:</strong> {{ meta['invalidatedAtTime'] | format_datetime }}</li>
+                        <li class="list-group-item"><strong>{{_('Invalidation time')}}:</strong> {{ meta['invalidatedAtTime'] | format_datetime }}</li>
                     {% endif %}
                     <li class="list-group-item"><strong>{{_('Attributed to')}}:</strong> <a href="{{ meta['wasAttributedTo'] }}" target="_blank">{{ meta['wasAttributedTo'] }}</a></li>
-                    {% if meta['hadPrimarySource'] %}
-                    <li class="list-group-item"><strong>{{_('Primary source')}}:</strong> {{ meta['hadPrimarySource'] }}</li>
-                    {% endif %}
+                    <li class="list-group-item"><strong>{{_('Primary source')}}:</strong> {{ meta['hadPrimarySource'] if meta['hadPrimarySource'] else _('Unknown') }}</li>
                     {% if meta['description'] %}
                     <li class="list-group-item"><strong>{{_('Description')}}:</strong> {{ meta['description'] }}</li>
                     {% endif %}
@@ -98,12 +96,14 @@
                         <li class="list-group-item">
                             <p><strong>{{_('Modifications')}}:</strong></p>
                             {% for mod_type, triples in modifications.items() %}
-                                <ul class="list-group mb-3">
-                                    <p>{{ mod_type }}</p>
-                                    {% for triple in triples %}
-                                        {{render_triple(triple, subject)}}
-                                    {% endfor %}
-                                </ul>
+                                {% if triples %}
+                                    <ul class="list-group mb-3">
+                                        <p>{{ mod_type }}</p>
+                                        {% for triple in triples %}
+                                            {{render_triple(triple, subject)}}
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
                             {% endfor %}
                         </li>
                     {% endif %}
