@@ -50,12 +50,14 @@
 {% extends "_base.html" %}
 
 {% block content %}
-<div class="container mt-5">
+<div class="container">
     <h2 class="mb-4 ellipsis">{{_('About')}} {{ subject | human_readable_predicate }}</h2>
 
-    <a href="{{ url_for('entity_history', entity_uri=subject) }}" class="btn btn-outline-primary">
-        <i class="bi bi-clock-history"></i> {{_('Time machine')}}
-    </a>
+    {% if history[subject] %}
+        <a href="{{ url_for('entity_history', entity_uri=subject) }}" class="btn btn-outline-primary">
+            <i class="bi bi-clock-history"></i> {{_('Time machine')}}
+        </a>
+    {% endif %}
     
     {% if triples %}
 

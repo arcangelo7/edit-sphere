@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  1.0\n"
 "Report-Msgid-Bugs-To: arcangelo.massari@unibo.it\n"
-"POT-Creation-Date: 2023-09-10 23:25+0200\n"
+"POT-Creation-Date: 2023-09-11 15:14+0200\n"
 "PO-Revision-Date: 2023-09-09 15:01+0200\n"
 "Last-Translator: Arcangelo Massari <arcangelo.massari@unibo.it>\n"
 "Language: en\n"
@@ -18,24 +18,49 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.12.1\n"
 
-#: edit_sphere/app.py:128
+#: edit_sphere/app.py:140
 msgid "Unknown"
 msgstr ""
 
-#: edit_sphere/app.py:229 edit_sphere/app.py:233
+#: edit_sphere/app.py:151
+msgid "Snapshot"
+msgstr ""
+
+#: edit_sphere/app.py:153
+msgid "Responsible agent"
+msgstr ""
+
+#: edit_sphere/app.py:154 edit_sphere/templates/entity_version.html:92
+msgid "Primary source"
+msgstr ""
+
+#: edit_sphere/app.py:155 edit_sphere/templates/entity_version.html:95
+msgid "Description"
+msgstr ""
+
+#: edit_sphere/app.py:183
+msgid "View version"
+msgstr ""
+
+#: edit_sphere/app.py:190
+msgid "Version history for"
+msgstr ""
+
+#: edit_sphere/app.py:278 edit_sphere/app.py:282
 msgid "Deletions"
 msgstr ""
 
-#: edit_sphere/app.py:229 edit_sphere/app.py:235
+#: edit_sphere/app.py:278 edit_sphere/app.py:284
 msgid "Additions"
 msgstr ""
 
 #: edit_sphere/templates/endpoint.html:5
-#: edit_sphere/templates/navigation.html:13
+#: edit_sphere/templates/navigation.html:16
 msgid "SPARQL Endpoint"
 msgstr ""
 
 #: edit_sphere/templates/entities.html:4
+#: edit_sphere/templates/navigation.html:13
 msgid "Catalogue"
 msgstr ""
 
@@ -55,54 +80,56 @@ msgstr ""
 msgid "of"
 msgstr ""
 
-#: edit_sphere/templates/entity_version.html:40
-msgid "Previous version"
+#: edit_sphere/templates/entity_version.html:39
+#: edit_sphere/templates/triples.html:58
+msgid "Time machine"
 msgstr ""
 
-#: edit_sphere/templates/entity_version.html:48
-msgid "Next version"
+#: edit_sphere/templates/entity_version.html:46
+msgid "Restore this version"
 msgstr ""
 
 #: edit_sphere/templates/entity_version.html:58
+#: edit_sphere/templates/entity_version.html:64
+msgid "Previous version"
+msgstr ""
+
+#: edit_sphere/templates/entity_version.html:72
+msgid "Next version"
+msgstr ""
+
+#: edit_sphere/templates/entity_version.html:83
 msgid "Metadata of snapshot"
 msgstr ""
 
-#: edit_sphere/templates/entity_version.html:61
+#: edit_sphere/templates/entity_version.html:86
 msgid "Generated at time"
 msgstr ""
 
-#: edit_sphere/templates/entity_version.html:63
+#: edit_sphere/templates/entity_version.html:88
 msgid "Invalidated at time"
 msgstr ""
 
-#: edit_sphere/templates/entity_version.html:65
+#: edit_sphere/templates/entity_version.html:90
 msgid "Attributed to"
 msgstr ""
 
-#: edit_sphere/templates/entity_version.html:67
-msgid "Primary source"
-msgstr ""
-
-#: edit_sphere/templates/entity_version.html:70
-msgid "Description"
-msgstr ""
-
-#: edit_sphere/templates/entity_version.html:74
+#: edit_sphere/templates/entity_version.html:99
 msgid "Modifications"
 msgstr ""
 
-#: edit_sphere/templates/entity_version.html:104
-#: edit_sphere/templates/triples.html:73
+#: edit_sphere/templates/entity_version.html:129
+#: edit_sphere/templates/triples.html:75
 msgid "Attributes"
 msgstr ""
 
-#: edit_sphere/templates/entity_version.html:112
-#: edit_sphere/templates/triples.html:81
+#: edit_sphere/templates/entity_version.html:137
+#: edit_sphere/templates/triples.html:83
 msgid "Links to other resources"
 msgstr ""
 
-#: edit_sphere/templates/entity_version.html:120
-#: edit_sphere/templates/triples.html:89
+#: edit_sphere/templates/entity_version.html:145
+#: edit_sphere/templates/triples.html:91
 msgid "There is no information related to this entity in the dataset"
 msgstr ""
 
@@ -110,12 +137,24 @@ msgstr ""
 msgid "Language"
 msgstr ""
 
+#: edit_sphere/templates/index.html:8
+msgid "An environment for data curation"
+msgstr ""
+
+#: edit_sphere/templates/index.html:10
+msgid "Edit, track changes, and be happy"
+msgstr ""
+
+#: edit_sphere/templates/index.html:11 edit_sphere/templates/navigation.html:13
+msgid "Go to the catalogue"
+msgstr ""
+
 #: edit_sphere/templates/navigation.html:10
 msgid "Go to the home"
 msgstr ""
 
-#: edit_sphere/templates/navigation.html:17
-#: edit_sphere/templates/navigation.html:18
+#: edit_sphere/templates/navigation.html:20
+#: edit_sphere/templates/navigation.html:21
 msgid "Search"
 msgstr ""
 
@@ -131,29 +170,25 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#: edit_sphere/templates/triples.html:57
-msgid "Time machine"
-msgstr ""
-
-#: edit_sphere/templates/triples.html:116
+#: edit_sphere/templates/triples.html:118
 msgid "Are you sure?"
 msgstr ""
 
-#: edit_sphere/templates/triples.html:117
+#: edit_sphere/templates/triples.html:119
 msgid ""
 "You are about to delete this information. In any case, it will be "
 "possible to restore it"
 msgstr ""
 
-#: edit_sphere/templates/triples.html:122
+#: edit_sphere/templates/triples.html:124
 msgid "Yes, delete it!"
 msgstr ""
 
-#: edit_sphere/templates/triples.html:131
+#: edit_sphere/templates/triples.html:133
 msgid "Deleted!"
 msgstr ""
 
-#: edit_sphere/templates/triples.html:132
+#: edit_sphere/templates/triples.html:134
 msgid "The data was deleted correctly"
 msgstr ""
 

@@ -1,0 +1,14 @@
+{% extends "_base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">Edit Sphere</h1>
+        <p class="lead">{{_('An environment for data curation')}}</p>
+        <hr class="my-4">
+        <p>{{_('Edit, track changes, and be happy')}}</p>
+        <a class="btn btn-primary btn-lg" href="{{url_for('catalogue')}}" role="button">{{_('Go to the catalogue')}}</a>
+    </div>    
+</div>
+{% endblock %}

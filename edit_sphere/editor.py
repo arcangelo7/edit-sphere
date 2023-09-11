@@ -1,8 +1,10 @@
 import validators
 from rdflib import ConjunctiveGraph, Literal, URIRef
+from rdflib.plugins.sparql.algebra import translateUpdate
+from rdflib.plugins.sparql.parser import parseUpdate
 from rdflib_ocdm.counter_handler.counter_handler import CounterHandler
 from rdflib_ocdm.ocdm_graph import OCDMGraph
-from rdflib_ocdm.storer import Storer, Reader
+from rdflib_ocdm.storer import Reader, Storer
 from SPARQLWrapper import POST, XML, SPARQLWrapper
 
 
@@ -58,7 +60,31 @@ class Editor:
         if result is not None:
             for triple in result.triples((None, None, None)):
                 g_set.add(triple)
-        
+
+    def execute(self, sparql_query: str) -> None:
+        parsed = parseUpdate(sparql_query)
+        translated = translateUpdate(parsed).algebra
+        g_set = OCDMGraph(self.counter_handler)
+        entities_added = set()
+        for operation in translated:
+            for triple in operation.triples:
+                entity = triple[0]
+                if entity not in entities_added:
+                    Reader.import_entities_from_triplestore(g_set, self.dataset_endpoint, [entity])
+                    entities_added.add(entity)
+        g_set.preexisting_finished(self.resp_agent, self.source)
+        for operation in translated:
+            if operation.name == "DeleteData":
+                for triple in operation.triples:
+                    g_set.remove(triple)
+            elif operation.name == "InsertData":
+                for triple in operation.triples:
+                    g_set.add(triple)
+        for subject in g_set.subjects(unique=True):
+            if len(list(g_set.triples((subject, None, None)))) == 0:
+                g_set.mark_as_deleted(subject)
+        self.save(g_set)
+
     def save(self, g_set: OCDMGraph):
         g_set.generate_provenance()
         dataset_storer = Storer(g_set)

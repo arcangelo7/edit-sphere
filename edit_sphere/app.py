@@ -1,3 +1,4 @@
+import copy
 import datetime
 import json
 import os
@@ -13,7 +14,11 @@ from rdflib import Graph
 from rdflib.plugins.sparql.algebra import translateUpdate
 from rdflib.plugins.sparql.parser import parseUpdate
 from SPARQLWrapper import JSON, SPARQLWrapper
-from time_agnostic_library.agnostic_entity import AgnosticEntity
+from time_agnostic_library.agnostic_entity import (
+    AgnosticEntity, _filter_timestamps_by_interval)
+from time_agnostic_library.prov_entity import ProvEntity
+from time_agnostic_library.sparql import Sparql
+from time_agnostic_library.support import convert_to_datetime
 
 from config import Config
 from edit_sphere.editor import Editor
@@ -33,6 +38,7 @@ with open("resources/context.json", "r") as config_file:
 dataset_endpoint = app.config["DATASET_ENDPOINT"]
 provenance_endpoint = app.config["PROVENANCE_ENDPOINT"]
 sparql = SPARQLWrapper(dataset_endpoint)
+change_tracking_config = app.config["CHANGE_TRACKING_CONFIG"]
 
 filter = Filter(context)
 
@@ -42,6 +48,10 @@ app.jinja_env.filters['split_ns'] = filter.split_ns
 
 @app.route('/')
 def index():
+    return render_template('index.html')
+
+@app.route('/catalogue')
+def catalogue():
     page = int(request.args.get('page', 1))
     per_page = int(request.args.get('per_page', 100))
     offset = (page - 1) * per_page
@@ -60,6 +70,8 @@ def index():
 def show_triples(subject):
     # Decodifica l'URL prima di usarlo nella query
     decoded_subject = urllib.parse.unquote(subject)
+    agnostic_entity = AgnosticEntity(res=decoded_subject, config_path=change_tracking_config)
+    history, provenance = agnostic_entity.get_history(include_prov_metadata=True)
     query = f"""
     SELECT ?predicate ?object WHERE {{
         <{decoded_subject}> ?predicate ?object.
@@ -68,7 +80,7 @@ def show_triples(subject):
     sparql.setQuery(query)
     sparql.setReturnFormat(JSON)
     triples = sparql.query().convert().get("results", {}).get("bindings", [])
-    return render_template('triples.html', subject=decoded_subject, triples=triples)
+    return render_template('triples.html', subject=decoded_subject, triples=triples, history=history)
 
 @app.route('/update_triple', methods=['POST'])
 def update_triple():
@@ -115,7 +127,7 @@ from datetime import datetime
 
 @app.route('/entity-history/<path:entity_uri>')
 def entity_history(entity_uri):
-    agnostic_entity = AgnosticEntity(res=entity_uri, config_path=app.config['CHANGE_TRACKING_CONFIG'])
+    agnostic_entity = AgnosticEntity(res=entity_uri, config_path=change_tracking_config)
     history, provenance = agnostic_entity.get_history(include_prov_metadata=True)
 
     # Trasforma i dati in formato TimelineJS
@@ -136,11 +148,11 @@ def entity_history(entity_uri):
                 "second": date.second
             },
             "text": {
-                "headline": f"Snapshot {i+1}",
+                "headline": gettext('Snapshot') + ' ' + str(i + 1),
                 "text": f"""
-                    <p><strong>Responsible agent</strong>: {responsible_agent}</p>
-                    <p><strong>Primary source</strong>: {primary_source}</p>
-                    <p><strong>Description</strong>: {metadata['description']}</p>"""
+                    <p><strong>""" + gettext('Responsible agent') + f"""</strong>: {responsible_agent}</p>
+                    <p><strong>""" + gettext('Primary source') + f"""</strong>: {primary_source}</p>
+                    <p><strong>""" + gettext('Description') + f"""</strong>: {metadata['description']}</p>"""
             },
             "autolink": False
         }
@@ -168,14 +180,14 @@ def entity_history(entity_uri):
                 "second": now.second
             }
 
-        view_version_button = f"<button><a href='/entity-version/{entity_uri}/{metadata['generatedAtTime']}' alt='{gettext('Materialize snapshot')} {i+1}' target='_self'>{gettext('View version')}</a></button>"
+        view_version_button = f"<button><a href='/entity-version/{entity_uri}/{metadata['generatedAtTime']}' alt='{gettext('Materialize snapshot')} {i+1}' target='_self'>" + gettext('View version') + "</a></button>"
         event["text"]["text"] += f"<br>{view_version_button}"
         events.append(event)
 
     timeline_data = {
         "title": {
             "text": {
-                "headline": f"Version history for {entity_uri}"
+                "headline": gettext('Version history for') + ' ' + entity_uri
             }
         },
         "events": events
@@ -185,7 +197,7 @@ def entity_history(entity_uri):
 
 @app.route('/entity-version/<path:entity_uri>/<timestamp>')
 def entity_version(entity_uri, timestamp):
-    agnostic_entity = AgnosticEntity(res=entity_uri, config_path=app.config['CHANGE_TRACKING_CONFIG'])
+    agnostic_entity = AgnosticEntity(res=entity_uri, config_path=change_tracking_config)
     history, metadata, other_snapshots_metadata = agnostic_entity.get_state_at_time(time=(None, timestamp), include_prov_metadata=True)
     timestamp_dt = datetime.fromisoformat(timestamp)
     if not timestamp_dt.tzinfo:
@@ -223,7 +235,42 @@ def entity_version(entity_uri, timestamp):
     else:
         modifications = None
 
-    return render_template('entity_version.html', subject=entity_uri, triples=triples, metadata=closest_metadata, next_snapshot_timestamp=next_snapshot_timestamp, prev_snapshot_timestamp=prev_snapshot_timestamp, modifications=modifications)
+    return render_template('entity_version.html', subject=entity_uri, triples=triples, metadata=closest_metadata, timestamp=closest_timestamp, next_snapshot_timestamp=next_snapshot_timestamp, prev_snapshot_timestamp=prev_snapshot_timestamp, modifications=modifications)
+
+@app.route('/restore-version/<path:entity_uri>/<timestamp>', methods=['POST'])
+def restore_version(entity_uri, timestamp):
+    query_snapshots = f"""
+        SELECT ?time ?updateQuery
+        WHERE {{
+            ?snapshot <{ProvEntity.iri_specialization_of}> <{entity_uri}>;
+                <{ProvEntity.iri_generated_at_time}> ?time
+            OPTIONAL {{
+                ?snapshot <{ProvEntity.iri_has_update_query}> ?updateQuery.
+            }}
+        }}
+    """
+    results = list(Sparql(query_snapshots, config_path=change_tracking_config).run_select_query())
+    results.sort(key=lambda x:convert_to_datetime(x[0]), reverse=True)
+    relevant_results = _filter_timestamps_by_interval((timestamp, timestamp), results, time_index=0)
+    agnostic_entity = AgnosticEntity(res=entity_uri, config_path=change_tracking_config)
+    entity_cg = agnostic_entity._query_dataset()
+    sum_update_queries = ""
+    for relevant_result in relevant_results:
+        for result in results:
+            if result[1]:
+                if convert_to_datetime(result[0]) > convert_to_datetime(relevant_result[0]):
+                    sum_update_queries += (result[1]) +  ";"
+    inverted_query = invert_sparql_update(sum_update_queries)
+    execute_sparql_update(inverted_query)
+    query = f"""
+        SELECT ?predicate ?object WHERE {{
+            <{entity_uri}> ?predicate ?object.
+        }}
+    """
+    sparql.setQuery(query)
+    sparql.setReturnFormat(JSON)
+    triples = sparql.query().convert().get("results", {}).get("bindings", [])
+    return render_template('triples.html', subject=entity_uri, triples=triples, history={entity_uri: True})
 
 def parse_sparql_update(query):
     parsed = parseUpdate(query)
@@ -237,6 +284,14 @@ def parse_sparql_update(query):
             modifications[gettext('Additions')].extend(operation.triples)
 
     return modifications
+
+def invert_sparql_update(sparql_query: str) -> str:
+    inverted_query = sparql_query.replace('INSERT', 'TEMP_REPLACE').replace('DELETE', 'INSERT').replace('TEMP_REPLACE', 'DELETE')
+    return inverted_query
+
+def execute_sparql_update(sparql_query: str):
+    editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'])
+    editor.execute(sparql_query)
 
 @app.cli.group()
 def translate():

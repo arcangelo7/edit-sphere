@@ -1,6 +1,6 @@
 {% extends "_base.html" %}
 {% block content %}
-<div class="container mt-5">
+<div class="container">
     <h1 class="mb-4">{{_('Catalogue')}}</h1>
     <ul class="list-group">
         {% for subject in subjects %}
@@ -15,12 +15,12 @@
         <ul class="pagination">
             <!-- Pagina precedente -->
             <li class="page-item {% if page == 1 %}disabled{% endif %}">
-                <a class="page-link" href="{{ url_for('index', page=page-1) }}">{{_('Previous')}}</a>
+                <a class="page-link" href="{{ url_for('catalogue', page=page-1) }}">{{_('Previous')}}</a>
             </li>
     
             <!-- Sempre mostra la pagina 1 -->
             <li class="page-item {% if page == 1 %}active{% endif %}">
-                <a class="page-link" href="{{ url_for('index', page=1) }}">1</a>
+                <a class="page-link" href="{{ url_for('catalogue', page=1) }}">1</a>
             </li>
     
             <!-- Se la pagina corrente è maggiore di 2, mostra i puntini di sospensione -->
@@ -37,7 +37,7 @@
     
             <!-- Pagina successiva -->
             <li class="page-item">
-                <a class="page-link" href="{{ url_for('index', page=page+1) }}">{{_('Next')}}</a>
+                <a class="page-link" href="{{ url_for('catalogue', page=page+1) }}">{{_('Next')}}</a>
             </li>
         </ul>
     </nav>
