@@ -16,6 +16,16 @@ class Editor:
         self.resp_agent = resp_agent
         self.source = source
 
+    def create(self, subject: str, predicate: str, value: str) -> None:
+        subject = URIRef(subject)
+        predicate = URIRef(predicate)
+        g_set = OCDMGraph(self.counter_handler)
+        Reader.import_entities_from_triplestore(g_set, self.dataset_endpoint, [subject])
+        g_set.preexisting_finished(self.resp_agent, self.source)
+        value = URIRef(value) if validators.url(value) else Literal(value)
+        g_set.add((subject, predicate, value))
+        self.save(g_set)
+
     def update(self, subject: str, predicate: str, old_value: str, new_value: str) -> None:
         subject = URIRef(subject)
         predicate = URIRef(predicate)

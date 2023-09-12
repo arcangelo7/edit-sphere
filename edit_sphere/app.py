@@ -101,6 +101,15 @@ def delete_triple():
     editor.delete(subject, predicate, object_value)
     return redirect(url_for('show_triples', subject=subject))
 
+@app.route('/add_triple', methods=['POST'])
+def add_triple():
+    subject = request.form.get('subject')
+    predicate = request.form.get('predicate')
+    object_value = request.form.get('object')
+    editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'])
+    editor.create(subject, predicate, object_value)
+    return redirect(url_for('show_triples', subject=subject))
+
 @app.route('/search')
 def search():
     subject = request.args.get('q')

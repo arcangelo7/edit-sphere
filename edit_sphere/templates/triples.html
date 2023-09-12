@@ -52,13 +52,15 @@
 {% block content %}
 <div class="container">
     <h2 class="mb-4 ellipsis">{{_('About')}} {{ subject | human_readable_predicate }}</h2>
-
+           
     {% if history[subject] %}
+    <div>
         <a href="{{ url_for('entity_history', entity_uri=subject) }}" class="btn btn-outline-primary">
             <i class="bi bi-clock-history"></i> {{_('Time machine')}}
         </a>
+    </div>
     {% endif %}
-    
+
     {% if triples %}
 
         {% set attributes_triples = [] %}
@@ -72,7 +74,28 @@
         {% endfor %}
     
         {% if attributes_triples %}
-            <h4 class="mt-5 mb-3">{{_('Attributes')}}</h4>
+            <div class="d-flex justify-content-start align-items-baseline mt-5 mb-3">
+                <h4 class="me-4">{{_('Attributes')}}</h4>
+                <button class="btn btn-outline-success add-button-attributes" title="{{_('Add new attribute')}}"><i class="bi bi-plus-lg"></i></button>
+            </div>
+            <div class="mb-5 add-form-attributes d-none">
+                <h4>{{_('Add a new piece of information')}}</h4>
+                <form action="{{ url_for('add_triple') }}" method="post">
+                    <input type="hidden" name="subject" value="{{ subject }}">
+                    <div class="form-group">
+                        <label for="predicate">{{_('Property')}}</label>
+                        <input type="text" class="form-control" name="predicate" required>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="object">{{_('Value')}}</label>
+                        <input type="text" class="form-control" name="object" required>
+                    </div>
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-primary">{{_('Add')}}</button>
+                        <button type="button" class="btn btn-secondary cancel-add-button-attributes">{{_('Cancel')}}</button>
+                    </div>
+                </form>
+            </div>            
             <ul class="list-group">
                 {% for triple in attributes_triples  %}
                     {{ render_triple(triple, subject) }}
@@ -80,7 +103,28 @@
             </ul>
         {% endif %}
         {% if links_triples %}
-            <h4 class="mt-5 mb-3">{{_('Links to other resources')}}</h4> 
+            <div class="d-flex justify-content-start align-items-baseline mt-5 mb-3">
+                <h4 class="me-4">{{_('Links to other resources')}}</h4>
+                <button class="btn btn-outline-success add-button-links" title="{{_('Add new link')}}"><i class="bi bi-plus-lg"></i></button>
+            </div>  
+            <div class="mb-5 add-form-links d-none">
+                <h5>{{_('Add a new piece of information')}}</h5>
+                <form action="{{ url_for('add_triple') }}" method="post">
+                    <input type="hidden" name="subject" value="{{ subject }}">
+                    <div class="form-group">
+                        <label for="predicate">{{_('Property')}}</label>
+                        <input type="text" class="form-control" name="predicate" required>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="object">{{_('Value')}}</label>
+                        <input type="text" class="form-control" name="object" required>
+                    </div>
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-primary">{{_('Add')}}</button>
+                        <button type="button" class="btn btn-secondary cancel-add-button-links">{{_('Cancel')}}</button>
+                    </div>
+                </form>
+            </div>              
             <ul class="list-group">
                 {% for triple in links_triples %}
                     {{ render_triple(triple, subject) }}
@@ -88,7 +132,26 @@
             </ul>
         {% endif %}
     {% else %}
-        <p class="alert alert-warning">{{_('There is no information related to this entity in the dataset')}}</p>
+        <p class="alert alert-warning mt-5 mb-4">{{_('There is no information related to this entity in the dataset')}}</p>
+        <button class="btn btn-outline-success add-button-links" title="{{_('Add new link')}}">{{_("Let's add some metadata")}}</button>
+        <div class="add-form-links d-none mt-4">
+            <h5>{{_('Add a new piece of information')}}</h5>
+            <form action="{{ url_for('add_triple') }}" method="post">
+                <input type="hidden" name="subject" value="{{ subject }}">
+                <div class="form-group">
+                    <label for="predicate">{{_('Property')}}</label>
+                    <input type="text" class="form-control" name="predicate" required>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="object">{{_('Value')}}</label>
+                    <input type="text" class="form-control" name="object" required>
+                </div>
+                <div class="mt-3">
+                    <button type="submit" class="btn btn-primary">{{_('Add')}}</button>
+                    <button type="button" class="btn btn-secondary cancel-add-button-links">{{_('Cancel')}}</button>
+                </div>
+            </form>
+        </div>              
     {% endif %}
 </div>
 
@@ -107,6 +170,7 @@
 
         $('.cancel-button').click(function () {
             toggleEditForm($(this).closest('.list-group-item'));
+            toggleEditForm($(this).closest('form'));
         });
 
         $('.delete-button').click(function() {
@@ -139,6 +203,19 @@
                     });
                 }
             });
+        });
+    
+        $('.add-button-attributes').click(function() {
+            $('.add-form-attributes').toggleClass('d-none');
+        });
+        $('.add-button-links').click(function() {
+            $('.add-form-links').toggleClass('d-none');
+        });
+        $('.cancel-add-button-attributes').click(function() {
+            $('.add-form-attributes').addClass('d-none');
+        });
+        $('.cancel-add-button-links').click(function() {
+            $('.add-form-links').addClass('d-none');
         });
     });
 </script>
