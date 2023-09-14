@@ -25,6 +25,7 @@ from config import Config
 from edit_sphere.editor import Editor
 from edit_sphere.filters import *
 from edit_sphere.forms import *
+from resources.datatypes import DATATYPE_MAPPING
 
 app = Flask(__name__)
 
@@ -319,6 +320,12 @@ def restore_version(entity_uri, timestamp):
     triples = sparql.query().convert().get("results", {}).get("bindings", [])
     return render_template('triples.jinja', subject=entity_uri, triples=triples, history={entity_uri: True})
 
+@app.route('/get_object_config', methods=['POST'])
+def get_object_config():
+    predicate = request.form.get('predicate')
+    datatype = next((p[1] for p in DATATYPE_MAPPING if str(p[0]) == predicate), 'text')
+    return datatype
+
 def parse_sparql_update(query):
     parsed = parseUpdate(query)
     translated = translateUpdate(parsed).algebra
@@ -341,85 +348,10 @@ def execute_sparql_update(sparql_query: str):
     editor.execute(sparql_query)
 
 def prioritize_datatype(datatypes):
-    datatype_priority = [
-        XSD.string,
-        XSD.normalizedString,
-
-        XSD.integer,
-        XSD.positiveInteger,
-        XSD.negativeInteger,
-        XSD.nonNegativeInteger,
-        XSD.nonPositiveInteger,
-        XSD.byte, # all signed integer numbers that can be stored in a 8-bit space
-        XSD.short,# all signed integer numbers that can be stored in a 16-bit space
-        XSD.long, # all signed integer numbers that can be stored in a 64-bit space
-        XSD.unsignedByte,
-        XSD.unsignedShort,
-        XSD.unsignedInt,
-        XSD.unsignedLong,
-
-        XSD.decimal,
-        XSD.float,
-        XSD.double,
-
-        XSD.duration,
-        XSD.dayTimeDuration,
-        XSD.yearMonthDuration,
-
-        XSD.dateTime,
-        XSD.dateTimeStamp,
-
-        XSD.date,
-        XSD.gYearMonth,
-        XSD.month,
-        XSD.gYear,
-        XSD.year,
-
-        XSD.time,
-        XSD.hour,
-        XSD.timezoneOffset,
-        XSD.minute,
-        XSD.second,
-
-        XSD.boolean,
-
-        XSD.hexBinary,
-        XSD.base64Binary,
-
-        XSD.anyURI,
-
-        XSD.QName, # is a qualified name according to Namespaces in XML, e.g. "<xsd:attribute name="lang" type="xsd:language"/>"
-        XSD.Name, # The lexical and value spaces of xsd:Name are the tokens (NMTOKEN) that conform to the definition of a name in XML 1.0, e.g. CMS
-        XSD.ENTITIES,
-        XSD.ENTITY, # Reference to an unparsed entity
-        XSD.ID, # The purpose of the xs:ID datatype is to define unique identifiers that are global to a document and emulate the ID attribute type available in the XML DTDs
-        XSD.IDREF,
-        XSD.IDREFS,
-        XSD.NCName,
-        XSD.NMTOKEN,
-        XSD.NMTOKENS,
-        XSD.NOTATION,
-
-        XSD.length, # Specifies the exact number of characters or list items allowed. Must be equal to or greater than zero
-        XSD.minLength,
-        XSD.maxLength,
-        XSD.pattern,
-        XSD.enumeration,
-        XSD.whiteSpace,
-        XSD.maxExclusive,
-        XSD.maxInclusive,
-        XSD.minExclusive,
-        XSD.minInclusive,
-        XSD.totalDigits,
-        XSD.fractionDigits,
-
-        XSD.Assertions,
-        XSD.explicitTimezone
-    ]
-    for datatype in datatype_priority:
-        if datatype in datatypes:
-            return datatype
-    return datatypes[0]
+    for datatype in DATATYPE_MAPPING:
+        if datatype[0] in datatypes:
+            return datatype[0]
+    return DATATYPE_MAPPING[0][0]
 
 def get_valid_predicates(triples):
     existing_predicates = [triple['predicate']['value'] for triple in triples]
@@ -460,11 +392,11 @@ def get_valid_predicates(triples):
     datatype_collections = defaultdict(list)
     for row in results:
         if row.datatype:
-            datatype_collections[str(row.predicate)].append(str(row.datatype))
+            datatype_collections[str(row.predicate)].append(row.datatype)
         else:
             datatype_collections[str(row.predicate)].append(XSD.string)
     datatypes = {
-        predicate: prioritize_datatype(dt_list) 
+        predicate: str(prioritize_datatype(dt_list))
         for predicate, dt_list in datatype_collections.items()
     }
     return can_be_added, can_be_deleted, datatypes

@@ -55,7 +55,7 @@
         <form action="{{ url_for('add_triple') }}" method="post">
             {{ create_form.subject(value=subject) }}
             <div class="form-group">
-                {{ create_form.predicate(class="form-control") }}
+                {{ create_form.predicate(class="form-control predicate-select") }}
             </div>
             <div class="form-group mt-3">
                 <label for="object">{{_('Value')}}</label>
@@ -224,104 +224,12 @@
             $('.add-form-links').addClass('d-none');
         });
         $('.predicate-select').change(function() {
-            const selectedOption = $(this).find('option:selected');
-            const datatype = selectedOption.data('datatype');
-            const objectInput = $('.object-input');
-            switch(datatype) {
-                case "http://www.w3.org/2001/XMLSchema#string":
-                case "http://www.w3.org/2001/XMLSchema#normalizedString":
-                    objectInput.attr('type', 'string');
-                    break;
-                case "http://www.w3.org/2001/XMLSchema#int":
-                case "http://www.w3.org/2001/XMLSchema#short":
-                case "http://www.w3.org/2001/XMLSchema#long":
-                case "http://www.w3.org/2001/XMLSchema#unsignedByte":
-                case "http://www.w3.org/2001/XMLSchema#unsignedShort":
-                case "http://www.w3.org/2001/XMLSchema#unsignedInt":
-                case "http://www.w3.org/2001/XMLSchema#byte":
-                case "http://www.w3.org/2001/XMLSchema#negativeInteger":
-                case "http://www.w3.org/2001/XMLSchema#nonNegativeInteger":
-                case "http://www.w3.org/2001/XMLSchema#nonPositiveInteger":
-                case "http://www.w3.org/2001/XMLSchema#positiveInteger":
-                    objectInput.attr('type', 'number');
-                    break;
-                case "http://www.w3.org/2001/XMLSchema#float":
-                case "http://www.w3.org/2001/XMLSchema#double":
-                case "http://www.w3.org/2001/XMLSchema#decimal":
-                    objectInput.attr('type', 'number').attr('step', 'any');
-                    break;
-                case "http://www.w3.org/2001/XMLSchema#duration":
-                case "http://www.w3.org/2001/XMLSchema#dayTimeDuration":
-                case "http://www.w3.org/2001/XMLSchema#yearMonthDuration":
-                    objectInput.attr('type', 'text');
-                    break;
-                case "http://www.w3.org/2001/XMLSchema#dateTime":
-                case "http://www.w3.org/2001/XMLSchema#dateTimeStamp":
-                    objectInput.attr('type', 'datetime-local');
-                    break;
-                case "http://www.w3.org/2001/XMLSchema#date":
-                    objectInput.attr('type', 'date');
-                    break;
-                case "http://www.w3.org/2001/XMLSchema#gYear":
-                case "http://www.w3.org/2001/XMLSchema#year":
-                    objectInput.attr('type', 'year');
-                    break;
-                case "http://www.w3.org/2001/XMLSchema#gYearMonth":
-                case "http://www.w3.org/2001/XMLSchema#month":
-                    objectInput.attr('type', 'month');
-                    break;
-                case "http://www.w3.org/2001/XMLSchema#time":
-                case "http://www.w3.org/2001/XMLSchema#hour":
-                case "http://www.w3.org/2001/XMLSchema#timezoneOffset":
-                case "http://www.w3.org/2001/XMLSchema#minute":
-                case "http://www.w3.org/2001/XMLSchema#second":
-                    objectInput.attr('type', 'time');
-                    break;
-                case "http://www.w3.org/2001/XMLSchema#boolean":
-                    objectInput.attr('type', 'checkbox');
-                    break;
-                case "http://www.w3.org/2001/XMLSchema#hexBinary":
-                case "http://www.w3.org/2001/XMLSchema#base64Binary":
-                    objectInput.attr('type', 'password');
-                    break;
-                case "http://www.w3.org/2001/XMLSchema#time":
-                    objectInput.attr('type', 'time');
-                    break;
-                case "http://www.w3.org/2001/XMLSchema#anyURI":
-                    objectInput.attr('type', 'url');
-                    break;
-                case "http://www.w3.org/2001/XMLSchema#QName":
-                case "http://www.w3.org/2001/XMLSchema#ENTITIES":
-                case "http://www.w3.org/2001/XMLSchema#ENTITY":
-                case "http://www.w3.org/2001/XMLSchema#ID":
-                case "http://www.w3.org/2001/XMLSchema#IDREF":
-                case "http://www.w3.org/2001/XMLSchema#IDREFS":
-                case "http://www.w3.org/2001/XMLSchema#NCName":
-                case "http://www.w3.org/2001/XMLSchema#NMTOKEN":
-                case "http://www.w3.org/2001/XMLSchema#NMTOKENS":
-                case "http://www.w3.org/2001/XMLSchema#NOTATION":
-                case "http://www.w3.org/2001/XMLSchema#Name":
-                    objectInput.attr('type', 'text');
-                    break;
-                case "http://www.w3.org/TR/xmlschema11-2/#rf-length":
-                case "http://www.w3.org/TR/xmlschema11-2/#rf-minLength":
-                case "http://www.w3.org/TR/xmlschema11-2/#rf-maxLength":
-                case "http://www.w3.org/TR/xmlschema11-2/#rf-pattern":
-                case "http://www.w3.org/TR/xmlschema11-2/#rf-enumeration":
-                case "http://www.w3.org/TR/xmlschema11-2/#rf-whiteSpace":
-                case "http://www.w3.org/TR/xmlschema11-2/#rf-maxExclusive":
-                case "http://www.w3.org/TR/xmlschema11-2/#rf-maxInclusive":
-                case "http://www.w3.org/TR/xmlschema11-2/#rf-minExclusive":
-                case "http://www.w3.org/TR/xmlschema11-2/#rf-minInclusive":
-                case "http://www.w3.org/TR/xmlschema11-2/#rf-totalDigits":
-                case "http://www.w3.org/TR/xmlschema11-2/#rf-fractionDigits":
-                case "http://www.w3.org/TR/xmlschema11-2/#rf-assertions":
-                case "http://www.w3.org/TR/xmlschema11-2/#rf-explicitTimezone":
-                    objectInput.attr('type', 'text');
-                    break;
-                default:
-                    objectInput.attr('type', 'text');
-            }
+            const selectedPredicate = $(this).val();
+            datatypes = {{datatypes}}
+            $.post("/get_object_config", {predicate: datatypes[selectedPredicate]}, function(datatype) {
+                const objectInput = $('.object-input');
+                objectInput.attr('type', datatype);
+            });
         });
     });
 </script>
