@@ -15,3 +15,4 @@ class Config(object):
     BABEL_TRANSLATION_DIRECTORIES = os.path.join(BASE_DIR, 'babel', 'translations')
     CHANGE_TRACKING_CONFIG = os.path.join(BASE_DIR, 'change_tracking.json')
     RESPONSIBLE_AGENT = URIRef('https://orcid.org/0000-0002-8420-0696')
+    SHACL_PATH = os.path.join(BASE_DIR, 'resources', 'shacl.ttl')

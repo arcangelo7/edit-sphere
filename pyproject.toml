@@ -17,6 +17,7 @@ rdflib-ocdm = "0.3.6"
 validators = "0.20.0"
 requests = "^2.31.0"
 time-agnostic-library = "4.3.6"
+pyshacl = "0.20.0"
 
 
 [build-system]

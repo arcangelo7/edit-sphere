@@ -123,21 +123,21 @@ schema:SnapshotEntityShape
     [
       sh:path rdf:type ;
       sh:targetNode prov:Entity ;
-      sh:minValue 1 ;
-      sh:maxValue 1 ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
       sh:path prov:generatedAtTime ;
       sh:datatype xsd:dateTime ;
-      sh:maxValue 1 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
       sh:path prov:invalidatedAtTime ;
       sh:datatype xsd:dateTime ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
@@ -156,48 +156,48 @@ schema:SnapshotEntityShape
         oa:Annotation
         pro:RoleInTime        
       ) ;
-      sh:minValue 1 ;
+      sh:minCount 1 ;
     ] ;
     sh:property
     [
       sh:path prov:wasDerivedFrom ;
       sh:class prov:Entity ;
-      sh:minValue 0 ;
+      sh:minCount 0 ;
     ] ;
     sh:property
     [
       sh:path prov:hadPrimarySource ;
       sh:nodeKind sh:IRI ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
       sh:path oco:hasUpdateQuery ;
       sh:datatype xsd:string ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
       sh:path dcterms:description ;
       sh:datatype xsd:string ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
       sh:path prov:wasAttributedTo ;
       sh:nodeKind sh:IRI ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
       sh:path [sh:inversePath prov:wasDerivedFrom] ;
       sh:class prov:Entity ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
 .
 
@@ -211,36 +211,36 @@ schema:DatasetShape
     [
       sh:path rdf:type ;
       sh:targetNode dcat:Dataset ;
-      sh:minValue 1 ;
-      sh:maxValue 1 ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
       sh:path dcterms:title ;
       sh:datatype xsd:string ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
       sh:path dcterms:description ;
       sh:datatype xsd:string ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
       sh:path dcterms:issued ;
       sh:datatype xsd:dateTime ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
       sh:path dcterms:modified ;
       sh:datatype xsd:dateTime ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
@@ -256,8 +256,8 @@ schema:DatasetShape
     [
       sh:path dcat:landingPage ;
       sh:nodeKind sh:IRI ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
@@ -268,8 +268,8 @@ schema:DatasetShape
     [
       sh:path void:sparqlEndpoint ;
       sh:nodeKind sh:IRI ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
@@ -280,8 +280,8 @@ schema:DatasetShape
     [
       sh:path [sh:inversePath void:subset] ;
       sh:class dcat:Dataset ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
 .
 
@@ -295,64 +295,64 @@ schema:DistributionShape
     [
       sh:path rdf:type ;
       sh:targetNode dcat:Distribution ;
-      sh:minValue 1 ;
-      sh:maxValue 1 ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
       sh:path dcterms:title ;
       sh:datatype xsd:string ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
       sh:path dcterms:description ;
       sh:datatype xsd:string ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
       sh:path dcterms:issued ;
       sh:datatype xsd:dateTime ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
       sh:path dcat:byte_size ;
       sh:datatype xsd:decimal ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
       sh:path dcterms:license ;
       sh:nodeKind sh:IRI ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
       sh:path dcat:downloadURL ;
       sh:nodeKind sh:IRI ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
       sh:path dcat:mediaType ;
       sh:nodeKind sh:IRI ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
       sh:path [sh:inversePath dcat:distribution] ;
       sh:class dcat:Dataset ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
 .
 
@@ -366,22 +366,22 @@ schema:AgentRoleShape
     [
       sh:path rdf:type ;
       sh:targetNode pro:RoleInTime ;
-      sh:minValue 1 ;
-      sh:maxValue 1 ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
       sh:path oco:hasNext ;
       sh:class pro:RoleInTime ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
       sh:path pro:isHeldBy ;
       sh:class foaf:Agent ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
@@ -389,22 +389,22 @@ schema:AgentRoleShape
       sh:classIn (pro:publisher
                   pro:author
                   pro:editor) ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
       sh:path [sh:inversePath oco:hasNext] ;
       sh:class pro:RoleInTime ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
       sh:path [sh:inversePath pro:isDocumentContextFor] ;
       sh:class fabio:Expression ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
@@ -423,15 +423,15 @@ schema:BibliographicReferenceShape
     [
       sh:path rdf:type ;
       sh:targetNode biro:BibliographicReference ;
-      sh:minValue 1 ;
-      sh:maxValue 1 ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
       sh:path c4o:hasContent ;
       sh:datatype xsd:string ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
@@ -442,15 +442,15 @@ schema:BibliographicReferenceShape
     [
       sh:path biro:references ;
       sh:class fabio:Expression ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
       sh:path [sh:inversePath frbr:part] ;
       sh:class fabio:Expression ;
-      sh:minValue 0 ;
-      sh:maxValue 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property
     [
@@ -493,29 +493,29 @@ schema:BibliographicResourceShape
       fabio:ReportDocument
       fabio:Series
       fabio:SpecificationDocument) ;
-    sh:minValue 1 ;
-    sh:maxValue 2 ;
+    sh:minCount 1 ;
+    sh:maxCount 2 ;
   ] ;
   sh:property
   [
     sh:path dcterms:title ;
     sh:datatype xsd:string ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
   [
     sh:path fabio:hasSubtitle ;
     sh:datatype xsd:string ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
   [
     sh:path frbr:partOf ;
     sh:class fabio:Expression ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
   [
@@ -526,29 +526,29 @@ schema:BibliographicResourceShape
   [
     sh:path prism:publicationDate ;
     sh:datatypeIn (xsd:date xsd:gYearMonth xsd:gYear) ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
   [
     sh:path frbr:embodiment ;
     sh:class fabio:ResourceEmbodiment ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
   [
     sh:path fabio:hasSequenceIdentifier ;
     sh:datatype xsd:string ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
   [
     sh:path prism:edition ;
     sh:datatype xsd:string ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
   [
@@ -617,43 +617,43 @@ schema:CitationShape
       cito:JournalCartelCitation
       cito:DistantCitation
     ) ;
-    sh:minValue 1 ;
-    sh:maxValue 2 ;
+    sh:minCount 1 ;
+    sh:maxCount 2 ;
   ] ;
   sh:property
   [
     sh:path cito:hasCitingEntity ;
     sh:targetNode fabio:Expression ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
   [
     sh:path cito:hasCitedEntity ;
     sh:targetNode fabio:Expression ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
   [
     sh:path cito:hasCitationCreationDate ;
     sh:datatypeIn (xsd:date xsd:gYearMonth xsd:gYear) ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
   [
     sh:path cito:hasCitationTimeSpan ;
     sh:datatype xsd:duration ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
   [
     sh:path cito:hasCitationCharacterisation ;
     sh:nodeKind sh:IRI ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
   [
@@ -687,15 +687,15 @@ schema:DiscourseElementShape
       doco:Table
       doco:TextChunk
     );
-    sh:minValue 1 ;
-    sh:maxValue 2 ;
+    sh:minCount 1 ;
+    sh:maxCount 2 ;
   ] ;
   sh:property
 	[
     sh:path dcterms:title ;
     sh:datatype xsd:string ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
 	[
@@ -706,8 +706,8 @@ schema:DiscourseElementShape
 	[
     sh:path oco:hasNext ;
     sh:class deo:DiscourseElement ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
 	[
@@ -718,29 +718,29 @@ schema:DiscourseElementShape
 	[
     sh:path c4o:hasContent ;
     sh:datatype xsd:string ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
 	[
     sh:path fabio:hasSequenceIdentifier ;
     sh:datatype xsd:string ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
 	[
     sh:path [sh:inversePath frbr:part] ;
     sh:classIn (fabio:Expression deo:DiscourseElement) ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
 	[
     sh:path [sh:inversePath oco:hasNext] ;
     sh:class deo:DiscourseElement ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
 	[
@@ -759,15 +759,15 @@ schema:PointerListShape
 	[
     sh:path rdf:type ;
     sh:targetNode c4o:SingleLocationPointerList ;
-    sh:minValue 1 ;
-    sh:maxValue 1 ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
 	[
     sh:path c4o:hasContent ;
     xsd:datatype xsd:string ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
 	[
@@ -778,8 +778,8 @@ schema:PointerListShape
 	[
     sh:path [sh:inversePath c4o:isContextOf] ;
     sh:class deo:DiscourseElement ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
 	[
@@ -798,29 +798,29 @@ schema:ReferenceAnnotationShape
 	[
     sh:path rdf:type ;
     sh:targetNode oa:Annotation ;
-    sh:minValue 1 ;
-    sh:maxValue 1 ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
 	[
     sh:path oa:hasBody ;
     sh:class cito:Citation ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
 	[
     sh:path [sh:inversePath oco:hasAnnotation] ;
     sh:class biro:BibliographicReference ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
 	[
     sh:path [sh:inversePath oco:hasAnnotation] ;
     sh:class c4o:InTextReferencePointer ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
 	[
@@ -839,29 +839,29 @@ schema:ReferencePointerShape
 	[
     sh:path rdf:type ;
     sh:targetNode oa:InTextReferencePointer ;
-    sh:minValue 1 ;
-    sh:maxValue 1 ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
 	[
     sh:path c4o:hasContent ;
     sh:datatype xsd:string ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
 	[
     sh:path oco:hasNext ;
     sh:class c4o:InTextReferencePointer ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
 	[
     sh:path c4o:denotes ;
     sh:class biro:BibliographicReference ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
 	[
@@ -872,22 +872,22 @@ schema:ReferencePointerShape
 	[
     sh:path [sh:inversePath oco:hasNext] ;
     sh:class oa:Annotation ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
 	[
     sh:path [sh:inversePath c4o:isContextOf] ;
     sh:class deo:DiscourseElement ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
 	[
     sh:path [sh:inversePath co:element] ;
     sh:class c4o:SingleLocationPointerList ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
 	[
@@ -910,36 +910,36 @@ schema:ResourceEmbodimentShape
       fabio:DigitalManifestation
       fabio:PrintObject
       ) ;
-    sh:minValue 1 ;
-    sh:maxValue 2 ;
+    sh:minCount 1 ;
+    sh:maxCount 2 ;
   ] ;
   sh:property
 	[
     sh:path dcterms:format ;
     sh:nodeKind sh:IRI ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
 	[
     sh:path prism:startingPage ;
     sh:datatype xsd:string ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
 	[
     sh:path prism:endingPage ;
     sh:datatype xsd:string ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
 	[
     sh:path frbr:exemplar ;
     sh:nodeKind sh:IRI ;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
 	[
@@ -963,29 +963,29 @@ schema:ResponsibleAgentShape
 	[
     sh:path rdf:type ;
     sh:targetNode foaf:Agent;
-    sh:minValue 1 ;
-    sh:maxValue 1 ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
 	[
     sh:path foaf:name ;
     sh:datatype xsd:string;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
 	[
     sh:path foaf:givenName ;
     sh:datatype xsd:string;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
 	[
     sh:path foaf:familyName ;
     sh:datatype xsd:string;
-    sh:minValue 0 ;
-    sh:maxValue 1 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
 	[

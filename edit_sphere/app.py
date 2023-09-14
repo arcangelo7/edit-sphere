@@ -9,8 +9,9 @@ import click
 import requests
 import validators
 from flask import Flask, redirect, render_template, request, session, url_for
-from flask_babel import Babel, format_datetime, gettext, refresh
-from rdflib import Graph
+from flask_babel import Babel, gettext, refresh
+from rdflib import RDF, Graph
+from rdflib.plugins.sparql import prepareQuery
 from rdflib.plugins.sparql.algebra import translateUpdate
 from rdflib.plugins.sparql.parser import parseUpdate
 from SPARQLWrapper import JSON, SPARQLWrapper
@@ -40,6 +41,13 @@ provenance_endpoint = app.config["PROVENANCE_ENDPOINT"]
 sparql = SPARQLWrapper(dataset_endpoint)
 change_tracking_config = app.config["CHANGE_TRACKING_CONFIG"]
 
+shacl_path = app.config["SHACL_PATH"]
+shacl = None
+if shacl_path:
+    if os.path.exists(shacl_path):
+        shacl = Graph()
+        shacl.parse(source=app.config["SHACL_PATH"], format="turtle")
+
 filter = Filter(context)
 
 app.jinja_env.filters['human_readable_predicate'] = filter.human_readable_predicate
@@ -48,7 +56,7 @@ app.jinja_env.filters['split_ns'] = filter.split_ns
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.jinja')
 
 @app.route('/catalogue')
 def catalogue():
@@ -64,7 +72,7 @@ def catalogue():
     sparql.setQuery(query)
     sparql.setReturnFormat(JSON)
     subjects = sparql.query().convert().get("results", {}).get("bindings", [])
-    return render_template('entities.html', subjects=subjects, page=page)
+    return render_template('entities.jinja', subjects=subjects, page=page)
 
 @app.route('/triples/<path:subject>')
 def show_triples(subject):
@@ -80,7 +88,8 @@ def show_triples(subject):
     sparql.setQuery(query)
     sparql.setReturnFormat(JSON)
     triples = sparql.query().convert().get("results", {}).get("bindings", [])
-    return render_template('triples.html', subject=decoded_subject, triples=triples, history=history)
+    can_be_added, can_be_deleted = get_valid_predicates(triples)
+    return render_template('triples.jinja', subject=decoded_subject, triples=triples, history=history, can_be_added=can_be_added, can_be_deleted=can_be_deleted)
 
 @app.route('/update_triple', methods=['POST'])
 def update_triple():
@@ -123,7 +132,7 @@ def set_language(lang_code=None):
 
 @app.route('/endpoint')
 def endpoint():
-    return render_template('endpoint.html', dataset_endpoint=dataset_endpoint)
+    return render_template('endpoint.jinja', dataset_endpoint=dataset_endpoint)
 
 @app.route('/dataset-endpoint', methods=['POST'])
 def sparql_proxy():
@@ -224,7 +233,7 @@ def entity_history(entity_uri):
         "events": events
     }
 
-    return render_template('entity_history.html', entity_uri=entity_uri, timeline_data=timeline_data)
+    return render_template('entity_history.jinja', entity_uri=entity_uri, timeline_data=timeline_data)
 
 @app.route('/entity-version/<path:entity_uri>/<timestamp>')
 def entity_version(entity_uri, timestamp):
@@ -266,7 +275,7 @@ def entity_version(entity_uri, timestamp):
     else:
         modifications = None
 
-    return render_template('entity_version.html', subject=entity_uri, triples=triples, metadata=closest_metadata, timestamp=closest_timestamp, next_snapshot_timestamp=next_snapshot_timestamp, prev_snapshot_timestamp=prev_snapshot_timestamp, modifications=modifications)
+    return render_template('entity_version.jinja', subject=entity_uri, triples=triples, metadata=closest_metadata, timestamp=closest_timestamp, next_snapshot_timestamp=next_snapshot_timestamp, prev_snapshot_timestamp=prev_snapshot_timestamp, modifications=modifications)
 
 @app.route('/restore-version/<path:entity_uri>/<timestamp>', methods=['POST'])
 def restore_version(entity_uri, timestamp):
@@ -301,7 +310,7 @@ def restore_version(entity_uri, timestamp):
     sparql.setQuery(query)
     sparql.setReturnFormat(JSON)
     triples = sparql.query().convert().get("results", {}).get("bindings", [])
-    return render_template('triples.html', subject=entity_uri, triples=triples, history={entity_uri: True})
+    return render_template('triples.jinja', subject=entity_uri, triples=triples, history={entity_uri: True})
 
 def parse_sparql_update(query):
     parsed = parseUpdate(query)
@@ -323,6 +332,38 @@ def invert_sparql_update(sparql_query: str) -> str:
 def execute_sparql_update(sparql_query: str):
     editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'])
     editor.execute(sparql_query)
+
+def get_valid_predicates(triples):
+    existing_predicates = [triple['predicate']['value'] for triple in triples]
+    predicate_counts = {predicate: existing_predicates.count(predicate) for predicate in set(existing_predicates)}
+    if not shacl:
+        return existing_predicates
+    s_type = next((triple['object']['value'] for triple in triples if triple['predicate']['value'] == str(RDF.type)), None)
+    if not s_type:
+        return existing_predicates
+    query = prepareQuery(f"""
+        SELECT ?predicate ?maxCount ?minCount WHERE {{
+            ?shape sh:targetClass <{s_type}> ;
+                   sh:property ?property .
+            ?property sh:path ?predicate .
+            OPTIONAL {{?property sh:maxCount ?maxCount .}}
+            OPTIONAL {{?property sh:minCount ?minCount .}}
+            FILTER (isURI(?predicate))
+        }}
+    """, initNs={"sh": "http://www.w3.org/ns/shacl#"})
+    results = shacl.query(query)
+    valid_predicates = [{str(row.predicate): {"min": (None if row.minCount is None else str(row.minCount)), 
+                                               "max": (None if row.maxCount is None else str(row.maxCount))}} 
+                        for row in results]
+    can_be_added = [
+        predicate for valid_predicate in valid_predicates for predicate, ranges in valid_predicate.items()
+        if not (ranges["max"] == '1' and predicate in existing_predicates)
+    ]
+    can_be_deleted = [
+        predicate for valid_predicate in valid_predicates for predicate, ranges in valid_predicate.items()
+        if not (ranges["min"] == '1' and predicate_counts.get(predicate, 0) == 1)
+    ]
+    return can_be_added, can_be_deleted
 
 @app.cli.group()
 def translate():
