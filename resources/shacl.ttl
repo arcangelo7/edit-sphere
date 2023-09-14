@@ -525,7 +525,11 @@ schema:BibliographicResourceShape
   sh:property
   [
     sh:path prism:publicationDate ;
-    sh:datatypeIn (xsd:date xsd:gYearMonth xsd:gYear) ;
+    sh:or (
+      [ sh:datatype xsd:date ]
+      [ sh:datatype xsd:gYearMonth ]
+      [ sh:datatype xsd:gYear ]
+    ) ;
     sh:minCount 0 ;
     sh:maxCount 1 ;
   ] ;
@@ -637,7 +641,11 @@ schema:CitationShape
   sh:property
   [
     sh:path cito:hasCitationCreationDate ;
-    sh:datatypeIn (xsd:date xsd:gYearMonth xsd:gYear) ;
+    sh:or (
+      [ sh:datatype xsd:date ]
+      [ sh:datatype xsd:gYearMonth ]
+      [ sh:datatype xsd:gYear ]
+    ) ;
     sh:minCount 0 ;
     sh:maxCount 1 ;
   ] ;

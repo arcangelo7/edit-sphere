@@ -1,8 +1,8 @@
-import copy
 import datetime
 import json
 import os
 import urllib
+from collections import defaultdict
 from datetime import timezone
 
 import click
@@ -10,7 +10,7 @@ import requests
 import validators
 from flask import Flask, redirect, render_template, request, session, url_for
 from flask_babel import Babel, gettext, refresh
-from rdflib import RDF, Graph
+from rdflib import RDF, XSD, Graph
 from rdflib.plugins.sparql import prepareQuery
 from rdflib.plugins.sparql.algebra import translateUpdate
 from rdflib.plugins.sparql.parser import parseUpdate
@@ -24,6 +24,7 @@ from time_agnostic_library.support import convert_to_datetime
 from config import Config
 from edit_sphere.editor import Editor
 from edit_sphere.filters import *
+from edit_sphere.forms import *
 
 app = Flask(__name__)
 
@@ -88,8 +89,14 @@ def show_triples(subject):
     sparql.setQuery(query)
     sparql.setReturnFormat(JSON)
     triples = sparql.query().convert().get("results", {}).get("bindings", [])
-    can_be_added, can_be_deleted = get_valid_predicates(triples)
-    return render_template('triples.jinja', subject=decoded_subject, triples=triples, history=history, can_be_added=can_be_added, can_be_deleted=can_be_deleted)
+    can_be_added, can_be_deleted, datatypes = get_valid_predicates(triples)
+    update_form = UpdateTripleForm()
+    if can_be_added:
+        create_form = CreateTripleFormWithSelect()
+        create_form.predicate.choices = [(p, filter.human_readable_predicate(p)) for p in can_be_added]
+    else:
+        create_form = CreateTripleFormWithInput()
+    return render_template('triples.jinja', subject=decoded_subject, triples=triples, history=history, can_be_added=can_be_added, can_be_deleted=can_be_deleted, datatypes=datatypes, update_form=update_form, create_form=create_form)
 
 @app.route('/update_triple', methods=['POST'])
 def update_triple():
@@ -333,21 +340,108 @@ def execute_sparql_update(sparql_query: str):
     editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'])
     editor.execute(sparql_query)
 
+def prioritize_datatype(datatypes):
+    datatype_priority = [
+        XSD.string,
+        XSD.normalizedString,
+
+        XSD.integer,
+        XSD.positiveInteger,
+        XSD.negativeInteger,
+        XSD.nonNegativeInteger,
+        XSD.nonPositiveInteger,
+        XSD.byte, # all signed integer numbers that can be stored in a 8-bit space
+        XSD.short,# all signed integer numbers that can be stored in a 16-bit space
+        XSD.long, # all signed integer numbers that can be stored in a 64-bit space
+        XSD.unsignedByte,
+        XSD.unsignedShort,
+        XSD.unsignedInt,
+        XSD.unsignedLong,
+
+        XSD.decimal,
+        XSD.float,
+        XSD.double,
+
+        XSD.duration,
+        XSD.dayTimeDuration,
+        XSD.yearMonthDuration,
+
+        XSD.dateTime,
+        XSD.dateTimeStamp,
+
+        XSD.date,
+        XSD.gYearMonth,
+        XSD.month,
+        XSD.gYear,
+        XSD.year,
+
+        XSD.time,
+        XSD.hour,
+        XSD.timezoneOffset,
+        XSD.minute,
+        XSD.second,
+
+        XSD.boolean,
+
+        XSD.hexBinary,
+        XSD.base64Binary,
+
+        XSD.anyURI,
+
+        XSD.QName, # is a qualified name according to Namespaces in XML, e.g. "<xsd:attribute name="lang" type="xsd:language"/>"
+        XSD.Name, # The lexical and value spaces of xsd:Name are the tokens (NMTOKEN) that conform to the definition of a name in XML 1.0, e.g. CMS
+        XSD.ENTITIES,
+        XSD.ENTITY, # Reference to an unparsed entity
+        XSD.ID, # The purpose of the xs:ID datatype is to define unique identifiers that are global to a document and emulate the ID attribute type available in the XML DTDs
+        XSD.IDREF,
+        XSD.IDREFS,
+        XSD.NCName,
+        XSD.NMTOKEN,
+        XSD.NMTOKENS,
+        XSD.NOTATION,
+
+        XSD.length, # Specifies the exact number of characters or list items allowed. Must be equal to or greater than zero
+        XSD.minLength,
+        XSD.maxLength,
+        XSD.pattern,
+        XSD.enumeration,
+        XSD.whiteSpace,
+        XSD.maxExclusive,
+        XSD.maxInclusive,
+        XSD.minExclusive,
+        XSD.minInclusive,
+        XSD.totalDigits,
+        XSD.fractionDigits,
+
+        XSD.Assertions,
+        XSD.explicitTimezone
+    ]
+    for datatype in datatype_priority:
+        if datatype in datatypes:
+            return datatype
+    return datatypes[0]
+
 def get_valid_predicates(triples):
     existing_predicates = [triple['predicate']['value'] for triple in triples]
     predicate_counts = {predicate: existing_predicates.count(predicate) for predicate in set(existing_predicates)}
     if not shacl:
-        return existing_predicates
+        return None, None
     s_type = next((triple['object']['value'] for triple in triples if triple['predicate']['value'] == str(RDF.type)), None)
     if not s_type:
-        return existing_predicates
+        return None, None
     query = prepareQuery(f"""
-        SELECT ?predicate ?maxCount ?minCount WHERE {{
+        SELECT ?predicate ?datatype ?maxCount ?minCount WHERE {{
             ?shape sh:targetClass <{s_type}> ;
                    sh:property ?property .
             ?property sh:path ?predicate .
+            OPTIONAL {{?property sh:datatype ?datatype .}}
             OPTIONAL {{?property sh:maxCount ?maxCount .}}
             OPTIONAL {{?property sh:minCount ?minCount .}}
+            OPTIONAL {{
+                ?property sh:or ?orList .
+                ?orList rdf:rest*/rdf:first ?orConstraint .
+                ?orConstraint sh:datatype ?datatype .
+            }}
             FILTER (isURI(?predicate))
         }}
     """, initNs={"sh": "http://www.w3.org/ns/shacl#"})
@@ -355,15 +449,25 @@ def get_valid_predicates(triples):
     valid_predicates = [{str(row.predicate): {"min": (None if row.minCount is None else str(row.minCount)), 
                                                "max": (None if row.maxCount is None else str(row.maxCount))}} 
                         for row in results]
-    can_be_added = [
+    can_be_added = list({
         predicate for valid_predicate in valid_predicates for predicate, ranges in valid_predicate.items()
         if not (ranges["max"] == '1' and predicate in existing_predicates)
-    ]
-    can_be_deleted = [
+    })
+    can_be_deleted = list({
         predicate for valid_predicate in valid_predicates for predicate, ranges in valid_predicate.items()
         if not (ranges["min"] == '1' and predicate_counts.get(predicate, 0) == 1)
-    ]
-    return can_be_added, can_be_deleted
+    })
+    datatype_collections = defaultdict(list)
+    for row in results:
+        if row.datatype:
+            datatype_collections[str(row.predicate)].append(str(row.datatype))
+        else:
+            datatype_collections[str(row.predicate)].append(XSD.string)
+    datatypes = {
+        predicate: prioritize_datatype(dt_list) 
+        for predicate, dt_list in datatype_collections.items()
+    }
+    return can_be_added, can_be_deleted, datatypes
 
 @app.cli.group()
 def translate():
