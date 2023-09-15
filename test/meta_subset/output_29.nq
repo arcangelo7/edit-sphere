@@ -1,0 +1,1000 @@
+<https://w3id.org/oc/meta/ra/06150114527> <http://xmlns.com/foaf/0.1/familyName> "Mattessich" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114296> <http://xmlns.com/foaf/0.1/givenName> "Barbara N." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114174> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114601> <http://xmlns.com/foaf/0.1/familyName> "Rafsnider" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115335> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114627> <http://xmlns.com/foaf/0.1/givenName> "Ellen" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114816> <http://xmlns.com/foaf/0.1/familyName> "Crawford" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114841> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115022> <http://xmlns.com/foaf/0.1/givenName> "Philip R." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114034> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114917> <http://xmlns.com/foaf/0.1/familyName> "Krasovec" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0610144> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/061021014> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114695> <http://xmlns.com/foaf/0.1/familyName> "Nowak" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114608> <http://xmlns.com/foaf/0.1/familyName> "Harter" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060197> <http://xmlns.com/foaf/0.1/familyName> "Huerre" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114096> <http://xmlns.com/foaf/0.1/givenName> "Ben H." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114755> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114909> <http://xmlns.com/foaf/0.1/familyName> "Bookstein" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115269> <http://xmlns.com/foaf/0.1/givenName> "William S." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114306> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114644> <http://xmlns.com/foaf/0.1/givenName> "Nick" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115025> <http://xmlns.com/foaf/0.1/familyName> "Rouse" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114329> <http://xmlns.com/foaf/0.1/givenName> "James" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060235> <http://xmlns.com/foaf/0.1/familyName> "Hanay" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06067> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114533> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114530> <http://xmlns.com/foaf/0.1/familyName> "Davis" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114527> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115370> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114886> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114176> <http://xmlns.com/foaf/0.1/givenName> "Vera" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114045> <http://xmlns.com/foaf/0.1/givenName> "Rowena W." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114385> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114860> <http://xmlns.com/foaf/0.1/givenName> "Eugene" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114405> <http://xmlns.com/foaf/0.1/familyName> "Moell" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114091> <http://xmlns.com/foaf/0.1/familyName> "Morrow" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114604> <http://xmlns.com/foaf/0.1/givenName> "Gabor J." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114993> <http://xmlns.com/foaf/0.1/givenName> "Howard D." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115166> <http://xmlns.com/foaf/0.1/familyName> "Wooster" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114729> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114139> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114587> <http://xmlns.com/foaf/0.1/givenName> "Isao" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114684> <http://xmlns.com/foaf/0.1/givenName> "K." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114464> <http://xmlns.com/foaf/0.1/familyName> "Roberts" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114666> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115241> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060209> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115320> <http://xmlns.com/foaf/0.1/givenName> "Clare" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114305> <http://xmlns.com/foaf/0.1/givenName> "Frederic L." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114509> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0603912> <http://xmlns.com/foaf/0.1/familyName> "Weimann" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114633> <http://xmlns.com/foaf/0.1/givenName> "Robert" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115027> <http://xmlns.com/foaf/0.1/familyName> "Neelameghan" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06026> <http://xmlns.com/foaf/0.1/familyName> "Makris" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114200> <http://xmlns.com/foaf/0.1/familyName> "Roth" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114541> <http://xmlns.com/foaf/0.1/familyName> "Cooper" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115130> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0611016894> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0611044949> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114012> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060225> <http://xmlns.com/foaf/0.1/familyName> "Crous" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114857> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115058> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060665> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115360> <http://xmlns.com/foaf/0.1/givenName> "Barbara M." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06017> <http://xmlns.com/foaf/0.1/givenName> "Michael" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115201> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114619> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114793> <http://xmlns.com/foaf/0.1/givenName> "John M." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114036> <http://xmlns.com/foaf/0.1/familyName> "Sullo" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114402> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0603912> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115300> <http://xmlns.com/foaf/0.1/givenName> "Robin P." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114937> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115148> <http://xmlns.com/foaf/0.1/familyName> "Hubert" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114708> <http://xmlns.com/foaf/0.1/familyName> "Yu" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060163> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114485> <http://xmlns.com/foaf/0.1/givenName> "A." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115276> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114510> <http://xmlns.com/foaf/0.1/givenName> "H." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114046> <http://xmlns.com/foaf/0.1/familyName> "Baokstein" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114749> <http://xmlns.com/foaf/0.1/familyName> "Sandison" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114507> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114782> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115048> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115173> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115303> <http://xmlns.com/foaf/0.1/givenName> "Paul" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114436> <http://xmlns.com/foaf/0.1/familyName> "Kraft" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114532> <http://xmlns.com/foaf/0.1/givenName> "Michael D." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114775> <http://xmlns.com/foaf/0.1/familyName> "Drott" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114203> <http://xmlns.com/foaf/0.1/familyName> "Bell" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114734> <http://xmlns.com/foaf/0.1/familyName> "Koenig" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114796> <http://xmlns.com/foaf/0.1/familyName> "Ross" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114978> <http://xmlns.com/foaf/0.1/givenName> "Danny P." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115178> <http://xmlns.com/foaf/0.1/givenName> "Eui Hang" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114559> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115315> <http://xmlns.com/foaf/0.1/givenName> "Gary" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114208> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114717> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115152> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114194> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115343> <http://xmlns.com/foaf/0.1/familyName> "Gandt" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/061107327> <http://xmlns.com/foaf/0.1/givenName> "Alan" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114163> <http://xmlns.com/foaf/0.1/givenName> "William S." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06061> <http://xmlns.com/foaf/0.1/givenName> "David G." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114806> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114256> <http://xmlns.com/foaf/0.1/familyName> "Kraft" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114328> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115071> <http://xmlns.com/foaf/0.1/familyName> "Rouse" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114917> <http://xmlns.com/foaf/0.1/givenName> "Frank" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115046> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06041> <http://xmlns.com/foaf/0.1/familyName> "Wichmann" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0622025635> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0622052851> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060125> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114774> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114083> <http://xmlns.com/foaf/0.1/givenName> "Joseph Z." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06066> <http://xmlns.com/foaf/0.1/familyName> "Zhuang" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114031> <http://xmlns.com/foaf/0.1/givenName> "Bluma C." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114635> <http://xmlns.com/foaf/0.1/familyName> "Lipetz" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114653> <http://xmlns.com/foaf/0.1/givenName> "Richard A. V." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0601> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114557> <http://xmlns.com/foaf/0.1/givenName> "Manfred" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114231> <http://xmlns.com/foaf/0.1/familyName> "Thorpe" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115113> <http://xmlns.com/foaf/0.1/givenName> "Christopher" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114486> <http://xmlns.com/foaf/0.1/familyName> "Zarember" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060192> <http://xmlns.com/foaf/0.1/familyName> "Mauclere" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115170> <http://xmlns.com/foaf/0.1/givenName> "Fritz" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114170> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114113> <http://xmlns.com/foaf/0.1/familyName> "Maron" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114692> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114065> <http://xmlns.com/foaf/0.1/familyName> "To" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114062> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114897> <http://xmlns.com/foaf/0.1/givenName> "Paul G." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114143> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115015> <http://xmlns.com/foaf/0.1/familyName> "Freeman" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114412> <http://xmlns.com/foaf/0.1/familyName> "Small" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114211> <http://xmlns.com/foaf/0.1/givenName> "Rowena W." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114642> <http://xmlns.com/foaf/0.1/givenName> "Eugene B." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114151> <http://xmlns.com/foaf/0.1/givenName> "K. Sparck" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114129> <http://xmlns.com/foaf/0.1/familyName> "Shaw" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114446> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114607> <http://xmlns.com/foaf/0.1/familyName> "Cawkell" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115013> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115041> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06069> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115027> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060238> <http://xmlns.com/foaf/0.1/familyName> "Klose" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114348> <http://xmlns.com/foaf/0.1/familyName> "Hillinger" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115126> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114073> <http://xmlns.com/foaf/0.1/givenName> "Marcia J." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115056> <http://xmlns.com/foaf/0.1/familyName> "Maddock" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114070> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114969> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060201> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115381> <http://xmlns.com/foaf/0.1/familyName> "Frisse" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115002> <http://xmlns.com/foaf/0.1/familyName> "Piternick" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060234> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114082> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114889> <http://xmlns.com/foaf/0.1/familyName> "Ludwig" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114346> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06098> <http://xmlns.com/foaf/0.1/familyName> "Sone" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115367> <http://xmlns.com/foaf/0.1/givenName> "Donald N." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114847> <http://xmlns.com/foaf/0.1/givenName> "Jose M." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114690> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060115> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115197> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114516> <http://xmlns.com/foaf/0.1/familyName> "Liew" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114632> <http://xmlns.com/foaf/0.1/familyName> "Davis" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114503> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114776> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114604> <http://xmlns.com/foaf/0.1/familyName> "Kovacs" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114782> <http://xmlns.com/foaf/0.1/familyName> "Blair" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115139> <http://xmlns.com/foaf/0.1/familyName> "Bookstein" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114107> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114540> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114125> <http://xmlns.com/foaf/0.1/givenName> "Subal Chandra" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060119> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114896> <http://xmlns.com/foaf/0.1/familyName> "Rossini" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06085> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114835> <http://xmlns.com/foaf/0.1/familyName> "Taube" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114711> <http://xmlns.com/foaf/0.1/givenName> "Una" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114942> <http://xmlns.com/foaf/0.1/givenName> "Bernard" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114366> <http://xmlns.com/foaf/0.1/givenName> "Gerald" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114101> <http://xmlns.com/foaf/0.1/givenName> "William E." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115072> <http://xmlns.com/foaf/0.1/familyName> "Rouse" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060211> <http://xmlns.com/foaf/0.1/familyName> "Zimmer" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114753> <http://xmlns.com/foaf/0.1/familyName> "Koll" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114495> <http://xmlns.com/foaf/0.1/givenName> "M. C." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114607> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114136> <http://xmlns.com/foaf/0.1/familyName> "Lehnus" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114640> <http://xmlns.com/foaf/0.1/familyName> "Jackson" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115077> <http://xmlns.com/foaf/0.1/givenName> "Sadaaki" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114779> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114173> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114758> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114539> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060185> <http://xmlns.com/foaf/0.1/familyName> "Marzullo" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114141> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114034> <http://xmlns.com/foaf/0.1/familyName> "Leimkuhler" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114110> <http://xmlns.com/foaf/0.1/familyName> "Poyer" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114388> <http://xmlns.com/foaf/0.1/familyName> "Borman" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114512> <http://xmlns.com/foaf/0.1/givenName> "A." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115082> <http://xmlns.com/foaf/0.1/givenName> "Katherine W." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115128> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114908> <http://xmlns.com/foaf/0.1/givenName> "Don R." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114821> <http://xmlns.com/foaf/0.1/givenName> "Anthony J." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115268> <http://xmlns.com/foaf/0.1/givenName> "Jacques J." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114938> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114797> <http://xmlns.com/foaf/0.1/givenName> "J. Macgregor" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115175> <http://xmlns.com/foaf/0.1/givenName> "Alan M." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114735> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114451> <http://xmlns.com/foaf/0.1/givenName> "Elliot" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06074> <http://xmlns.com/foaf/0.1/givenName> "Boaz" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114670> <http://xmlns.com/foaf/0.1/givenName> "Betty Spillers" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06046> <http://xmlns.com/foaf/0.1/givenName> "Maximilien" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060666> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114698> <http://xmlns.com/foaf/0.1/givenName> "Kurt J." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114376> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114030> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114676> <http://xmlns.com/foaf/0.1/givenName> "W. Bruce" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114730> <http://xmlns.com/foaf/0.1/givenName> "W. M." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114790> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114770> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115087> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115379> <http://xmlns.com/foaf/0.1/familyName> "Barlow" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114267> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114196> <http://xmlns.com/foaf/0.1/givenName> "C. R. G." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114295> <http://xmlns.com/foaf/0.1/familyName> "Kraft" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114539> <http://xmlns.com/foaf/0.1/givenName> "Joseph D." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115249> <http://xmlns.com/foaf/0.1/familyName> "Cagan" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06065> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115052> <http://xmlns.com/foaf/0.1/familyName> "Weil" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114067> <http://xmlns.com/foaf/0.1/givenName> "Charles T." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114256> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114620> <http://xmlns.com/foaf/0.1/familyName> "Turner" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114636> <http://xmlns.com/foaf/0.1/givenName> "Robert" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114264> <http://xmlns.com/foaf/0.1/givenName> "John" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114819> <http://xmlns.com/foaf/0.1/familyName> "Afolayan" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060219> <http://xmlns.com/foaf/0.1/familyName> "Moreno" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114907> <http://xmlns.com/foaf/0.1/givenName> "Abraham" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114718> <http://xmlns.com/foaf/0.1/givenName> "Hilary D." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114547> <http://xmlns.com/foaf/0.1/givenName> "Bani K." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114199> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060150> <http://xmlns.com/foaf/0.1/familyName> "Mignatti" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0608> <http://xmlns.com/foaf/0.1/familyName> "Inoue" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060149> <http://xmlns.com/foaf/0.1/givenName> "Peter" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060142> <http://xmlns.com/foaf/0.1/familyName> "Marion" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115155> <http://xmlns.com/foaf/0.1/familyName> "Tague" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114069> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114412> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115353> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114640> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114015> <http://xmlns.com/foaf/0.1/familyName> "Kraft" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115301> <http://xmlns.com/foaf/0.1/givenName> "Eugene B." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114368> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115142> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114546> <http://xmlns.com/foaf/0.1/familyName> "Lynch" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114701> <http://xmlns.com/foaf/0.1/familyName> "Studer" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114181> <http://xmlns.com/foaf/0.1/givenName> "William" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114617> <http://xmlns.com/foaf/0.1/givenName> "J. A." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114153> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115267> <http://xmlns.com/foaf/0.1/familyName> "Salton" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114190> <http://xmlns.com/foaf/0.1/familyName> "Rickman" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114557> <http://xmlns.com/foaf/0.1/familyName> "Kochen" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115232> <http://xmlns.com/foaf/0.1/familyName> "Bromberg" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115002> <http://xmlns.com/foaf/0.1/givenName> "Anne B." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115378> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114707> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114462> <http://xmlns.com/foaf/0.1/familyName> "Regazzi" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114875> <http://xmlns.com/foaf/0.1/givenName> "Stephen S." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114721> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114316> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115279> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114537> <http://xmlns.com/foaf/0.1/givenName> "Robert Lee" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114741> <http://xmlns.com/foaf/0.1/givenName> "Edward S." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115137> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114114> <http://xmlns.com/foaf/0.1/givenName> "R. T." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115346> <http://xmlns.com/foaf/0.1/familyName> "Bonckaert" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060179> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115256> <http://xmlns.com/foaf/0.1/familyName> "Spicer" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114610> <http://xmlns.com/foaf/0.1/familyName> "Bulick" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114548> <http://xmlns.com/foaf/0.1/familyName> "Clelland" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115106> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114498> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114866> <http://xmlns.com/foaf/0.1/familyName> "Bourne" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06051> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060120> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115236> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115141> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115036> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115259> <http://xmlns.com/foaf/0.1/givenName> "Czetong T." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114563> <http://xmlns.com/foaf/0.1/givenName> "Helen J." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114643> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060139> <http://xmlns.com/foaf/0.1/givenName> "Christian" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060170> <http://xmlns.com/foaf/0.1/givenName> "Dorothee" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114704> <http://xmlns.com/foaf/0.1/familyName> "Ravindran" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114523> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114554> <http://xmlns.com/foaf/0.1/givenName> "Samuel" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060149> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114313> <http://xmlns.com/foaf/0.1/familyName> "Rush" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114458> <http://xmlns.com/foaf/0.1/familyName> "Spaulding" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114981> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114722> <http://xmlns.com/foaf/0.1/givenName> "Howard D." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114323> <http://xmlns.com/foaf/0.1/familyName> "Harmon" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060221> <http://xmlns.com/foaf/0.1/givenName> "A." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114494> <http://xmlns.com/foaf/0.1/familyName> "Whitehead" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114826> <http://xmlns.com/foaf/0.1/givenName> "E." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060122> <http://xmlns.com/foaf/0.1/givenName> "Mark R." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114455> <http://xmlns.com/foaf/0.1/familyName> "Levett" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114134> <http://xmlns.com/foaf/0.1/givenName> "Martha" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114051> <http://xmlns.com/foaf/0.1/givenName> "Robert J." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06058> <http://xmlns.com/foaf/0.1/givenName> "Chung-Rong" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114381> <http://xmlns.com/foaf/0.1/givenName> "E. H." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114214> <http://xmlns.com/foaf/0.1/givenName> "Ben-Ami" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114354> <http://xmlns.com/foaf/0.1/familyName> "Johnson" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114542> <http://xmlns.com/foaf/0.1/givenName> "C. D." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060199> <http://xmlns.com/foaf/0.1/givenName> "Antoine" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115141> <http://xmlns.com/foaf/0.1/familyName> "Sowden" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114372> <http://xmlns.com/foaf/0.1/givenName> "G." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060227> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060196> <http://xmlns.com/foaf/0.1/familyName> "Bestetti" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114583> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115072> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06039> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114738> <http://xmlns.com/foaf/0.1/familyName> "Lunin" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114470> <http://xmlns.com/foaf/0.1/givenName> "William H." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114705> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114514> <http://xmlns.com/foaf/0.1/givenName> "John" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114262> <http://xmlns.com/foaf/0.1/familyName> "Scheffler" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114100> <http://xmlns.com/foaf/0.1/givenName> "H. Edward" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114112> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114252> <http://xmlns.com/foaf/0.1/givenName> "M. C." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060140> <http://xmlns.com/foaf/0.1/familyName> "Bartsch" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114090> <http://xmlns.com/foaf/0.1/familyName> "Mcdonough" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114668> <http://xmlns.com/foaf/0.1/familyName> "Bates" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114265> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115006> <http://xmlns.com/foaf/0.1/givenName> "Gerard" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114926> <http://xmlns.com/foaf/0.1/givenName> "Rowena Weiss" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114041> <http://xmlns.com/foaf/0.1/familyName> "Davis" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115312> <http://xmlns.com/foaf/0.1/givenName> "Loren D." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0604> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114374> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114954> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115079> <http://xmlns.com/foaf/0.1/familyName> "King" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114065> <http://xmlns.com/foaf/0.1/givenName> "David" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060107> <http://xmlns.com/foaf/0.1/givenName> "Tomoaki" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114140> <http://xmlns.com/foaf/0.1/givenName> "Leonard N." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114630> <http://xmlns.com/foaf/0.1/familyName> "Young" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0608> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114840> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114259> <http://xmlns.com/foaf/0.1/familyName> "Tocatlian" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114275> <http://xmlns.com/foaf/0.1/givenName> "Erik" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115208> <http://xmlns.com/foaf/0.1/givenName> "Ana D." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114365> <http://xmlns.com/foaf/0.1/givenName> "Ruth Reinke" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114254> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114406> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114549> <http://xmlns.com/foaf/0.1/givenName> "Eric" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114801> <http://xmlns.com/foaf/0.1/familyName> "Emly" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114050> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114808> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115019> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114855> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114679> <http://xmlns.com/foaf/0.1/givenName> "Paul R." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114727> <http://xmlns.com/foaf/0.1/givenName> "Clara" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115216> <http://xmlns.com/foaf/0.1/givenName> "David" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114503> <http://xmlns.com/foaf/0.1/familyName> "Geus" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114182> <http://xmlns.com/foaf/0.1/familyName> "Gupta" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114350> <http://xmlns.com/foaf/0.1/familyName> "Belzer" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114575> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115299> <http://xmlns.com/foaf/0.1/givenName> "David B." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114924> <http://xmlns.com/foaf/0.1/familyName> "Smiley" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114145> <http://xmlns.com/foaf/0.1/familyName> "Avramescu" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114979> <http://xmlns.com/foaf/0.1/givenName> "Bert R." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115175> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114807> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115358> <http://xmlns.com/foaf/0.1/givenName> "Pete" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114220> <http://xmlns.com/foaf/0.1/familyName> "Mathis" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114433> <http://xmlns.com/foaf/0.1/givenName> "Robert J." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114033> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114493> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114722> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06067> <http://xmlns.com/foaf/0.1/familyName> "Scheithauer" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0606> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114972> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114315> <http://xmlns.com/foaf/0.1/familyName> "Smith" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114863> <http://xmlns.com/foaf/0.1/familyName> "Murugesan" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114052> <http://xmlns.com/foaf/0.1/givenName> "Peter" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114861> <http://xmlns.com/foaf/0.1/givenName> "A. F." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114739> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115379> <http://xmlns.com/foaf/0.1/givenName> "Diane" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060181> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114099> <http://xmlns.com/foaf/0.1/givenName> "Carolyn" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114830> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115192> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114553> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115253> <http://xmlns.com/foaf/0.1/givenName> "Hubert H." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114681> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114389> <http://xmlns.com/foaf/0.1/givenName> "Benjamin" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114918> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114980> <http://xmlns.com/foaf/0.1/familyName> "Martin" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114108> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060237> <http://xmlns.com/foaf/0.1/givenName> "Holger" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114562> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06058> <http://xmlns.com/foaf/0.1/familyName> "Changchien" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114218> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114840> <http://xmlns.com/foaf/0.1/givenName> "Sheilah" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114331> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0603910> <http://xmlns.com/foaf/0.1/familyName> "Geyer" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114067> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114340> <http://xmlns.com/foaf/0.1/familyName> "Chalice" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06099> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114096> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115069> <http://xmlns.com/foaf/0.1/familyName> "Smith" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115083> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114135> <http://xmlns.com/foaf/0.1/familyName> "Glickert" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114351> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115347> <http://xmlns.com/foaf/0.1/givenName> "L." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114043> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114325> <http://xmlns.com/foaf/0.1/givenName> "R. D." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06076> <http://xmlns.com/foaf/0.1/familyName> "Carmon" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114184> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06091> <http://xmlns.com/foaf/0.1/givenName> "Hitoe" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114073> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115143> <http://xmlns.com/foaf/0.1/familyName> "Cerny" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114558> <http://xmlns.com/foaf/0.1/familyName> "Reich" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115303> <http://xmlns.com/foaf/0.1/familyName> "Kahn" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060126> <http://xmlns.com/foaf/0.1/familyName> "McElhinney" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/061308112> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115183> <http://xmlns.com/foaf/0.1/familyName> "Simkins" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060166> <http://xmlns.com/foaf/0.1/familyName> "Loh" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114026> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060147> <http://xmlns.com/foaf/0.1/givenName> "Henry" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114538> <http://xmlns.com/foaf/0.1/familyName> "Line" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114407> <http://xmlns.com/foaf/0.1/familyName> "De Price" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0603909> <http://xmlns.com/foaf/0.1/familyName> "Eck" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114582> <http://xmlns.com/foaf/0.1/givenName> "Abraham" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06072> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060158> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114154> <http://xmlns.com/foaf/0.1/familyName> "Salvador" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114971> <http://xmlns.com/foaf/0.1/familyName> "Buckley" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114990> <http://xmlns.com/foaf/0.1/givenName> "Karen B." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115314> <http://xmlns.com/foaf/0.1/givenName> "Peter" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114120> <http://xmlns.com/foaf/0.1/givenName> "Alan" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114295> <http://xmlns.com/foaf/0.1/givenName> "Donald H." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115112> <http://xmlns.com/foaf/0.1/givenName> "Mary J." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114547> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060233> <http://xmlns.com/foaf/0.1/familyName> "Foxman" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114193> <http://xmlns.com/foaf/0.1/familyName> "Perk" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114160> <http://xmlns.com/foaf/0.1/givenName> "Tefko" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114338> <http://xmlns.com/foaf/0.1/familyName> "Cuadra" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114098> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115037> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0623011051> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0623039801> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114639> <http://xmlns.com/foaf/0.1/givenName> "B." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114133> <http://xmlns.com/foaf/0.1/givenName> "Jean E." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06808763> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114605> <http://xmlns.com/foaf/0.1/givenName> "Rowena Weiss" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115295> <http://xmlns.com/foaf/0.1/familyName> "Gagnoud" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114345> <http://xmlns.com/foaf/0.1/familyName> "Parsons" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115163> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114643> <http://xmlns.com/foaf/0.1/familyName> "Jackson" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114035> <http://xmlns.com/foaf/0.1/familyName> "Marsh" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114091> <http://xmlns.com/foaf/0.1/givenName> "Deanna I." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114951> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114678> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114369> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114198> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114473> <http://xmlns.com/foaf/0.1/givenName> "Donald B." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114014> <http://xmlns.com/foaf/0.1/familyName> "Lawani" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114625> <http://xmlns.com/foaf/0.1/familyName> "Vokac" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114028> <http://xmlns.com/foaf/0.1/givenName> "Susan" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114568> <http://xmlns.com/foaf/0.1/familyName> "Hurt" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115311> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114537> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114466> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060156> <http://xmlns.com/foaf/0.1/familyName> "Ometto" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114962> <http://xmlns.com/foaf/0.1/familyName> "Tague" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114058> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115108> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115227> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114452> <http://xmlns.com/foaf/0.1/familyName> "Frycki" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115012> <http://xmlns.com/foaf/0.1/familyName> "Lied" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115060> <http://xmlns.com/foaf/0.1/familyName> "O'Brien" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114497> <http://xmlns.com/foaf/0.1/familyName> "Rose" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114037> <http://xmlns.com/foaf/0.1/familyName> "Wallace" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06069> <http://xmlns.com/foaf/0.1/givenName> "Christine M." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115120> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114280> <http://xmlns.com/foaf/0.1/familyName> "Bottle" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115233> <http://xmlns.com/foaf/0.1/givenName> "Donald A." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06034> <http://xmlns.com/foaf/0.1/givenName> "David" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060188> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114955> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115182> <http://xmlns.com/foaf/0.1/givenName> "H. Curtis" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06032> <http://xmlns.com/foaf/0.1/givenName> "Ruth" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114416> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060172> <http://xmlns.com/foaf/0.1/givenName> "Nagahiro" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060208> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114007> <http://xmlns.com/foaf/0.1/givenName> "James" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114382> <http://xmlns.com/foaf/0.1/familyName> "Dantzic" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115314> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0640943> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/064020460> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06043> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060106> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115013> <http://xmlns.com/foaf/0.1/familyName> "Tolliver" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060172> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115215> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114215> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/062042319> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/062069661> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115045> <http://xmlns.com/foaf/0.1/givenName> "Henry" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06045> <http://xmlns.com/foaf/0.1/givenName> "Jean" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0605> <http://xmlns.com/foaf/0.1/familyName> "Yamazaki" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114616> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114740> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114742> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114517> <http://xmlns.com/foaf/0.1/givenName> "Uinam J." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114848> <http://xmlns.com/foaf/0.1/givenName> "Carl" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115180> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115063> <http://xmlns.com/foaf/0.1/familyName> "Berninger" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114217> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115105> <http://xmlns.com/foaf/0.1/familyName> "Hirst" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060114> <http://xmlns.com/foaf/0.1/givenName> "Emma E." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114859> <http://xmlns.com/foaf/0.1/givenName> "C." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114965> <http://xmlns.com/foaf/0.1/givenName> "M. C." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115127> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114090> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114993> <http://xmlns.com/foaf/0.1/familyName> "White" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114742> <http://xmlns.com/foaf/0.1/givenName> "Anita L." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114915> <http://xmlns.com/foaf/0.1/familyName> "Berkoff" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114146> <http://xmlns.com/foaf/0.1/givenName> "Susan" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114769> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114510> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114652> <http://xmlns.com/foaf/0.1/familyName> "Yerkey" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114900> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114715> <http://xmlns.com/foaf/0.1/familyName> "Sachs" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114255> <http://xmlns.com/foaf/0.1/givenName> "Gerald A." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115290> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114686> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114182> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114783> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114275> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114301> <http://xmlns.com/foaf/0.1/givenName> "Roger" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06047> <http://xmlns.com/foaf/0.1/givenName> "Glenn W." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06059> <http://xmlns.com/foaf/0.1/givenName> "Jeng-Yi" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114040> <http://xmlns.com/foaf/0.1/givenName> "James F." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115178> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060104> <http://xmlns.com/foaf/0.1/familyName> "Shinozaki" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0610145> <http://xmlns.com/foaf/0.1/familyName> "Case" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114343> <http://xmlns.com/foaf/0.1/familyName> "Worthen" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114586> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114775> <http://xmlns.com/foaf/0.1/givenName> "M. Carl" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114686> <http://xmlns.com/foaf/0.1/familyName> "McAllister" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114284> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114180> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114688> <http://xmlns.com/foaf/0.1/givenName> "G." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115229> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114269> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114802> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060216> <http://xmlns.com/foaf/0.1/givenName> "P." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114401> <http://xmlns.com/foaf/0.1/familyName> "Moor" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115197> <http://xmlns.com/foaf/0.1/familyName> "Swift" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114555> <http://xmlns.com/foaf/0.1/givenName> "Wolfgang" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114398> <http://xmlns.com/foaf/0.1/givenName> "C. Samuel" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114210> <http://xmlns.com/foaf/0.1/familyName> "Slavens" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114738> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114883> <http://xmlns.com/foaf/0.1/familyName> "Milevski" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060219> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060102> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114255> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114740> <http://xmlns.com/foaf/0.1/familyName> "Hamill" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114237> <http://xmlns.com/foaf/0.1/givenName> "E. F." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115373> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114809> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114127> <http://xmlns.com/foaf/0.1/familyName> "Main" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114495> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060203> <http://xmlns.com/foaf/0.1/givenName> "Seung-Hee" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114883> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115206> <http://xmlns.com/foaf/0.1/familyName> "Parker" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114077> <http://xmlns.com/foaf/0.1/familyName> "Nowicki" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115194> <http://xmlns.com/foaf/0.1/givenName> "Julie M." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114259> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114010> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0606> <http://xmlns.com/foaf/0.1/familyName> "Sakaike" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114892> <http://xmlns.com/foaf/0.1/givenName> "Laurence B." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060214> <http://xmlns.com/foaf/0.1/givenName> "C." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115369> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114794> <http://xmlns.com/foaf/0.1/givenName> "John" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114224> <http://xmlns.com/foaf/0.1/familyName> "Tagliacozzo" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115085> <http://xmlns.com/foaf/0.1/givenName> "John T." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114480> <http://xmlns.com/foaf/0.1/familyName> "Anderson" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060232> <http://xmlns.com/foaf/0.1/givenName> "Yunsub" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114312> <http://xmlns.com/foaf/0.1/givenName> "N. M." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114286> <http://xmlns.com/foaf/0.1/givenName> "M." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114335> <http://xmlns.com/foaf/0.1/givenName> "Frances" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060169> <http://xmlns.com/foaf/0.1/givenName> "DuPont" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114998> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114469> <http://xmlns.com/foaf/0.1/givenName> "Michael R. W." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114292> <http://xmlns.com/foaf/0.1/givenName> "M. H." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114889> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114611> <http://xmlns.com/foaf/0.1/givenName> "K. Leon" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114459> <http://xmlns.com/foaf/0.1/familyName> "Stanton" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114270> <http://xmlns.com/foaf/0.1/givenName> "Peter B." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115361> <http://xmlns.com/foaf/0.1/familyName> "Thom" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114520> <http://xmlns.com/foaf/0.1/givenName> "Lois F." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114625> <http://xmlns.com/foaf/0.1/givenName> "L." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114720> <http://xmlns.com/foaf/0.1/givenName> "Eugene F." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114550> <http://xmlns.com/foaf/0.1/familyName> "Meadow" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114208> <http://xmlns.com/foaf/0.1/familyName> "Starks" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114554> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114815> <http://xmlns.com/foaf/0.1/familyName> "Gupta" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0622025635> <http://xmlns.com/foaf/0.1/familyName> "Gasperini" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060183> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114352> <http://xmlns.com/foaf/0.1/givenName> "Kingsley R." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114633> <http://xmlns.com/foaf/0.1/familyName> "Fugmann" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115042> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114762> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115372> <http://xmlns.com/foaf/0.1/givenName> "Jean A." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06302019> <http://xmlns.com/foaf/0.1/givenName> "Anita" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/061107327> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114551> <http://xmlns.com/foaf/0.1/givenName> "A." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114113> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115267> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/061308112> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0613026670> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114247> <http://xmlns.com/foaf/0.1/familyName> "Williams" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115370> <http://xmlns.com/foaf/0.1/familyName> "Abed" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114971> <http://xmlns.com/foaf/0.1/givenName> "C." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115127> <http://xmlns.com/foaf/0.1/givenName> "Timothy C." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115076> <http://xmlns.com/foaf/0.1/givenName> "Peter" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06027> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115214> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115174> <http://xmlns.com/foaf/0.1/givenName> "Susan" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114746> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/064020965> <http://xmlns.com/foaf/0.1/familyName> "Buckland" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114314> <http://xmlns.com/foaf/0.1/familyName> "Young" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114485> <http://xmlns.com/foaf/0.1/familyName> "Sandison" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114548> <http://xmlns.com/foaf/0.1/givenName> "Richard C." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114489> <http://xmlns.com/foaf/0.1/familyName> "Salasin" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060113> <http://xmlns.com/foaf/0.1/familyName> "Rokkas" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114704> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115227> <http://xmlns.com/foaf/0.1/givenName> "Derek De Solla" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114214> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114541> <http://xmlns.com/foaf/0.1/givenName> "William S." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115093> <http://xmlns.com/foaf/0.1/familyName> "Benenfeld" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114095> <http://xmlns.com/foaf/0.1/familyName> "Allan" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114913> <http://xmlns.com/foaf/0.1/familyName> "Schultheisz" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114420> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06042> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114380> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114048> <http://xmlns.com/foaf/0.1/familyName> "Larson" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114507> <http://xmlns.com/foaf/0.1/givenName> "Peter" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114947> <http://xmlns.com/foaf/0.1/givenName> "Elizabeth S." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114277> <http://xmlns.com/foaf/0.1/givenName> "Howard M." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114845> <http://xmlns.com/foaf/0.1/givenName> "Philip M." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060102> <http://xmlns.com/foaf/0.1/givenName> "Takashi" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114989> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060178> <http://xmlns.com/foaf/0.1/familyName> "Suzuki" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060121> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114013> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114490> <http://xmlns.com/foaf/0.1/givenName> "T." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114920> <http://xmlns.com/foaf/0.1/familyName> "Neway" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114509> <http://xmlns.com/foaf/0.1/familyName> "Holt" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114237> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114966> <http://xmlns.com/foaf/0.1/givenName> "C. R." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114935> <http://xmlns.com/foaf/0.1/givenName> "Marilyn M." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114279> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114532> <http://xmlns.com/foaf/0.1/familyName> "Cooper" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114856> <http://xmlns.com/foaf/0.1/familyName> "Jordan" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114319> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114595> <http://xmlns.com/foaf/0.1/givenName> "Wilson I. B." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115222> <http://xmlns.com/foaf/0.1/familyName> "Diener" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114158> <http://xmlns.com/foaf/0.1/familyName> "Kearney" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0610116001> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/0610136871> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06017> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114813> <http://xmlns.com/foaf/0.1/givenName> "James" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060118> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114776> <http://xmlns.com/foaf/0.1/familyName> "Griffith" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115041> <http://xmlns.com/foaf/0.1/familyName> "Boyce" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114689> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114661> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114575> <http://xmlns.com/foaf/0.1/familyName> "Cole" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115056> <http://xmlns.com/foaf/0.1/givenName> "Jerome T." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115093> <http://xmlns.com/foaf/0.1/givenName> "Alan R." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115292> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115144> <http://xmlns.com/foaf/0.1/familyName> "Longo" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115359> <http://xmlns.com/foaf/0.1/familyName> "Corley" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114949> <http://xmlns.com/foaf/0.1/familyName> "Foulk" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114843> <http://xmlns.com/foaf/0.1/givenName> "Paul De" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114754> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115361> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114595> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0609> <http://xmlns.com/foaf/0.1/givenName> "Ulf" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114671> <http://xmlns.com/foaf/0.1/familyName> "Williams" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060142> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115139> <http://xmlns.com/foaf/0.1/givenName> "A." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114814> <http://xmlns.com/foaf/0.1/givenName> "John" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114672> <http://xmlns.com/foaf/0.1/givenName> "Dagobert" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06220102410> <http://xmlns.com/foaf/0.1/familyName> "Usdin" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060167> <http://xmlns.com/foaf/0.1/familyName> "Marincola" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115174> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060196> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114211> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060184> <http://xmlns.com/foaf/0.1/givenName> "Angelo" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114124> <http://xmlns.com/foaf/0.1/familyName> "Mahapatra" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115003> <http://xmlns.com/foaf/0.1/givenName> "Bruce C." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115166> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114807> <http://xmlns.com/foaf/0.1/givenName> "Ruth N." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114713> <http://xmlns.com/foaf/0.1/familyName> "Wellisch" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114957> <http://xmlns.com/foaf/0.1/familyName> "Williams" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115147> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060234> <http://xmlns.com/foaf/0.1/givenName> "Peter" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114904> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06023> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115149> <http://xmlns.com/foaf/0.1/givenName> "Judith" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115279> <http://xmlns.com/foaf/0.1/givenName> "Robert T." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114702> <http://xmlns.com/foaf/0.1/familyName> "Marton" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060114> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114616> <http://xmlns.com/foaf/0.1/familyName> "Davis" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114693> <http://xmlns.com/foaf/0.1/familyName> "Nickelsen" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114248> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060230> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115348> <http://xmlns.com/foaf/0.1/givenName> "Holly Brügge" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114032> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115338> <http://xmlns.com/foaf/0.1/givenName> "Stephen P." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115321> <http://xmlns.com/foaf/0.1/familyName> "Kantor" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115308> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114612> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060102> <http://xmlns.com/foaf/0.1/familyName> "Kohno" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114016> <http://xmlns.com/foaf/0.1/familyName> "Liesener" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114300> <http://xmlns.com/foaf/0.1/familyName> "Delorenzo" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114622> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/061208240> <http://xmlns.com/foaf/0.1/familyName> "Tekaia" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114249> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115375> <http://xmlns.com/foaf/0.1/givenName> "Doris L." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115286> <http://xmlns.com/foaf/0.1/familyName> "Brodie" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114860> <http://xmlns.com/foaf/0.1/familyName> "Garfield" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114483> <http://xmlns.com/foaf/0.1/givenName> "Paul B." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114378> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114803> <http://xmlns.com/foaf/0.1/familyName> "Yeates" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114708> <http://xmlns.com/foaf/0.1/givenName> "Clement T." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06014> <http://xmlns.com/foaf/0.1/familyName> "Fung" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114914> <http://xmlns.com/foaf/0.1/givenName> "Marc" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115073> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0603914> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0622025635> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114621> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114290> <http://xmlns.com/foaf/0.1/givenName> "Donald T." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114384> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115096> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114090> <http://xmlns.com/foaf/0.1/givenName> "Carol C." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060118> <http://xmlns.com/foaf/0.1/familyName> "Iishi" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06043> <http://xmlns.com/foaf/0.1/givenName> "Eduardo L." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114512> <http://xmlns.com/foaf/0.1/familyName> "Sandison" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115380> <http://xmlns.com/foaf/0.1/familyName> "Hill" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115096> <http://xmlns.com/foaf/0.1/givenName> "Peter J." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114310> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114147> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114261> <http://xmlns.com/foaf/0.1/familyName> "Jones" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060665> <http://xmlns.com/foaf/0.1/familyName> "Yeh" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114408> <http://xmlns.com/foaf/0.1/familyName> "Kirson" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114460> <http://xmlns.com/foaf/0.1/familyName> "Fryser" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060134> <http://xmlns.com/foaf/0.1/givenName> "Matthew S." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06030> <http://xmlns.com/foaf/0.1/givenName> "Sue E." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114685> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115231> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114227> <http://xmlns.com/foaf/0.1/familyName> "Lancaster" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114194> <http://xmlns.com/foaf/0.1/givenName> "Charles T." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115028> <http://xmlns.com/foaf/0.1/givenName> "J." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0640943> <http://xmlns.com/foaf/0.1/familyName> "Fischhoff" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114597> <http://xmlns.com/foaf/0.1/familyName> "Praunlich" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115284> <http://xmlns.com/foaf/0.1/givenName> "Grace T." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114836> <http://xmlns.com/foaf/0.1/familyName> "Vickery" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114271> <http://xmlns.com/foaf/0.1/givenName> "Martha E." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114880> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115109> <http://xmlns.com/foaf/0.1/familyName> "Prabha" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114727> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114078> <http://xmlns.com/foaf/0.1/familyName> "Golashvili" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114663> <http://xmlns.com/foaf/0.1/familyName> "Marcus" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0610146> <http://xmlns.com/foaf/0.1/familyName> "Robertson" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114662> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114801> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060130> <http://xmlns.com/foaf/0.1/familyName> "Boivin-Angèle" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114240> <http://xmlns.com/foaf/0.1/familyName> "Jones" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114092> <http://xmlns.com/foaf/0.1/familyName> "Jerman" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114079> <http://xmlns.com/foaf/0.1/givenName> "Jerry R." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0603910> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114669> <http://xmlns.com/foaf/0.1/familyName> "Kantor" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115025> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060187> <http://xmlns.com/foaf/0.1/givenName> "Luisa" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114273> <http://xmlns.com/foaf/0.1/familyName> "Studer" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060223> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114869> <http://xmlns.com/foaf/0.1/givenName> "Dagobert" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114372> <http://xmlns.com/foaf/0.1/familyName> "Salton" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115352> <http://xmlns.com/foaf/0.1/givenName> "Carolyn" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115196> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114787> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114232> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115288> <http://xmlns.com/foaf/0.1/familyName> "Bernier" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114724> <http://xmlns.com/foaf/0.1/givenName> "Charles T." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114164> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114123> <http://xmlns.com/foaf/0.1/familyName> "Brooks" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114167> <http://xmlns.com/foaf/0.1/givenName> "G." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114172> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06049> <http://xmlns.com/foaf/0.1/familyName> "Wilson" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114722> <http://xmlns.com/foaf/0.1/familyName> "White" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114865> <http://xmlns.com/foaf/0.1/familyName> "McGill" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114941> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114626> <http://xmlns.com/foaf/0.1/givenName> "Guilbert C." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115187> <http://xmlns.com/foaf/0.1/familyName> "Jones" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114431> <http://xmlns.com/foaf/0.1/givenName> "Peter" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060128> <http://xmlns.com/foaf/0.1/givenName> "Joan E." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06056> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114894> <http://xmlns.com/foaf/0.1/familyName> "Clelland" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/062014518> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114972> <http://xmlns.com/foaf/0.1/familyName> "Fox" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114596> <http://xmlns.com/foaf/0.1/familyName> "Cornell" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06059> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114843> <http://xmlns.com/foaf/0.1/familyName> "Haen" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06502569> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115129> <http://xmlns.com/foaf/0.1/familyName> "Carpenter" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115306> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114159> <http://xmlns.com/foaf/0.1/givenName> "Bonnie M." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114976> <http://xmlns.com/foaf/0.1/familyName> "Drott" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114499> <http://xmlns.com/foaf/0.1/familyName> "Nakayama" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114846> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114109> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114726> <http://xmlns.com/foaf/0.1/givenName> "A. Majid" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114479> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114068> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060202> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115244> <http://xmlns.com/foaf/0.1/givenName> "R." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06074> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114854> <http://xmlns.com/foaf/0.1/familyName> "Nadziejka" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115093> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115355> <http://xmlns.com/foaf/0.1/givenName> "Anthony" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114013> <http://xmlns.com/foaf/0.1/givenName> "Susan" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114197> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114439> <http://xmlns.com/foaf/0.1/givenName> "William B." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060148> <http://xmlns.com/foaf/0.1/givenName> "Kenneth" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114347> <http://xmlns.com/foaf/0.1/familyName> "Krauze" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114529> <http://xmlns.com/foaf/0.1/familyName> "Neeley" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115005> <http://xmlns.com/foaf/0.1/familyName> "Peritz" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115265> <http://xmlns.com/foaf/0.1/familyName> "Landry" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115351> <http://xmlns.com/foaf/0.1/familyName> "Tooey" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114233> <http://xmlns.com/foaf/0.1/familyName> "Rush" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114188> <http://xmlns.com/foaf/0.1/familyName> "Helmuth" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114379> <http://xmlns.com/foaf/0.1/familyName> "Hilliker" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114650> <http://xmlns.com/foaf/0.1/givenName> "Libena" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114902> <http://xmlns.com/foaf/0.1/familyName> "Williamson" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115199> <http://xmlns.com/foaf/0.1/familyName> "Bramer" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114056> <http://xmlns.com/foaf/0.1/familyName> "Bennett" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115252> <http://xmlns.com/foaf/0.1/familyName> "Ginski" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114454> <http://xmlns.com/foaf/0.1/givenName> "C. F." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115089> <http://xmlns.com/foaf/0.1/givenName> "Ann S." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114277> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06057> <http://xmlns.com/foaf/0.1/givenName> "Jinn-Shium" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060215> <http://xmlns.com/foaf/0.1/familyName> "Bonini" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06508499> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115189> <http://xmlns.com/foaf/0.1/givenName> "C. R." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115073> <http://xmlns.com/foaf/0.1/familyName> "Harter" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114150> <http://xmlns.com/foaf/0.1/familyName> "Katzer" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114479> <http://xmlns.com/foaf/0.1/familyName> "Kwok" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06029> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060109> <http://xmlns.com/foaf/0.1/familyName> "Ochiai" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115097> <http://xmlns.com/foaf/0.1/familyName> "Cooper" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114545> <http://xmlns.com/foaf/0.1/familyName> "Johns" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114431> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115071> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06047> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114706> <http://xmlns.com/foaf/0.1/givenName> "Patricia N." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060154> <http://xmlns.com/foaf/0.1/givenName> "Elisabeth" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/064020965> <http://purl.org/spar/datacite/hasIdentifier> <https://w3id.org/oc/meta/id/064040482> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114460> <http://xmlns.com/foaf/0.1/givenName> "Benjamin S." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114152> <http://xmlns.com/foaf/0.1/familyName> "Barber" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114021> <http://xmlns.com/foaf/0.1/givenName> "Charles H." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0607> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114570> <http://xmlns.com/foaf/0.1/givenName> "Glynn" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115265> <http://xmlns.com/foaf/0.1/givenName> "Bertrand C." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114054> <http://xmlns.com/foaf/0.1/givenName> "Charles T." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114442> <http://xmlns.com/foaf/0.1/givenName> "Mark P." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115365> <http://xmlns.com/foaf/0.1/givenName> "Jan L." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114038> <http://xmlns.com/foaf/0.1/familyName> "Triscari" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114409> <http://xmlns.com/foaf/0.1/givenName> "Eleanor D." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06027> <http://xmlns.com/foaf/0.1/familyName> "Powles" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114719> <http://xmlns.com/foaf/0.1/familyName> "Allen" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114748> <http://xmlns.com/foaf/0.1/givenName> "Starr Roxanne" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114969> <http://xmlns.com/foaf/0.1/givenName> "Laurence" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115239> <http://xmlns.com/foaf/0.1/familyName> "Cepanec" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0603909> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114682> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115365> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114766> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114424> <http://xmlns.com/foaf/0.1/familyName> "Zaltman" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114789> <http://xmlns.com/foaf/0.1/familyName> "Baum" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060107> <http://xmlns.com/foaf/0.1/familyName> "Yoshimura" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114238> <http://xmlns.com/foaf/0.1/givenName> "David M." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114841> <http://xmlns.com/foaf/0.1/familyName> "Matheson" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114497> <http://xmlns.com/foaf/0.1/givenName> "L. L." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114599> <http://xmlns.com/foaf/0.1/givenName> "Charles T." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114815> <http://xmlns.com/foaf/0.1/givenName> "A. B." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060239> <http://xmlns.com/foaf/0.1/familyName> "Beyermann" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115117> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114088> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114521> <http://xmlns.com/foaf/0.1/familyName> "Line" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115064> <http://xmlns.com/foaf/0.1/givenName> "Charles L." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060116> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114137> <http://xmlns.com/foaf/0.1/familyName> "Williams" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114651> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114741> <http://xmlns.com/foaf/0.1/familyName> "Warner" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06088> <http://xmlns.com/foaf/0.1/givenName> "Klaus" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114137> <http://xmlns.com/foaf/0.1/givenName> "J. H." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114494> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114864> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114751> <http://xmlns.com/foaf/0.1/givenName> "Wim" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115237> <http://xmlns.com/foaf/0.1/familyName> "Minker" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114094> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115124> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114901> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114820> <http://xmlns.com/foaf/0.1/givenName> "Michael D." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114005> <http://xmlns.com/foaf/0.1/givenName> "Hilary D." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115362> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114335> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114109> <http://xmlns.com/foaf/0.1/familyName> "Cozzens" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114680> <http://xmlns.com/foaf/0.1/givenName> "Richard C." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115247> <http://xmlns.com/foaf/0.1/givenName> "Rudolf J." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060183> <http://xmlns.com/foaf/0.1/givenName> "Domenico" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114497> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06033> <http://xmlns.com/foaf/0.1/givenName> "Lily" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115209> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115180> <http://xmlns.com/foaf/0.1/givenName> "Miranda Lee" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114268> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114700> <http://xmlns.com/foaf/0.1/familyName> "Davis" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06046> <http://xmlns.com/foaf/0.1/familyName> "Arella" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114169> <http://xmlns.com/foaf/0.1/givenName> "Emil H." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114139> <http://xmlns.com/foaf/0.1/familyName> "Svenonius" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114427> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114699> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115076> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114039> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114436> <http://xmlns.com/foaf/0.1/givenName> "Donald H." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115034> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060218> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114965> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114482> <http://xmlns.com/foaf/0.1/givenName> "Paul" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114463> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115331> <http://xmlns.com/foaf/0.1/familyName> "Fidel" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114921> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115008> <http://xmlns.com/foaf/0.1/givenName> "A. Patricia" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114564> <http://xmlns.com/foaf/0.1/givenName> "W. Bruce" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115311> <http://xmlns.com/foaf/0.1/givenName> "Roy" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060205> <http://xmlns.com/foaf/0.1/givenName> "Hyeong-Reh Choi" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06087> <http://xmlns.com/foaf/0.1/familyName> "Rucklidge" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060215> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114731> <http://xmlns.com/foaf/0.1/familyName> "Marcus" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06083> <http://xmlns.com/foaf/0.1/familyName> "Engebraaten" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114954> <http://xmlns.com/foaf/0.1/familyName> "Conry" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114351> <http://xmlns.com/foaf/0.1/givenName> "Karen Sparck" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114505> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114851> <http://xmlns.com/foaf/0.1/givenName> "Stephen A." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114393> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115077> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114494> <http://xmlns.com/foaf/0.1/givenName> "Daniel L." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06018> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114588> <http://xmlns.com/foaf/0.1/familyName> "Bates" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115089> <http://xmlns.com/foaf/0.1/familyName> "Gray" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115005> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115206> <http://xmlns.com/foaf/0.1/givenName> "Lorraine M. Purgailis" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114553> <http://xmlns.com/foaf/0.1/givenName> "Peter" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114737> <http://xmlns.com/foaf/0.1/familyName> "Lawrence" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114161> <http://xmlns.com/foaf/0.1/givenName> "Ralph M." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06092> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115181> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114899> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114891> <http://xmlns.com/foaf/0.1/givenName> "Eugene" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06089> <http://xmlns.com/foaf/0.1/givenName> "Rolf" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115256> <http://xmlns.com/foaf/0.1/givenName> "Neville" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0622025785> <http://xmlns.com/foaf/0.1/familyName> "Zamora" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114456> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115062> <http://xmlns.com/foaf/0.1/familyName> "Martin" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115354> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0690346> <http://xmlns.com/foaf/0.1/familyName> "Somasundaram" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114948> <http://xmlns.com/foaf/0.1/familyName> "Yovits" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115012> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114396> <http://xmlns.com/foaf/0.1/givenName> "Chai" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115001> <http://xmlns.com/foaf/0.1/familyName> "McCarn" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/0640943> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114875> <http://xmlns.com/foaf/0.1/familyName> "Baratz" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114083> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114333> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114987> <http://xmlns.com/foaf/0.1/familyName> "Dronberger" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114516> <http://xmlns.com/foaf/0.1/givenName> "Chong K." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114031> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115363> <http://xmlns.com/foaf/0.1/givenName> "A. Neil" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114918> <http://xmlns.com/foaf/0.1/familyName> "Bender" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115244> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114481> <http://xmlns.com/foaf/0.1/familyName> "Narin" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06020> <http://xmlns.com/foaf/0.1/familyName> "Gupta" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114623> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114465> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/060195> <http://xmlns.com/foaf/0.1/familyName> "Pradinaud" <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150114446> <http://xmlns.com/foaf/0.1/givenName> "Charles M." <https://w3id.org/oc/meta/ra/> .
+<https://w3id.org/oc/meta/ra/06150115039> <http://xmlns.com/foaf/0.1/givenName> "John E." <https://w3id.org/oc/meta/ra/> .
