@@ -150,7 +150,7 @@ def validate_new_triple(subject, predicate, new_value, old_value = None):
         old_value = [triple[2] for triple in data_graph.triples((URIRef(subject), URIRef(predicate), None)) if str(triple[2]) == str(old_value)][0]
     query = f"""
         PREFIX sh: <http://www.w3.org/ns/shacl#>
-        SELECT DISTINCT ?datatype ?a_class ?classIn WHERE {{
+        SELECT DISTINCT ?property ?datatype ?a_class ?classIn WHERE {{
             ?shape sh:targetClass ?type ;
                 sh:property ?property .
             VALUES ?type {{<{'> <'.join(s_types)}>}}
@@ -170,20 +170,26 @@ def validate_new_triple(subject, predicate, new_value, old_value = None):
         }}
     """
     results = shacl.query(query)
+    property_exists = [row.property for row in results]
+    if not property_exists:
+        return None, old_value, gettext('The property %(predicate)s is not allowed for resources of type %(s_type)s', predicate=filter.human_readable_predicate(predicate), s_type=filter.human_readable_predicate(s_types[0]))
     datatypes = [row.datatype for row in results]
     classes = [row.a_class for row in results if row.a_class]
     classes.extend([row.classIn for row in results if row.classIn])
     if classes:
         if not validators.url(new_value):
-            return None, old_value, gettext('The provided value is invalid. Please ensure it matches the required format')
-        new_value = convert_to_matching_class(new_value, classes)
-        if new_value is None:
-            return None, old_value, gettext('The provided value is invalid. Please ensure it matches the required format')
+            return None, old_value, gettext('<code>%(new_value)s</code> is not a valid value. The <code>%(property)s</code> property requires values of type %(o_types)s', new_value=filter.human_readable_predicate(new_value), property=filter.human_readable_predicate(predicate), o_types=', '.join([f'<code>{filter.human_readable_predicate(o_class)}</code>' for o_class in classes]))
+        valid_value = convert_to_matching_class(new_value, classes)
+        if valid_value is None:
+            return None, old_value, gettext('<code>%(new_value)s</code> is not a valid value. The <code>%(property)s</code> property requires values of type %(o_types)s', new_value=filter.human_readable_predicate(new_value), property=filter.human_readable_predicate(predicate), o_types=', '.join([f'<code>{filter.human_readable_predicate(o_class)}</code>' for o_class in classes]))
+        return valid_value, old_value, ''
     elif datatypes:
-        new_value = convert_to_matching_literal(new_value, datatypes)
-        if new_value is None:
-            return None, old_value, gettext('The provided value is invalid. Please ensure it matches the required format')
-    return new_value, old_value, ''
+        valid_value = convert_to_matching_literal(new_value, datatypes)
+        if valid_value is None:
+            return None, old_value, gettext('<code>%(new_value)s</code> is not a valid value. The <code>%(property)s</code> property requires values of type %(o_types)s', new_value=filter.human_readable_predicate(new_value), property=filter.human_readable_predicate(predicate), o_types=', '.join([f'<code>{filter.human_readable_predicate(datatype)}</code>' for datatype in datatypes]))
+        return valid_value, old_value, ''
+    valid_value = URIRef(new_value) if validators.url(new_value) else Literal(new_value)
+    return valid_value, old_value, ''
 
 def fetch_data_graph_for_subject(subject_uri):
     """

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  1.0\n"
 "Report-Msgid-Bugs-To: arcangelo.massari@unibo.it\n"
-"POT-Creation-Date: 2023-09-14 13:07+0200\n"
+"POT-Creation-Date: 2023-09-16 13:17+0200\n"
 "PO-Revision-Date: 2023-09-09 15:01+0200\n"
 "Last-Translator: Arcangelo Massari <arcangelo.massari@unibo.it>\n"
 "Language: en\n"
@@ -18,44 +18,56 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.12.1\n"
 
-#: edit_sphere/app.py:158 edit_sphere/templates/entity_version.jinja:91
+#: edit_sphere/app.py:175
+#, python-format
+msgid "The property %(predicate)s is not allowed for resources of type %(s_type)s"
+msgstr ""
+
+#: edit_sphere/app.py:181 edit_sphere/app.py:184 edit_sphere/app.py:189
+#, python-format
+msgid ""
+"<code>%(new_value)s</code> is not a valid value. The "
+"<code>%(property)s</code> property requires values of type %(o_types)s"
+msgstr ""
+
+#: edit_sphere/app.py:287 edit_sphere/templates/entity_version.jinja:91
 msgid "Unknown"
 msgstr ""
 
-#: edit_sphere/app.py:168 edit_sphere/app.py:175
+#: edit_sphere/app.py:297 edit_sphere/app.py:304
 #: edit_sphere/templates/entity_version.jinja:5
 msgid "Definition of the property"
 msgstr ""
 
-#: edit_sphere/app.py:190
+#: edit_sphere/app.py:319
 msgid "Snapshot"
 msgstr ""
 
-#: edit_sphere/app.py:192
+#: edit_sphere/app.py:321
 msgid "Responsible agent"
 msgstr ""
 
-#: edit_sphere/app.py:193 edit_sphere/templates/entity_version.jinja:91
+#: edit_sphere/app.py:322 edit_sphere/templates/entity_version.jinja:91
 msgid "Primary source"
 msgstr ""
 
-#: edit_sphere/app.py:194 edit_sphere/templates/entity_version.jinja:93
+#: edit_sphere/app.py:323 edit_sphere/templates/entity_version.jinja:93
 msgid "Description"
 msgstr ""
 
-#: edit_sphere/app.py:223
+#: edit_sphere/app.py:352
 msgid "View version"
 msgstr ""
 
-#: edit_sphere/app.py:230
+#: edit_sphere/app.py:359
 msgid "Version history for"
 msgstr ""
 
-#: edit_sphere/app.py:318 edit_sphere/app.py:322
+#: edit_sphere/app.py:447 edit_sphere/app.py:451
 msgid "Deletions"
 msgstr ""
 
-#: edit_sphere/app.py:318 edit_sphere/app.py:324
+#: edit_sphere/app.py:447 edit_sphere/app.py:453
 msgid "Additions"
 msgstr ""
 
@@ -94,7 +106,7 @@ msgid "of"
 msgstr ""
 
 #: edit_sphere/templates/entity_version.jinja:39
-#: edit_sphere/templates/triples.jinja:87
+#: edit_sphere/templates/triples.jinja:91
 msgid "Time machine"
 msgstr ""
 
@@ -140,7 +152,7 @@ msgid "Links to other resources"
 msgstr ""
 
 #: edit_sphere/templates/entity_version.jinja:145
-#: edit_sphere/templates/triples.jinja:120
+#: edit_sphere/templates/triples.jinja:124
 msgid "There is no information related to this entity in the dataset"
 msgstr ""
 
@@ -175,84 +187,84 @@ msgid "Update"
 msgstr ""
 
 #: edit_sphere/templates/triples.jinja:33
-#: edit_sphere/templates/triples.jinja:72
-#: edit_sphere/templates/triples.jinja:136
+#: edit_sphere/templates/triples.jinja:66
+#: edit_sphere/templates/triples.jinja:140
 msgid "Cancel"
 msgstr ""
 
-#: edit_sphere/templates/triples.jinja:52
-#: edit_sphere/templates/triples.jinja:123
+#: edit_sphere/templates/triples.jinja:54
+#: edit_sphere/templates/triples.jinja:127
 msgid "Add a new piece of information"
 msgstr ""
 
-#: edit_sphere/templates/triples.jinja:67
-#: edit_sphere/templates/triples.jinja:131
+#: edit_sphere/templates/triples.jinja:61
+#: edit_sphere/templates/triples.jinja:135
 msgid "Value"
 msgstr ""
 
-#: edit_sphere/templates/triples.jinja:71
-#: edit_sphere/templates/triples.jinja:135
+#: edit_sphere/templates/triples.jinja:65
+#: edit_sphere/templates/triples.jinja:139
 msgid "Add"
 msgstr ""
 
-#: edit_sphere/templates/triples.jinja:82
+#: edit_sphere/templates/triples.jinja:76
 msgid "About"
 msgstr ""
 
-#: edit_sphere/templates/triples.jinja:104
+#: edit_sphere/templates/triples.jinja:108
 msgid "attributes"
 msgstr ""
 
-#: edit_sphere/templates/triples.jinja:104
+#: edit_sphere/templates/triples.jinja:108
 msgid "links to other resources"
 msgstr ""
 
-#: edit_sphere/templates/triples.jinja:121
+#: edit_sphere/templates/triples.jinja:125
 msgid "Add new link"
 msgstr ""
 
-#: edit_sphere/templates/triples.jinja:121
+#: edit_sphere/templates/triples.jinja:125
 msgid "Let's add some metadata"
 msgstr ""
 
-#: edit_sphere/templates/triples.jinja:127
+#: edit_sphere/templates/triples.jinja:131
 msgid "Property"
 msgstr ""
 
-#: edit_sphere/templates/triples.jinja:156
-#: edit_sphere/templates/triples.jinja:208
+#: edit_sphere/templates/triples.jinja:164
+#: edit_sphere/templates/triples.jinja:216
 msgid "Warning"
 msgstr ""
 
-#: edit_sphere/templates/triples.jinja:157
+#: edit_sphere/templates/triples.jinja:165
 msgid ""
 "You cannot add more properties; the limit for each property has been "
 "reached"
 msgstr ""
 
-#: edit_sphere/templates/triples.jinja:182
+#: edit_sphere/templates/triples.jinja:190
 msgid "Are you sure?"
 msgstr ""
 
-#: edit_sphere/templates/triples.jinja:183
+#: edit_sphere/templates/triples.jinja:191
 msgid ""
 "You are about to delete this information. In any case, it will be "
 "possible to restore it"
 msgstr ""
 
-#: edit_sphere/templates/triples.jinja:188
+#: edit_sphere/templates/triples.jinja:196
 msgid "Yes, delete it!"
 msgstr ""
 
-#: edit_sphere/templates/triples.jinja:197
+#: edit_sphere/templates/triples.jinja:205
 msgid "Deleted!"
 msgstr ""
 
-#: edit_sphere/templates/triples.jinja:198
+#: edit_sphere/templates/triples.jinja:206
 msgid "The data was deleted correctly"
 msgstr ""
 
-#: edit_sphere/templates/triples.jinja:209
+#: edit_sphere/templates/triples.jinja:217
 msgid "This property is mandatory and cannot be deleted"
 msgstr ""
 
