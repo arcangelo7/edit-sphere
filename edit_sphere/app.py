@@ -123,6 +123,12 @@ def delete_triple():
     subject = request.form.get('subject')
     predicate = request.form.get('predicate')
     object_value = request.form.get('object')
+    if shacl:
+        data_graph = fetch_data_graph_for_subject(subject)
+        _, can_be_deleted, _ = get_valid_predicates(list(data_graph.triples((None, None, None))))
+        if predicate not in can_be_deleted:
+            flash(gettext('This property cannot be deleted'))
+            return redirect(url_for('show_triples', subject=subject))
     editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'])
     editor.delete(subject, predicate, object_value)
     return redirect(url_for('show_triples', subject=subject))
@@ -133,6 +139,11 @@ def add_triple():
     predicate = request.form.get('predicate')
     object_value = request.form.get('object')
     if shacl:
+        data_graph = fetch_data_graph_for_subject(subject)
+        can_be_added, _, _ = get_valid_predicates(list(data_graph.triples((None, None, None))))
+        if predicate not in can_be_added and URIRef(predicate) in data_graph.predicates():
+            flash(gettext('This resource cannot have any other %(predicate)s properties', predicate=filter.human_readable_predicate(predicate)))
+            return redirect(url_for('show_triples', subject=subject))
         object_value, _, report_text = validate_new_triple(subject, predicate, object_value)
         if object_value is None:
             flash(report_text)
@@ -197,11 +208,10 @@ def fetch_data_graph_for_subject(subject_uri):
     """
     query_str = f'''
         CONSTRUCT {{
-            ?s ?p ?o .
+            <{subject_uri}> ?p ?o .
         }}
         WHERE {{
             <{subject_uri}> ?p ?o .
-            ?s ?p ?o .
         }}
     '''
     sparql.setQuery(query_str)
@@ -469,11 +479,18 @@ def prioritize_datatype(datatypes):
     return DATATYPE_MAPPING[0][0]
 
 def get_valid_predicates(triples):
-    existing_predicates = [triple['predicate']['value'] for triple in triples]
+    def extract_type(triple):
+        if 'object' in triple:
+            if 'predicate' in triple and triple['predicate']['value'] == str(RDF.type):
+                return triple['object']['value']
+        elif triple[1] == RDF.type:
+            return triple[2]
+        return None
+    existing_predicates = [triple['predicate']['value'] if 'predicate' in triple else triple[1] for triple in triples]
     predicate_counts = {predicate: existing_predicates.count(predicate) for predicate in set(existing_predicates)}
     if not shacl:
         return None, None, None
-    s_types = [triple['object']['value'] for triple in triples if triple['predicate']['value'] == str(RDF.type)]
+    s_types = [extract_type(triple) for triple in triples if extract_type(triple) is not None]
     if not s_types:
         return None, None, None
     query = prepareQuery(f"""

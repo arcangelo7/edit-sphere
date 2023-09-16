@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  1.0\n"
 "Report-Msgid-Bugs-To: arcangelo.massari@unibo.it\n"
-"POT-Creation-Date: 2023-09-16 13:17+0200\n"
+"POT-Creation-Date: 2023-09-16 19:28+0200\n"
 "PO-Revision-Date: 2023-09-09 15:01+0200\n"
 "Last-Translator: Arcangelo Massari <arcangelo.massari@unibo.it>\n"
 "Language: en\n"
@@ -18,56 +18,65 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.12.1\n"
 
-#: edit_sphere/app.py:175
+#: edit_sphere/app.py:129
+msgid "This property cannot be deleted"
+msgstr ""
+
+#: edit_sphere/app.py:143
+#, python-format
+msgid "This resource cannot have any other %(predicate)s properties"
+msgstr ""
+
+#: edit_sphere/app.py:185
 #, python-format
 msgid "The property %(predicate)s is not allowed for resources of type %(s_type)s"
 msgstr ""
 
-#: edit_sphere/app.py:181 edit_sphere/app.py:184 edit_sphere/app.py:189
+#: edit_sphere/app.py:191 edit_sphere/app.py:194 edit_sphere/app.py:199
 #, python-format
 msgid ""
 "<code>%(new_value)s</code> is not a valid value. The "
 "<code>%(property)s</code> property requires values of type %(o_types)s"
 msgstr ""
 
-#: edit_sphere/app.py:287 edit_sphere/templates/entity_version.jinja:91
+#: edit_sphere/app.py:296 edit_sphere/templates/entity_version.jinja:91
 msgid "Unknown"
 msgstr ""
 
-#: edit_sphere/app.py:297 edit_sphere/app.py:304
+#: edit_sphere/app.py:306 edit_sphere/app.py:313
 #: edit_sphere/templates/entity_version.jinja:5
 msgid "Definition of the property"
 msgstr ""
 
-#: edit_sphere/app.py:319
+#: edit_sphere/app.py:328
 msgid "Snapshot"
 msgstr ""
 
-#: edit_sphere/app.py:321
+#: edit_sphere/app.py:330
 msgid "Responsible agent"
 msgstr ""
 
-#: edit_sphere/app.py:322 edit_sphere/templates/entity_version.jinja:91
+#: edit_sphere/app.py:331 edit_sphere/templates/entity_version.jinja:91
 msgid "Primary source"
 msgstr ""
 
-#: edit_sphere/app.py:323 edit_sphere/templates/entity_version.jinja:93
+#: edit_sphere/app.py:332 edit_sphere/templates/entity_version.jinja:93
 msgid "Description"
 msgstr ""
 
-#: edit_sphere/app.py:352
+#: edit_sphere/app.py:361
 msgid "View version"
 msgstr ""
 
-#: edit_sphere/app.py:359
+#: edit_sphere/app.py:368
 msgid "Version history for"
 msgstr ""
 
-#: edit_sphere/app.py:447 edit_sphere/app.py:451
+#: edit_sphere/app.py:456 edit_sphere/app.py:460
 msgid "Deletions"
 msgstr ""
 
-#: edit_sphere/app.py:447 edit_sphere/app.py:453
+#: edit_sphere/app.py:456 edit_sphere/app.py:462
 msgid "Additions"
 msgstr ""
 
