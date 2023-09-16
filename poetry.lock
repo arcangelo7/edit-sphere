@@ -400,19 +400,19 @@ files = [
 
 [[package]]
 name = "oc-ocdm"
-version = "7.3.0"
+version = "7.3.1"
 description = "Object mapping library for manipulating RDF graphs that are compliant with the OpenCitations datamodel."
 category = "main"
 optional = false
 python-versions = ">=3.7.4,<4.0.0"
 files = [
-    {file = "oc_ocdm-7.3.0-py3-none-any.whl", hash = "sha256:e41daaf6301fd3a1f1ef074c74a07b10ff3cd333e6adf7198c0d273da1ed654c"},
-    {file = "oc_ocdm-7.3.0.tar.gz", hash = "sha256:c03b38ce557ca3e4b271d134d0f682e6ba80ec57fc82c7956e3ccfe34d7e142f"},
+    {file = "oc_ocdm-7.3.1-py3-none-any.whl", hash = "sha256:3f60535e8038652e1a0a9d4975f74f7ea22da1a16393e2a2e2e12c77f9d3a25c"},
+    {file = "oc_ocdm-7.3.1.tar.gz", hash = "sha256:f87f777bdf0941cf856866eb28bddfe927ba4c76694750c6e8391fca01684548"},
 ]
 
 [package.dependencies]
 filelock = ">=3.6.0,<4.0.0"
-pyshacl = ">=0.20.0,<0.21.0"
+pyshacl = "0.23.0"
 rdflib = ">=6.0.0,<7.0.0"
 SPARQLWrapper = "2.0.0"
 
@@ -499,14 +499,14 @@ diagrams = ["jinja2", "railroad-diagrams"]
 
 [[package]]
 name = "pyshacl"
-version = "0.20.0"
+version = "0.23.0"
 description = "Python SHACL Validator"
 category = "main"
 optional = false
 python-versions = ">=3.7.0,<4.0.0"
 files = [
-    {file = "pyshacl-0.20.0-py3-none-any.whl", hash = "sha256:5de57ed490748f621301f69e47224fa5bd84b0fb5aab40126118dc8e90d4ede6"},
-    {file = "pyshacl-0.20.0.tar.gz", hash = "sha256:47f014c52cc69167b902c89b3940dd400f7f5d2169a62f97f837f3419b4a737d"},
+    {file = "pyshacl-0.23.0-py3-none-any.whl", hash = "sha256:5d77ab194d4333d6c2a3c409d096ac31e68f1ae0e22c3668b2a081e32256c738"},
+    {file = "pyshacl-0.23.0.tar.gz", hash = "sha256:43a80bbf403176f8f37a22fbbe8d95ba5395cf755e378af1db3126e709819d2c"},
 ]
 
 [package.dependencies]
@@ -514,14 +514,14 @@ html5lib = ">=1.1,<2"
 owlrl = ">=6.0.2,<7"
 packaging = ">=21.3"
 prettytable = ">=2.2.1,<3.0.0"
-rdflib = ">=6.2.0,<7"
+rdflib = ">=6.3.2,<7"
 
 [package.extras]
 dev-coverage = ["coverage (>6.1,!=6.1.1,<7)", "platformdirs", "pytest-cov (>=2.8.1,<3.0.0)"]
-dev-lint = ["black (==22.8.0)", "flake8 (>=5.0.4,<6.0.0)", "isort (>=5.10.1,<6.0.0)", "platformdirs"]
-dev-type-checking = ["mypy (>=0.800,<0.801)", "platformdirs", "types-setuptools"]
-js = ["pyduktape2 (>=0.4.1,<0.5.0)"]
-jsonld = ["rdflib-jsonld (>=0.4.0,<0.6)"]
+dev-lint = ["black (==23.3.0)", "platformdirs", "ruff (>=0.0.267,<0.0.268)"]
+dev-type-checking = ["mypy (>=0.800,<0.900)", "mypy (>=0.900,<0.1000)", "platformdirs", "types-setuptools"]
+http = ["sanic (>=22.12,<23)", "sanic-cors (==2.2.0)", "sanic-ext (>=23.3,<23.6)"]
+js = ["pyduktape2 (>=0.4.3,<0.5.0)"]
 
 [[package]]
 name = "python-dateutil"
@@ -612,28 +612,25 @@ files = [
 
 [[package]]
 name = "rdflib"
-version = "6.2.0"
+version = "6.3.2"
 description = "RDFLib is a Python library for working with RDF, a simple yet powerful language for representing information."
 category = "main"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.7,<4.0"
 files = [
-    {file = "rdflib-6.2.0-py3-none-any.whl", hash = "sha256:85c34a86dfc517a41e5f2425a41a0aceacc23983462b32e68610b9fad1383bca"},
-    {file = "rdflib-6.2.0.tar.gz", hash = "sha256:62dc3c86d1712db0f55785baf8047f63731fa59b2682be03219cb89262065942"},
+    {file = "rdflib-6.3.2-py3-none-any.whl", hash = "sha256:36b4e74a32aa1e4fa7b8719876fb192f19ecd45ff932ea5ebbd2e417a0247e63"},
+    {file = "rdflib-6.3.2.tar.gz", hash = "sha256:72af591ff704f4caacea7ecc0c5a9056b8553e0489dd4f35a9bc52dbd41522e0"},
 ]
 
 [package.dependencies]
-isodate = "*"
-pyparsing = "*"
-setuptools = "*"
+isodate = ">=0.6.0,<0.7.0"
+pyparsing = ">=2.1.0,<4"
 
 [package.extras]
-berkeleydb = ["berkeleydb"]
-dev = ["black (==22.6.0)", "flake8", "flakeheaven", "isort", "mypy", "pep8-naming", "types-setuptools"]
-docs = ["myst-parser", "sphinx (<6)", "sphinx-autodoc-typehints", "sphinxcontrib-apidoc", "sphinxcontrib-kroki"]
-html = ["html5lib"]
-networkx = ["networkx"]
-tests = ["html5lib", "pytest", "pytest-cov"]
+berkeleydb = ["berkeleydb (>=18.1.0,<19.0.0)"]
+html = ["html5lib (>=1.0,<2.0)"]
+lxml = ["lxml (>=4.3.0,<5.0.0)"]
+networkx = ["networkx (>=2.0.0,<3.0.0)"]
 
 [[package]]
 name = "rdflib-ocdm"
@@ -696,20 +693,20 @@ use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
 
 [[package]]
 name = "setuptools"
-version = "68.2.0"
+version = "68.2.2"
 description = "Easily download, build, install, upgrade, and uninstall Python packages"
 category = "main"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "setuptools-68.2.0-py3-none-any.whl", hash = "sha256:af3d5949030c3f493f550876b2fd1dd5ec66689c4ee5d5344f009746f71fd5a8"},
-    {file = "setuptools-68.2.0.tar.gz", hash = "sha256:00478ca80aeebeecb2f288d3206b0de568df5cd2b8fada1209843cc9a8d88a48"},
+    {file = "setuptools-68.2.2-py3-none-any.whl", hash = "sha256:b454a35605876da60632df1a60f736524eb73cc47bbc9f3f1ef1b644de74fd2a"},
+    {file = "setuptools-68.2.2.tar.gz", hash = "sha256:4ac1475276d2f1c48684874089fefcd83bd7162ddaafb81fac866ba0db282a87"},
 ]
 
 [package.extras]
 docs = ["furo", "jaraco.packaging (>=9.3)", "jaraco.tidelift (>=1.4)", "pygments-github-lexers (==0.0.5)", "rst.linker (>=1.9)", "sphinx (>=3.5)", "sphinx-favicon", "sphinx-hoverxref (<2)", "sphinx-inline-tabs", "sphinx-lint", "sphinx-notfound-page (>=1,<2)", "sphinx-reredirects", "sphinxcontrib-towncrier"]
 testing = ["build[virtualenv]", "filelock (>=3.4.0)", "flake8-2020", "ini2toml[lite] (>=0.9)", "jaraco.develop (>=7.21)", "jaraco.envs (>=2.2)", "jaraco.path (>=3.2.0)", "pip (>=19.1)", "pytest (>=6)", "pytest-black (>=0.3.7)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)", "pytest-mypy (>=0.9.1)", "pytest-perf", "pytest-ruff", "pytest-timeout", "pytest-xdist", "tomli-w (>=1.0.0)", "virtualenv (>=13.0.0)", "wheel"]
-testing-integration = ["build[virtualenv]", "filelock (>=3.4.0)", "jaraco.envs (>=2.2)", "jaraco.path (>=3.2.0)", "packaging", "pytest", "pytest-enabler", "pytest-xdist", "tomli", "virtualenv (>=13.0.0)", "wheel"]
+testing-integration = ["build[virtualenv] (>=1.0.3)", "filelock (>=3.4.0)", "jaraco.envs (>=2.2)", "jaraco.path (>=3.2.0)", "packaging (>=23.1)", "pytest", "pytest-enabler", "pytest-xdist", "tomli", "virtualenv (>=13.0.0)", "wheel"]
 
 [[package]]
 name = "six"
@@ -746,20 +743,20 @@ pandas = ["pandas (>=1.3.5)"]
 
 [[package]]
 name = "time-agnostic-library"
-version = "4.3.6"
+version = "4.3.7"
 description = "time-agnostic-library is a Python ≥3.7 library that allows performing time-travel queries on RDF datasets compliant with the OCDM v2.0.1 provenance specification."
 category = "main"
 optional = false
 python-versions = ">=3.7.4,<4.0.0"
 files = [
-    {file = "time_agnostic_library-4.3.6-py3-none-any.whl", hash = "sha256:54450ca81c3710defe1145d240b7b68e1c5ac816980f3be800a5ec88a854ce86"},
-    {file = "time_agnostic_library-4.3.6.tar.gz", hash = "sha256:33e8c0becc2039836c783a883604ade9cfd80271d40f086aeb503fbfde1707b8"},
+    {file = "time_agnostic_library-4.3.7-py3-none-any.whl", hash = "sha256:511d53c5aa6d3695b260f560e92749c9b63975cb836283293ea0d150a578a817"},
+    {file = "time_agnostic_library-4.3.7.tar.gz", hash = "sha256:e1a2f4cd8aad239031eb8910f5e4a8a403cedd018a8edb4ff648d5e2e80ef396"},
 ]
 
 [package.dependencies]
 psycopg2 = ">=2.9.6,<3.0.0"
 python_dateutil = ">=2.8.2,<3.0.0"
-rdflib = "6.2.0"
+rdflib = "6.3.2"
 SPARQLWrapper = "2.0.0"
 tqdm = ">=4.62.3,<5.0.0"
 validators = ">=0.20.0,<0.21.0"
@@ -883,4 +880,4 @@ email = ["email-validator"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "bbfe1e7d4b04eab3034462f7213e3cc1ea70648ab31fa64b533e7f7d493ae1f7"
+content-hash = "f839029c4c9e06be14ed6642ea4b5cbd8e49d1f7e43db4a24ad2f6516c34d5ab"

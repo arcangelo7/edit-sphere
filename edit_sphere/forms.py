@@ -16,11 +16,6 @@ class CreateTripleFormWithInput(Form):
     object = StringField('Value', [DataRequired()])
 
 class CreateTripleFormWithSelect(Form):
-    def __init__(self, *args, **kwargs):
-        super(CreateTripleFormWithSelect, self).__init__(*args, **kwargs)
-        predicate_choice = self.predicate.data
-        datatype = next((predicate[1] for predicate in DATATYPE_MAPPING if str(predicate[0]) == predicate_choice), 'text')
-        self.object.widget.input_type = datatype
-    subject = HiddenField('Subject')
+    subject = HiddenField('Subject', validators=[DataRequired()])
     predicate = SelectField('Property', choices=[], validators=[DataRequired()])
     object = StringField('Value', [DataRequired()])

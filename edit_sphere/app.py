@@ -8,13 +8,14 @@ from datetime import timezone
 import click
 import requests
 import validators
-from flask import Flask, redirect, render_template, request, session, url_for
+from flask import (Flask, flash, redirect, render_template, request, session,
+                   url_for)
 from flask_babel import Babel, gettext, refresh
-from rdflib import RDF, XSD, Graph
+from rdflib import RDF, XSD, Graph, Literal, URIRef
 from rdflib.plugins.sparql import prepareQuery
 from rdflib.plugins.sparql.algebra import translateUpdate
 from rdflib.plugins.sparql.parser import parseUpdate
-from SPARQLWrapper import JSON, SPARQLWrapper
+from SPARQLWrapper import JSON, XML, SPARQLWrapper
 from time_agnostic_library.agnostic_entity import (
     AgnosticEntity, _filter_timestamps_by_interval)
 from time_agnostic_library.prov_entity import ProvEntity
@@ -105,8 +106,16 @@ def update_triple():
     predicate = request.form.get('predicate')
     old_value = request.form.get('old_value')
     new_value = request.form.get('new_value')
+    if shacl:
+        new_value, old_value, report_text = validate_new_triple(subject, predicate, new_value, old_value)
+        if new_value is None:
+            flash(report_text)
+            return redirect(url_for('show_triples', subject=subject))
+    else:
+        new_value = URIRef(new_value) if validators.url(new_value) else Literal(new_value)
+        old_value = URIRef(old_value) if validators.url(old_value) else Literal(old_value)
     editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'])
-    editor.update(subject, predicate, old_value, new_value)    
+    editor.update(URIRef(subject), URIRef(predicate), old_value, new_value)    
     return redirect(url_for('show_triples', subject=subject))
 
 @app.route('/delete_triple', methods=['POST'])
@@ -123,9 +132,115 @@ def add_triple():
     subject = request.form.get('subject')
     predicate = request.form.get('predicate')
     object_value = request.form.get('object')
+    if shacl:
+        object_value, _, report_text = validate_new_triple(subject, predicate, object_value)
+        if object_value is None:
+            flash(report_text)
+            return redirect(url_for('show_triples', subject=subject))
+    else:
+        object_value = URIRef(object_value) if validators.url(object_value) else Literal(object_value)
     editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'])
-    editor.create(subject, predicate, object_value)
+    editor.create(URIRef(subject), URIRef(predicate), object_value)
     return redirect(url_for('show_triples', subject=subject))
+
+def validate_new_triple(subject, predicate, new_value, old_value = None):
+    data_graph = fetch_data_graph_for_subject(subject)
+    s_types = [triple[2] for triple in data_graph.triples((URIRef(subject), RDF.type, None))]
+    if old_value is not None:
+        old_value = [triple[2] for triple in data_graph.triples((URIRef(subject), URIRef(predicate), None)) if str(triple[2]) == str(old_value)][0]
+    query = f"""
+        PREFIX sh: <http://www.w3.org/ns/shacl#>
+        SELECT DISTINCT ?datatype ?a_class ?classIn WHERE {{
+            ?shape sh:targetClass ?type ;
+                sh:property ?property .
+            VALUES ?type {{<{'> <'.join(s_types)}>}}
+            ?property sh:path <{predicate}> .
+            OPTIONAL {{?property sh:datatype ?datatype .}}
+            OPTIONAL {{?property sh:class ?a_class .}}
+            OPTIONAL {{
+                ?property sh:or ?orList .
+                ?orList rdf:rest*/rdf:first ?orConstraint .
+                ?orConstraint sh:datatype ?datatype .
+                OPTIONAL {{?orConstraint sh:class ?class .}}
+            }}
+            OPTIONAL {{
+                ?property sh:classIn ?classInList .
+                ?classInList rdf:rest*/rdf:first ?classIn .
+            }}
+        }}
+    """
+    results = shacl.query(query)
+    datatypes = [row.datatype for row in results]
+    classes = [row.a_class for row in results if row.a_class]
+    classes.extend([row.classIn for row in results if row.classIn])
+    if classes:
+        if not validators.url(new_value):
+            return None, old_value, gettext('The provided value is invalid. Please ensure it matches the required format')
+        new_value = convert_to_matching_class(new_value, classes)
+        if new_value is None:
+            return None, old_value, gettext('The provided value is invalid. Please ensure it matches the required format')
+    elif datatypes:
+        new_value = convert_to_matching_literal(new_value, datatypes)
+        if new_value is None:
+            return None, old_value, gettext('The provided value is invalid. Please ensure it matches the required format')
+    return new_value, old_value, ''
+
+def fetch_data_graph_for_subject(subject_uri):
+    """
+    Fetch all triples associated with subject.
+    """
+    query_str = f'''
+        CONSTRUCT {{
+            ?s ?p ?o .
+        }}
+        WHERE {{
+            <{subject_uri}> ?p ?o .
+            ?s ?p ?o .
+        }}
+    '''
+    sparql.setQuery(query_str)
+    sparql.setReturnFormat(XML)
+    result = sparql.queryAndConvert()
+    return result
+
+def fetch_data_graph_for_subject_recursively(subject_uri):
+    """
+    Fetch all triples associated with subject and all triples of all the entities that the subject points to.
+    """
+    query_str = f'''
+        PREFIX eea: <https://jobu_tupaki/>
+        CONSTRUCT {{
+            ?s ?p ?o .
+        }}
+        WHERE {{
+            {{
+                <{subject_uri}> ?p ?o .
+                ?s ?p ?o .
+            }} UNION {{
+                <{subject_uri}> (<eea:everything_everywhere_allatonce>|!<eea:everything_everywhere_allatonce>)* ?s.
+                ?s ?p ?o. 
+            }}
+        }}
+    '''
+    sparql.setQuery(query_str)
+    sparql.setReturnFormat(XML)
+    result = sparql.queryAndConvert()
+    return result
+
+def convert_to_matching_class(object_value, classes):
+    data_graph = fetch_data_graph_for_subject(object_value)
+    o_types = {c[2] for c in data_graph.triples((URIRef(object_value), RDF.type, None))}
+    if o_types.intersection(classes):
+        return URIRef(object_value)
+
+def convert_to_matching_literal(object_value, datatypes):
+    for datatype in datatypes:
+        validation_func = next((d[1] for d in DATATYPE_MAPPING if d[0] == datatype), None)
+        if validation_func is None:
+            return Literal(object_value)
+        is_valid_datatype = validation_func(object_value)
+        if is_valid_datatype:
+            return Literal(object_value, datatype=datatype)
 
 @app.route('/search')
 def search():
@@ -320,12 +435,6 @@ def restore_version(entity_uri, timestamp):
     triples = sparql.query().convert().get("results", {}).get("bindings", [])
     return render_template('triples.jinja', subject=entity_uri, triples=triples, history={entity_uri: True})
 
-@app.route('/get_object_config', methods=['POST'])
-def get_object_config():
-    predicate = request.form.get('predicate')
-    datatype = next((p[1] for p in DATATYPE_MAPPING if str(p[0]) == predicate), 'text')
-    return datatype
-
 def parse_sparql_update(query):
     parsed = parseUpdate(query)
     translated = translateUpdate(parsed).algebra
@@ -357,14 +466,15 @@ def get_valid_predicates(triples):
     existing_predicates = [triple['predicate']['value'] for triple in triples]
     predicate_counts = {predicate: existing_predicates.count(predicate) for predicate in set(existing_predicates)}
     if not shacl:
-        return None, None
-    s_type = next((triple['object']['value'] for triple in triples if triple['predicate']['value'] == str(RDF.type)), None)
-    if not s_type:
-        return None, None
+        return None, None, None
+    s_types = [triple['object']['value'] for triple in triples if triple['predicate']['value'] == str(RDF.type)]
+    if not s_types:
+        return None, None, None
     query = prepareQuery(f"""
         SELECT ?predicate ?datatype ?maxCount ?minCount WHERE {{
-            ?shape sh:targetClass <{s_type}> ;
+            ?shape sh:targetClass ?type ;
                    sh:property ?property .
+            VALUES ?type {{<{'> <'.join(s_types)}>}}
             ?property sh:path ?predicate .
             OPTIONAL {{?property sh:datatype ?datatype .}}
             OPTIONAL {{?property sh:maxCount ?maxCount .}}
@@ -389,17 +499,13 @@ def get_valid_predicates(triples):
         predicate for valid_predicate in valid_predicates for predicate, ranges in valid_predicate.items()
         if not (ranges["min"] == '1' and predicate_counts.get(predicate, 0) == 1)
     })
-    datatype_collections = defaultdict(list)
+    datatypes = defaultdict(list)
     for row in results:
         if row.datatype:
-            datatype_collections[str(row.predicate)].append(row.datatype)
+            datatypes[str(row.predicate)].append(row.datatype)
         else:
-            datatype_collections[str(row.predicate)].append(XSD.string)
-    datatypes = {
-        predicate: str(prioritize_datatype(dt_list))
-        for predicate, dt_list in datatype_collections.items()
-    }
-    return can_be_added, can_be_deleted, datatypes
+            datatypes[str(row.predicate)].append(XSD.string)
+    return can_be_added, can_be_deleted, dict(datatypes)
 
 @app.cli.group()
 def translate():

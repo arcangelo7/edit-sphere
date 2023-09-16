@@ -16,27 +16,18 @@ class Editor:
         self.resp_agent = resp_agent
         self.source = source
 
-    def create(self, subject: str, predicate: str, value: str) -> None:
-        subject = URIRef(subject)
-        predicate = URIRef(predicate)
+    def create(self, subject: URIRef, predicate: URIRef, value: Literal|URIRef) -> None:
         g_set = OCDMGraph(self.counter_handler)
         Reader.import_entities_from_triplestore(g_set, self.dataset_endpoint, [subject])
         g_set.preexisting_finished(self.resp_agent, self.source)
-        value = URIRef(value) if validators.url(value) else Literal(value)
         g_set.add((subject, predicate, value))
         self.save(g_set)
 
-    def update(self, subject: str, predicate: str, old_value: str, new_value: str) -> None:
-        subject = URIRef(subject)
-        predicate = URIRef(predicate)
+    def update(self, subject: URIRef, predicate: URIRef, old_value: Literal|URIRef, new_value: Literal|URIRef) -> None:
         g_set = OCDMGraph(self.counter_handler)
         Reader.import_entities_from_triplestore(g_set, self.dataset_endpoint, [subject])
         g_set.preexisting_finished(self.resp_agent, self.source)
-        for triple in g_set.triples((None, predicate, None)):
-            if str(triple[2]) == old_value:
-                datatype = triple[2].datatype if isinstance(triple[2], Literal) else None
-                g_set.remove(triple)
-        new_value = URIRef(new_value) if validators.url(new_value) else Literal(new_value, datatype=datatype)
+        g_set.remove((subject, predicate, old_value))
         g_set.add((subject, predicate, new_value))
         self.save(g_set)
 

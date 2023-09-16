@@ -74,7 +74,17 @@
 {% block content %}
 <div class="container">
     <h2 class="mb-4 ellipsis">{{_('About')}} {{ subject | human_readable_predicate }}</h2>
-           
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="row col-sm-12 col-md-6 text-center mb-4 mx-auto">
+                <div class="alert alert-warning">
+                    {{ messages[0] }}
+                </div>
+            </div>
+        {% endif %}
+    {% endwith %}
+
     {% if history[subject] %}
     <div>
         <a href="{{ url_for('entity_history', entity_uri=subject) }}" class="btn btn-outline-primary">
@@ -210,7 +220,7 @@
                 });
             }
         });
-    
+
         $('.add-button-attributes').click(function() {
             showAddFormOrAlert('attributes');
         });
@@ -222,14 +232,6 @@
         });
         $('.cancel-add-button-links').click(function() {
             $('.add-form-links').addClass('d-none');
-        });
-        $('.predicate-select').change(function() {
-            const selectedPredicate = $(this).val();
-            datatypes = {{datatypes}}
-            $.post("/get_object_config", {predicate: datatypes[selectedPredicate]}, function(datatype) {
-                const objectInput = $('.object-input');
-                objectInput.attr('type', datatype);
-            });
         });
     });
 </script>

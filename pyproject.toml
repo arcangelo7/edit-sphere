@@ -16,9 +16,11 @@ flask-babel = "^3.1.0"
 rdflib-ocdm = "0.3.6"
 validators = "0.20.0"
 requests = "^2.31.0"
-time-agnostic-library = "4.3.6"
-pyshacl = "0.20.0"
+time-agnostic-library = "4.3.7"
 flask-wtf = "^1.1.1"
+oc-ocdm = "7.3.1"
+pyshacl = "0.23.0"
+setuptools = "^68.2.2"
 
 
 [build-system]
