@@ -39,10 +39,20 @@
                 <div class="d-flex flex-column flex-sm-row">
                     <button class="btn btn-outline-secondary edit-button m-2">
                         <i class="bi bi-pencil-square"></i> <!-- Icona di modifica -->
-                    </button>    
-                    <button class="btn btn-outline-danger delete-button m-2" data-subject="{{ subject }}" data-predicate="{{ triple['predicate']['value'] }}" data-object="{{ triple['object']['value'] }}">
-                        <i class="bi bi-trash"></i> <!-- Icona di cancellazione -->
-                    </button>                    
+                    </button>
+                    {% if triple['predicate']['value'] not in can_be_deleted %}
+                    <span title="{{ _('This property is mandatory and cannot be deleted') }}" class="info-cursor">
+                    {% endif %}
+                        <button class="btn btn-outline-danger delete-button m-2" 
+                                data-subject="{{ subject }}" 
+                                data-predicate="{{ triple['predicate']['value'] }}" 
+                                data-object="{{ triple['object']['value'] }}"
+                                {% if triple['predicate']['value'] not in can_be_deleted %}disabled{% endif %}>
+                            <i class="bi bi-trash"></i> <!-- Icona di cancellazione -->
+                        </button>
+                    {% if triple['predicate']['value'] not in can_be_deleted %}
+                    </span>
+                    {% endif %}
                 </div>
             </div>
         {% endif %}
@@ -109,8 +119,14 @@
             {% if triples_set %}
                 <div class="d-flex justify-content-start align-items-baseline mt-5 mb-3">
                     <h4 class="me-4">{{ type_human.capitalize() }}</h4>
+                    {% if not can_be_added %}
+                    <span title="{{ _('You cannot add more properties; the limit for each property has been reached') }}" class="info-cursor">
+                        <button class="btn btn-outline-success add-button-{{ type }}" disabled><i class="bi bi-plus-lg"></i></button>
+                    </span>
+                    {% else %}
                     <button class="btn btn-outline-success add-button-{{ type }}" title="{{_('Add new ' + type_human)}}"><i class="bi bi-plus-lg"></i></button>
-                </div>            
+                    {% endif %}
+                </div>
                 {{ add_form(type) }}
                 <ul class="list-group">
                     {% for triple in triples_set %}

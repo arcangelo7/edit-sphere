@@ -511,16 +511,16 @@ def get_valid_predicates(triples):
         }}
     """, initNs={"sh": "http://www.w3.org/ns/shacl#"})
     results = shacl.query(query)
-    valid_predicates = [{str(row.predicate): {"min": (None if row.minCount is None else str(row.minCount)), 
+    valid_predicates = [{row.predicate: {"min": (None if row.minCount is None else str(row.minCount)), 
                                                "max": (None if row.maxCount is None else str(row.maxCount))}} 
                         for row in results]
     can_be_added = list({
-        predicate for valid_predicate in valid_predicates for predicate, ranges in valid_predicate.items()
-        if not (ranges["max"] == '1' and predicate in existing_predicates)
+        str(predicate) for valid_predicate in valid_predicates for predicate, ranges in valid_predicate.items()
+        if not (ranges["max"] is not None and int(ranges["max"]) <= predicate_counts.get(str(predicate), 0))
     })
     can_be_deleted = list({
-        predicate for valid_predicate in valid_predicates for predicate, ranges in valid_predicate.items()
-        if not (ranges["min"] == '1' and predicate_counts.get(predicate, 0) == 1)
+        str(predicate) for valid_predicate in valid_predicates for predicate, ranges in valid_predicate.items()
+        if not (ranges["min"] is not None and int(ranges["min"]) == predicate_counts.get(str(predicate), 0))
     })
     datatypes = defaultdict(list)
     for row in results:

@@ -743,20 +743,22 @@ pandas = ["pandas (>=1.3.5)"]
 
 [[package]]
 name = "time-agnostic-library"
-version = "4.3.7"
+version = "4.3.8"
 description = "time-agnostic-library is a Python ≥3.7 library that allows performing time-travel queries on RDF datasets compliant with the OCDM v2.0.1 provenance specification."
 category = "main"
 optional = false
-python-versions = ">=3.7.4,<4.0.0"
+python-versions = ">=3.8,<4.0"
 files = [
-    {file = "time_agnostic_library-4.3.7-py3-none-any.whl", hash = "sha256:511d53c5aa6d3695b260f560e92749c9b63975cb836283293ea0d150a578a817"},
-    {file = "time_agnostic_library-4.3.7.tar.gz", hash = "sha256:e1a2f4cd8aad239031eb8910f5e4a8a403cedd018a8edb4ff648d5e2e80ef396"},
+    {file = "time_agnostic_library-4.3.8-py3-none-any.whl", hash = "sha256:71f80363583440b04df0fa6e12e4fcc4800a1323877295e9f9757c6ef30294e4"},
+    {file = "time_agnostic_library-4.3.8.tar.gz", hash = "sha256:cc5386d656aaa0fc2b4d7222ae0596cb463180946e946d0adb7602d00561c23e"},
 ]
 
 [package.dependencies]
 psycopg2 = ">=2.9.6,<3.0.0"
 python_dateutil = ">=2.8.2,<3.0.0"
 rdflib = "6.3.2"
+rdflib-ocdm = "0.3.6"
+setuptools = ">=68.2.2,<69.0.0"
 SPARQLWrapper = "2.0.0"
 tqdm = ">=4.62.3,<5.0.0"
 validators = ">=0.20.0,<0.21.0"
@@ -880,4 +882,4 @@ email = ["email-validator"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "f839029c4c9e06be14ed6642ea4b5cbd8e49d1f7e43db4a24ad2f6516c34d5ab"
+content-hash = "3a2a6d77a32d4c51e747cede7966983704690760a9c9209e00874de7d6a25c5c"
