@@ -118,13 +118,19 @@ schema:BibliographicResourceShape
     sh:class datacite:Identifier ;
   ] ;
   sh:property
+  [
+    sh:path rdf:type ;
+    sh:hasValue fabio:Expression ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property
 	[
     sh:path rdf:type ;
     sh:in (fabio:ArchivalDocument
       fabio:Book
       fabio:BookChapter
       doco:Part
-      fabio:Expression
       fabio:ExpressionCollection
       fabio:BookSeries
       fabio:BookSet
@@ -141,8 +147,8 @@ schema:BibliographicResourceShape
       fabio:ReportDocument
       fabio:Series
       fabio:SpecificationDocument) ;
-    sh:minCount 1 ;
-    sh:maxCount 2 ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property
   [

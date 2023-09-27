@@ -27,35 +27,48 @@
                 {{ update_form.subject(value=subject) }}
                 {{ update_form.predicate(value=triple['predicate']['value']) }}
                 {{ update_form.old_value(value=triple['object']['value']) }}
-                {{ update_form.new_value(class="form-control my-4", value=triple['object']['value']) }}
+                {% if triple['predicate']['value'] in optional_values %}
+                    <select name="new_value" class="form-control my-4">
+                        {% for value in optional_values[triple['predicate']['value']] %}
+                            <option value="{{ value }}" {% if value == triple['object']['value'] %}selected{% endif %}>{{ value | human_readable_predicate }}</option>
+                        {% endfor %}
+                    </select>
+                {% else %}
+                    {{ update_form.new_value(class="form-control my-4", value=triple['object']['value']) }}
+                {% endif %}
                 <div>
                     <button type="submit" class="btn btn-primary">{{_('Update')}}</button>
                     <button type="button" class="btn btn-secondary cancel-button">{{_('Cancel')}}</button>
                 </div>
             </form>
         </span>
-        {% if triple['predicate']['value'] != 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type' %}
-            <div class="align-self-start">
-                <div class="d-flex flex-column flex-sm-row">
-                    <button class="btn btn-outline-secondary edit-button m-2">
-                        <i class="bi bi-pencil-square"></i> <!-- Icona di modifica -->
+        <div class="align-self-start">
+            <div class="d-flex flex-column flex-sm-row">
+                {% if triple['predicate']['value'] in mandatory_values and triple['object']['value'] == mandatory_values[triple['predicate']['value']] %}
+                    <div title="{{ _('This property is mandatory and cannot be edited') }}" class="info-cursor">
+                {% endif %}
+                    <button class="btn btn-outline-secondary edit-button m-2"
+                            {% if triple['predicate']['value'] in mandatory_values and triple['object']['value'] == mandatory_values[triple['predicate']['value']] %}disabled{% endif %}>
+                        <i class="bi bi-pencil-square"></i>
                     </button>
-                    {% if triple['predicate']['value'] not in can_be_deleted %}
-                    <span title="{{ _('This property is mandatory and cannot be deleted') }}" class="info-cursor">
-                    {% endif %}
-                        <button class="btn btn-outline-danger delete-button m-2" 
-                                data-subject="{{ subject }}" 
-                                data-predicate="{{ triple['predicate']['value'] }}" 
-                                data-object="{{ triple['object']['value'] }}"
-                                {% if triple['predicate']['value'] not in can_be_deleted %}disabled{% endif %}>
-                            <i class="bi bi-trash"></i> <!-- Icona di cancellazione -->
-                        </button>
-                    {% if triple['predicate']['value'] not in can_be_deleted %}
-                    </span>
-                    {% endif %}
-                </div>
+                {% if triple['predicate']['value'] in mandatory_values and triple['object']['value'] == mandatory_values[triple['predicate']['value']] %}
+                    </div>
+                {% endif %}
+                {% if triple['predicate']['value'] not in can_be_deleted or (triple['predicate']['value'] in mandatory_values and triple['object']['value'] == mandatory_values[triple['predicate']['value']]) %}
+                    <div title="{{ _('This property is mandatory and cannot be deleted') }}" class="info-cursor">
+                {% endif %}
+                    <button class="btn btn-outline-danger delete-button m-2" 
+                            data-subject="{{ subject }}" 
+                            data-predicate="{{ triple['predicate']['value'] }}" 
+                            data-object="{{ triple['object']['value'] }}"
+                            {% if triple['predicate']['value'] not in can_be_deleted or (triple['predicate']['value'] in mandatory_values and triple['object']['value'] == mandatory_values[triple['predicate']['value']]) %}disabled{% endif %}>
+                        <i class="bi bi-trash"></i> <!-- Icona di cancellazione -->
+                    </button>
+                {% if triple['predicate']['value'] not in can_be_deleted or (triple['predicate']['value'] in mandatory_values and triple['object']['value'] == mandatory_values[triple['predicate']['value']]) %}
+                    </div>
+                {% endif %}
             </div>
-        {% endif %}
+        </div>
     </li>
 {% endmacro %}
 
@@ -69,7 +82,14 @@
             </div>
             <div class="form-group mt-3">
                 <label for="object">{{_('Value')}}</label>
-                {{ create_form.object(class="form-control object-input") }}
+                <select name="object" class="form-control object-input" style="display: none;">
+                    {% for pred, values in optional_values.items() %}
+                        {% for value in values %}
+                            <option value="{{ value }}" data-predicate="{{ pred }}">{{ value | human_readable_predicate }}</option>
+                        {% endfor %}
+                    {% endfor %}
+                </select>
+                <input type="text" name="object" class="form-control object-input-text" style="display: none;">
             </div>
             <div class="mt-3">
                 <button type="submit" class="btn btn-primary">{{_('Add')}}</button>
@@ -162,7 +182,8 @@
 
 <script>
     $(document).ready(function () {
-        
+        const optional_values = {{ optional_values|tojson|safe }};
+
         function toggleEditForm(listItem) {
             const form = listItem.find('.edit-form');
             const valueSpan = listItem.find('.object-value');
@@ -185,6 +206,17 @@
                 } else {
                     $(`.add-form-${type}`).toggleClass('d-none');
                 }
+            }
+        }
+
+        function updateObjectInput() {
+            const selectedPredicate = $('.predicate-select').val();
+            if (optional_values[selectedPredicate].length > 0) {
+                $('.object-input-text').hide();
+                $('.object-input').show().find('option').hide().filter(`[data-predicate="${selectedPredicate}"]`).show();
+            } else {
+                $('.object-input').hide();
+                $('.object-input-text').show();
             }
         }
 
@@ -237,11 +269,9 @@
             }
         });
 
-        $('.add-button-attributes').click(function() {
-            showAddFormOrAlert('attributes');
-        });
-        $('.add-button-links').click(function() {
-            showAddFormOrAlert('links');
+        $('.add-button-attributes, .add-button-links').click(function() {
+            showAddFormOrAlert($(this).hasClass('add-button-attributes') ? 'attributes' : 'links');
+            updateObjectInput();
         });
         $('.cancel-add-button-attributes').click(function() {
             $('.add-form-attributes').addClass('d-none');
@@ -249,6 +279,7 @@
         $('.cancel-add-button-links').click(function() {
             $('.add-form-links').addClass('d-none');
         });
+        $('.predicate-select').change(updateObjectInput);
     });
 </script>
 {% endblock %}

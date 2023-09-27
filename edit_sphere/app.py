@@ -91,14 +91,14 @@ def show_triples(subject):
     sparql.setQuery(query)
     sparql.setReturnFormat(JSON)
     triples = sparql.query().convert().get("results", {}).get("bindings", [])
-    can_be_added, can_be_deleted, datatypes = get_valid_predicates(triples)
+    can_be_added, can_be_deleted, datatypes, mandatory_values, optional_values = get_valid_predicates(triples)
     update_form = UpdateTripleForm()
     if can_be_added:
         create_form = CreateTripleFormWithSelect()
         create_form.predicate.choices = [(p, filter.human_readable_predicate(p)) for p in can_be_added]
     else:
         create_form = CreateTripleFormWithInput()
-    return render_template('triples.jinja', subject=decoded_subject, triples=triples, history=history, can_be_added=can_be_added, can_be_deleted=can_be_deleted, datatypes=datatypes, update_form=update_form, create_form=create_form)
+    return render_template('triples.jinja', subject=decoded_subject, triples=triples, history=history, can_be_added=can_be_added, can_be_deleted=can_be_deleted, datatypes=datatypes, update_form=update_form, create_form=create_form, mandatory_values=mandatory_values, optional_values=optional_values)
 
 @app.route('/update_triple', methods=['POST'])
 def update_triple():
@@ -125,7 +125,7 @@ def delete_triple():
     object_value = request.form.get('object')
     if shacl:
         data_graph = fetch_data_graph_for_subject(subject)
-        _, can_be_deleted, _ = get_valid_predicates(list(data_graph.triples((None, None, None))))
+        _, can_be_deleted, _, _, _ = get_valid_predicates(list(data_graph.triples((URIRef(subject), None, None))))
         if predicate not in can_be_deleted:
             flash(gettext('This property cannot be deleted'))
             return redirect(url_for('show_triples', subject=subject))
@@ -140,7 +140,7 @@ def add_triple():
     object_value = request.form.get('object')
     if shacl:
         data_graph = fetch_data_graph_for_subject(subject)
-        can_be_added, _, _ = get_valid_predicates(list(data_graph.triples((None, None, None))))
+        can_be_added, _, _, _, _ = get_valid_predicates(list(data_graph.triples((None, None, None))))
         if predicate not in can_be_added and URIRef(predicate) in data_graph.predicates():
             flash(gettext('This resource cannot have any other %(predicate)s properties', predicate=filter.human_readable_predicate(predicate)))
             return redirect(url_for('show_triples', subject=subject))
@@ -161,7 +161,8 @@ def validate_new_triple(subject, predicate, new_value, old_value = None):
         old_value = [triple[2] for triple in data_graph.triples((URIRef(subject), URIRef(predicate), None)) if str(triple[2]) == str(old_value)][0]
     query = f"""
         PREFIX sh: <http://www.w3.org/ns/shacl#>
-        SELECT DISTINCT ?property ?datatype ?a_class ?classIn WHERE {{
+        SELECT DISTINCT ?property ?datatype ?a_class ?classIn (GROUP_CONCAT(DISTINCT COALESCE(?optionalValue, ""); separator=",") AS ?optionalValues)
+        WHERE {{
             ?shape sh:targetClass ?type ;
                 sh:property ?property .
             VALUES ?type {{<{'> <'.join(s_types)}>}}
@@ -178,7 +179,12 @@ def validate_new_triple(subject, predicate, new_value, old_value = None):
                 ?property sh:classIn ?classInList .
                 ?classInList rdf:rest*/rdf:first ?classIn .
             }}
+            OPTIONAL {{
+                ?property sh:in ?list .
+                ?list rdf:rest*/rdf:first ?optionalValue .
+            }}
         }}
+        GROUP BY ?property ?datatype ?a_class ?classIn
     """
     results = shacl.query(query)
     property_exists = [row.property for row in results]
@@ -187,6 +193,10 @@ def validate_new_triple(subject, predicate, new_value, old_value = None):
     datatypes = [row.datatype for row in results]
     classes = [row.a_class for row in results if row.a_class]
     classes.extend([row.classIn for row in results if row.classIn])
+    optional_values_str = [row.optionalValues for row in results if row.optionalValues][0]
+    optional_values = [value for value in optional_values_str.split(',') if value]
+    if optional_values and new_value not in optional_values:
+        return None, old_value, gettext('<code>%(new_value)s</code> is not a valid value. The <code>%(property)s</code> property requires one of the following values: %(o_values)s', new_value=filter.human_readable_predicate(new_value), property=filter.human_readable_predicate(predicate), o_values=', '.join([f'<code>{filter.human_readable_predicate(value)}</code>' for value in optional_values]))
     if classes:
         if not validators.url(new_value):
             return None, old_value, gettext('<code>%(new_value)s</code> is not a valid value. The <code>%(property)s</code> property requires values of type %(o_types)s', new_value=filter.human_readable_predicate(new_value), property=filter.human_readable_predicate(predicate), o_types=', '.join([f'<code>{filter.human_readable_predicate(o_class)}</code>' for o_class in classes]))
@@ -484,17 +494,29 @@ def get_valid_predicates(triples):
             if 'predicate' in triple and triple['predicate']['value'] == str(RDF.type):
                 return triple['object']['value']
         elif triple[1] == RDF.type:
+            return str(triple[2])
+        return None
+    def extract_predicate(triple):
+        if isinstance(triple, dict) and 'predicate' in triple:
+            return triple['predicate']['value']
+        elif isinstance(triple, tuple):
+            return triple[1]
+        return None
+    def extract_object_value(triple):
+        if isinstance(triple, dict) and 'object' in triple:
+            return triple['object']['value']
+        elif isinstance(triple, tuple):
             return triple[2]
         return None
-    existing_predicates = [triple['predicate']['value'] if 'predicate' in triple else triple[1] for triple in triples]
-    predicate_counts = {predicate: existing_predicates.count(predicate) for predicate in set(existing_predicates)}
+    existing_predicates = [extract_predicate(triple) for triple in triples]
+    predicate_counts = {str(predicate): existing_predicates.count(predicate) for predicate in set(existing_predicates)}
     if not shacl:
-        return None, None, None
+        return None, None, None, None, None
     s_types = [extract_type(triple) for triple in triples if extract_type(triple) is not None]
     if not s_types:
-        return None, None, None
+        return None, None, None, None, None
     query = prepareQuery(f"""
-        SELECT ?predicate ?datatype ?maxCount ?minCount WHERE {{
+        SELECT ?predicate ?datatype ?maxCount ?minCount ?hasValue (GROUP_CONCAT(?optionalValue; separator=",") AS ?optionalValues) WHERE {{
             ?shape sh:targetClass ?type ;
                    sh:property ?property .
             VALUES ?type {{<{'> <'.join(s_types)}>}}
@@ -502,6 +524,11 @@ def get_valid_predicates(triples):
             OPTIONAL {{?property sh:datatype ?datatype .}}
             OPTIONAL {{?property sh:maxCount ?maxCount .}}
             OPTIONAL {{?property sh:minCount ?minCount .}}
+            OPTIONAL {{?property sh:hasValue ?hasValue .}}
+            OPTIONAL {{
+                ?property sh:in ?list .
+                ?list rdf:rest*/rdf:first ?optionalValue .
+            }}
             OPTIONAL {{
                 ?property sh:or ?orList .
                 ?orList rdf:rest*/rdf:first ?orConstraint .
@@ -509,26 +536,49 @@ def get_valid_predicates(triples):
             }}
             FILTER (isURI(?predicate))
         }}
-    """, initNs={"sh": "http://www.w3.org/ns/shacl#"})
+        GROUP BY ?predicate ?datatype ?maxCount ?minCount ?hasValue
+    """, initNs={"sh": "http://www.w3.org/ns/shacl#", "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"})
     results = shacl.query(query)
-    valid_predicates = [{row.predicate: {"min": (None if row.minCount is None else str(row.minCount)), 
-                                               "max": (None if row.maxCount is None else str(row.maxCount))}} 
-                        for row in results]
-    can_be_added = list({
-        str(predicate) for valid_predicate in valid_predicates for predicate, ranges in valid_predicate.items()
-        if not (ranges["max"] is not None and int(ranges["max"]) <= predicate_counts.get(str(predicate), 0))
-    })
-    can_be_deleted = list({
-        str(predicate) for valid_predicate in valid_predicates for predicate, ranges in valid_predicate.items()
-        if not (ranges["min"] is not None and int(ranges["min"]) == predicate_counts.get(str(predicate), 0))
-    })
+    valid_predicates = [{
+        str(row.predicate): {
+            "min": (None if row.minCount is None else str(row.minCount)), 
+            "max": (None if row.maxCount is None else str(row.maxCount)),
+            "hasValue": row.hasValue,
+            "optionalValues": row.optionalValues.split(",") if row.optionalValues else []
+        }
+    } for row in results]
+    can_be_added = set()
+    can_be_deleted = set()
+    for valid_predicate in valid_predicates:
+        for predicate, ranges in valid_predicate.items():
+            if ranges["hasValue"]:
+                mandatory_value_present = any(extract_object_value(triple) == str(ranges["hasValue"]) for triple in triples)
+                if not mandatory_value_present:
+                    can_be_added.add(predicate)
+            else:
+                max_reached_for_generic = (ranges["max"] is not None and int(ranges["max"]) <= predicate_counts.get(predicate, 0))
+                max_reached_for_optional = (ranges["max"] is not None and int(ranges["max"]) <= sum(1 for triple in triples if extract_object_value(triple) in ranges["optionalValues"])) if ranges["optionalValues"] else max_reached_for_generic
+                if not max_reached_for_generic or not max_reached_for_optional:
+                    can_be_added.add(predicate)
+                if not (ranges["min"] is not None and int(ranges["min"]) == predicate_counts.get(predicate, 0)):
+                    can_be_deleted.add(predicate)
     datatypes = defaultdict(list)
     for row in results:
         if row.datatype:
             datatypes[str(row.predicate)].append(row.datatype)
         else:
             datatypes[str(row.predicate)].append(XSD.string)
-    return can_be_added, can_be_deleted, dict(datatypes)
+    mandatory_values = {}
+    for valid_predicate in valid_predicates:
+        for predicate, ranges in valid_predicate.items():
+            if ranges["hasValue"]:
+                mandatory_values[str(predicate)] = str(ranges["hasValue"])
+    optional_values = dict()
+    for valid_predicate in valid_predicates:
+        for predicate, ranges in valid_predicate.items():
+            if "optionalValues" in ranges:
+                optional_values.setdefault(str(predicate), list()).extend(ranges["optionalValues"])
+    return list(can_be_added), list(can_be_deleted), dict(datatypes), mandatory_values, optional_values
 
 @app.cli.group()
 def translate():
