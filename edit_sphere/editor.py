@@ -1,4 +1,5 @@
-import validators
+from datetime import datetime
+
 from rdflib import ConjunctiveGraph, Literal, URIRef
 from rdflib.plugins.sparql.algebra import translateUpdate
 from rdflib.plugins.sparql.parser import parseUpdate
@@ -9,24 +10,25 @@ from SPARQLWrapper import POST, XML, SPARQLWrapper
 
 
 class Editor:
-    def __init__(self, dataset_endpoint: str, provenance_endpoint:str, counter_handler: CounterHandler, resp_agent: URIRef, source: URIRef = None):
+    def __init__(self, dataset_endpoint: str, provenance_endpoint:str, counter_handler: CounterHandler, resp_agent: URIRef, source: URIRef = None, c_time: datetime|None = None):
         self.dataset_endpoint = dataset_endpoint
         self.provenance_endpoint = provenance_endpoint
         self.counter_handler = counter_handler
         self.resp_agent = resp_agent
         self.source = source
+        self.c_time = self.to_posix_timestamp(c_time)
 
     def create(self, subject: URIRef, predicate: URIRef, value: Literal|URIRef) -> None:
         g_set = OCDMGraph(self.counter_handler)
         Reader.import_entities_from_triplestore(g_set, self.dataset_endpoint, [subject])
-        g_set.preexisting_finished(self.resp_agent, self.source)
+        g_set.preexisting_finished(self.resp_agent, self.source, self.c_time)
         g_set.add((subject, predicate, value))
         self.save(g_set)
 
     def update(self, subject: URIRef, predicate: URIRef, old_value: Literal|URIRef, new_value: Literal|URIRef) -> None:
         g_set = OCDMGraph(self.counter_handler)
         Reader.import_entities_from_triplestore(g_set, self.dataset_endpoint, [subject])
-        g_set.preexisting_finished(self.resp_agent, self.source)
+        g_set.preexisting_finished(self.resp_agent, self.source, self.c_time)
         g_set.remove((subject, predicate, old_value))
         g_set.add((subject, predicate, new_value))
         self.save(g_set)
@@ -36,7 +38,7 @@ class Editor:
         predicate = URIRef(predicate)
         g_set = OCDMGraph(self.counter_handler)
         Reader.import_entities_from_triplestore(g_set, self.dataset_endpoint, [subject])
-        g_set.preexisting_finished(self.resp_agent, self.source)
+        g_set.preexisting_finished(self.resp_agent, self.source, self.c_time)
         if predicate:
             if value:
                 for triple in g_set.triples((None, predicate, None)):
@@ -73,7 +75,7 @@ class Editor:
                 if entity not in entities_added:
                     Reader.import_entities_from_triplestore(g_set, self.dataset_endpoint, [entity])
                     entities_added.add(entity)
-        g_set.preexisting_finished(self.resp_agent, self.source)
+        g_set.preexisting_finished(self.resp_agent, self.source, self.c_time)
         for operation in translated:
             if operation.name == "DeleteData":
                 for triple in operation.triples:
@@ -93,3 +95,10 @@ class Editor:
         dataset_storer.upload_all(self.dataset_endpoint)
         prov_storer.upload_all(self.provenance_endpoint)
         g_set.commit_changes()
+
+    def to_posix_timestamp(self, value: str|datetime|None) -> float|None:
+        if isinstance(value, datetime):
+            return value.timestamp()
+        elif isinstance(value, str):
+            dt = datetime.fromisoformat(value)
+            return dt.timestamp()

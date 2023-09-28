@@ -21,6 +21,13 @@ schema:IdentifierShape
     sh:targetClass datacite:Identifier ;
     sh:property
     [
+      sh:path rdf:type ;
+      sh:hasValue datacite:Identifier ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+    ];
+    sh:property
+    [
       sh:path literal:hasLiteralValue ;
       sh:datatype xsd:string ;
       sh:minCount 1 ;
@@ -69,6 +76,13 @@ schema:AgentRoleShape
     rdfs:subClassOf schema:BibliographicEntityShape ;
     sh:targetClass pro:RoleInTime ;
     sh:nodeKind sh:IRI ;
+    sh:property
+    [
+      sh:path rdf:type ;
+      sh:hasValue pro:RoleInTime ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+    ];
     sh:property
     [
       sh:path oco:hasNext ;
@@ -227,6 +241,13 @@ schema:ResourceEmbodimentShape
   sh:targetClass fabio:Manifestation ;
   sh:nodeKind sh:IRI ;
   sh:property
+  [
+    sh:path rdf:type ;
+    sh:hasValue fabio:Manifestation ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ];
+  sh:property
 	[
     sh:path rdf:type ;
     sh:in (
@@ -278,6 +299,13 @@ schema:ResponsibleAgentShape
   rdfs:subClassOf schema:BibliographicEntityShape ;
   sh:targetClass foaf:Agent ;
   sh:nodeKind sh:IRI ;
+  sh:property
+  [
+    sh:path rdf:type ;
+    sh:hasValue foaf:Agent ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ];
   sh:property
   [
     sh:path datacite:hasIdentifier ;

@@ -114,7 +114,7 @@ def update_triple():
     else:
         new_value = URIRef(new_value) if validators.url(new_value) else Literal(new_value)
         old_value = URIRef(old_value) if validators.url(old_value) else Literal(old_value)
-    editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'])
+    editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'], app.config['PRIMARY_SOURCE'], app.config['DATASET_GENERATION_TIME'])
     editor.update(URIRef(subject), URIRef(predicate), old_value, new_value)    
     return redirect(url_for('show_triples', subject=subject))
 
@@ -129,7 +129,7 @@ def delete_triple():
         if predicate not in can_be_deleted:
             flash(gettext('This property cannot be deleted'))
             return redirect(url_for('show_triples', subject=subject))
-    editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'])
+    editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'], app.config['PRIMARY_SOURCE'], app.config['DATASET_GENERATION_TIME'])
     editor.delete(subject, predicate, object_value)
     return redirect(url_for('show_triples', subject=subject))
 
@@ -150,7 +150,7 @@ def add_triple():
             return redirect(url_for('show_triples', subject=subject))
     else:
         object_value = URIRef(object_value) if validators.url(object_value) else Literal(object_value)
-    editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'])
+    editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'], app.config['PRIMARY_SOURCE'], app.config['DATASET_GENERATION_TIME'])
     editor.create(URIRef(subject), URIRef(predicate), object_value)
     return redirect(url_for('show_triples', subject=subject))
 
@@ -193,7 +193,8 @@ def validate_new_triple(subject, predicate, new_value, old_value = None):
     datatypes = [row.datatype for row in results]
     classes = [row.a_class for row in results if row.a_class]
     classes.extend([row.classIn for row in results if row.classIn])
-    optional_values_str = [row.optionalValues for row in results if row.optionalValues][0]
+    optional_values_str = [row.optionalValues for row in results if row.optionalValues]
+    optional_values_str = optional_values_str[0] if optional_values_str else ''
     optional_values = [value for value in optional_values_str.split(',') if value]
     if optional_values and new_value not in optional_values:
         return None, old_value, gettext('<code>%(new_value)s</code> is not a valid value. The <code>%(property)s</code> property requires one of the following values: %(o_values)s', new_value=filter.human_readable_predicate(new_value), property=filter.human_readable_predicate(predicate), o_values=', '.join([f'<code>{filter.human_readable_predicate(value)}</code>' for value in optional_values]))
@@ -441,8 +442,6 @@ def restore_version(entity_uri, timestamp):
     results = list(Sparql(query_snapshots, config_path=change_tracking_config).run_select_query())
     results.sort(key=lambda x:convert_to_datetime(x[0]), reverse=True)
     relevant_results = _filter_timestamps_by_interval((timestamp, timestamp), results, time_index=0)
-    agnostic_entity = AgnosticEntity(res=entity_uri, config_path=change_tracking_config)
-    entity_cg = agnostic_entity._query_dataset()
     sum_update_queries = ""
     for relevant_result in relevant_results:
         for result in results:
@@ -458,8 +457,7 @@ def restore_version(entity_uri, timestamp):
     """
     sparql.setQuery(query)
     sparql.setReturnFormat(JSON)
-    triples = sparql.query().convert().get("results", {}).get("bindings", [])
-    return render_template('triples.jinja', subject=entity_uri, triples=triples, history={entity_uri: True})
+    return redirect(url_for('show_triples', subject=entity_uri))
 
 def parse_sparql_update(query):
     parsed = parseUpdate(query)
@@ -479,7 +477,7 @@ def invert_sparql_update(sparql_query: str) -> str:
     return inverted_query
 
 def execute_sparql_update(sparql_query: str):
-    editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'])
+    editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'], app.config['PRIMARY_SOURCE'], app.config['DATASET_GENERATION_TIME'])
     editor.execute(sparql_query)
 
 def prioritize_datatype(datatypes):

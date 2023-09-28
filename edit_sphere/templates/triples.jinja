@@ -1,18 +1,12 @@
 {% macro render_triple(triple, subject) %}
     <li class="list-group-item d-flex align-items-center">
         <span class="flex-grow-1 d-flex flex-column justify-content-center p-3 w-75">
-            <span class="ellipsis" title="{{triple['predicate']['value']}}">
-                <a class="fw-bold"href="{{ (triple['predicate']['value'] | split_ns)[0][:-1] }}#{{ triple['predicate']['value'] }}" target="_blank" alt="Definition of the property {{ triple['predicate']['value'] }}">
-                    {{ triple['predicate']['value'] | human_readable_predicate }}
-                    <i class="bi bi-question-circle ml-1"></i>
-                </a>
+            <span class="ellipsis fw-bold" title="{{triple['predicate']['value']}}">
+                {{ triple['predicate']['value'] | human_readable_predicate }}
             </span>
             {% if triple['object']['value'] != triple['object']['value'] | human_readable_predicate %}
                 <span title="{{ triple['object']['value'] }}" class="object-value mt-4 ellipsis">
-                    <a href="{{ (triple['object']['value'] | split_ns)[0][:-1] }}#{{ triple['object']['value'] }}" target="_blank" alt="Definition of the value {{ triple['object']['value'] }}">
-                        {{ triple['object']['value'] | human_readable_predicate }}
-                        <i class="bi bi-question-circle ml-1"></i>
-                    </a>
+                    {{ triple['object']['value'] | human_readable_predicate }}
                 </span>
             {% elif triple['object']['value'].startswith('http://') or triple['object']['value'].startswith('https://') %}
                 <span title="{{ triple['object']['value'] }}" class="object-value mt-4 ellipsis">
@@ -27,7 +21,7 @@
                 {{ update_form.subject(value=subject) }}
                 {{ update_form.predicate(value=triple['predicate']['value']) }}
                 {{ update_form.old_value(value=triple['object']['value']) }}
-                {% if triple['predicate']['value'] in optional_values %}
+                {% if optional_values[triple['predicate']['value']] %}
                     <select name="new_value" class="form-control my-4">
                         {% for value in optional_values[triple['predicate']['value']] %}
                             <option value="{{ value }}" {% if value == triple['object']['value'] %}selected{% endif %}>{{ value | human_readable_predicate }}</option>

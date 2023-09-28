@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from typing import Tuple
+from urllib.parse import urlparse
 
 import dateutil
 from flask_babel import format_datetime
@@ -34,6 +35,11 @@ class Filter:
         return format_datetime(dt, format='long')
 
     def split_ns(self, ns: str) -> Tuple[str, str]:
-        last_part = ns.split('/')[-1].split('#')[-1]
-        first_part = ns.replace(last_part, '')
+        parsed = urlparse(ns)
+        if parsed.fragment:
+            first_part = parsed.scheme + '://' + parsed.netloc + parsed.path + '#'
+            last_part = parsed.fragment
+        else:
+            first_part = parsed.scheme + '://' + parsed.netloc + '/'.join(parsed.path.split('/')[:-1]) + '/'
+            last_part = parsed.path.split('/')[-1]
         return first_part, last_part
