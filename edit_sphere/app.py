@@ -300,7 +300,7 @@ def entity_history(entity_uri):
     agnostic_entity = AgnosticEntity(res=entity_uri, config_path=change_tracking_config)
     history, provenance = agnostic_entity.get_history(include_prov_metadata=True)
 
-    # Trasforma i dati in formato TimelineJS
+    # Trasforma i dati in formato TimelineJS useless
     events = []
     sorted_metadata = sorted(provenance[entity_uri].items(), key=lambda x: x[1]['generatedAtTime'])  # Ordina gli eventi per data
 
