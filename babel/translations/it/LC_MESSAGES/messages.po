@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT 1.0\n"
 "Report-Msgid-Bugs-To: arcangelo.massari@unibo.it\n"
-"POT-Creation-Date: 2023-09-27 18:10+0200\n"
+"POT-Creation-Date: 2023-09-29 11:25+0200\n"
 "PO-Revision-Date: 2023-09-09 15:01+0200\n"
 "Last-Translator: Arcangelo Massari <arcangelo.massari@unibo.it>\n"
 "Language: it\n"
@@ -18,21 +18,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.12.1\n"
 
-#: edit_sphere/app.py:130
+#: edit_sphere/app.py:133
 msgid "This property cannot be deleted"
 msgstr "Questa proprietà non può essere cancellata"
 
-#: edit_sphere/app.py:145
+#: edit_sphere/app.py:148
 #, python-format
 msgid "This resource cannot have any other %(predicate)s properties"
 msgstr "Questa risorsa non può avere altre proprietà %(predicate)s"
 
-#: edit_sphere/app.py:192
+#: edit_sphere/app.py:195
 #, python-format
 msgid "The property %(predicate)s is not allowed for resources of type %(s_type)s"
 msgstr "%(predicate)s non è un metadato valido per risorse di tipo %(s_type)s"
 
-#: edit_sphere/app.py:199
+#: edit_sphere/app.py:203
 #, python-format
 msgid ""
 "<code>%(new_value)s</code> is not a valid value. The "
@@ -42,7 +42,7 @@ msgstr ""
 "<code>%(new_value)s</code> non è un valore valido. "
 "<code>%(property)s</code> richiede valori di tipo %(o_values)s"
 
-#: edit_sphere/app.py:202 edit_sphere/app.py:205 edit_sphere/app.py:210
+#: edit_sphere/app.py:206 edit_sphere/app.py:209 edit_sphere/app.py:214
 #, python-format
 msgid ""
 "<code>%(new_value)s</code> is not a valid value. The "
@@ -51,46 +51,50 @@ msgstr ""
 "<code>%(new_value)s</code> non è un valore valido. "
 "<code>%(property)s</code> richiede valori di tipo %(o_types)s"
 
-#: edit_sphere/app.py:307 edit_sphere/templates/entity_version.jinja:91
-msgid "Unknown"
-msgstr "Sconosciuta"
-
-#: edit_sphere/app.py:317 edit_sphere/app.py:324
+#: edit_sphere/app.py:321 edit_sphere/app.py:328
 #: edit_sphere/templates/entity_version.jinja:5
 msgid "Definition of the property"
 msgstr "Definizione della proprieta"
 
-#: edit_sphere/app.py:339
+#: edit_sphere/app.py:343
 msgid "Snapshot"
 msgstr "Versione"
 
-#: edit_sphere/app.py:341
+#: edit_sphere/app.py:345
 msgid "Responsible agent"
 msgstr "Agente responsabile"
 
-#: edit_sphere/app.py:342 edit_sphere/templates/entity_version.jinja:91
+#: edit_sphere/app.py:346 edit_sphere/templates/entity_version.jinja:93
 msgid "Primary source"
 msgstr "Fonte primaria"
 
-#: edit_sphere/app.py:343 edit_sphere/templates/entity_version.jinja:93
+#: edit_sphere/app.py:347 edit_sphere/templates/entity_version.jinja:95
 msgid "Description"
 msgstr "Descrizione"
 
-#: edit_sphere/app.py:372
+#: edit_sphere/app.py:376
 msgid "View version"
 msgstr "Visualizza versione"
 
-#: edit_sphere/app.py:379
+#: edit_sphere/app.py:383
 msgid "Version history for"
 msgstr "Storia delle versioni di"
 
-#: edit_sphere/app.py:467 edit_sphere/app.py:471
+#: edit_sphere/app.py:488 edit_sphere/app.py:492
 msgid "Deletions"
 msgstr "Cancellazioni"
 
-#: edit_sphere/app.py:467 edit_sphere/app.py:473
+#: edit_sphere/app.py:488 edit_sphere/app.py:494
 msgid "Additions"
 msgstr "Aggiunte"
+
+#: edit_sphere/filters.py:50
+msgid "Unknown"
+msgstr "Sconosciuta"
+
+#: edit_sphere/filters.py:53 edit_sphere/templates/entity_version.jinja:34
+msgid "Version"
+msgstr "Versione"
 
 #: edit_sphere/templates/endpoint.jinja:5
 #: edit_sphere/templates/navigation.jinja:16
@@ -119,15 +123,11 @@ msgid "Link to the entity"
 msgstr "Collegamento alla risorsa"
 
 #: edit_sphere/templates/entity_version.jinja:34
-msgid "Version"
-msgstr "Versione"
-
-#: edit_sphere/templates/entity_version.jinja:34
 msgid "of"
 msgstr "di"
 
 #: edit_sphere/templates/entity_version.jinja:39
-#: edit_sphere/templates/triples.jinja:121
+#: edit_sphere/templates/triples.jinja:115
 msgid "Time machine"
 msgstr "Macchina del tempo"
 
@@ -135,32 +135,32 @@ msgstr "Macchina del tempo"
 msgid "Restore this version"
 msgstr "Ripristina questa versione"
 
-#: edit_sphere/templates/entity_version.jinja:58
-#: edit_sphere/templates/entity_version.jinja:64
+#: edit_sphere/templates/entity_version.jinja:60
+#: edit_sphere/templates/entity_version.jinja:66
 msgid "Previous version"
 msgstr "Versione precedente"
 
-#: edit_sphere/templates/entity_version.jinja:72
+#: edit_sphere/templates/entity_version.jinja:74
 msgid "Next version"
 msgstr "Versione successiva"
 
-#: edit_sphere/templates/entity_version.jinja:83
+#: edit_sphere/templates/entity_version.jinja:85
 msgid "Metadata of snapshot"
 msgstr "Metadati della versione numero"
 
-#: edit_sphere/templates/entity_version.jinja:86
+#: edit_sphere/templates/entity_version.jinja:88
 msgid "Generation time"
 msgstr "Data di generazione"
 
-#: edit_sphere/templates/entity_version.jinja:88
+#: edit_sphere/templates/entity_version.jinja:90
 msgid "Invalidation time"
 msgstr "Data di invalidazione"
 
-#: edit_sphere/templates/entity_version.jinja:90
+#: edit_sphere/templates/entity_version.jinja:92
 msgid "Attributed to"
 msgstr "Agente responsabile"
 
-#: edit_sphere/templates/entity_version.jinja:97
+#: edit_sphere/templates/entity_version.jinja:99
 msgid "Modifications"
 msgstr "Modifiche"
 
@@ -173,9 +173,8 @@ msgid "Links to other resources"
 msgstr "Collegamenti ad altre risorse"
 
 #: edit_sphere/templates/entity_version.jinja:145
-#: edit_sphere/templates/triples.jinja:160
-msgid "There is no information related to this entity in the dataset"
-msgstr "Non ci sono informazioni disponibili su questa risorsa nella banca dati"
+msgid "This snapshot does not exist"
+msgstr "Questa versione non esiste"
 
 #: edit_sphere/templates/footer.jinja:15
 msgid "Language"
@@ -203,54 +202,54 @@ msgstr "Torna alla home"
 msgid "Search"
 msgstr "Cerca"
 
-#: edit_sphere/templates/triples.jinja:40
+#: edit_sphere/templates/triples.jinja:34
 msgid "Update"
 msgstr "Modifica"
 
-#: edit_sphere/templates/triples.jinja:41
-#: edit_sphere/templates/triples.jinja:96
-#: edit_sphere/templates/triples.jinja:176
+#: edit_sphere/templates/triples.jinja:35
+#: edit_sphere/templates/triples.jinja:90
+#: edit_sphere/templates/triples.jinja:170
 msgid "Cancel"
 msgstr "Annulla"
 
-#: edit_sphere/templates/triples.jinja:48
+#: edit_sphere/templates/triples.jinja:42
 msgid "This property is mandatory and cannot be edited"
 msgstr "Questa proprietà è obbligatoria e non può essere modificata"
 
-#: edit_sphere/templates/triples.jinja:58
-#: edit_sphere/templates/triples.jinja:265
+#: edit_sphere/templates/triples.jinja:52
+#: edit_sphere/templates/triples.jinja:259
 msgid "This property is mandatory and cannot be deleted"
 msgstr "Questa proprietà è obbligatoria e non può essere cancellata"
 
-#: edit_sphere/templates/triples.jinja:77
-#: edit_sphere/templates/triples.jinja:163
+#: edit_sphere/templates/triples.jinja:71
+#: edit_sphere/templates/triples.jinja:157
 msgid "Add a new piece of information"
 msgstr "Aggiungi una nuova informazione"
 
-#: edit_sphere/templates/triples.jinja:84
-#: edit_sphere/templates/triples.jinja:171
+#: edit_sphere/templates/triples.jinja:78
+#: edit_sphere/templates/triples.jinja:165
 msgid "Value"
 msgstr "Valore"
 
-#: edit_sphere/templates/triples.jinja:95
-#: edit_sphere/templates/triples.jinja:175
+#: edit_sphere/templates/triples.jinja:89
+#: edit_sphere/templates/triples.jinja:169
 msgid "Add"
 msgstr "Aggiungi"
 
-#: edit_sphere/templates/triples.jinja:106
+#: edit_sphere/templates/triples.jinja:100
 msgid "About"
 msgstr "Riguardo"
 
-#: edit_sphere/templates/triples.jinja:138
+#: edit_sphere/templates/triples.jinja:132
 msgid "attributes"
 msgstr "attributi"
 
-#: edit_sphere/templates/triples.jinja:138
+#: edit_sphere/templates/triples.jinja:132
 msgid "links to other resources"
 msgstr "collegamenti ad altre risorse"
 
-#: edit_sphere/templates/triples.jinja:143
-#: edit_sphere/templates/triples.jinja:202
+#: edit_sphere/templates/triples.jinja:137
+#: edit_sphere/templates/triples.jinja:196
 msgid ""
 "You cannot add more properties; the limit for each property has been "
 "reached"
@@ -258,28 +257,32 @@ msgstr ""
 "Non puoi aggiungere altre proprietà; il limite per ogni proprietà è stato"
 " raggiunto"
 
-#: edit_sphere/templates/triples.jinja:161
+#: edit_sphere/templates/triples.jinja:154
+msgid "There is no information related to this entity in the dataset"
+msgstr "Non ci sono informazioni disponibili su questa risorsa nella banca dati"
+
+#: edit_sphere/templates/triples.jinja:155
 msgid "Add new link"
 msgstr "Aggiungi un nuovo collegamento"
 
-#: edit_sphere/templates/triples.jinja:161
+#: edit_sphere/templates/triples.jinja:155
 msgid "Let's add some metadata"
 msgstr "Aggiungiamo un po' di metadati"
 
-#: edit_sphere/templates/triples.jinja:167
+#: edit_sphere/templates/triples.jinja:161
 msgid "Property"
 msgstr "Proprietà"
 
-#: edit_sphere/templates/triples.jinja:201
-#: edit_sphere/templates/triples.jinja:264
+#: edit_sphere/templates/triples.jinja:195
+#: edit_sphere/templates/triples.jinja:258
 msgid "Warning"
 msgstr "Attenzione"
 
-#: edit_sphere/templates/triples.jinja:238
+#: edit_sphere/templates/triples.jinja:232
 msgid "Are you sure?"
 msgstr "Sei sicuro?"
 
-#: edit_sphere/templates/triples.jinja:239
+#: edit_sphere/templates/triples.jinja:233
 msgid ""
 "You are about to delete this information. In any case, it will be "
 "possible to restore it"
@@ -287,15 +290,15 @@ msgstr ""
 "Stai per cancellare questa informazione. Ad ogni modo, potrai "
 "ripristinarla in un secondo momento"
 
-#: edit_sphere/templates/triples.jinja:244
+#: edit_sphere/templates/triples.jinja:238
 msgid "Yes, delete it!"
 msgstr "Sì, cancella!"
 
-#: edit_sphere/templates/triples.jinja:253
+#: edit_sphere/templates/triples.jinja:247
 msgid "Deleted!"
 msgstr "Cancellato!"
 
-#: edit_sphere/templates/triples.jinja:254
+#: edit_sphere/templates/triples.jinja:248
 msgid "The data was deleted correctly"
 msgstr "La cancellazione è avvenuta correttamente"
 

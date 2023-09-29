@@ -42,6 +42,7 @@ with open("resources/context.json", "r") as config_file:
 dataset_endpoint = app.config["DATASET_ENDPOINT"]
 provenance_endpoint = app.config["PROVENANCE_ENDPOINT"]
 sparql = SPARQLWrapper(dataset_endpoint)
+provenance_sparql = SPARQLWrapper(provenance_endpoint)
 change_tracking_config = app.config["CHANGE_TRACKING_CONFIG"]
 
 shacl_path = app.config["SHACL_PATH"]
@@ -54,6 +55,7 @@ if shacl_path:
 filter = Filter(context)
 
 app.jinja_env.filters['human_readable_predicate'] = filter.human_readable_predicate
+app.jinja_env.filters['human_readable_primary_source'] = filter.human_readable_primary_source
 app.jinja_env.filters['format_datetime'] = filter.human_readable_datetime
 app.jinja_env.filters['split_ns'] = filter.split_ns
 
@@ -305,7 +307,7 @@ def entity_history(entity_uri):
     for i, (snapshot_uri, metadata) in enumerate(sorted_metadata):
         date = datetime.fromisoformat(metadata['generatedAtTime'])
         responsible_agent = f"<a href='{metadata['wasAttributedTo']}' alt='{gettext('Link to the responsible agent description')} target='_blank'>{metadata['wasAttributedTo']}</a>" if validators.url(metadata['wasAttributedTo']) else metadata['wasAttributedTo']
-        primary_source = gettext('Unknown') if not metadata['hadPrimarySource'] else f"<a href='{metadata['hadPrimarySource']}' alt='{gettext('Link to the primary source description')} target='_blank'>{metadata['hadPrimarySource']}</a>" if validators.url(metadata['hadPrimarySource']) else metadata['hadPrimarySource']
+        primary_source = filter.human_readable_primary_source(metadata['hadPrimarySource'])
         modifications = metadata['hasUpdateQuery']
         modification_text = ""
         if modifications:
@@ -387,16 +389,34 @@ def entity_history(entity_uri):
 
 @app.route('/entity-version/<path:entity_uri>/<timestamp>')
 def entity_version(entity_uri, timestamp):
+    try:
+        timestamp_dt = datetime.fromisoformat(timestamp)
+    except ValueError:
+        query_timestamp = f'''
+            SELECT ?generation_time
+            WHERE {{
+                <{entity_uri}/prov/se/{timestamp}> <{ProvEntity.iri_generated_at_time}> ?generation_time.
+            }}
+        '''
+        provenance_sparql.setQuery(query_timestamp)
+        provenance_sparql.setReturnFormat(JSON)
+        try:
+            generation_time = provenance_sparql.queryAndConvert()['results']['bindings'][0]['generation_time']['value']
+        except IndexError:
+            return render_template('entity_version.jinja', subject=entity_uri, triples=list(), metadata={f'{entity_uri}/prov/se/{timestamp}': None})
+        timestamp = generation_time
+        timestamp_dt = datetime.fromisoformat(generation_time)
     agnostic_entity = AgnosticEntity(res=entity_uri, config_path=change_tracking_config)
     history, metadata, other_snapshots_metadata = agnostic_entity.get_state_at_time(time=(None, timestamp), include_prov_metadata=True)
-    timestamp_dt = datetime.fromisoformat(timestamp)
     if not timestamp_dt.tzinfo:
         timestamp_dt = timestamp_dt.replace(tzinfo=timezone.utc)
     history = {k: v for k, v in history.items()}
     for key, value in metadata.items():
         value['generatedAtTime'] = datetime.fromisoformat(value['generatedAtTime']).astimezone(timezone.utc).isoformat()
-
-    closest_timestamp = min(history.keys(), key=lambda t: abs(datetime.fromisoformat(t).astimezone(timezone.utc) - timestamp_dt))
+    try:
+        closest_timestamp = min(history.keys(), key=lambda t: abs(datetime.fromisoformat(t).astimezone(timezone.utc) - timestamp_dt))
+    except ValueError:
+        return render_template('entity_version.jinja', subject=entity_uri, triples=list(), metadata={f'{entity_uri}/prov/se/0': None})
     version: Graph = history[closest_timestamp]
     triples = list(version.triples((None, None, None)))
     
@@ -430,7 +450,7 @@ def entity_version(entity_uri, timestamp):
 @app.route('/restore-version/<path:entity_uri>/<timestamp>', methods=['POST'])
 def restore_version(entity_uri, timestamp):
     query_snapshots = f"""
-        SELECT ?time ?updateQuery
+        SELECT ?time ?updateQuery ?snapshot
         WHERE {{
             ?snapshot <{ProvEntity.iri_specialization_of}> <{entity_uri}>;
                 <{ProvEntity.iri_generated_at_time}> ?time
@@ -448,8 +468,10 @@ def restore_version(entity_uri, timestamp):
             if result[1]:
                 if convert_to_datetime(result[0]) > convert_to_datetime(relevant_result[0]):
                     sum_update_queries += (result[1]) +  ";"
+        primary_source = URIRef(relevant_result[2])
     inverted_query = invert_sparql_update(sum_update_queries)
-    execute_sparql_update(inverted_query)
+    editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'], primary_source, app.config['DATASET_GENERATION_TIME'])
+    editor.execute(inverted_query)
     query = f"""
         SELECT ?predicate ?object WHERE {{
             <{entity_uri}> ?predicate ?object.

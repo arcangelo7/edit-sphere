@@ -49,71 +49,71 @@
         {% endif %}    
     </div>
     
-    {# Pulsanti per navigare tra gli snapshot #}
-    <div class="mt-5 mb-5 d-flex justify-content-start">
-
-        {% if prev_snapshot_timestamp %}
-        <div class="me-4">
-            <a href="{{ url_for('entity_version', entity_uri=subject, timestamp=prev_snapshot_timestamp) }}" class="btn btn-outline-primary">
-                <i class="bi bi-arrow-left"></i> {{ _('Previous version') }}
-            </a>
-        </div>
-        {% else %}
-        <div style="visibility: hidden;" class="me-4">
-            <a href="#" class="btn btn-outline-primary">
-                <i class="bi bi-arrow-left"></i> {{ _('Previous version') }}
-            </a>
-        </div>
-        {% endif %}
-    
-        {% if next_snapshot_timestamp %}
-        <div>
-            <a href="{{ url_for('entity_version', entity_uri=subject, timestamp=next_snapshot_timestamp) }}" class="btn btn-outline-primary">
-                {{ _('Next version') }} <i class="bi bi-arrow-right"></i>
-            </a>
-        </div>
-        {% endif %}
-    </div>
-
-    <div class="row mb-5">
-        {% for snapshot_uri, meta in metadata.items() %}
-        <div class="col-md-6 mb-4">
-            <div class="card">
-                <div class="card-header">
-                    {{_('Metadata of snapshot')}} {{ snapshot_uri.split('/')[-1] }}
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><strong>{{_('Generation time')}}:</strong> {{ meta['generatedAtTime'] | format_datetime }}</li>
-                    {% if meta['invalidatedAtTime'] %}
-                        <li class="list-group-item"><strong>{{_('Invalidation time')}}:</strong> {{ meta['invalidatedAtTime'] | format_datetime }}</li>
-                    {% endif %}
-                    <li class="list-group-item"><strong>{{_('Attributed to')}}:</strong> <a href="{{ meta['wasAttributedTo'] }}" target="_blank">{{ meta['wasAttributedTo'] }}</a></li>
-                    <li class="list-group-item"><strong>{{_('Primary source')}}:</strong> {{ meta['hadPrimarySource'] if meta['hadPrimarySource'] else _('Unknown') }}</li>
-                    {% if meta['description'] %}
-                    <li class="list-group-item"><strong>{{_('Description')}}:</strong> {{ meta['description'] }}</li>
-                    {% endif %}
-                    {% if modifications %}
-                        <li class="list-group-item">
-                            <p><strong>{{_('Modifications')}}:</strong></p>
-                            {% for mod_type, triples in modifications.items() %}
-                                {% if triples %}
-                                    <ul class="list-group mb-3">
-                                        <p>{{ mod_type }}</p>
-                                        {% for triple in triples %}
-                                            {{render_triple(triple, subject)}}
-                                        {% endfor %}
-                                    </ul>
-                                {% endif %}
-                            {% endfor %}
-                        </li>
-                    {% endif %}
-                </ul>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-
     {% if triples %}
+
+        {# Pulsanti per navigare tra gli snapshot #}
+        <div class="mt-5 mb-5 d-flex justify-content-start">
+
+            {% if prev_snapshot_timestamp %}
+            <div class="me-4">
+                <a href="{{ url_for('entity_version', entity_uri=subject, timestamp=prev_snapshot_timestamp) }}" class="btn btn-outline-primary">
+                    <i class="bi bi-arrow-left"></i> {{ _('Previous version') }}
+                </a>
+            </div>
+            {% else %}
+            <div style="visibility: hidden;" class="me-4">
+                <a href="#" class="btn btn-outline-primary">
+                    <i class="bi bi-arrow-left"></i> {{ _('Previous version') }}
+                </a>
+            </div>
+            {% endif %}
+        
+            {% if next_snapshot_timestamp %}
+            <div>
+                <a href="{{ url_for('entity_version', entity_uri=subject, timestamp=next_snapshot_timestamp) }}" class="btn btn-outline-primary">
+                    {{ _('Next version') }} <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="row mb-5">
+            {% for snapshot_uri, meta in metadata.items() %}
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        {{_('Metadata of snapshot')}} {{ snapshot_uri.split('/')[-1] }}
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>{{_('Generation time')}}:</strong> {{ meta['generatedAtTime'] | format_datetime }}</li>
+                        {% if meta['invalidatedAtTime'] %}
+                            <li class="list-group-item"><strong>{{_('Invalidation time')}}:</strong> {{ meta['invalidatedAtTime'] | format_datetime }}</li>
+                        {% endif %}
+                        <li class="list-group-item"><strong>{{_('Attributed to')}}:</strong> <a href="{{ meta['wasAttributedTo'] }}" target="_blank">{{ meta['wasAttributedTo'] }}</a></li>
+                        <li class="list-group-item"><strong>{{_('Primary source')}}:</strong> {{ meta['hadPrimarySource'] | human_readable_primary_source }}</li>
+                        {% if meta['description'] %}
+                        <li class="list-group-item"><strong>{{_('Description')}}:</strong> {{ meta['description'] }}</li>
+                        {% endif %}
+                        {% if modifications %}
+                            <li class="list-group-item">
+                                <p><strong>{{_('Modifications')}}:</strong></p>
+                                {% for mod_type, triples in modifications.items() %}
+                                    {% if triples %}
+                                        <ul class="list-group mb-3">
+                                            <p>{{ mod_type }}</p>
+                                            {% for triple in triples %}
+                                                {{render_triple(triple, subject)}}
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                {% endfor %}
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
 
         {% set attributes_triples = [] %}
         {% set links_triples = [] %}
@@ -142,7 +142,7 @@
             </ul>
         {% endif %}
     {% else %}
-        <p class="alert alert-warning">{{_('There is no information related to this entity in the dataset')}}</p>
+        <p class="alert alert-warning my-5">{{_('This snapshot does not exist')}}</p>
     {% endif %}
 </div>
 {% endblock %}
