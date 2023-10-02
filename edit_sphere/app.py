@@ -100,7 +100,8 @@ def show_triples(subject):
         create_form.predicate.choices = [(p, filter.human_readable_predicate(p)) for p in can_be_added]
     else:
         create_form = CreateTripleFormWithInput()
-    return render_template('triples.jinja', subject=decoded_subject, triples=triples, history=history, can_be_added=can_be_added, can_be_deleted=can_be_deleted, datatypes=datatypes, update_form=update_form, create_form=create_form, mandatory_values=mandatory_values, optional_values=optional_values)
+    shacl_validation = True if shacl else False
+    return render_template('triples.jinja', subject=decoded_subject, triples=triples, history=history, can_be_added=can_be_added, can_be_deleted=can_be_deleted, datatypes=datatypes, update_form=update_form, create_form=create_form, mandatory_values=mandatory_values, optional_values=optional_values, shacl=shacl_validation)
 
 @app.route('/update_triple', methods=['POST'])
 def update_triple():

@@ -1,11 +1,11 @@
 {% macro render_triple(triple, subject) %}
     <li class="list-group-item d-flex align-items-center">
         <span class="flex-grow-1 d-flex flex-column justify-content-center p-3 w-75">
-            <span class="ellipsis fw-bold" title="{{triple['predicate']['value']}}">
+            <span class="ellipsis fw-bold">
                 {{ triple['predicate']['value'] | human_readable_predicate }}
             </span>
             {% if triple['object']['value'] != triple['object']['value'] | human_readable_predicate %}
-                <span title="{{ triple['object']['value'] }}" class="object-value mt-4 ellipsis">
+                <span class="object-value mt-4 ellipsis">
                     {{ triple['object']['value'] | human_readable_predicate }}
                 </span>
             {% elif triple['object']['value'].startswith('http://') or triple['object']['value'].startswith('https://') %}
@@ -13,7 +13,7 @@
                     <a href="{{url_for('show_triples', subject=triple['object']['value']|urlencode)}}" alt="Link to the entity {{ triple['object']['value'] }}">{{ triple['object']['value'] }}</a>
                 </span>
             {% else %}
-                <span title="{{ triple['object']['value'] }}" class="object-value mt-4 ellipsis">{{ triple['object']['value'] }}</span>
+                <span class="object-value mt-4 ellipsis">{{ triple['object']['value'] }}</span>
             {% endif %}
             <form class="edit-form d-none"
                 action="{{ url_for('update_triple') }}"
@@ -38,27 +38,27 @@
         </span>
         <div class="align-self-start">
             <div class="d-flex flex-column flex-sm-row">
-                {% if triple['predicate']['value'] in mandatory_values and triple['object']['value'] == mandatory_values[triple['predicate']['value']] %}
+                {% if shacl and triple['predicate']['value'] in mandatory_values and triple['object']['value'] == mandatory_values[triple['predicate']['value']] %}
                     <div title="{{ _('This property is mandatory and cannot be edited') }}" class="info-cursor">
                 {% endif %}
                     <button class="btn btn-outline-secondary edit-button m-2"
-                            {% if triple['predicate']['value'] in mandatory_values and triple['object']['value'] == mandatory_values[triple['predicate']['value']] %}disabled{% endif %}>
+                            {% if shacl and triple['predicate']['value'] in mandatory_values and triple['object']['value'] == mandatory_values[triple['predicate']['value']] %}disabled{% endif %}>
                         <i class="bi bi-pencil-square"></i>
                     </button>
-                {% if triple['predicate']['value'] in mandatory_values and triple['object']['value'] == mandatory_values[triple['predicate']['value']] %}
+                {% if shacl and triple['predicate']['value'] in mandatory_values and triple['object']['value'] == mandatory_values[triple['predicate']['value']] %}
                     </div>
                 {% endif %}
-                {% if triple['predicate']['value'] not in can_be_deleted or (triple['predicate']['value'] in mandatory_values and triple['object']['value'] == mandatory_values[triple['predicate']['value']]) %}
+                {% if shacl and (triple['predicate']['value'] not in can_be_deleted or (triple['predicate']['value'] in mandatory_values and triple['object']['value'] == mandatory_values[triple['predicate']['value']])) %}
                     <div title="{{ _('This property is mandatory and cannot be deleted') }}" class="info-cursor">
                 {% endif %}
                     <button class="btn btn-outline-danger delete-button m-2" 
                             data-subject="{{ subject }}" 
                             data-predicate="{{ triple['predicate']['value'] }}" 
                             data-object="{{ triple['object']['value'] }}"
-                            {% if triple['predicate']['value'] not in can_be_deleted or (triple['predicate']['value'] in mandatory_values and triple['object']['value'] == mandatory_values[triple['predicate']['value']]) %}disabled{% endif %}>
+                            {% if shacl and (triple['predicate']['value'] not in can_be_deleted or (triple['predicate']['value'] in mandatory_values and triple['object']['value'] == mandatory_values[triple['predicate']['value']])) %}disabled{% endif %}>
                         <i class="bi bi-trash"></i> <!-- Icona di cancellazione -->
                     </button>
-                {% if triple['predicate']['value'] not in can_be_deleted or (triple['predicate']['value'] in mandatory_values and triple['object']['value'] == mandatory_values[triple['predicate']['value']]) %}
+                {% if shacl and (triple['predicate']['value'] not in can_be_deleted or (triple['predicate']['value'] in mandatory_values and triple['object']['value'] == mandatory_values[triple['predicate']['value']])) %}
                     </div>
                 {% endif %}
             </div>
@@ -76,13 +76,15 @@
             </div>
             <div class="form-group mt-3">
                 <label for="object">{{_('Value')}}</label>
-                <select name="object" class="form-control object-input" style="display: none;">
-                    {% for pred, values in optional_values.items() %}
-                        {% for value in values %}
-                            <option value="{{ value }}" data-predicate="{{ pred }}">{{ value | human_readable_predicate }}</option>
+                {% if shacl %}
+                    <select name="object" class="form-control object-input" style="display: none;">
+                        {% for pred, values in optional_values.items() %}
+                            {% for value in values %}
+                                <option value="{{ value }}" data-predicate="{{ pred }}">{{ value | human_readable_predicate }}</option>
+                            {% endfor %}
                         {% endfor %}
-                    {% endfor %}
-                </select>
+                    </select>
+                {% endif %}
                 <input type="text" name="object" class="form-control object-input-text" style="display: none;">
             </div>
             <div class="mt-3">
@@ -133,7 +135,7 @@
             {% if triples_set %}
                 <div class="d-flex justify-content-start align-items-baseline mt-5 mb-3">
                     <h4 class="me-4">{{ type_human.capitalize() }}</h4>
-                    {% if not can_be_added %}
+                    {% if shacl and not can_be_added %}
                     <span title="{{ _('You cannot add more properties; the limit for each property has been reached') }}" class="info-cursor">
                         <button class="btn btn-outline-success add-button-{{ type }}" disabled><i class="bi bi-plus-lg"></i></button>
                     </span>
@@ -177,6 +179,7 @@
 <script>
     $(document).ready(function () {
         const optional_values = {{ optional_values|tojson|safe }};
+        const shacl = {{ shacl|tojson|safe }};
 
         function toggleEditForm(listItem) {
             const form = listItem.find('.edit-form');
@@ -204,6 +207,10 @@
         }
 
         function updateObjectInput() {
+            if (!shacl) {
+                $('.object-input-text').show();
+                return
+            }
             const selectedPredicate = $('.predicate-select').val();
             if (optional_values[selectedPredicate].length > 0) {
                 $('.object-input-text').hide();
@@ -227,7 +234,7 @@
             const subject = $(this).data('subject');
             const predicate = $(this).data('predicate');
             const object_value = $(this).data('object');
-            if ({{ can_be_deleted | safe }}.includes(predicate)) {
+            if (!shacl || {{ can_be_deleted | safe }}.includes(predicate)) {
                 Swal.fire({
                     title: "{{_('Are you sure?')}}",
                     text: "{{_('You are about to delete this information. In any case, it will be possible to restore it')}}",

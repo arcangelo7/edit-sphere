@@ -1,25 +1,19 @@
 {% macro render_triple(triple, subject) %}
     <li class="list-group-item d-flex align-items-center">
         <span class="flex-grow-1 d-flex flex-column justify-content-center p-3 w-75">
-            <span class="ellipsis" title="{{triple[1]}}">
-                <a class="fw-bold"href="{{ (triple[1] | split_ns)[0][:-1] }}#{{ triple[1] }}" target="_blank" alt="{{_('Definition of the property')}} {{ triple[1] }}">
-                    {{ triple[1] | human_readable_predicate }}
-                    <i class="bi bi-question-circle ml-1"></i>
-                </a>
+            <span class="ellipsis fw-bold">
+                {{ triple[1] | human_readable_predicate }}
             </span>
             {% if triple[2] != triple[2] | human_readable_predicate %}
-                <span title="{{ triple[2] }}" class="object-value mt-4 ellipsis">
-                    <a href="{{ (triple[2] | split_ns)[0][:-1] }}#{{ triple[2] }}" target="_blank" alt="{{_('Definition of the value')}} {{ triple[2] }}">
-                        {{ triple[2] | human_readable_predicate }}
-                        <i class="bi bi-question-circle ml-1"></i>
-                    </a>
+                <span class="object-value mt-4 ellipsis">
+                    {{ triple[2] | human_readable_predicate }}
                 </span>
             {% elif triple[2].startswith('http://') or triple[2].startswith('https://') %}
                 <span title="{{ triple[2] }}" class="object-value mt-4 ellipsis">
                     <a href="{{url_for('show_triples', subject=triple[2]|urlencode)}}" alt="{{_('Link to the entity')}} {{ triple[2] }}">{{ triple[2] }}</a>
                 </span>
             {% else %}
-                <span title="{{ triple[2] }}" class="object-value mt-4 ellipsis">{{ triple[2] }}</span>
+                <span class="object-value mt-4 ellipsis">{{ triple[2] }}</span>
             {% endif %}
         </span>
     </li>
