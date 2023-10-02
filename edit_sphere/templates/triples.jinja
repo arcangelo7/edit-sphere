@@ -1,19 +1,16 @@
 {% macro render_triple(triple, subject) %}
     <li class="list-group-item d-flex align-items-center">
         <span class="flex-grow-1 d-flex flex-column justify-content-center p-3 w-75">
-            <span class="ellipsis fw-bold">
-                {{ triple['predicate']['value'] | human_readable_predicate }}
-            </span>
             {% if triple['object']['value'] != triple['object']['value'] | human_readable_predicate %}
-                <span class="object-value mt-4 ellipsis">
+                <span class="object-value ellipsis">
                     {{ triple['object']['value'] | human_readable_predicate }}
                 </span>
             {% elif triple['object']['value'].startswith('http://') or triple['object']['value'].startswith('https://') %}
-                <span title="{{ triple['object']['value'] }}" class="object-value mt-4 ellipsis">
+                <span title="{{ triple['object']['value'] }}" class="object-value ellipsis">
                     <a href="{{url_for('show_triples', subject=triple['object']['value']|urlencode)}}" alt="Link to the entity {{ triple['object']['value'] }}">{{ triple['object']['value'] }}</a>
                 </span>
             {% else %}
-                <span class="object-value mt-4 ellipsis">{{ triple['object']['value'] }}</span>
+                <span class="object-value ellipsis">{{ triple['object']['value'] }}</span>
             {% endif %}
             <form class="edit-form d-none"
                 action="{{ url_for('update_triple') }}"
@@ -131,8 +128,8 @@
             {% endif %}
         {% endfor %}
     
-        {% for type, type_human, triples_set in [('attributes', _('attributes'), attributes_triples), ('links', _('links to other resources'), links_triples)] %}
-            {% if triples_set %}
+        {% for type, type_human, triples_set_specific in [('attributes', _('attributes'), attributes_triples), ('links', _('links to other resources'), links_triples)] %}
+            {% if triples_set_specific %}
                 <div class="d-flex justify-content-start align-items-baseline mt-5 mb-3">
                     <h4 class="me-4">{{ type_human.capitalize() }}</h4>
                     {% if shacl and not can_be_added %}
@@ -144,11 +141,19 @@
                     {% endif %}
                 </div>
                 {{ add_form(type) }}
-                <ul class="list-group">
-                    {% for triple in triples_set %}
-                        {{ render_triple(triple, subject) }}
-                    {% endfor %}
-                </ul>
+                {% for predicate, triples_set_generic in grouped_triples.items() %}
+                    {% set relevant_triples = triples_set_generic|select('in', triples_set_specific)|list %}
+                    {% if relevant_triples %}
+                        <div class="predicate-group">
+                            <span class="fw-bold">{{ predicate | human_readable_predicate }}</span>
+                            <ul class="list-group list-group-flush">
+                                {% for triple in relevant_triples %}
+                                    {{ render_triple(triple, subject) }}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                {% endfor %}
             {% endif %}
         {% endfor %}
 

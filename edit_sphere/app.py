@@ -101,7 +101,10 @@ def show_triples(subject):
     else:
         create_form = CreateTripleFormWithInput()
     shacl_validation = True if shacl else False
-    return render_template('triples.jinja', subject=decoded_subject, triples=triples, history=history, can_be_added=can_be_added, can_be_deleted=can_be_deleted, datatypes=datatypes, update_form=update_form, create_form=create_form, mandatory_values=mandatory_values, optional_values=optional_values, shacl=shacl_validation)
+    grouped_triples = defaultdict(list)
+    for triple in triples:
+        grouped_triples[triple['predicate']['value']].append(triple)
+    return render_template('triples.jinja', subject=decoded_subject, triples=triples, history=history, can_be_added=can_be_added, can_be_deleted=can_be_deleted, datatypes=datatypes, update_form=update_form, create_form=create_form, mandatory_values=mandatory_values, optional_values=optional_values, shacl=shacl_validation, grouped_triples=grouped_triples)
 
 @app.route('/update_triple', methods=['POST'])
 def update_triple():
