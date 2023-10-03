@@ -1,5 +1,5 @@
 {% macro render_triple(triple, subject) %}
-    <li class="list-group-item d-flex align-items-center">
+    <li class="d-flex align-items-center">
         <span class="flex-grow-1 d-flex flex-column justify-content-center p-3 w-75">
             {% if triple['object']['value'] != triple['object']['value'] | human_readable_predicate %}
                 <span class="object-value ellipsis">
@@ -144,13 +144,11 @@
                 {% for predicate, triples_set_generic in grouped_triples.items() %}
                     {% set relevant_triples = triples_set_generic|select('in', triples_set_specific)|list %}
                     {% if relevant_triples %}
-                        <div class="predicate-group">
+                        <div class="predicate-group mb-4">
                             <span class="fw-bold">{{ predicate | human_readable_predicate }}</span>
-                            <ul class="list-group list-group-flush">
-                                {% for triple in relevant_triples %}
-                                    {{ render_triple(triple, subject) }}
-                                {% endfor %}
-                            </ul>
+                            {% for triple in relevant_triples %}
+                                {{ render_triple(triple, subject) }}
+                            {% endfor %}
                         </div>
                     {% endif %}
                 {% endfor %}

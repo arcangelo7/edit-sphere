@@ -1,19 +1,16 @@
 {% macro render_triple(triple, subject) %}
-    <li class="list-group-item d-flex align-items-center">
+    <li class="d-flex align-items-center">
         <span class="flex-grow-1 d-flex flex-column justify-content-center p-3 w-75">
-            <span class="ellipsis fw-bold">
-                {{ triple[1] | human_readable_predicate }}
-            </span>
             {% if triple[2] != triple[2] | human_readable_predicate %}
-                <span class="object-value mt-4 ellipsis">
+                <span class="object-value ellipsis">
                     {{ triple[2] | human_readable_predicate }}
                 </span>
             {% elif triple[2].startswith('http://') or triple[2].startswith('https://') %}
-                <span title="{{ triple[2] }}" class="object-value mt-4 ellipsis">
+                <span title="{{ triple[2] }}" class="object-value ellipsis">
                     <a href="{{url_for('show_triples', subject=triple[2]|urlencode)}}" alt="{{_('Link to the entity')}} {{ triple[2] }}">{{ triple[2] }}</a>
                 </span>
             {% else %}
-                <span class="object-value mt-4 ellipsis">{{ triple[2] }}</span>
+                <span class="object-value ellipsis">{{ triple[2] }}</span>
             {% endif %}
         </span>
     </li>
@@ -119,22 +116,24 @@
             {% endif %}
         {% endfor %}
     
-        {% if attributes_triples %}
-            <h4 class="mt-5 mb-3">{{_('Attributes')}}</h4>
-            <ul class="list-group">
-                {% for triple in attributes_triples  %}
-                    {{ render_triple(triple, subject) }}
+        {% for type, type_human, triples_set_specific in [('attributes', _('attributes'), attributes_triples), ('links', _('links to other resources'), links_triples)] %}
+            {% if triples_set_specific %}
+                <div class="d-flex justify-content-start align-items-baseline mt-5 mb-3">
+                    <h4 class="me-4">{{ type_human.capitalize() }}</h4>
+                </div>
+                {% for predicate, triples_set_generic in grouped_triples.items() %}
+                    {% set relevant_triples = triples_set_generic|select('in', triples_set_specific)|list %}
+                    {% if relevant_triples %}
+                        <div class="predicate-group mb-4">
+                            <span class="fw-bold">{{ predicate | human_readable_predicate }}</span>
+                            {% for triple in relevant_triples %}
+                                {{ render_triple(triple, subject) }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
                 {% endfor %}
-            </ul>
-        {% endif %}
-        {% if links_triples %}
-            <h4 class="mt-5 mb-3">{{_('Links to other resources')}}</h4> 
-            <ul class="list-group">
-                {% for triple in links_triples %}
-                    {{ render_triple(triple, subject) }}
-                {% endfor %}
-            </ul>
-        {% endif %}
+            {% endif %}
+        {% endfor %}
     {% else %}
         <p class="alert alert-warning my-5">{{_('This snapshot does not exist')}}</p>
     {% endif %}

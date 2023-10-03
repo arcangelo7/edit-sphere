@@ -10,7 +10,7 @@ class Config(object):
     SECRET_KEY = 'adoiugwoad7y78agdlauwvdliu'
     DATASET_ENDPOINT = 'http://192.168.56.1:9999/blazegraph/sparql'
     PROVENANCE_ENDPOINT = 'http://192.168.56.1:19999/blazegraph/sparql'
-    DATASET_GENERATION_TIME = '2023-09-20'
+    DATASET_GENERATION_TIME = '2023-09-20T10:23:11+02:00'
     COUNTER_HANDLER = SqliteCounterHandler(os.path.join(BASE_DIR, 'meta_counter_handler.db'))
     LANGUAGES = ['en', 'it']
     BABEL_TRANSLATION_DIRECTORIES = os.path.join(BASE_DIR, 'babel', 'translations')

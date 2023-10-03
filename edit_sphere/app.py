@@ -449,7 +449,11 @@ def entity_version(entity_uri, timestamp):
     else:
         modifications = None
 
-    return render_template('entity_version.jinja', subject=entity_uri, triples=triples, metadata=closest_metadata, timestamp=closest_timestamp, next_snapshot_timestamp=next_snapshot_timestamp, prev_snapshot_timestamp=prev_snapshot_timestamp, modifications=modifications)
+    grouped_triples = defaultdict(list)
+    for triple in triples:
+        grouped_triples[triple[1]].append(triple)
+
+    return render_template('entity_version.jinja', subject=entity_uri, triples=triples, metadata=closest_metadata, timestamp=closest_timestamp, next_snapshot_timestamp=next_snapshot_timestamp, prev_snapshot_timestamp=prev_snapshot_timestamp, modifications=modifications, grouped_triples=grouped_triples)
 
 @app.route('/restore-version/<path:entity_uri>/<timestamp>', methods=['POST'])
 def restore_version(entity_uri, timestamp):
