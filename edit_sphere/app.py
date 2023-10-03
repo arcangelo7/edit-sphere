@@ -8,8 +8,8 @@ from datetime import timezone
 import click
 import requests
 import validators
-from flask import (Flask, flash, redirect, render_template, request, session,
-                   url_for)
+from flask import (Flask, abort, flash, redirect, render_template, request,
+                   session, url_for)
 from flask_babel import Babel, gettext, refresh
 from rdflib import RDF, XSD, Graph, Literal, URIRef
 from rdflib.plugins.sparql import prepareQuery
@@ -407,11 +407,16 @@ def entity_version(entity_uri, timestamp):
         try:
             generation_time = provenance_sparql.queryAndConvert()['results']['bindings'][0]['generation_time']['value']
         except IndexError:
-            return render_template('entity_version.jinja', subject=entity_uri, triples=list(), metadata={f'{entity_uri}/prov/se/{timestamp}': None})
+            abort(404)
         timestamp = generation_time
         timestamp_dt = datetime.fromisoformat(generation_time)
     agnostic_entity = AgnosticEntity(res=entity_uri, config_path=change_tracking_config)
     history, metadata, other_snapshots_metadata = agnostic_entity.get_state_at_time(time=(None, timestamp), include_prov_metadata=True)
+    all_snapshots = list(metadata.items()) + list(other_snapshots_metadata.items())
+    sorted_all_snapshots = sorted(all_snapshots, key=lambda x: x[1]['generatedAtTime'])
+    last_snapshot_timestamp = sorted_all_snapshots[-1][1]['generatedAtTime'] if sorted_all_snapshots else None
+    if last_snapshot_timestamp and timestamp > last_snapshot_timestamp:
+        abort(404)
     if not timestamp_dt.tzinfo:
         timestamp_dt = timestamp_dt.replace(tzinfo=timezone.utc)
     history = {k: v for k, v in history.items()}
@@ -420,11 +425,12 @@ def entity_version(entity_uri, timestamp):
     try:
         closest_timestamp = min(history.keys(), key=lambda t: abs(datetime.fromisoformat(t).astimezone(timezone.utc) - timestamp_dt))
     except ValueError:
-        return render_template('entity_version.jinja', subject=entity_uri, triples=list(), metadata={f'{entity_uri}/prov/se/0': None})
+        abort(404)
     version: Graph = history[closest_timestamp]
     triples = list(version.triples((None, None, None)))
     
     sorted_snapshots = sorted(other_snapshots_metadata.items(), key=lambda x: x[1]['generatedAtTime'])
+
     next_snapshot_timestamp = None
     prev_snapshot_timestamp = None
     for snapshot_uri, meta in sorted_snapshots:
@@ -488,6 +494,10 @@ def restore_version(entity_uri, timestamp):
     sparql.setQuery(query)
     sparql.setReturnFormat(JSON)
     return redirect(url_for('show_triples', subject=entity_uri))
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('errors/404.jinja'), 404
 
 def parse_sparql_update(query):
     parsed = parseUpdate(query)
