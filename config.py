@@ -18,3 +18,4 @@ class Config(object):
     RESPONSIBLE_AGENT = URIRef('https://orcid.org/0000-0002-8420-0696')
     PRIMARY_SOURCE = None
     SHACL_PATH = os.path.join(BASE_DIR, 'resources', 'shacl.ttl')
+    DISPLAY_RULES_PATH = os.path.join(BASE_DIR, 'display_rules.json')

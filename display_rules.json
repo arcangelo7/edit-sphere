@@ -1,0 +1,135 @@
+[
+    {
+        "class": "http://purl.org/spar/fabio/Expression",
+        "displayProperties": [
+            {
+                "property": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "displayName": "Type",
+                "shouldBeDisplayed": true,
+                "fetchValueFromQuery": null
+            },
+            {
+                "property": "http://purl.org/dc/terms/title",
+                "displayName": "Title",
+                "shouldBeDisplayed": true,
+                "fetchValueFromQuery": null
+            },
+            {
+                "property": "http://purl.org/spar/fabio/hasSubtitle",
+                "displayName": "Subtitle",
+                "shouldBeDisplayed": true,
+                "fetchValueFromQuery": null
+            }
+        ]
+    },
+    {
+        "class": "http://purl.org/spar/datacite/Identifier",
+        "displayProperties": [
+            {
+                "property": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "displayName": "Type",
+                "shouldBeDisplayed": true,
+                "fetchValueFromQuery": null
+            },
+            {
+                "property": "http://www.essepuntato.it/2010/06/literalreification/hasLiteralValue",
+                "displayName": "Literal Value",
+                "shouldBeDisplayed": true,
+                "fetchValueFromQuery": null
+            },
+            {
+                "property": "http://purl.org/spar/datacite/usesIdentifierScheme",
+                "displayName": "Identifier Scheme",
+                "shouldBeDisplayed": true,
+                "fetchValueFromQuery": null
+            }
+        ]
+    },
+    {
+        "class": "http://purl.org/spar/pro/RoleInTime",
+        "displayProperties": [
+            {
+                "property": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "displayName": "Type",
+                "shouldBeDisplayed": true,
+                "fetchValueFromQuery": null
+            },
+            {
+                "property": "https://w3id.org/oc/ontology/hasNext",
+                "displayName": "Next Role",
+                "shouldBeDisplayed": true,
+                "fetchValueFromQuery": null
+            },
+            {
+                "property": "http://purl.org/spar/pro/isHeldBy",
+                "displayName": "Held By",
+                "shouldBeDisplayed": true,
+                "fetchValueFromQuery": null
+            },
+            {
+                "property": "http://purl.org/spar/pro/withRole",
+                "displayName": "Role",
+                "shouldBeDisplayed": true,
+                "fetchValueFromQuery": null
+            }
+        ]
+    },
+    {
+        "class": "http://purl.org/spar/fabio/Manifestation",
+        "displayProperties": [
+            {
+                "property": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "displayName": "Type",
+                "shouldBeDisplayed": true,
+                "fetchValueFromQuery": null
+            },
+            {
+                "property": "http://purl.org/dc/terms/format",
+                "displayName": "Format",
+                "shouldBeDisplayed": true,
+                "fetchValueFromQuery": null
+            },
+            {
+                "property": "http://prismstandard.org/namespaces/basic/2.0/startingPage",
+                "displayName": "Starting Page",
+                "shouldBeDisplayed": true,
+                "fetchValueFromQuery": null
+            },
+            {
+                "property": "http://prismstandard.org/namespaces/basic/2.0/endingPage",
+                "displayName": "Ending Page",
+                "shouldBeDisplayed": true,
+                "fetchValueFromQuery": null
+            }
+        ]
+    },
+    {
+        "class": "http://xmlns.com/foaf/0.1/Agent",
+        "displayProperties": [
+            {
+                "property": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "displayName": "Type",
+                "shouldBeDisplayed": true,
+                "fetchValueFromQuery": null
+            },
+            {
+                "property": "http://xmlns.com/foaf/0.1/name",
+                "displayName": "Name",
+                "shouldBeDisplayed": true,
+                "fetchValueFromQuery": null
+            },
+            {
+                "property": "http://xmlns.com/foaf/0.1/givenName",
+                "displayName": "Given Name",
+                "shouldBeDisplayed": true,
+                "fetchValueFromQuery": null
+            },
+            {
+                "property": "http://xmlns.com/foaf/0.1/familyName",
+                "displayName": "Family Name",
+                "shouldBeDisplayed": true,
+                "fetchValueFromQuery": null
+            }
+        ]
+    }
+]

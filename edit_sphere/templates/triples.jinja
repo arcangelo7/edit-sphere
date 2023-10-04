@@ -1,5 +1,5 @@
 {% macro render_triple(triple, subject) %}
-    <li class="d-flex align-items-center">
+    <li class="d-flex align-items-center property-value">
         <span class="flex-grow-1 d-flex flex-column justify-content-center p-3 w-75">
             {% if triple['object']['value'] != triple['object']['value'] | human_readable_predicate %}
                 <span class="object-value ellipsis">
@@ -19,13 +19,13 @@
                 {{ update_form.predicate(value=triple['predicate']['value']) }}
                 {{ update_form.old_value(value=triple['object']['value']) }}
                 {% if optional_values[triple['predicate']['value']] %}
-                    <select name="new_value" class="form-control my-4">
+                    <select name="new_value" class="form-control mb-4">
                         {% for value in optional_values[triple['predicate']['value']] %}
                             <option value="{{ value }}" {% if value == triple['object']['value'] %}selected{% endif %}>{{ value | human_readable_predicate }}</option>
                         {% endfor %}
                     </select>
                 {% else %}
-                    {{ update_form.new_value(class="form-control my-4", value=triple['object']['value']) }}
+                    {{ update_form.new_value(class="form-control mb-4", value=triple['object']['value']) }}
                 {% endif %}
                 <div>
                     <button type="submit" class="btn btn-primary">{{_('Update')}}</button>
@@ -225,11 +225,11 @@
         }
 
         $('.edit-button').click(function () {
-            toggleEditForm($(this).closest('.list-group-item'));
+            toggleEditForm($(this).closest('.property-value'));
         });
 
         $('.cancel-button').click(function () {
-            toggleEditForm($(this).closest('.list-group-item'));
+            toggleEditForm($(this).closest('.property-value'));
             toggleEditForm($(this).closest('form'));
         });
 

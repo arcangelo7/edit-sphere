@@ -38,6 +38,11 @@ babel = Babel()
 with open("resources/context.json", "r") as config_file:
     context = json.load(config_file)["@context"]
 
+display_rules_path = app.config["DISPLAY_RULES_PATH"]
+display_rules = None
+if display_rules_path:
+    with open(display_rules_path, 'r') as f:
+        display_rules = json.load(f)
 
 dataset_endpoint = app.config["DATASET_ENDPOINT"]
 provenance_endpoint = app.config["PROVENANCE_ENDPOINT"]
@@ -93,6 +98,14 @@ def show_triples(subject):
     sparql.setQuery(query)
     sparql.setReturnFormat(JSON)
     triples = sparql.query().convert().get("results", {}).get("bindings", [])
+    subject_classes = [triple['object']['value'] for triple in triples if triple['predicate']['value'] == str(RDF.type)]
+    relevant_properties = set()
+    if display_rules and subject_classes:
+        for rule in display_rules:
+            if rule.get('class') in subject_classes:
+                relevant_properties.update([prop['property'] for prop in rule['displayProperties'] if prop['shouldBeDisplayed']])
+    if relevant_properties:
+        triples = [triple for triple in triples if triple['predicate']['value'] in relevant_properties]
     can_be_added, can_be_deleted, datatypes, mandatory_values, optional_values = get_valid_predicates(triples)
     update_form = UpdateTripleForm()
     if can_be_added:
@@ -548,11 +561,12 @@ def get_valid_predicates(triples):
         return None
     existing_predicates = [extract_predicate(triple) for triple in triples]
     predicate_counts = {str(predicate): existing_predicates.count(predicate) for predicate in set(existing_predicates)}
+    default_datatypes = {str(predicate): XSD.string for predicate in existing_predicates}
     if not shacl:
-        return None, None, None, None, None
+        return existing_predicates, existing_predicates, default_datatypes, dict(), dict()
     s_types = [extract_type(triple) for triple in triples if extract_type(triple) is not None]
     if not s_types:
-        return None, None, None, None, None
+        return existing_predicates, existing_predicates, default_datatypes, dict(), dict()
     query = prepareQuery(f"""
         SELECT ?predicate ?datatype ?maxCount ?minCount ?hasValue (GROUP_CONCAT(?optionalValue; separator=",") AS ?optionalValues) WHERE {{
             ?shape sh:targetClass ?type ;
