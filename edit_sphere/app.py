@@ -57,7 +57,7 @@ if shacl_path:
         shacl = Graph()
         shacl.parse(source=app.config["SHACL_PATH"], format="turtle")
 
-filter = Filter(context)
+filter = Filter(context, display_rules)
 
 app.jinja_env.filters['human_readable_predicate'] = filter.human_readable_predicate
 app.jinja_env.filters['human_readable_primary_source'] = filter.human_readable_primary_source
@@ -98,26 +98,33 @@ def show_triples(subject):
     sparql.setQuery(query)
     sparql.setReturnFormat(JSON)
     triples = sparql.query().convert().get("results", {}).get("bindings", [])
-    subject_classes = [triple['object']['value'] for triple in triples if triple['predicate']['value'] == str(RDF.type)]
+    can_be_added, can_be_deleted, datatypes, mandatory_values, optional_values, subject_classes = get_valid_predicates(triples)
     relevant_properties = set()
-    if display_rules and subject_classes:
-        for rule in display_rules:
-            if rule.get('class') in subject_classes:
-                relevant_properties.update([prop['property'] for prop in rule['displayProperties'] if prop['shouldBeDisplayed']])
+    if display_rules:
+        for triple in triples:
+            for rule in display_rules:
+                if rule['class'] in subject_classes:
+                    relevant_properties.update([prop['property'] for prop in rule['displayProperties'] if prop['shouldBeDisplayed']])
+                    for displayProperty in rule['displayProperties']:
+                        if displayProperty['property'] == triple['predicate']['value'] and displayProperty['fetchValueFromQuery']:
+                            result = execute_sparql_query(displayProperty['fetchValueFromQuery'])
+                            if result:
+                                triple['object']['value'] = result
     if relevant_properties:
         triples = [triple for triple in triples if triple['predicate']['value'] in relevant_properties]
-    can_be_added, can_be_deleted, datatypes, mandatory_values, optional_values = get_valid_predicates(triples)
+        can_be_added = [uri for uri in can_be_added if uri in relevant_properties]
+        can_be_deleted = [uri for uri in can_be_deleted if uri in relevant_properties]
     update_form = UpdateTripleForm()
     if can_be_added:
         create_form = CreateTripleFormWithSelect()
-        create_form.predicate.choices = [(p, filter.human_readable_predicate(p)) for p in can_be_added]
+        create_form.predicate.choices = [(p, filter.human_readable_predicate(p, subject_classes)) for p in can_be_added]
     else:
         create_form = CreateTripleFormWithInput()
     shacl_validation = True if shacl else False
     grouped_triples = defaultdict(list)
     for triple in triples:
         grouped_triples[triple['predicate']['value']].append(triple)
-    return render_template('triples.jinja', subject=decoded_subject, triples=triples, history=history, can_be_added=can_be_added, can_be_deleted=can_be_deleted, datatypes=datatypes, update_form=update_form, create_form=create_form, mandatory_values=mandatory_values, optional_values=optional_values, shacl=shacl_validation, grouped_triples=grouped_triples)
+    return render_template('triples.jinja', subject=decoded_subject, triples=triples, history=history, can_be_added=can_be_added, can_be_deleted=can_be_deleted, datatypes=datatypes, update_form=update_form, create_form=create_form, mandatory_values=mandatory_values, optional_values=optional_values, shacl=shacl_validation, grouped_triples=grouped_triples, subject_classes=subject_classes)
 
 @app.route('/update_triple', methods=['POST'])
 def update_triple():
@@ -144,7 +151,7 @@ def delete_triple():
     object_value = request.form.get('object')
     if shacl:
         data_graph = fetch_data_graph_for_subject(subject)
-        _, can_be_deleted, _, _, _ = get_valid_predicates(list(data_graph.triples((URIRef(subject), None, None))))
+        _, can_be_deleted, _, _, _, _ = get_valid_predicates(list(data_graph.triples((URIRef(subject), None, None))))
         if predicate not in can_be_deleted:
             flash(gettext('This property cannot be deleted'))
             return redirect(url_for('show_triples', subject=subject))
@@ -159,9 +166,9 @@ def add_triple():
     object_value = request.form.get('object')
     if shacl:
         data_graph = fetch_data_graph_for_subject(subject)
-        can_be_added, _, _, _, _ = get_valid_predicates(list(data_graph.triples((None, None, None))))
+        can_be_added, _, _, _, _, s_types = get_valid_predicates(list(data_graph.triples((None, None, None))))
         if predicate not in can_be_added and URIRef(predicate) in data_graph.predicates():
-            flash(gettext('This resource cannot have any other %(predicate)s properties', predicate=filter.human_readable_predicate(predicate)))
+            flash(gettext('This resource cannot have any other %(predicate)s properties', predicate=filter.human_readable_predicate(predicate, s_types)))
             return redirect(url_for('show_triples', subject=subject))
         object_value, _, report_text = validate_new_triple(subject, predicate, object_value)
         if object_value is None:
@@ -208,7 +215,7 @@ def validate_new_triple(subject, predicate, new_value, old_value = None):
     results = shacl.query(query)
     property_exists = [row.property for row in results]
     if not property_exists:
-        return None, old_value, gettext('The property %(predicate)s is not allowed for resources of type %(s_type)s', predicate=filter.human_readable_predicate(predicate), s_type=filter.human_readable_predicate(s_types[0]))
+        return None, old_value, gettext('The property %(predicate)s is not allowed for resources of type %(s_type)s', predicate=filter.human_readable_predicate(predicate, s_types), s_type=filter.human_readable_predicate(s_types[0], s_types))
     datatypes = [row.datatype for row in results]
     classes = [row.a_class for row in results if row.a_class]
     classes.extend([row.classIn for row in results if row.classIn])
@@ -216,18 +223,18 @@ def validate_new_triple(subject, predicate, new_value, old_value = None):
     optional_values_str = optional_values_str[0] if optional_values_str else ''
     optional_values = [value for value in optional_values_str.split(',') if value]
     if optional_values and new_value not in optional_values:
-        return None, old_value, gettext('<code>%(new_value)s</code> is not a valid value. The <code>%(property)s</code> property requires one of the following values: %(o_values)s', new_value=filter.human_readable_predicate(new_value), property=filter.human_readable_predicate(predicate), o_values=', '.join([f'<code>{filter.human_readable_predicate(value)}</code>' for value in optional_values]))
+        return None, old_value, gettext('<code>%(new_value)s</code> is not a valid value. The <code>%(property)s</code> property requires one of the following values: %(o_values)s', new_value=filter.human_readable_predicate(new_value, s_types), property=filter.human_readable_predicate(predicate, s_types), o_values=', '.join([f'<code>{filter.human_readable_predicate(value, s_types)}</code>' for value in optional_values]))
     if classes:
         if not validators.url(new_value):
-            return None, old_value, gettext('<code>%(new_value)s</code> is not a valid value. The <code>%(property)s</code> property requires values of type %(o_types)s', new_value=filter.human_readable_predicate(new_value), property=filter.human_readable_predicate(predicate), o_types=', '.join([f'<code>{filter.human_readable_predicate(o_class)}</code>' for o_class in classes]))
+            return None, old_value, gettext('<code>%(new_value)s</code> is not a valid value. The <code>%(property)s</code> property requires values of type %(o_types)s', new_value=filter.human_readable_predicate(new_value, s_types), property=filter.human_readable_predicate(predicate, s_types), o_types=', '.join([f'<code>{filter.human_readable_predicate(o_class, s_types)}</code>' for o_class in classes]))
         valid_value = convert_to_matching_class(new_value, classes)
         if valid_value is None:
-            return None, old_value, gettext('<code>%(new_value)s</code> is not a valid value. The <code>%(property)s</code> property requires values of type %(o_types)s', new_value=filter.human_readable_predicate(new_value), property=filter.human_readable_predicate(predicate), o_types=', '.join([f'<code>{filter.human_readable_predicate(o_class)}</code>' for o_class in classes]))
+            return None, old_value, gettext('<code>%(new_value)s</code> is not a valid value. The <code>%(property)s</code> property requires values of type %(o_types)s', new_value=filter.human_readable_predicate(new_value, s_types), property=filter.human_readable_predicate(predicate, s_types), o_types=', '.join([f'<code>{filter.human_readable_predicate(o_class, s_types)}</code>' for o_class in classes]))
         return valid_value, old_value, ''
     elif datatypes:
         valid_value = convert_to_matching_literal(new_value, datatypes)
         if valid_value is None:
-            return None, old_value, gettext('<code>%(new_value)s</code> is not a valid value. The <code>%(property)s</code> property requires values of type %(o_types)s', new_value=filter.human_readable_predicate(new_value), property=filter.human_readable_predicate(predicate), o_types=', '.join([f'<code>{filter.human_readable_predicate(datatype)}</code>' for datatype in datatypes]))
+            return None, old_value, gettext('<code>%(new_value)s</code> is not a valid value. The <code>%(property)s</code> property requires values of type %(o_types)s', new_value=filter.human_readable_predicate(new_value, s_types), property=filter.human_readable_predicate(predicate, s_types), o_types=', '.join([f'<code>{filter.human_readable_predicate(datatype, s_types)}</code>' for datatype in datatypes]))
         return valid_value, old_value, ''
     valid_value = URIRef(new_value) if validators.url(new_value) else Literal(new_value)
     return valid_value, old_value, ''
@@ -316,7 +323,7 @@ from datetime import datetime
 def entity_history(entity_uri):
     agnostic_entity = AgnosticEntity(res=entity_uri, config_path=change_tracking_config)
     history, provenance = agnostic_entity.get_history(include_prov_metadata=True)
-
+    subject_classes = [subject_class[2] for subject_class in list(history[entity_uri].values())[0].triples((URIRef(entity_uri), RDF.type, None))]
     # Trasforma i dati in formato TimelineJS useless
     events = []
     sorted_metadata = sorted(provenance[entity_uri].items(), key=lambda x: x[1]['generatedAtTime'])  # Ordina gli eventi per data
@@ -331,21 +338,7 @@ def entity_history(entity_uri):
             modifications = parse_sparql_update(modifications)
             for mod_type, triples in modifications.items():
                 for triple in triples:
-                    modification_text += f"<p><strong>{mod_type}</strong>: "
-                    if filter.human_readable_predicate(triple[1]) != triple[1]:
-                        href = f"{filter.split_ns(triple[1])[0][:-1]}#{triple[1]}"
-                        alt = gettext('Definition of the property') + ' ' + triple[1]
-                        modification_text += f"<a href='{href}' alt={alt} target='_blank' title='{triple[1]}'>{filter.human_readable_predicate(triple[1])}</a>"
-                    else:
-                        modification_text += triple[1]
-                    modification_text += ' '
-                    if filter.human_readable_predicate(triple[2]) != triple[2]:
-                        href = f"{filter.split_ns(triple[2])[0][:-1]}#{triple[2]}"
-                        alt = gettext('Definition of the property') + ' ' + triple[2]
-                        modification_text += f"<a href='{href}' alt={alt} target='_blank' title='{triple[1]}'>{filter.human_readable_predicate(triple[2])}</a>"
-                    else:
-                        modification_text += triple[2]
-                    modification_text += '</p>'
+                    modification_text += f"<p><strong>{mod_type}</strong>: {filter.human_readable_predicate(triple[1], subject_classes)} {filter.human_readable_predicate(triple[2], subject_classes)}</p>"
         event = {
             "start_date": {
                 "year": date.year,
@@ -425,6 +418,7 @@ def entity_version(entity_uri, timestamp):
         timestamp_dt = datetime.fromisoformat(generation_time)
     agnostic_entity = AgnosticEntity(res=entity_uri, config_path=change_tracking_config)
     history, metadata, other_snapshots_metadata = agnostic_entity.get_state_at_time(time=(None, timestamp), include_prov_metadata=True)
+    subject_classes = [subject_class[2] for subject_class in list(history.values())[0].triples((URIRef(entity_uri), RDF.type, None))]
     all_snapshots = list(metadata.items()) + list(other_snapshots_metadata.items())
     sorted_all_snapshots = sorted(all_snapshots, key=lambda x: x[1]['generatedAtTime'])
     last_snapshot_timestamp = sorted_all_snapshots[-1][1]['generatedAtTime'] if sorted_all_snapshots else None
@@ -441,7 +435,15 @@ def entity_version(entity_uri, timestamp):
         abort(404)
     version: Graph = history[closest_timestamp]
     triples = list(version.triples((None, None, None)))
-    
+    relevant_properties = set()
+    for triple in triples:
+        if display_rules:
+            for rule in display_rules:
+                if URIRef(rule['class']) in subject_classes:
+                    relevant_properties.update([prop['property'] for prop in rule['displayProperties'] if prop['shouldBeDisplayed']])
+    if relevant_properties:
+        triples = [triple for triple in triples if str(triple[1]) in relevant_properties]
+
     sorted_snapshots = sorted(other_snapshots_metadata.items(), key=lambda x: x[1]['generatedAtTime'])
 
     next_snapshot_timestamp = None
@@ -472,7 +474,7 @@ def entity_version(entity_uri, timestamp):
     for triple in triples:
         grouped_triples[triple[1]].append(triple)
 
-    return render_template('entity_version.jinja', subject=entity_uri, triples=triples, metadata=closest_metadata, timestamp=closest_timestamp, next_snapshot_timestamp=next_snapshot_timestamp, prev_snapshot_timestamp=prev_snapshot_timestamp, modifications=modifications, grouped_triples=grouped_triples)
+    return render_template('entity_version.jinja', subject=entity_uri, triples=triples, metadata=closest_metadata, timestamp=closest_timestamp, next_snapshot_timestamp=next_snapshot_timestamp, prev_snapshot_timestamp=prev_snapshot_timestamp, modifications=modifications, grouped_triples=grouped_triples, subject_classes=subject_classes)
 
 @app.route('/restore-version/<path:entity_uri>/<timestamp>', methods=['POST'])
 def restore_version(entity_uri, timestamp):
@@ -630,7 +632,15 @@ def get_valid_predicates(triples):
         for predicate, ranges in valid_predicate.items():
             if "optionalValues" in ranges:
                 optional_values.setdefault(str(predicate), list()).extend(ranges["optionalValues"])
-    return list(can_be_added), list(can_be_deleted), dict(datatypes), mandatory_values, optional_values
+    return list(can_be_added), list(can_be_deleted), dict(datatypes), mandatory_values, optional_values, s_types
+
+def execute_sparql_query(query):
+    sparql.setQuery(query)
+    sparql.setReturnFormat(JSON)
+    results = sparql.query().convert().get("results", {}).get("bindings", [])
+    if results:
+        return results[0].get("result", {}).get("value")
+    return None
 
 @app.cli.group()
 def translate():

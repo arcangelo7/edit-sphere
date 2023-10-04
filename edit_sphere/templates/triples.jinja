@@ -1,17 +1,13 @@
 {% macro render_triple(triple, subject) %}
     <li class="d-flex align-items-center property-value">
         <span class="flex-grow-1 d-flex flex-column justify-content-center p-3 w-75">
-            {% if triple['object']['value'] != triple['object']['value'] | human_readable_predicate %}
-                <span class="object-value ellipsis">
-                    {{ triple['object']['value'] | human_readable_predicate }}
-                </span>
-            {% elif triple['object']['value'].startswith('http://') or triple['object']['value'].startswith('https://') %}
-                <span title="{{ triple['object']['value'] }}" class="object-value ellipsis">
-                    <a href="{{url_for('show_triples', subject=triple['object']['value']|urlencode)}}" alt="Link to the entity {{ triple['object']['value'] }}">{{ triple['object']['value'] }}</a>
-                </span>
-            {% else %}
-                <span class="object-value ellipsis">{{ triple['object']['value'] }}</span>
-            {% endif %}
+            <span class="object-value ellipsis">
+                {% if triple['object']['value'] %}
+                    {{ triple['object']['value'] | human_readable_predicate(subject_classes) }}
+                {% else %}
+                    {{ _("No result from SPARQL query") }}
+                {% endif %}
+            </span>
             <form class="edit-form d-none"
                 action="{{ url_for('update_triple') }}"
                 method="post">
@@ -21,7 +17,7 @@
                 {% if optional_values[triple['predicate']['value']] %}
                     <select name="new_value" class="form-control mb-4">
                         {% for value in optional_values[triple['predicate']['value']] %}
-                            <option value="{{ value }}" {% if value == triple['object']['value'] %}selected{% endif %}>{{ value | human_readable_predicate }}</option>
+                            <option value="{{ value }}" {% if value == triple['object']['value'] %}selected{% endif %}>{{ value | human_readable_predicate(subject_classes) }}</option>
                         {% endfor %}
                     </select>
                 {% else %}
@@ -77,7 +73,7 @@
                     <select name="object" class="form-control object-input" style="display: none;">
                         {% for pred, values in optional_values.items() %}
                             {% for value in values %}
-                                <option value="{{ value }}" data-predicate="{{ pred }}">{{ value | human_readable_predicate }}</option>
+                                <option value="{{ value }}" data-predicate="{{ pred }}">{{ value | human_readable_predicate(subject_classes) }}</option>
                             {% endfor %}
                         {% endfor %}
                     </select>
@@ -96,7 +92,7 @@
 
 {% block content %}
 <div class="container">
-    <h2 class="mb-4 ellipsis">{{_('About')}} {{ subject | human_readable_predicate }}</h2>
+    <h2 class="mb-4 ellipsis">{{_('About')}} {{ subject | human_readable_predicate(subject_classes, False) }}</h2>
 
     {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -121,9 +117,10 @@
         {% set attributes_triples = [] %}
         {% set links_triples = [] %}
         {% for triple in triples %}
-            {% if triple['object']['value'] != triple['object']['value'] | human_readable_predicate or not (triple['object']['value'].startswith('http://') or triple['object']['value'].startswith('https://')) %}
+            {% set human_readable = triple['object']['value'] | human_readable_predicate(subject_classes) %}
+            {% if not (human_readable.startswith('<a')) %}
                 {% set _ = attributes_triples.append(triple) %}
-            {% elif triple['object']['value'] == triple['object']['value'] | human_readable_predicate and (triple['object']['value'].startswith('http://') or triple['object']['value'].startswith('https://')) %}
+            {% else %}
                 {% set _ = links_triples.append(triple) %}
             {% endif %}
         {% endfor %}
@@ -145,7 +142,7 @@
                     {% set relevant_triples = triples_set_generic|select('in', triples_set_specific)|list %}
                     {% if relevant_triples %}
                         <div class="predicate-group mb-4">
-                            <span class="fw-bold">{{ predicate | human_readable_predicate }}</span>
+                            <span class="fw-bold">{{ predicate | human_readable_predicate(subject_classes) }}</span>
                             {% for triple in relevant_triples %}
                                 {{ render_triple(triple, subject) }}
                             {% endfor %}

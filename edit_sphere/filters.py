@@ -1,18 +1,28 @@
 from __future__ import annotations
 
 from typing import Tuple
-from urllib.parse import urlparse
-
+from urllib.parse import urlparse, quote
+from flask import url_for
+from flask_babel import gettext
 import dateutil
 import validators
 from flask_babel import format_datetime, lazy_gettext
 
 
 class Filter:
-    def __init__(self, context):
+    def __init__(self, context: dict, display_rules: dict):
         self.context = context
+        self.display_rules = display_rules
 
-    def human_readable_predicate(self, url):
+    def human_readable_predicate(self, url: str, entity_classes: list, is_link: bool = True):
+        subject_classes = [str(subject_class) for subject_class in entity_classes]
+        if self.display_rules:
+            for diplay_rule in self.display_rules:
+                for subject_class in subject_classes:
+                    if subject_class in diplay_rule['class']:
+                        for display_property in diplay_rule['displayProperties']:
+                            if display_property['property'] == str(url):
+                                return display_property['displayName']
         first_part, last_part = self.split_ns(url)
         if first_part in self.context:
             if last_part.islower():
@@ -28,6 +38,8 @@ class Filter:
                         word += char
                 words.append(word)
                 return " ".join(words).lower()
+        elif validators.url(url) and is_link:
+            return f"<a href='{url_for('show_triples', subject=quote(url))}' alt='{gettext('Link to the entity %(entity)s', entity=url)}'>{url}</a>"
         else:
             return url
     

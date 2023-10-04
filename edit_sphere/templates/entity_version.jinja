@@ -1,17 +1,9 @@
 {% macro render_triple(triple, subject) %}
     <li class="d-flex align-items-center">
         <span class="flex-grow-1 d-flex flex-column justify-content-center p-3 w-75">
-            {% if triple[2] != triple[2] | human_readable_predicate %}
-                <span class="object-value ellipsis">
-                    {{ triple[2] | human_readable_predicate }}
-                </span>
-            {% elif triple[2].startswith('http://') or triple[2].startswith('https://') %}
-                <span title="{{ triple[2] }}" class="object-value ellipsis">
-                    <a href="{{url_for('show_triples', subject=triple[2]|urlencode)}}" alt="{{_('Link to the entity')}} {{ triple[2] }}">{{ triple[2] }}</a>
-                </span>
-            {% else %}
-                <span class="object-value ellipsis">{{ triple[2] }}</span>
-            {% endif %}
+            <span class="object-value ellipsis">
+                {{ triple[2] | human_readable_predicate(subject_classes) }}
+            </span>
         </span>
     </li>
 {% endmacro %}
@@ -22,7 +14,7 @@
 <div class="container">
     {% set first_snapshot_uri = metadata.keys()|first %}
     {% set version_number = first_snapshot_uri.split('/')[-1] %}
-    <h2 class="mb-4 ellipsis">{{_('Version')}} {{ version_number }} {{_('of')}} <span title="{{subject | human_readable_predicate}}">{{ subject | human_readable_predicate }}</span></h2>
+    <h2 class="mb-4 ellipsis">{{_('Version')}} {{ version_number }} {{_('of')}} <span title="{{subject | human_readable_predicate(subject_classes, False)}}">{{ subject | human_readable_predicate(subject_classes, False) }}</span></h2>
 
     <div class="d-flex">
         <div class="me-4">
@@ -109,9 +101,10 @@
         {% set attributes_triples = [] %}
         {% set links_triples = [] %}
         {% for triple in triples %}
-            {% if triple[2] != triple[2] | human_readable_predicate or not (triple[2].startswith('http://') or triple[2].startswith('https://')) %}
+            {% set human_readable = triple[2] | human_readable_predicate(subject_classes) %}
+            {% if not (human_readable.startswith('<a')) %}
                 {% set _ = attributes_triples.append(triple) %}
-            {% elif triple[2] == triple[2] | human_readable_predicate and (triple[2].startswith('http://') or triple[2].startswith('https://')) %}
+            {% else %}
                 {% set _ = links_triples.append(triple) %}
             {% endif %}
         {% endfor %}
@@ -125,7 +118,7 @@
                     {% set relevant_triples = triples_set_generic|select('in', triples_set_specific)|list %}
                     {% if relevant_triples %}
                         <div class="predicate-group mb-4">
-                            <span class="fw-bold">{{ predicate | human_readable_predicate }}</span>
+                            <span class="fw-bold">{{ predicate | human_readable_predicate(subject_classes) }}</span>
                             {% for triple in relevant_triples %}
                                 {{ render_triple(triple, subject) }}
                             {% endfor %}

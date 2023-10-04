@@ -19,6 +19,12 @@
                 "displayName": "Subtitle",
                 "shouldBeDisplayed": true,
                 "fetchValueFromQuery": null
+            },
+            {
+                "property": "http://purl.org/spar/fabio/hasSubtitle",
+                "displayName": "Subtitle",
+                "shouldBeDisplayed": true,
+                "fetchValueFromQuery": null
             }
         ]
     },
