@@ -101,9 +101,10 @@ def show_triples(subject):
     if display_rules:
         grouped_triples, relevant_properties = get_grouped_triples(subject, triples, subject_classes)
     else:
-        grouped_triples = {(triple['predicate']['value'], filter.human_readable_predicate(triple['predicate']['value'])): [triple] for triple in triples}
+        grouped_triples = dict()
+        for triple in triples:
+            grouped_triples.setdefault((triple['predicate']['value'], filter.human_readable_predicate(triple['predicate']['value'], subject_classes, True)), []).append(triple)
         relevant_properties = set(triple['predicate']['value'] for triple in triples)
-
     triples = [triple for triple in triples if triple['predicate']['value'] in relevant_properties]
     can_be_added = [uri for uri in can_be_added if uri in relevant_properties]
     can_be_deleted = [uri for uri in can_be_deleted if uri in relevant_properties]
