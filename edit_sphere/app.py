@@ -2,9 +2,10 @@ import datetime
 import json
 import os
 import urllib
-from collections import defaultdict
+from collections import defaultdict, OrderedDict
 from datetime import timezone
-
+import yaml
+from copy import deepcopy
 import click
 import requests
 import validators
@@ -42,7 +43,7 @@ display_rules_path = app.config["DISPLAY_RULES_PATH"]
 display_rules = None
 if display_rules_path:
     with open(display_rules_path, 'r') as f:
-        display_rules = json.load(f)
+        display_rules = yaml.safe_load(f)
 
 dataset_endpoint = app.config["DATASET_ENDPOINT"]
 provenance_endpoint = app.config["PROVENANCE_ENDPOINT"]
@@ -86,45 +87,33 @@ def catalogue():
 
 @app.route('/triples/<path:subject>')
 def show_triples(subject):
-    # Decodifica l'URL prima di usarlo nella query
     decoded_subject = urllib.parse.unquote(subject)
     agnostic_entity = AgnosticEntity(res=decoded_subject, config_path=change_tracking_config)
-    history, provenance = agnostic_entity.get_history(include_prov_metadata=True)
-    query = f"""
-    SELECT ?predicate ?object WHERE {{
-        <{decoded_subject}> ?predicate ?object.
-    }}
-    """
+    history, _ = agnostic_entity.get_history(include_prov_metadata=True)
+
+    query = f"SELECT ?predicate ?object WHERE {{ <{decoded_subject}> ?predicate ?object. }}"
     sparql.setQuery(query)
     sparql.setReturnFormat(JSON)
     triples = sparql.query().convert().get("results", {}).get("bindings", [])
+
     can_be_added, can_be_deleted, datatypes, mandatory_values, optional_values, subject_classes = get_valid_predicates(triples)
-    relevant_properties = set()
+
     if display_rules:
-        for triple in triples:
-            for rule in display_rules:
-                if rule['class'] in subject_classes:
-                    relevant_properties.update([prop['property'] for prop in rule['displayProperties'] if prop['shouldBeDisplayed']])
-                    for displayProperty in rule['displayProperties']:
-                        if displayProperty['property'] == triple['predicate']['value'] and displayProperty['fetchValueFromQuery']:
-                            result = execute_sparql_query(displayProperty['fetchValueFromQuery'])
-                            if result:
-                                triple['object']['value'] = result
-    if relevant_properties:
-        triples = [triple for triple in triples if triple['predicate']['value'] in relevant_properties]
-        can_be_added = [uri for uri in can_be_added if uri in relevant_properties]
-        can_be_deleted = [uri for uri in can_be_deleted if uri in relevant_properties]
-    update_form = UpdateTripleForm()
-    if can_be_added:
-        create_form = CreateTripleFormWithSelect()
-        create_form.predicate.choices = [(p, filter.human_readable_predicate(p, subject_classes)) for p in can_be_added]
+        grouped_triples, relevant_properties = get_grouped_triples(subject, triples, subject_classes)
     else:
-        create_form = CreateTripleFormWithInput()
-    shacl_validation = True if shacl else False
-    grouped_triples = defaultdict(list)
-    for triple in triples:
-        grouped_triples[triple['predicate']['value']].append(triple)
-    return render_template('triples.jinja', subject=decoded_subject, triples=triples, history=history, can_be_added=can_be_added, can_be_deleted=can_be_deleted, datatypes=datatypes, update_form=update_form, create_form=create_form, mandatory_values=mandatory_values, optional_values=optional_values, shacl=shacl_validation, grouped_triples=grouped_triples, subject_classes=subject_classes)
+        grouped_triples = {(triple['predicate']['value'], filter.human_readable_predicate(triple['predicate']['value'])): [triple] for triple in triples}
+        relevant_properties = set(triple['predicate']['value'] for triple in triples)
+
+    triples = [triple for triple in triples if triple['predicate']['value'] in relevant_properties]
+    can_be_added = [uri for uri in can_be_added if uri in relevant_properties]
+    can_be_deleted = [uri for uri in can_be_deleted if uri in relevant_properties]
+
+    update_form = UpdateTripleForm()
+    create_form = CreateTripleFormWithSelect() if can_be_added else CreateTripleFormWithInput()
+    if can_be_added:
+        create_form.predicate.choices = [(p, filter.human_readable_predicate(p, subject_classes)) for p in can_be_added]
+
+    return render_template('triples.jinja', subject=decoded_subject, history=history, can_be_added=can_be_added, can_be_deleted=can_be_deleted, datatypes=datatypes, update_form=update_form, create_form=create_form, mandatory_values=mandatory_values, optional_values=optional_values, shacl=True if shacl else False, grouped_triples=grouped_triples, subject_classes=subject_classes)
 
 @app.route('/update_triple', methods=['POST'])
 def update_triple():
@@ -238,6 +227,44 @@ def validate_new_triple(subject, predicate, new_value, old_value = None):
         return valid_value, old_value, ''
     valid_value = URIRef(new_value) if validators.url(new_value) else Literal(new_value)
     return valid_value, old_value, ''
+
+def get_grouped_triples(subject, triples, subject_classes):
+    grouped_triples = OrderedDict()
+    relevant_properties = set()
+    for triple in triples:
+        for rule in display_rules:
+            if rule['class'] in subject_classes:
+                for prop in rule['displayProperties']:
+                    relevant_properties.add(prop['property'])
+                    for displayConfig in prop['values']:
+                        if displayConfig['shouldBeDisplayed']:
+                            key = (prop['property'], displayConfig['displayName'])
+                            if triple['predicate']['value'] == prop['property']:
+                                if displayConfig['fetchValueFromQuery']:
+                                    result = execute_sparql_query(displayConfig['fetchValueFromQuery'], subject, triple['object']['value'])
+                                    print(displayConfig['fetchValueFromQuery'], result)
+                                    if result:
+                                        new_triple = deepcopy(triple)
+                                        new_triple['object']['value'] = result
+                                        existing_values = [t['object']['value'] for t in grouped_triples.get(key, [])]
+                                        if new_triple['object']['value'] not in existing_values:
+                                            grouped_triples.setdefault(key, []).append(new_triple)
+                                else:
+                                    existing_values = [t['object']['value'] for t in grouped_triples.get(key, [])]
+                                    if triple['object']['value'] not in existing_values:
+                                        grouped_triples.setdefault(key, []).append(triple)
+    ordered_keys = sorted(grouped_triples.keys(), key=lambda k: property_order_index(k[0], subject_classes))
+    grouped_triples = OrderedDict((k, grouped_triples[k]) for k in ordered_keys)
+    return grouped_triples, relevant_properties
+
+def property_order_index(prop, subject_classes):
+    """Return the index of a property based on its order in the configuration file."""
+    for rule in display_rules:
+        if rule['class'] in subject_classes:
+            for index, prop_config in enumerate(rule['displayProperties']):
+                if prop_config['property'] == prop:
+                    return index
+    return float('inf')
 
 def fetch_data_graph_for_subject(subject_uri):
     """
@@ -634,12 +661,15 @@ def get_valid_predicates(triples):
                 optional_values.setdefault(str(predicate), list()).extend(ranges["optionalValues"])
     return list(can_be_added), list(can_be_deleted), dict(datatypes), mandatory_values, optional_values, s_types
 
-def execute_sparql_query(query):
+def execute_sparql_query(query: str, subject: str, value: str) -> str:
+    query = query.replace('[[subject]]', f'<{subject}>')
+    query = query.replace('[[value]]', f'<{value}>')
     sparql.setQuery(query)
     sparql.setReturnFormat(JSON)
     results = sparql.query().convert().get("results", {}).get("bindings", [])
     if results:
-        return results[0].get("result", {}).get("value")
+        variable_name = list(results[0].keys())[0]
+        return results[0].get(variable_name, {}).get("value")
     return None
 
 @app.cli.group()

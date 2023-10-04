@@ -1,0 +1,238 @@
+- class: "http://purl.org/spar/fabio/Expression"
+  displayProperties:
+    - property: "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      values:
+      - displayName: "Type"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: |
+            PREFIX fabio: <http://purl.org/spar/fabio/>
+            SELECT DISTINCT ?type
+            WHERE {
+                [[subject]] a ?type.
+                FILTER (?type != fabio:Expression)
+            }
+    - property: "http://purl.org/dc/terms/title"
+      values:
+      - displayName: "Title"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: null
+    - property: "http://purl.org/spar/fabio/hasSubtitle"
+      values:
+      - displayName: "Subtitle"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: null
+    - property: "http://purl.org/spar/pro/isDocumentContextFor"
+      values:
+      - displayName: "Author"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: |
+            PREFIX pro: <http://purl.org/spar/pro/>
+            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+            SELECT DISTINCT ?formattedName WHERE {
+                [[value]] pro:isHeldBy ?ra;
+                    pro:withRole pro:author.
+                OPTIONAL { ?ra foaf:name ?name. }
+                OPTIONAL { ?ra foaf:familyName ?familyName. }
+                OPTIONAL { ?ra foaf:givenName ?givenName. }
+                BIND(
+                    IF(BOUND(?name), ?name,
+                        IF(BOUND(?familyName) && BOUND(?givenName), CONCAT(?familyName, ", ", ?givenName),
+                            IF(BOUND(?familyName), CONCAT(?familyName, ","), 
+                                IF(BOUND(?givenName), CONCAT(",", ?givenName), "")
+                            )
+                        )
+                    ) AS ?formattedName
+                )
+            }
+      - displayName: "Publisher"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: |
+            PREFIX pro: <http://purl.org/spar/pro/>
+            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+            SELECT DISTINCT ?formattedName WHERE {
+                [[value]] pro:isHeldBy ?ra;
+                    pro:withRole pro:publisher.
+                OPTIONAL { ?ra foaf:name ?name. }
+                OPTIONAL { ?ra foaf:familyName ?familyName. }
+                OPTIONAL { ?ra foaf:givenName ?givenName. }
+                BIND(
+                    IF(BOUND(?name), ?name,
+                        IF(BOUND(?familyName) && BOUND(?givenName), CONCAT(?familyName, ", ", ?givenName),
+                            IF(BOUND(?familyName), CONCAT(?familyName, ","), 
+                                IF(BOUND(?givenName), CONCAT(",", ?givenName), "")
+                            )
+                        )
+                    ) AS ?formattedName
+                )
+            }
+      - displayName: "Editor"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: |
+            PREFIX pro: <http://purl.org/spar/pro/>
+            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+            SELECT DISTINCT ?formattedName WHERE {
+                [[value]] pro:isHeldBy ?ra;
+                    pro:withRole pro:editor.
+                OPTIONAL { ?ra foaf:name ?name. }
+                OPTIONAL { ?ra foaf:familyName ?familyName. }
+                OPTIONAL { ?ra foaf:givenName ?givenName. }
+                BIND(
+                    IF(BOUND(?name), ?name,
+                        IF(BOUND(?familyName) && BOUND(?givenName), CONCAT(?familyName, ", ", ?givenName),
+                            IF(BOUND(?familyName), CONCAT(?familyName, ","), 
+                                IF(BOUND(?givenName), CONCAT(",", ?givenName), "")
+                            )
+                        )
+                    ) AS ?formattedName
+                )
+            }
+    - property: "http://prismstandard.org/namespaces/basic/2.0/publicationDate"
+      values:
+      - displayName: "Publication Date"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: null
+    - property: "http://purl.org/vocab/frbr/core#embodiment"
+      values:
+      - displayName: "Page"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: |
+          PREFIX frbr: <http://purl.org/vocab/frbr/core#>
+          PREFIX prism: <http://prismstandard.org/namespaces/basic/2.0/>
+          SELECT 
+              (IF(BOUND(?startingPage) && BOUND(?endingPage), 
+                  CONCAT(STR(?startingPage), "-", STR(?endingPage)), 
+                  IF(BOUND(?startingPage), STR(?startingPage), 
+                  IF(BOUND(?endingPage), STR(?endingPage), ""))) AS ?page) 
+          WHERE {
+              [[subject]] frbr:embodiment ?re.
+              OPTIONAL { ?re prism:startingPage ?startingPage. }
+              OPTIONAL { ?re prism:endingPage ?endingPage. }
+          }
+    - property: "http://purl.org/vocab/frbr/core#partOf"
+      values:
+      - displayName: "Issue"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: |
+            PREFIX fabio: <http://purl.org/spar/fabio/>
+            PREFIX frbr: <http://purl.org/vocab/frbr/core#>
+            SELECT ?issueNumber
+            WHERE {
+                [[subject]] frbr:partOf ?issue.
+                ?issue a fabio:JournalIssue;
+                    fabio:hasSequenceIdentifier ?issueNumber.
+            }
+    - property: "http://purl.org/vocab/frbr/core#partOf"
+      values:
+      - displayName: "Volume"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: |
+            PREFIX fabio: <http://purl.org/spar/fabio/>
+            PREFIX frbr: <http://purl.org/vocab/frbr/core#>
+            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+            SELECT ?volumeNumber
+            WHERE {
+                [[subject]] frbr:partOf+ ?volume.
+                ?issue a fabio:JournalVolume;
+                    fabio:hasSequenceIdentifier ?volumeNumber.
+            }
+    - property: "http://purl.org/vocab/frbr/core#partOf"
+      values:
+      - displayName: "Journal"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: |
+            PREFIX fabio: <http://purl.org/spar/fabio/>
+            PREFIX frbr: <http://purl.org/vocab/frbr/core#>
+            PREFIX dcterms: <http://purl.org/dc/terms/>
+            SELECT ?journalName
+            WHERE {
+                [[subject]] frbr:partOf+ ?journal.
+                ?journal a fabio:Journal;
+                    dcterms:title ?journalName.
+            }
+
+- class: "http://purl.org/spar/datacite/Identifier"
+  displayProperties:
+    - property: "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      values:
+      - displayName: "Type"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: null
+    - property: "http://www.essepuntato.it/2010/06/literalreification/hasLiteralValue"
+      values:
+      - displayName: "Literal Value"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: null
+    - property: "http://purl.org/spar/datacite/usesIdentifierScheme"
+      values:
+      - displayName: "Identifier Scheme"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: null
+
+- class: "http://purl.org/spar/pro/RoleInTime"
+  displayProperties:
+    - property: "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      values:
+      - displayName: "Type"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: null
+    - property: "https://w3id.org/oc/ontology/hasNext"
+      values:
+      - displayName: "Next Role"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: null
+    - property: "http://purl.org/spar/pro/isHeldBy"
+      values:
+      - displayName: "Held By"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: null
+    - property: "http://purl.org/spar/pro/withRole"
+      values:
+      - displayName: "Role"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: null
+
+- class: "http://purl.org/spar/fabio/Manifestation"
+  displayProperties:
+    - property: "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      values:
+      - displayName: "Type"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: null
+    - property: "http://purl.org/dc/terms/format"
+      values:
+      - displayName: "Format"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: null
+    - property: "http://prismstandard.org/namespaces/basic/2.0/startingPage"
+      values:
+      - displayName: "Starting Page"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: null
+    - property: "http://prismstandard.org/namespaces/basic/2.0/endingPage"
+      values:
+      - displayName: "Ending Page"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: null
+
+- class: "http://xmlns.com/foaf/0.1/Agent"
+  displayProperties:
+    - property: "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      values:
+      - displayName: "Type"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: null
+    - property: "http://xmlns.com/foaf/0.1/name"
+      values:
+      - displayName: "Name"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: null
+    - property: "http://xmlns.com/foaf/0.1/givenName"
+      values:
+      - displayName: "Given Name"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: null
+    - property: "http://xmlns.com/foaf/0.1/familyName"
+      values:
+      - displayName: "Family Name"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: null

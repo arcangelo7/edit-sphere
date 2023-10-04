@@ -22,7 +22,8 @@ class Filter:
                     if subject_class in diplay_rule['class']:
                         for display_property in diplay_rule['displayProperties']:
                             if display_property['property'] == str(url):
-                                return display_property['displayName']
+                                for value in display_property['values']:
+                                    return value['displayName']
         first_part, last_part = self.split_ns(url)
         if first_part in self.context:
             if last_part.islower():

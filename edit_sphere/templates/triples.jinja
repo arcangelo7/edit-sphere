@@ -59,8 +59,8 @@
     </li>
 {% endmacro %}
 
-{% macro add_form(type) %}
-    <div class="mb-5 add-form-{{ type }} d-none">
+{% macro add_form() %}
+    <div class="mb-5 add-form d-none">
         <h5>{{_('Add a new piece of information')}}</h5>
         <form action="{{ url_for('add_triple') }}" method="post">
             {{ create_form.subject(value=subject) }}
@@ -82,7 +82,7 @@
             </div>
             <div class="mt-3">
                 <button type="submit" class="btn btn-primary">{{_('Add')}}</button>
-                <button type="button" class="btn btn-secondary cancel-add-button-{{ type }}">{{_('Cancel')}}</button>
+                <button type="button" class="btn btn-secondary cancel-add-button">{{_('Cancel')}}</button>
             </div>
         </form>
     </div>
@@ -112,67 +112,30 @@
     </div>
     {% endif %}
 
-    {% if triples %}
-
-        {% set attributes_triples = [] %}
-        {% set links_triples = [] %}
-        {% for triple in triples %}
-            {% set human_readable = triple['object']['value'] | human_readable_predicate(subject_classes) %}
-            {% if not (human_readable.startswith('<a')) %}
-                {% set _ = attributes_triples.append(triple) %}
+    {% if grouped_triples %}
+        <div class="d-flex justify-content-start align-items-baseline mt-5 mb-3">
+            <h4 class="me-4">{{ _('Information') }}</h4>
+            {% if shacl and not can_be_added %}
+                <span title="{{ _('You cannot add more properties; the limit for each property has been reached') }}" class="info-cursor">
+                    <button class="btn btn-outline-success add-button" disabled><i class="bi bi-plus-lg"></i></button>
+                </span>
             {% else %}
-                {% set _ = links_triples.append(triple) %}
+                <button class="btn btn-outline-success add-button" title="{{_('Add new information')}}"><i class="bi bi-plus-lg"></i></button>
             {% endif %}
-        {% endfor %}
-    
-        {% for type, type_human, triples_set_specific in [('attributes', _('attributes'), attributes_triples), ('links', _('links to other resources'), links_triples)] %}
-            {% if triples_set_specific %}
-                <div class="d-flex justify-content-start align-items-baseline mt-5 mb-3">
-                    <h4 class="me-4">{{ type_human.capitalize() }}</h4>
-                    {% if shacl and not can_be_added %}
-                    <span title="{{ _('You cannot add more properties; the limit for each property has been reached') }}" class="info-cursor">
-                        <button class="btn btn-outline-success add-button-{{ type }}" disabled><i class="bi bi-plus-lg"></i></button>
-                    </span>
-                    {% else %}
-                    <button class="btn btn-outline-success add-button-{{ type }}" title="{{_('Add new ' + type_human)}}"><i class="bi bi-plus-lg"></i></button>
-                    {% endif %}
-                </div>
-                {{ add_form(type) }}
-                {% for predicate, triples_set_generic in grouped_triples.items() %}
-                    {% set relevant_triples = triples_set_generic|select('in', triples_set_specific)|list %}
-                    {% if relevant_triples %}
-                        <div class="predicate-group mb-4">
-                            <span class="fw-bold">{{ predicate | human_readable_predicate(subject_classes) }}</span>
-                            {% for triple in relevant_triples %}
-                                {{ render_triple(triple, subject) }}
-                            {% endfor %}
-                        </div>
-                    {% endif %}
+        </div>
+        {{ add_form() }}
+        {% for (original_property, display_name), triples_set in grouped_triples.items() %}
+            <div class="predicate-group mb-4">
+                <span class="fw-bold">{{ display_name | human_readable_predicate(subject_classes) }}</span>
+                {% for triple in triples_set %}
+                    {{ render_triple(triple, subject) }}
                 {% endfor %}
-            {% endif %}
+            </div>
         {% endfor %}
-
     {% else %}
         <p class="alert alert-warning mt-5 mb-4">{{_('There is no information related to this entity in the dataset')}}</p>
-        <button class="btn btn-outline-success add-button-links" title="{{_('Add new link')}}">{{_("Let's add some metadata")}}</button>
-        <div class="add-form-links d-none mt-4">
-            <h5>{{_('Add a new piece of information')}}</h5>
-            <form action="{{ url_for('add_triple') }}" method="post">
-                <input type="hidden" name="subject" value="{{ subject }}">
-                <div class="form-group">
-                    <label for="predicate">{{_('Property')}}</label>
-                    <input type="text" class="form-control" name="predicate" required>
-                </div>
-                <div class="form-group mt-3">
-                    <label for="object">{{_('Value')}}</label>
-                    <input type="text" class="form-control" name="object" required>
-                </div>
-                <div class="mt-3">
-                    <button type="submit" class="btn btn-primary">{{_('Add')}}</button>
-                    <button type="button" class="btn btn-secondary cancel-add-button-links">{{_('Cancel')}}</button>
-                </div>
-            </form>
-        </div>              
+        <button class="btn btn-outline-success add-button" title="{{_('Add new information')}}">{{_("Let's add some metadata")}}</button>
+        {{ add_form() }}
     {% endif %}
 </div>
 
@@ -188,10 +151,10 @@
             valueSpan.toggleClass('d-none');
         }
 
-        function showAddFormOrAlert(type) {
+        function showAddFormOrAlert() {
             can_be_added = {{ can_be_added|tojson|safe }}
             if (can_be_added == null) {
-                $(`.add-form-${type}`).toggleClass('d-none');
+                $(`.add-form`).toggleClass('d-none');
             } else {
                 if (can_be_added.length == 0) {
                     Swal.fire({
@@ -201,7 +164,7 @@
                         confirmButtonColor: '#3085d6'
                     });
                 } else {
-                    $(`.add-form-${type}`).toggleClass('d-none');
+                    $(`.add-form`).toggleClass('d-none');
                 }
             }
         }
@@ -270,15 +233,12 @@
             }
         });
 
-        $('.add-button-attributes, .add-button-links').click(function() {
-            showAddFormOrAlert($(this).hasClass('add-button-attributes') ? 'attributes' : 'links');
+        $('.add-button').click(function() {
+            showAddFormOrAlert();
             updateObjectInput();
         });
-        $('.cancel-add-button-attributes').click(function() {
-            $('.add-form-attributes').addClass('d-none');
-        });
-        $('.cancel-add-button-links').click(function() {
-            $('.add-form-links').addClass('d-none');
+        $('.cancel-add-button').click(function() {
+            $('.add-form').addClass('d-none');
         });
         $('.predicate-select').change(updateObjectInput);
     });
