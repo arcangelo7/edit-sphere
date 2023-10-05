@@ -1,4 +1,4 @@
-{% macro render_triple(triple, subject) %}
+{% macro render_triple(triple, subject, externalEntity) %}
     <li class="d-flex align-items-center">
         <span class="flex-grow-1 d-flex flex-column justify-content-center p-3 w-75">
             <span class="object-value ellipsis">
@@ -32,7 +32,7 @@
         {% endif %}    
     </div>
     
-    {% if triples %}
+    {% if grouped_triples %}
 
         {# Pulsanti per navigare tra gli snapshot #}
         <div class="mt-5 mb-5 d-flex justify-content-start">
@@ -98,35 +98,17 @@
             {% endfor %}
         </div>
 
-        {% set attributes_triples = [] %}
-        {% set links_triples = [] %}
-        {% for triple in triples %}
-            {% set human_readable = triple[2] | human_readable_predicate(subject_classes) %}
-            {% if not (human_readable.startswith('<a')) %}
-                {% set _ = attributes_triples.append(triple) %}
-            {% else %}
-                {% set _ = links_triples.append(triple) %}
-            {% endif %}
+        {% for display_name, data in grouped_triples.items() %}
+            <div class="predicate-group mb-4">
+                {% if data['triples'] %}
+                    <span class="fw-bold">{{ display_name | human_readable_predicate(subject_classes) }}</span>
+                    {% for triple in data['triples'] %}
+                        {{ render_triple(triple, subject, data['external_entity']) }}
+                    {% endfor %}
+                {% endif %}
+            </div>
         {% endfor %}
     
-        {% for type, type_human, triples_set_specific in [('attributes', _('attributes'), attributes_triples), ('links', _('links to other resources'), links_triples)] %}
-            {% if triples_set_specific %}
-                <div class="d-flex justify-content-start align-items-baseline mt-5 mb-3">
-                    <h4 class="me-4">{{ type_human.capitalize() }}</h4>
-                </div>
-                {% for predicate, triples_set_generic in grouped_triples.items() %}
-                    {% set relevant_triples = triples_set_generic|select('in', triples_set_specific)|list %}
-                    {% if relevant_triples %}
-                        <div class="predicate-group mb-4">
-                            <span class="fw-bold">{{ predicate | human_readable_predicate(subject_classes) }}</span>
-                            {% for triple in relevant_triples %}
-                                {{ render_triple(triple, subject) }}
-                            {% endfor %}
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            {% endif %}
-        {% endfor %}
     {% else %}
         <p class="alert alert-warning my-5">{{_('This snapshot does not exist')}}</p>
     {% endif %}

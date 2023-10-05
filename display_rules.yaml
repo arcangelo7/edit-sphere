@@ -176,9 +176,9 @@
       - displayName: "Type"
         shouldBeDisplayed: true
         fetchValueFromQuery: null
-    - property: "https://w3id.org/oc/ontology/hasNext"
+    - property: "http://purl.org/spar/pro/withRole"
       values:
-      - displayName: "Next Role"
+      - displayName: "Role"
         shouldBeDisplayed: true
         fetchValueFromQuery: null
     - property: "http://purl.org/spar/pro/isHeldBy"
@@ -186,9 +186,9 @@
       - displayName: "Held By"
         shouldBeDisplayed: true
         fetchValueFromQuery: null
-    - property: "http://purl.org/spar/pro/withRole"
+    - property: "https://w3id.org/oc/ontology/hasNext"
       values:
-      - displayName: "Role"
+      - displayName: "Next Role"
         shouldBeDisplayed: true
         fetchValueFromQuery: null
 

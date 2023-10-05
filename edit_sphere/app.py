@@ -1,10 +1,8 @@
-import datetime
 import json
 import os
 import urllib
 from collections import OrderedDict, defaultdict
-from copy import deepcopy
-from datetime import timezone
+from datetime import datetime, timezone
 
 import click
 import requests
@@ -22,7 +20,7 @@ from rdflib.plugins.sparql import prepareQuery
 from rdflib.plugins.sparql.algebra import translateQuery, translateUpdate
 from rdflib.plugins.sparql.parser import parseQuery, parseUpdate
 from resources.datatypes import DATATYPE_MAPPING
-from SPARQLWrapper import JSON, XML, SPARQLWrapper
+from SPARQLWrapper import JSON, RDFXML, XML, SPARQLWrapper
 from time_agnostic_library.agnostic_entity import (
     AgnosticEntity, _filter_timestamps_by_interval)
 from time_agnostic_library.prov_entity import ProvEntity
@@ -91,10 +89,15 @@ def show_triples(subject):
     agnostic_entity = AgnosticEntity(res=decoded_subject, config_path=change_tracking_config)
     history, _ = agnostic_entity.get_history(include_prov_metadata=True)
 
+    g = Graph()
     query = f"SELECT ?predicate ?object WHERE {{ <{decoded_subject}> ?predicate ?object. }}"
     sparql.setQuery(query)
     sparql.setReturnFormat(JSON)
     triples = sparql.query().convert().get("results", {}).get("bindings", [])
+    for triple in triples:
+        value = Literal(triple['object']['value'], datatype=URIRef(triple['object']['datatype'])) if triple['object']['type'] == 'literal' and 'datatype' in triple['object'] else Literal(triple['object']['value'], datatype=XSD.string) if triple['object']['type'] == 'literal' else URIRef(triple['object']['value'])
+        g.add((URIRef(decoded_subject), URIRef(triple['predicate']['value']), value))
+    triples = list(g.triples((None, None, None)))
 
     can_be_added, can_be_deleted, datatypes, mandatory_values, optional_values, subject_classes = get_valid_predicates(triples)
 
@@ -103,9 +106,9 @@ def show_triples(subject):
     else:
         grouped_triples = dict()
         for triple in triples:
-            grouped_triples.setdefault((triple['predicate']['value'], filter.human_readable_predicate(triple['predicate']['value'], subject_classes, True), False), []).append(triple)
-        relevant_properties = set(triple['predicate']['value'] for triple in triples)
-    triples = [triple for triple in triples if triple['predicate']['value'] in relevant_properties]
+            grouped_triples.setdefault((triple[1], filter.human_readable_predicate(triple[1], subject_classes, True), False), []).append(triple)
+        relevant_properties = set(triple[1] for triple in triples)
+    triples = [triple for triple in triples if triple[1] in relevant_properties]
     can_be_added = [uri for uri in can_be_added if uri in relevant_properties]
     can_be_deleted = [uri for uri in can_be_deleted if uri in relevant_properties]
 
@@ -121,14 +124,13 @@ def update_triple():
     predicate = request.form.get('predicate')
     old_value = request.form.get('old_value')
     new_value = request.form.get('new_value')
+    new_value, old_value, report_text = validate_new_triple(subject, predicate, new_value, old_value)
     if shacl:
-        new_value, old_value, report_text = validate_new_triple(subject, predicate, new_value, old_value)
         if new_value is None:
             flash(report_text)
             return redirect(url_for('show_triples', subject=subject))
     else:
-        new_value = URIRef(new_value) if validators.url(new_value) else Literal(new_value)
-        old_value = URIRef(old_value) if validators.url(old_value) else Literal(old_value)
+        new_value = Literal(new_value, datatype=old_value.datatype) if old_value.datatype and isinstance(old_value, Literal) else Literal(new_value, datatype=XSD.string) if isinstance(old_value, Literal) else URIRef(new_value)
     editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'], app.config['PRIMARY_SOURCE'], app.config['DATASET_GENERATION_TIME'])
     editor.update(URIRef(subject), URIRef(predicate), old_value, new_value)    
     return redirect(url_for('show_triples', subject=subject))
@@ -153,18 +155,18 @@ def add_triple():
     subject = request.form.get('subject')
     predicate = request.form.get('predicate')
     object_value = request.form.get('object')
+    object_value, _, report_text = validate_new_triple(subject, predicate, object_value)
     if shacl:
         data_graph = fetch_data_graph_for_subject(subject)
         can_be_added, _, _, _, _, s_types = get_valid_predicates(list(data_graph.triples((None, None, None))))
         if predicate not in can_be_added and URIRef(predicate) in data_graph.predicates():
             flash(gettext('This resource cannot have any other %(predicate)s properties', predicate=filter.human_readable_predicate(predicate, s_types)))
             return redirect(url_for('show_triples', subject=subject))
-        object_value, _, report_text = validate_new_triple(subject, predicate, object_value)
         if object_value is None:
             flash(report_text)
             return redirect(url_for('show_triples', subject=subject))
     else:
-        object_value = URIRef(object_value) if validators.url(object_value) else Literal(object_value)
+        object_value = URIRef(object_value) if validators.url(object_value) else Literal(object_value, datatype=XSD.string)
     editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'], app.config['PRIMARY_SOURCE'], app.config['DATASET_GENERATION_TIME'])
     editor.create(URIRef(subject), URIRef(predicate), object_value)
     return redirect(url_for('show_triples', subject=subject))
@@ -307,11 +309,14 @@ def entity_version(entity_uri, timestamp):
     version: Graph = history[closest_timestamp]
     triples = list(version.triples((None, None, None)))
     relevant_properties = set()
-    for triple in triples:
-        if display_rules:
-            for rule in display_rules:
-                if URIRef(rule['class']) in subject_classes:
-                    relevant_properties.update([prop['property'] for prop in rule['displayProperties'] if prop['shouldBeDisplayed']])
+    if display_rules:
+        grouped_triples, relevant_properties = get_grouped_triples(entity_uri, triples, subject_classes)
+    else:
+        grouped_triples = dict()
+        for triple in triples:
+            grouped_triples.setdefault((triple[1], filter.human_readable_predicate(triple[1], subject_classes, True), False), []).append(triple)
+        relevant_properties = set(triple[1] for triple in triples)
+
     if relevant_properties:
         triples = [triple for triple in triples if str(triple[1]) in relevant_properties]
 
@@ -340,12 +345,7 @@ def entity_version(entity_uri, timestamp):
         modifications = parse_sparql_update(sparql_query)
     else:
         modifications = None
-
-    grouped_triples = defaultdict(list)
-    for triple in triples:
-        grouped_triples[triple[1]].append(triple)
-
-    return render_template('entity_version.jinja', subject=entity_uri, triples=triples, metadata=closest_metadata, timestamp=closest_timestamp, next_snapshot_timestamp=next_snapshot_timestamp, prev_snapshot_timestamp=prev_snapshot_timestamp, modifications=modifications, grouped_triples=grouped_triples, subject_classes=subject_classes)
+    return render_template('entity_version.jinja', subject=entity_uri, metadata=closest_metadata, timestamp=closest_timestamp, next_snapshot_timestamp=next_snapshot_timestamp, prev_snapshot_timestamp=prev_snapshot_timestamp, modifications=modifications, grouped_triples=grouped_triples, subject_classes=subject_classes)
 
 @app.route('/restore-version/<path:entity_uri>/<timestamp>', methods=['POST'])
 def restore_version(entity_uri, timestamp):
@@ -403,6 +403,7 @@ def validate_new_triple(subject, predicate, new_value, old_value = None):
     s_types = [triple[2] for triple in data_graph.triples((URIRef(subject), RDF.type, None))]
     if old_value is not None:
         old_value = [triple[2] for triple in data_graph.triples((URIRef(subject), URIRef(predicate), None)) if str(triple[2]) == str(old_value)][0]
+    valid_value = Literal(new_value, datatype=old_value.datatype) if old_value.datatype and isinstance(old_value, Literal) else Literal(new_value) if isinstance(old_value, Literal) else URIRef(new_value)
     query = f"""
         PREFIX sh: <http://www.w3.org/ns/shacl#>
         SELECT DISTINCT ?property ?datatype ?a_class ?classIn (GROUP_CONCAT(DISTINCT COALESCE(?optionalValue, ""); separator=",") AS ?optionalValues)
@@ -454,36 +455,42 @@ def validate_new_triple(subject, predicate, new_value, old_value = None):
         if valid_value is None:
             return None, old_value, gettext('<code>%(new_value)s</code> is not a valid value. The <code>%(property)s</code> property requires values of type %(o_types)s', new_value=filter.human_readable_predicate(new_value, s_types), property=filter.human_readable_predicate(predicate, s_types), o_types=', '.join([f'<code>{filter.human_readable_predicate(datatype, s_types)}</code>' for datatype in datatypes]))
         return valid_value, old_value, ''
-    valid_value = URIRef(new_value) if validators.url(new_value) else Literal(new_value)
     return valid_value, old_value, ''
 
 def get_grouped_triples(subject, triples, subject_classes):
     grouped_triples = OrderedDict()
     relevant_properties = set()
-    for triple in triples:
-        for rule in display_rules:
-            if rule['class'] in subject_classes:
-                for prop in rule['displayProperties']:
-                    relevant_properties.add(prop['property'])
-                    for displayConfig in prop['values']:
-                        if displayConfig['shouldBeDisplayed']:
-                            if triple['predicate']['value'] == prop['property']:
+    subject_classes = [str(subject_class) for subject_class in subject_classes]
+    for rule in display_rules:
+        if rule['class'] in subject_classes:
+            for prop in rule['displayProperties']:
+                relevant_properties.add(prop['property'])
+                for displayConfig in prop['values']:
+                    if displayConfig['shouldBeDisplayed']:
+                        for triple in triples:
+                            if str(triple[1]) == prop['property']:
+                                display_name = displayConfig['displayName']
+                                if display_name not in grouped_triples:
+                                    grouped_triples[display_name] = {
+                                        'property': prop['property'],
+                                        'external_entity': None,
+                                        'triples': []
+                                    }
                                 if displayConfig['fetchValueFromQuery']:
-                                    result, external_entity = execute_sparql_query(displayConfig['fetchValueFromQuery'], subject, triple['object']['value'])
-                                    key = (prop['property'], displayConfig['displayName'], external_entity)
+                                    result, external_entity = execute_sparql_query(displayConfig['fetchValueFromQuery'], subject, triple[2])
                                     if result:
-                                        new_triple = deepcopy(triple)
-                                        new_triple['object']['value'] = result
-                                        existing_values = [t['object']['value'] for t in grouped_triples.get(key, [])]
-                                        if new_triple['object']['value'] not in existing_values:
-                                            grouped_triples.setdefault(key, []).append(new_triple)
+                                        grouped_triples[display_name]['external_entity'] = external_entity
+                                        new_triple = (str(triple[0]), str(triple[1]), str(result))
+                                        existing_values = [t[2] for t in grouped_triples[display_name]['triples']]
+                                        if new_triple[2] not in existing_values:
+                                            grouped_triples[display_name]['triples'].append(new_triple)
                                 else:
-                                    key = (prop['property'], displayConfig['displayName'], None)
-                                    existing_values = [t['object']['value'] for t in grouped_triples.get(key, [])]
-                                    if triple['object']['value'] not in existing_values:
-                                        grouped_triples.setdefault(key, []).append(triple)
-    ordered_keys = sorted(grouped_triples.keys(), key=lambda k: property_order_index(k[0], subject_classes))
-    grouped_triples = OrderedDict((k, grouped_triples[k]) for k in ordered_keys)
+                                    new_triple = (str(triple[0]), str(triple[1]), str(triple[2]))
+                                    existing_values = [t[2] for t in grouped_triples[display_name]['triples']]
+                                    if new_triple[2] not in existing_values:
+                                        grouped_triples[display_name]['triples'].append(new_triple)
+    ordered_display_names = sorted(grouped_triples.keys(), key=lambda k: property_order_index(grouped_triples[k]['property'], subject_classes))
+    grouped_triples = OrderedDict((k, grouped_triples[k]) for k in ordered_display_names)
     return grouped_triples, relevant_properties
 
 def property_order_index(prop, subject_classes):
@@ -546,7 +553,7 @@ def convert_to_matching_literal(object_value, datatypes):
     for datatype in datatypes:
         validation_func = next((d[1] for d in DATATYPE_MAPPING if d[0] == datatype), None)
         if validation_func is None:
-            return Literal(object_value)
+            return Literal(object_value, datatype=XSD.string)
         is_valid_datatype = validation_func(object_value)
         if is_valid_datatype:
             return Literal(object_value, datatype=datatype)
@@ -566,31 +573,12 @@ def prioritize_datatype(datatypes):
     return DATATYPE_MAPPING[0][0]
 
 def get_valid_predicates(triples):
-    def extract_type(triple):
-        if 'object' in triple:
-            if 'predicate' in triple and triple['predicate']['value'] == str(RDF.type):
-                return triple['object']['value']
-        elif triple[1] == RDF.type:
-            return str(triple[2])
-        return None
-    def extract_predicate(triple):
-        if isinstance(triple, dict) and 'predicate' in triple:
-            return triple['predicate']['value']
-        elif isinstance(triple, tuple):
-            return triple[1]
-        return None
-    def extract_object_value(triple):
-        if isinstance(triple, dict) and 'object' in triple:
-            return triple['object']['value']
-        elif isinstance(triple, tuple):
-            return triple[2]
-        return None
-    existing_predicates = [extract_predicate(triple) for triple in triples]
+    existing_predicates = [triple[1] for triple in triples]
     predicate_counts = {str(predicate): existing_predicates.count(predicate) for predicate in set(existing_predicates)}
     default_datatypes = {str(predicate): XSD.string for predicate in existing_predicates}
     if not shacl:
         return existing_predicates, existing_predicates, default_datatypes, dict(), dict()
-    s_types = [extract_type(triple) for triple in triples if extract_type(triple) is not None]
+    s_types = [triple[2] for triple in triples if triple[1] == RDF.type]
     if not s_types:
         return existing_predicates, existing_predicates, default_datatypes, dict(), dict()
     query = prepareQuery(f"""
@@ -630,12 +618,12 @@ def get_valid_predicates(triples):
     for valid_predicate in valid_predicates:
         for predicate, ranges in valid_predicate.items():
             if ranges["hasValue"]:
-                mandatory_value_present = any(extract_object_value(triple) == str(ranges["hasValue"]) for triple in triples)
+                mandatory_value_present = any(triple[2] == str(ranges["hasValue"]) for triple in triples)
                 if not mandatory_value_present:
                     can_be_added.add(predicate)
             else:
                 max_reached_for_generic = (ranges["max"] is not None and int(ranges["max"]) <= predicate_counts.get(predicate, 0))
-                max_reached_for_optional = (ranges["max"] is not None and int(ranges["max"]) <= sum(1 for triple in triples if extract_object_value(triple) in ranges["optionalValues"])) if ranges["optionalValues"] else max_reached_for_generic
+                max_reached_for_optional = (ranges["max"] is not None and int(ranges["max"]) <= sum(1 for triple in triples if triple[2] in ranges["optionalValues"])) if ranges["optionalValues"] else max_reached_for_generic
                 if not max_reached_for_generic or not max_reached_for_optional:
                     can_be_added.add(predicate)
                 if not (ranges["min"] is not None and int(ranges["min"]) == predicate_counts.get(predicate, 0)):

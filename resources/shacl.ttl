@@ -212,20 +212,8 @@ schema:BibliographicResourceShape
   ] ;
   sh:property
   [
-    sh:path prism:edition ;
-    sh:datatype xsd:string ;
-    sh:minCount 0 ;
-    sh:maxCount 1 ;
-  ] ;
-  sh:property
-  [
     sh:path pro:isDocumentContextFor ;
     sh:class pro:RoleInTime ;
-  ] ;
-  sh:property
-  [
-    sh:path dcterms:relation ;
-    sh:nodeKind sh:IRI ;
   ] ;
   sh:property
   [
@@ -260,13 +248,6 @@ schema:ResourceEmbodimentShape
   ] ;
   sh:property
 	[
-    sh:path dcterms:format ;
-    sh:nodeKind sh:IRI ;
-    sh:minCount 0 ;
-    sh:maxCount 1 ;
-  ] ;
-  sh:property
-	[
     sh:path prism:startingPage ;
     sh:datatype xsd:string ;
     sh:minCount 0 ;
@@ -276,13 +257,6 @@ schema:ResourceEmbodimentShape
 	[
     sh:path prism:endingPage ;
     sh:datatype xsd:string ;
-    sh:minCount 0 ;
-    sh:maxCount 1 ;
-  ] ;
-  sh:property
-	[
-    sh:path frbr:exemplar ;
-    sh:nodeKind sh:IRI ;
     sh:minCount 0 ;
     sh:maxCount 1 ;
   ] ;
