@@ -2,32 +2,32 @@ import datetime
 import json
 import os
 import urllib
-from collections import defaultdict, OrderedDict
-from datetime import timezone
-import yaml
+from collections import OrderedDict, defaultdict
 from copy import deepcopy
+from datetime import timezone
+
 import click
 import requests
 import validators
+import yaml
+from config import Config
+from edit_sphere.editor import Editor
+from edit_sphere.filters import *
+from edit_sphere.forms import *
 from flask import (Flask, abort, flash, redirect, render_template, request,
                    session, url_for)
 from flask_babel import Babel, gettext, refresh
 from rdflib import RDF, XSD, Graph, Literal, URIRef
 from rdflib.plugins.sparql import prepareQuery
-from rdflib.plugins.sparql.algebra import translateUpdate
-from rdflib.plugins.sparql.parser import parseUpdate
+from rdflib.plugins.sparql.algebra import translateQuery, translateUpdate
+from rdflib.plugins.sparql.parser import parseQuery, parseUpdate
+from resources.datatypes import DATATYPE_MAPPING
 from SPARQLWrapper import JSON, XML, SPARQLWrapper
 from time_agnostic_library.agnostic_entity import (
     AgnosticEntity, _filter_timestamps_by_interval)
 from time_agnostic_library.prov_entity import ProvEntity
 from time_agnostic_library.sparql import Sparql
 from time_agnostic_library.support import convert_to_datetime
-
-from config import Config
-from edit_sphere.editor import Editor
-from edit_sphere.filters import *
-from edit_sphere.forms import *
-from resources.datatypes import DATATYPE_MAPPING
 
 app = Flask(__name__)
 
@@ -103,7 +103,7 @@ def show_triples(subject):
     else:
         grouped_triples = dict()
         for triple in triples:
-            grouped_triples.setdefault((triple['predicate']['value'], filter.human_readable_predicate(triple['predicate']['value'], subject_classes, True)), []).append(triple)
+            grouped_triples.setdefault((triple['predicate']['value'], filter.human_readable_predicate(triple['predicate']['value'], subject_classes, True), False), []).append(triple)
         relevant_properties = set(triple['predicate']['value'] for triple in triples)
     triples = [triple for triple in triples if triple['predicate']['value'] in relevant_properties]
     can_be_added = [uri for uri in can_be_added if uri in relevant_properties]
@@ -113,7 +113,6 @@ def show_triples(subject):
     create_form = CreateTripleFormWithSelect() if can_be_added else CreateTripleFormWithInput()
     if can_be_added:
         create_form.predicate.choices = [(p, filter.human_readable_predicate(p, subject_classes)) for p in can_be_added]
-
     return render_template('triples.jinja', subject=decoded_subject, history=history, can_be_added=can_be_added, can_be_deleted=can_be_deleted, datatypes=datatypes, update_form=update_form, create_form=create_form, mandatory_values=mandatory_values, optional_values=optional_values, shacl=True if shacl else False, grouped_triples=grouped_triples, subject_classes=subject_classes)
 
 @app.route('/update_triple', methods=['POST'])
@@ -170,159 +169,6 @@ def add_triple():
     editor.create(URIRef(subject), URIRef(predicate), object_value)
     return redirect(url_for('show_triples', subject=subject))
 
-def validate_new_triple(subject, predicate, new_value, old_value = None):
-    data_graph = fetch_data_graph_for_subject(subject)
-    s_types = [triple[2] for triple in data_graph.triples((URIRef(subject), RDF.type, None))]
-    if old_value is not None:
-        old_value = [triple[2] for triple in data_graph.triples((URIRef(subject), URIRef(predicate), None)) if str(triple[2]) == str(old_value)][0]
-    query = f"""
-        PREFIX sh: <http://www.w3.org/ns/shacl#>
-        SELECT DISTINCT ?property ?datatype ?a_class ?classIn (GROUP_CONCAT(DISTINCT COALESCE(?optionalValue, ""); separator=",") AS ?optionalValues)
-        WHERE {{
-            ?shape sh:targetClass ?type ;
-                sh:property ?property .
-            VALUES ?type {{<{'> <'.join(s_types)}>}}
-            ?property sh:path <{predicate}> .
-            OPTIONAL {{?property sh:datatype ?datatype .}}
-            OPTIONAL {{?property sh:class ?a_class .}}
-            OPTIONAL {{
-                ?property sh:or ?orList .
-                ?orList rdf:rest*/rdf:first ?orConstraint .
-                ?orConstraint sh:datatype ?datatype .
-                OPTIONAL {{?orConstraint sh:class ?class .}}
-            }}
-            OPTIONAL {{
-                ?property sh:classIn ?classInList .
-                ?classInList rdf:rest*/rdf:first ?classIn .
-            }}
-            OPTIONAL {{
-                ?property sh:in ?list .
-                ?list rdf:rest*/rdf:first ?optionalValue .
-            }}
-        }}
-        GROUP BY ?property ?datatype ?a_class ?classIn
-    """
-    results = shacl.query(query)
-    property_exists = [row.property for row in results]
-    if not property_exists:
-        return None, old_value, gettext('The property %(predicate)s is not allowed for resources of type %(s_type)s', predicate=filter.human_readable_predicate(predicate, s_types), s_type=filter.human_readable_predicate(s_types[0], s_types))
-    datatypes = [row.datatype for row in results]
-    classes = [row.a_class for row in results if row.a_class]
-    classes.extend([row.classIn for row in results if row.classIn])
-    optional_values_str = [row.optionalValues for row in results if row.optionalValues]
-    optional_values_str = optional_values_str[0] if optional_values_str else ''
-    optional_values = [value for value in optional_values_str.split(',') if value]
-    if optional_values and new_value not in optional_values:
-        return None, old_value, gettext('<code>%(new_value)s</code> is not a valid value. The <code>%(property)s</code> property requires one of the following values: %(o_values)s', new_value=filter.human_readable_predicate(new_value, s_types), property=filter.human_readable_predicate(predicate, s_types), o_values=', '.join([f'<code>{filter.human_readable_predicate(value, s_types)}</code>' for value in optional_values]))
-    if classes:
-        if not validators.url(new_value):
-            return None, old_value, gettext('<code>%(new_value)s</code> is not a valid value. The <code>%(property)s</code> property requires values of type %(o_types)s', new_value=filter.human_readable_predicate(new_value, s_types), property=filter.human_readable_predicate(predicate, s_types), o_types=', '.join([f'<code>{filter.human_readable_predicate(o_class, s_types)}</code>' for o_class in classes]))
-        valid_value = convert_to_matching_class(new_value, classes)
-        if valid_value is None:
-            return None, old_value, gettext('<code>%(new_value)s</code> is not a valid value. The <code>%(property)s</code> property requires values of type %(o_types)s', new_value=filter.human_readable_predicate(new_value, s_types), property=filter.human_readable_predicate(predicate, s_types), o_types=', '.join([f'<code>{filter.human_readable_predicate(o_class, s_types)}</code>' for o_class in classes]))
-        return valid_value, old_value, ''
-    elif datatypes:
-        valid_value = convert_to_matching_literal(new_value, datatypes)
-        if valid_value is None:
-            return None, old_value, gettext('<code>%(new_value)s</code> is not a valid value. The <code>%(property)s</code> property requires values of type %(o_types)s', new_value=filter.human_readable_predicate(new_value, s_types), property=filter.human_readable_predicate(predicate, s_types), o_types=', '.join([f'<code>{filter.human_readable_predicate(datatype, s_types)}</code>' for datatype in datatypes]))
-        return valid_value, old_value, ''
-    valid_value = URIRef(new_value) if validators.url(new_value) else Literal(new_value)
-    return valid_value, old_value, ''
-
-def get_grouped_triples(subject, triples, subject_classes):
-    grouped_triples = OrderedDict()
-    relevant_properties = set()
-    for triple in triples:
-        for rule in display_rules:
-            if rule['class'] in subject_classes:
-                for prop in rule['displayProperties']:
-                    relevant_properties.add(prop['property'])
-                    for displayConfig in prop['values']:
-                        if displayConfig['shouldBeDisplayed']:
-                            key = (prop['property'], displayConfig['displayName'])
-                            if triple['predicate']['value'] == prop['property']:
-                                if displayConfig['fetchValueFromQuery']:
-                                    result = execute_sparql_query(displayConfig['fetchValueFromQuery'], subject, triple['object']['value'])
-                                    print(displayConfig['fetchValueFromQuery'], result)
-                                    if result:
-                                        new_triple = deepcopy(triple)
-                                        new_triple['object']['value'] = result
-                                        existing_values = [t['object']['value'] for t in grouped_triples.get(key, [])]
-                                        if new_triple['object']['value'] not in existing_values:
-                                            grouped_triples.setdefault(key, []).append(new_triple)
-                                else:
-                                    existing_values = [t['object']['value'] for t in grouped_triples.get(key, [])]
-                                    if triple['object']['value'] not in existing_values:
-                                        grouped_triples.setdefault(key, []).append(triple)
-    ordered_keys = sorted(grouped_triples.keys(), key=lambda k: property_order_index(k[0], subject_classes))
-    grouped_triples = OrderedDict((k, grouped_triples[k]) for k in ordered_keys)
-    return grouped_triples, relevant_properties
-
-def property_order_index(prop, subject_classes):
-    """Return the index of a property based on its order in the configuration file."""
-    for rule in display_rules:
-        if rule['class'] in subject_classes:
-            for index, prop_config in enumerate(rule['displayProperties']):
-                if prop_config['property'] == prop:
-                    return index
-    return float('inf')
-
-def fetch_data_graph_for_subject(subject_uri):
-    """
-    Fetch all triples associated with subject.
-    """
-    query_str = f'''
-        CONSTRUCT {{
-            <{subject_uri}> ?p ?o .
-        }}
-        WHERE {{
-            <{subject_uri}> ?p ?o .
-        }}
-    '''
-    sparql.setQuery(query_str)
-    sparql.setReturnFormat(XML)
-    result = sparql.queryAndConvert()
-    return result
-
-def fetch_data_graph_for_subject_recursively(subject_uri):
-    """
-    Fetch all triples associated with subject and all triples of all the entities that the subject points to.
-    """
-    query_str = f'''
-        PREFIX eea: <https://jobu_tupaki/>
-        CONSTRUCT {{
-            ?s ?p ?o .
-        }}
-        WHERE {{
-            {{
-                <{subject_uri}> ?p ?o .
-                ?s ?p ?o .
-            }} UNION {{
-                <{subject_uri}> (<eea:everything_everywhere_allatonce>|!<eea:everything_everywhere_allatonce>)* ?s.
-                ?s ?p ?o. 
-            }}
-        }}
-    '''
-    sparql.setQuery(query_str)
-    sparql.setReturnFormat(XML)
-    result = sparql.queryAndConvert()
-    return result
-
-def convert_to_matching_class(object_value, classes):
-    data_graph = fetch_data_graph_for_subject(object_value)
-    o_types = {c[2] for c in data_graph.triples((URIRef(object_value), RDF.type, None))}
-    if o_types.intersection(classes):
-        return URIRef(object_value)
-
-def convert_to_matching_literal(object_value, datatypes):
-    for datatype in datatypes:
-        validation_func = next((d[1] for d in DATATYPE_MAPPING if d[0] == datatype), None)
-        if validation_func is None:
-            return Literal(object_value)
-        is_valid_datatype = validation_func(object_value)
-        if is_valid_datatype:
-            return Literal(object_value, datatype=datatype)
-
 @app.route('/search')
 def search():
     subject = request.args.get('q')
@@ -343,9 +189,6 @@ def sparql_proxy():
     query = request.form.get('query')
     response = requests.post(dataset_endpoint, data={'query': query}, headers={'Accept': 'application/sparql-results+json'})
     return response.content, response.status_code, {'Content-Type': 'application/sparql-results+json'}
-
-from datetime import datetime
-
 
 @app.route('/entity-history/<path:entity_uri>')
 def entity_history(entity_uri):
@@ -555,6 +398,159 @@ def parse_sparql_update(query):
 
     return modifications
 
+def validate_new_triple(subject, predicate, new_value, old_value = None):
+    data_graph = fetch_data_graph_for_subject(subject)
+    s_types = [triple[2] for triple in data_graph.triples((URIRef(subject), RDF.type, None))]
+    if old_value is not None:
+        old_value = [triple[2] for triple in data_graph.triples((URIRef(subject), URIRef(predicate), None)) if str(triple[2]) == str(old_value)][0]
+    query = f"""
+        PREFIX sh: <http://www.w3.org/ns/shacl#>
+        SELECT DISTINCT ?property ?datatype ?a_class ?classIn (GROUP_CONCAT(DISTINCT COALESCE(?optionalValue, ""); separator=",") AS ?optionalValues)
+        WHERE {{
+            ?shape sh:targetClass ?type ;
+                sh:property ?property .
+            VALUES ?type {{<{'> <'.join(s_types)}>}}
+            ?property sh:path <{predicate}> .
+            OPTIONAL {{?property sh:datatype ?datatype .}}
+            OPTIONAL {{?property sh:class ?a_class .}}
+            OPTIONAL {{
+                ?property sh:or ?orList .
+                ?orList rdf:rest*/rdf:first ?orConstraint .
+                ?orConstraint sh:datatype ?datatype .
+                OPTIONAL {{?orConstraint sh:class ?class .}}
+            }}
+            OPTIONAL {{
+                ?property sh:classIn ?classInList .
+                ?classInList rdf:rest*/rdf:first ?classIn .
+            }}
+            OPTIONAL {{
+                ?property sh:in ?list .
+                ?list rdf:rest*/rdf:first ?optionalValue .
+            }}
+        }}
+        GROUP BY ?property ?datatype ?a_class ?classIn
+    """
+    results = shacl.query(query)
+    property_exists = [row.property for row in results]
+    if not property_exists:
+        return None, old_value, gettext('The property %(predicate)s is not allowed for resources of type %(s_type)s', predicate=filter.human_readable_predicate(predicate, s_types), s_type=filter.human_readable_predicate(s_types[0], s_types))
+    datatypes = [row.datatype for row in results]
+    classes = [row.a_class for row in results if row.a_class]
+    classes.extend([row.classIn for row in results if row.classIn])
+    optional_values_str = [row.optionalValues for row in results if row.optionalValues]
+    optional_values_str = optional_values_str[0] if optional_values_str else ''
+    optional_values = [value for value in optional_values_str.split(',') if value]
+    if optional_values and new_value not in optional_values:
+        return None, old_value, gettext('<code>%(new_value)s</code> is not a valid value. The <code>%(property)s</code> property requires one of the following values: %(o_values)s', new_value=filter.human_readable_predicate(new_value, s_types), property=filter.human_readable_predicate(predicate, s_types), o_values=', '.join([f'<code>{filter.human_readable_predicate(value, s_types)}</code>' for value in optional_values]))
+    if classes:
+        if not validators.url(new_value):
+            return None, old_value, gettext('<code>%(new_value)s</code> is not a valid value. The <code>%(property)s</code> property requires values of type %(o_types)s', new_value=filter.human_readable_predicate(new_value, s_types), property=filter.human_readable_predicate(predicate, s_types), o_types=', '.join([f'<code>{filter.human_readable_predicate(o_class, s_types)}</code>' for o_class in classes]))
+        valid_value = convert_to_matching_class(new_value, classes)
+        if valid_value is None:
+            return None, old_value, gettext('<code>%(new_value)s</code> is not a valid value. The <code>%(property)s</code> property requires values of type %(o_types)s', new_value=filter.human_readable_predicate(new_value, s_types), property=filter.human_readable_predicate(predicate, s_types), o_types=', '.join([f'<code>{filter.human_readable_predicate(o_class, s_types)}</code>' for o_class in classes]))
+        return valid_value, old_value, ''
+    elif datatypes:
+        valid_value = convert_to_matching_literal(new_value, datatypes)
+        if valid_value is None:
+            return None, old_value, gettext('<code>%(new_value)s</code> is not a valid value. The <code>%(property)s</code> property requires values of type %(o_types)s', new_value=filter.human_readable_predicate(new_value, s_types), property=filter.human_readable_predicate(predicate, s_types), o_types=', '.join([f'<code>{filter.human_readable_predicate(datatype, s_types)}</code>' for datatype in datatypes]))
+        return valid_value, old_value, ''
+    valid_value = URIRef(new_value) if validators.url(new_value) else Literal(new_value)
+    return valid_value, old_value, ''
+
+def get_grouped_triples(subject, triples, subject_classes):
+    grouped_triples = OrderedDict()
+    relevant_properties = set()
+    for triple in triples:
+        for rule in display_rules:
+            if rule['class'] in subject_classes:
+                for prop in rule['displayProperties']:
+                    relevant_properties.add(prop['property'])
+                    for displayConfig in prop['values']:
+                        if displayConfig['shouldBeDisplayed']:
+                            if triple['predicate']['value'] == prop['property']:
+                                if displayConfig['fetchValueFromQuery']:
+                                    result, external_entity = execute_sparql_query(displayConfig['fetchValueFromQuery'], subject, triple['object']['value'])
+                                    key = (prop['property'], displayConfig['displayName'], external_entity)
+                                    if result:
+                                        new_triple = deepcopy(triple)
+                                        new_triple['object']['value'] = result
+                                        existing_values = [t['object']['value'] for t in grouped_triples.get(key, [])]
+                                        if new_triple['object']['value'] not in existing_values:
+                                            grouped_triples.setdefault(key, []).append(new_triple)
+                                else:
+                                    key = (prop['property'], displayConfig['displayName'], None)
+                                    existing_values = [t['object']['value'] for t in grouped_triples.get(key, [])]
+                                    if triple['object']['value'] not in existing_values:
+                                        grouped_triples.setdefault(key, []).append(triple)
+    ordered_keys = sorted(grouped_triples.keys(), key=lambda k: property_order_index(k[0], subject_classes))
+    grouped_triples = OrderedDict((k, grouped_triples[k]) for k in ordered_keys)
+    return grouped_triples, relevant_properties
+
+def property_order_index(prop, subject_classes):
+    """Return the index of a property based on its order in the configuration file."""
+    for rule in display_rules:
+        if rule['class'] in subject_classes:
+            for index, prop_config in enumerate(rule['displayProperties']):
+                if prop_config['property'] == prop:
+                    return index
+    return float('inf')
+
+def fetch_data_graph_for_subject(subject_uri):
+    """
+    Fetch all triples associated with subject.
+    """
+    query_str = f'''
+        CONSTRUCT {{
+            <{subject_uri}> ?p ?o .
+        }}
+        WHERE {{
+            <{subject_uri}> ?p ?o .
+        }}
+    '''
+    sparql.setQuery(query_str)
+    sparql.setReturnFormat(XML)
+    result = sparql.queryAndConvert()
+    return result
+
+def fetch_data_graph_for_subject_recursively(subject_uri):
+    """
+    Fetch all triples associated with subject and all triples of all the entities that the subject points to.
+    """
+    query_str = f'''
+        PREFIX eea: <https://jobu_tupaki/>
+        CONSTRUCT {{
+            ?s ?p ?o .
+        }}
+        WHERE {{
+            {{
+                <{subject_uri}> ?p ?o .
+                ?s ?p ?o .
+            }} UNION {{
+                <{subject_uri}> (<eea:everything_everywhere_allatonce>|!<eea:everything_everywhere_allatonce>)* ?s.
+                ?s ?p ?o. 
+            }}
+        }}
+    '''
+    sparql.setQuery(query_str)
+    sparql.setReturnFormat(XML)
+    result = sparql.queryAndConvert()
+    return result
+
+def convert_to_matching_class(object_value, classes):
+    data_graph = fetch_data_graph_for_subject(object_value)
+    o_types = {c[2] for c in data_graph.triples((URIRef(object_value), RDF.type, None))}
+    if o_types.intersection(classes):
+        return URIRef(object_value)
+
+def convert_to_matching_literal(object_value, datatypes):
+    for datatype in datatypes:
+        validation_func = next((d[1] for d in DATATYPE_MAPPING if d[0] == datatype), None)
+        if validation_func is None:
+            return Literal(object_value)
+        is_valid_datatype = validation_func(object_value)
+        if is_valid_datatype:
+            return Literal(object_value, datatype=datatype)
+
 def invert_sparql_update(sparql_query: str) -> str:
     inverted_query = sparql_query.replace('INSERT', 'TEMP_REPLACE').replace('DELETE', 'INSERT').replace('TEMP_REPLACE', 'DELETE')
     return inverted_query
@@ -662,16 +658,22 @@ def get_valid_predicates(triples):
                 optional_values.setdefault(str(predicate), list()).extend(ranges["optionalValues"])
     return list(can_be_added), list(can_be_deleted), dict(datatypes), mandatory_values, optional_values, s_types
 
-def execute_sparql_query(query: str, subject: str, value: str) -> str:
+def execute_sparql_query(query: str, subject: str, value: str) -> Tuple[str, str]:
     query = query.replace('[[subject]]', f'<{subject}>')
     query = query.replace('[[value]]', f'<{value}>')
     sparql.setQuery(query)
     sparql.setReturnFormat(JSON)
     results = sparql.query().convert().get("results", {}).get("bindings", [])
     if results:
-        variable_name = list(results[0].keys())[0]
-        return results[0].get(variable_name, {}).get("value")
-    return None
+        parsed_query = parseQuery(query)
+        algebra_query = translateQuery(parsed_query).algebra
+        variable_order = algebra_query['PV']
+        result = results[0]
+        values = [result.get(str(var_name), {}).get("value", None) for var_name in variable_order]
+        first_value = values[0] if len(values) > 0 else None
+        second_value = values[1] if len(values) > 1 else None
+        return (first_value, second_value)
+    return None, None
 
 @app.cli.group()
 def translate():

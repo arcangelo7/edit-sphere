@@ -28,7 +28,7 @@
         fetchValueFromQuery: |
             PREFIX pro: <http://purl.org/spar/pro/>
             PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-            SELECT DISTINCT ?formattedName WHERE {
+            SELECT DISTINCT ?formattedName ?ra WHERE {
                 [[value]] pro:isHeldBy ?ra;
                     pro:withRole pro:author.
                 OPTIONAL { ?ra foaf:name ?name. }
@@ -49,7 +49,7 @@
         fetchValueFromQuery: |
             PREFIX pro: <http://purl.org/spar/pro/>
             PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-            SELECT DISTINCT ?formattedName WHERE {
+            SELECT DISTINCT ?formattedName ?ra WHERE {
                 [[value]] pro:isHeldBy ?ra;
                     pro:withRole pro:publisher.
                 OPTIONAL { ?ra foaf:name ?name. }
@@ -70,7 +70,7 @@
         fetchValueFromQuery: |
             PREFIX pro: <http://purl.org/spar/pro/>
             PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-            SELECT DISTINCT ?formattedName WHERE {
+            SELECT DISTINCT ?formattedName ?ra WHERE {
                 [[value]] pro:isHeldBy ?ra;
                     pro:withRole pro:editor.
                 OPTIONAL { ?ra foaf:name ?name. }
@@ -103,6 +103,7 @@
                   CONCAT(STR(?startingPage), "-", STR(?endingPage)), 
                   IF(BOUND(?startingPage), STR(?startingPage), 
                   IF(BOUND(?endingPage), STR(?endingPage), ""))) AS ?page) 
+            ?re
           WHERE {
               [[subject]] frbr:embodiment ?re.
               OPTIONAL { ?re prism:startingPage ?startingPage. }
@@ -115,7 +116,7 @@
         fetchValueFromQuery: |
             PREFIX fabio: <http://purl.org/spar/fabio/>
             PREFIX frbr: <http://purl.org/vocab/frbr/core#>
-            SELECT ?issueNumber
+            SELECT ?issueNumber ?issue
             WHERE {
                 [[subject]] frbr:partOf ?issue.
                 ?issue a fabio:JournalIssue;
@@ -129,10 +130,10 @@
             PREFIX fabio: <http://purl.org/spar/fabio/>
             PREFIX frbr: <http://purl.org/vocab/frbr/core#>
             PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-            SELECT ?volumeNumber
+            SELECT ?volumeNumber ?volume
             WHERE {
                 [[subject]] frbr:partOf+ ?volume.
-                ?issue a fabio:JournalVolume;
+                ?volume a fabio:JournalVolume;
                     fabio:hasSequenceIdentifier ?volumeNumber.
             }
     - property: "http://purl.org/vocab/frbr/core#partOf"
@@ -143,7 +144,7 @@
             PREFIX fabio: <http://purl.org/spar/fabio/>
             PREFIX frbr: <http://purl.org/vocab/frbr/core#>
             PREFIX dcterms: <http://purl.org/dc/terms/>
-            SELECT ?journalName
+            SELECT ?journalName ?journal
             WHERE {
                 [[subject]] frbr:partOf+ ?journal.
                 ?journal a fabio:Journal;

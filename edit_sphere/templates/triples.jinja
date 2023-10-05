@@ -1,9 +1,13 @@
-{% macro render_triple(triple, subject) %}
+{% macro render_triple(triple, subject, externalEntity) %}
     <li class="d-flex align-items-center property-value">
         <span class="flex-grow-1 d-flex flex-column justify-content-center p-3 w-75">
             <span class="object-value ellipsis">
                 {% if triple['object']['value'] %}
-                    {{ triple['object']['value'] | human_readable_predicate(subject_classes) }}
+                    {% if externalEntity %}
+                        <a href="{{url_for('show_triples', subject=externalEntity)}}" alt="{{_('Redirection to the entity %(entity)s', entity=externalEntity)}}" title="{{_('Redirection to the entity %(entity)s', entity=externalEntity)}}">{{ triple['object']['value'] | human_readable_predicate(subject_classes) }}</a>
+                    {% else %}
+                        {{ triple['object']['value'] | human_readable_predicate(subject_classes) }}
+                    {% endif %}
                 {% else %}
                     {{ _("No result from SPARQL query") }}
                 {% endif %}
@@ -34,10 +38,16 @@
                 {% if shacl and triple['predicate']['value'] in mandatory_values and triple['object']['value'] == mandatory_values[triple['predicate']['value']] %}
                     <div title="{{ _('This property is mandatory and cannot be edited') }}" class="info-cursor">
                 {% endif %}
+                {% if externalEntity %}
+                    <a alt="{{_('Redirection to the entity %(entity)s', entity=externalEntity)}}" class="btn btn-outline-primary m-2" title="{{_('Redirection to the entity %(entity)s', entity=externalEntity)}}" href="{{url_for('show_triples', subject=externalEntity)}}">
+                        <i class="bi bi-arrow-right-square"></i>
+                    </a>
+                {% else %}
                     <button class="btn btn-outline-secondary edit-button m-2"
                             {% if shacl and triple['predicate']['value'] in mandatory_values and triple['object']['value'] == mandatory_values[triple['predicate']['value']] %}disabled{% endif %}>
                         <i class="bi bi-pencil-square"></i>
                     </button>
+                {% endif %}
                 {% if shacl and triple['predicate']['value'] in mandatory_values and triple['object']['value'] == mandatory_values[triple['predicate']['value']] %}
                     </div>
                 {% endif %}
@@ -124,11 +134,11 @@
             {% endif %}
         </div>
         {{ add_form() }}
-        {% for (original_property, display_name), triples_set in grouped_triples.items() %}
+        {% for (original_property, display_name, externalEntity), triples_set in grouped_triples.items() %}
             <div class="predicate-group mb-4">
                 <span class="fw-bold">{{ display_name | human_readable_predicate(subject_classes) }}</span>
                 {% for triple in triples_set %}
-                    {{ render_triple(triple, subject) }}
+                    {{ render_triple(triple, subject, externalEntity) }}
                 {% endfor %}
             </div>
         {% endfor %}
@@ -185,7 +195,12 @@
         }
 
         $('.edit-button').click(function () {
-            toggleEditForm($(this).closest('.property-value'));
+            const isRedirect = $(this).find('i').hasClass('bi-arrow-right-square');
+            if (isRedirect) {
+                pass
+            } else {
+                toggleEditForm($(this).closest('.property-value'));
+            }
         });
 
         $('.cancel-button').click(function () {
