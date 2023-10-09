@@ -11,16 +11,19 @@
                 [[subject]] a ?type.
                 FILTER (?type != fabio:Expression)
             }
+      orderedBy: null
     - property: "http://purl.org/dc/terms/title"
       values:
       - displayName: "Title"
         shouldBeDisplayed: true
         fetchValueFromQuery: null
+      orderedBy: null
     - property: "http://purl.org/spar/fabio/hasSubtitle"
       values:
       - displayName: "Subtitle"
         shouldBeDisplayed: true
         fetchValueFromQuery: null
+      orderedBy: null
     - property: "http://purl.org/spar/pro/isDocumentContextFor"
       values:
       - displayName: "Author"
@@ -86,11 +89,13 @@
                     ) AS ?formattedName
                 )
             }
+      orderedBy: "https://w3id.org/oc/ontology/hasNext"
     - property: "http://prismstandard.org/namespaces/basic/2.0/publicationDate"
       values:
       - displayName: "Publication Date"
         shouldBeDisplayed: true
         fetchValueFromQuery: null
+      orderedBy: null
     - property: "http://purl.org/vocab/frbr/core#embodiment"
       values:
       - displayName: "Page"
@@ -109,6 +114,7 @@
               OPTIONAL { ?re prism:startingPage ?startingPage. }
               OPTIONAL { ?re prism:endingPage ?endingPage. }
           }
+      orderedBy: null
     - property: "http://purl.org/vocab/frbr/core#partOf"
       values:
       - displayName: "Issue"
@@ -122,6 +128,7 @@
                 ?issue a fabio:JournalIssue;
                     fabio:hasSequenceIdentifier ?issueNumber.
             }
+      orderedBy: null
     - property: "http://purl.org/vocab/frbr/core#partOf"
       values:
       - displayName: "Volume"
@@ -136,6 +143,7 @@
                 ?volume a fabio:JournalVolume;
                     fabio:hasSequenceIdentifier ?volumeNumber.
             }
+      orderedBy: null
     - property: "http://purl.org/vocab/frbr/core#partOf"
       values:
       - displayName: "Journal"
@@ -150,6 +158,7 @@
                 ?journal a fabio:Journal;
                     dcterms:title ?journalName.
             }
+      orderedBy: null
 
 - class: "http://purl.org/spar/datacite/Identifier"
   displayProperties:
@@ -158,16 +167,19 @@
       - displayName: "Type"
         shouldBeDisplayed: true
         fetchValueFromQuery: null
+      orderedBy: null
     - property: "http://www.essepuntato.it/2010/06/literalreification/hasLiteralValue"
       values:
       - displayName: "Literal Value"
         shouldBeDisplayed: true
         fetchValueFromQuery: null
+      orderedBy: null
     - property: "http://purl.org/spar/datacite/usesIdentifierScheme"
       values:
       - displayName: "Identifier Scheme"
         shouldBeDisplayed: true
         fetchValueFromQuery: null
+      orderedBy: null
 
 - class: "http://purl.org/spar/pro/RoleInTime"
   displayProperties:
@@ -176,21 +188,25 @@
       - displayName: "Type"
         shouldBeDisplayed: true
         fetchValueFromQuery: null
+      orderedBy: null
     - property: "http://purl.org/spar/pro/withRole"
       values:
       - displayName: "Role"
         shouldBeDisplayed: true
         fetchValueFromQuery: null
+      orderedBy: null
     - property: "http://purl.org/spar/pro/isHeldBy"
       values:
       - displayName: "Held By"
         shouldBeDisplayed: true
         fetchValueFromQuery: null
+      orderedBy: null
     - property: "https://w3id.org/oc/ontology/hasNext"
       values:
       - displayName: "Next Role"
         shouldBeDisplayed: true
         fetchValueFromQuery: null
+      orderedBy: null
 
 - class: "http://purl.org/spar/fabio/Manifestation"
   displayProperties:
@@ -199,21 +215,25 @@
       - displayName: "Type"
         shouldBeDisplayed: true
         fetchValueFromQuery: null
+      orderedBy: null
     - property: "http://purl.org/dc/terms/format"
       values:
       - displayName: "Format"
         shouldBeDisplayed: true
         fetchValueFromQuery: null
+      orderedBy: null
     - property: "http://prismstandard.org/namespaces/basic/2.0/startingPage"
       values:
       - displayName: "Starting Page"
         shouldBeDisplayed: true
         fetchValueFromQuery: null
+      orderedBy: null
     - property: "http://prismstandard.org/namespaces/basic/2.0/endingPage"
       values:
       - displayName: "Ending Page"
         shouldBeDisplayed: true
         fetchValueFromQuery: null
+      orderedBy: null
 
 - class: "http://xmlns.com/foaf/0.1/Agent"
   displayProperties:
@@ -222,18 +242,22 @@
       - displayName: "Type"
         shouldBeDisplayed: true
         fetchValueFromQuery: null
+      orderedBy: null
     - property: "http://xmlns.com/foaf/0.1/name"
       values:
       - displayName: "Name"
         shouldBeDisplayed: true
         fetchValueFromQuery: null
+      orderedBy: null
     - property: "http://xmlns.com/foaf/0.1/givenName"
       values:
       - displayName: "Given Name"
         shouldBeDisplayed: true
         fetchValueFromQuery: null
+      orderedBy: null
     - property: "http://xmlns.com/foaf/0.1/familyName"
       values:
       - displayName: "Family Name"
         shouldBeDisplayed: true
         fetchValueFromQuery: null
+      orderedBy: null

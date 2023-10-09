@@ -1,5 +1,8 @@
-{% macro render_triple(triple, subject, externalEntity) %}
-    <li class="d-flex align-items-center property-value">
+{% macro render_triple(triple, subject, externalEntity, isDraggable, object, orderedBy) %}
+    <li class="d-flex align-items-center property-value {{ 'draggable' if isDraggable else '' }}" data-object-id="{{ object }}" data-property-id="{{ triple[1] }}" data-ordered_by="{{ orderedBy }}">
+        {% if isDraggable %}
+            <span class="drag-handle">☰</span>
+        {% endif %}
         <span class="flex-grow-1 d-flex flex-column justify-content-center p-3 w-75">
             <span class="object-value ellipsis">
                 {% if triple[2] %}
@@ -57,7 +60,7 @@
                     <button class="btn btn-outline-danger delete-button m-2" 
                             data-subject="{{ subject }}" 
                             data-predicate="{{ triple[1] }}" 
-                            data-object="{{ triple[2] }}"
+                            data-object="{{ externalEntity if externalEntity else triple[2] }}"
                             {% if shacl and (triple[1] not in can_be_deleted or (triple[1] in mandatory_values and triple[2] == mandatory_values[triple[1]])) %}disabled{% endif %}>
                         <i class="bi bi-trash"></i> <!-- Icona di cancellazione -->
                     </button>
@@ -138,8 +141,8 @@
             <div class="predicate-group mb-4">
                 {% if data['triples'] %}
                     <span class="fw-bold">{{ display_name | human_readable_predicate(subject_classes) }}</span>
-                    {% for triple in data['triples'] %}
-                        {{ render_triple(triple, subject, data['external_entity']) }}
+                    {% for triple_data in data['triples'] %}
+                        {{ render_triple(triple_data['triple'], subject, triple_data['external_entity'], data['is_draggable'], triple_data['object'], data['ordered_by']) }}
                     {% endfor %}
                 {% endif %}
             </div>
@@ -184,15 +187,16 @@
         function updateObjectInput() {
             if (!shacl) {
                 $('.object-input-text').show();
+                $('.object-input').prop('disabled', true);
                 return
             }
             const selectedPredicate = $('.predicate-select').val();
             if (optional_values[selectedPredicate].length > 0) {
-                $('.object-input-text').hide();
-                $('.object-input').show().find('option').hide().filter(`[data-predicate="${selectedPredicate}"]`).show();
+                $('.object-input-text').hide().prop('disabled', true);
+                $('.object-input').show().prop('disabled', false).find('option').hide().filter(`[data-predicate="${selectedPredicate}"]`).show();
             } else {
-                $('.object-input').hide();
-                $('.object-input-text').show();
+                $('.object-input').hide().prop('disabled', true);
+                $('.object-input-text').show().prop('disabled', false);
             }
         }
 
@@ -258,6 +262,42 @@
             $('.add-form').addClass('d-none');
         });
         $('.predicate-select').change(updateObjectInput);
+        $('.predicate-group').each(function() {
+            new Sortable(this, {
+                animation: 150,
+                filter: '.property-value:not(.draggable)',
+                draggable: '.draggable',
+                handle: '.drag-handle',
+                onEnd: function(evt) {
+                    let new_order = [];
+                    let predicate = null;
+                    let orderedBy = null;
+                    $(evt.from).find('.property-value').each(function() {
+                        new_order.push($(this).data('object-id'));
+                        predicate = $(this).data('property-id');
+                        orderedBy = $(this).data('ordered_by');
+                    });
+                    $.ajax({
+                        url: '/update_order',
+                        method: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify({
+                            new_order: new_order,
+                            subject: '{{ subject }}',
+                            predicate: predicate,
+                            ordered_by: orderedBy
+                        }),
+                        success: function(response) {
+                            if (response.status === "success") {
+                                // Mostra un messaggio di successo o fai altre azioni se necessario
+                            } else {
+                                // Gestisci errori o mostra un messaggio di errore
+                            }
+                        }
+                    });
+                }
+            });
+        });
     });
 </script>
 {% endblock %}
