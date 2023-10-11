@@ -88,7 +88,6 @@ def show_triples(subject):
     decoded_subject = urllib.parse.unquote(subject)
     agnostic_entity = AgnosticEntity(res=decoded_subject, config_path=change_tracking_config)
     history, _ = agnostic_entity.get_history(include_prov_metadata=True)
-
     g = Graph()
     query = f"SELECT ?predicate ?object WHERE {{ <{decoded_subject}> ?predicate ?object. }}"
     sparql.setQuery(query)
@@ -132,7 +131,10 @@ def update_triple():
     else:
         new_value = Literal(new_value, datatype=old_value.datatype) if old_value.datatype and isinstance(old_value, Literal) else Literal(new_value, datatype=XSD.string) if isinstance(old_value, Literal) else URIRef(new_value)
     editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'], app.config['PRIMARY_SOURCE'], app.config['DATASET_GENERATION_TIME'])
+    editor.import_entity(URIRef(subject))
+    editor.preexisting_finished()
     editor.update(URIRef(subject), URIRef(predicate), old_value, new_value)    
+    editor.save()
     return redirect(url_for('show_triples', subject=subject))
 
 @app.route('/delete_triple', methods=['POST'])
@@ -147,7 +149,10 @@ def delete_triple():
             flash(gettext('This property cannot be deleted'))
             return redirect(url_for('show_triples', subject=subject))
     editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'], app.config['PRIMARY_SOURCE'], app.config['DATASET_GENERATION_TIME'])
+    editor.import_entity(URIRef(subject))
+    editor.preexisting_finished()
     editor.delete(subject, predicate, object_value)
+    editor.save()
     return redirect(url_for('show_triples', subject=subject))
 
 @app.route('/add_triple', methods=['POST'])
@@ -168,7 +173,10 @@ def add_triple():
     else:
         object_value = URIRef(object_value) if validators.url(object_value) else Literal(object_value, datatype=XSD.string)
     editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'], app.config['PRIMARY_SOURCE'], app.config['DATASET_GENERATION_TIME'])
+    editor.import_entity(URIRef(subject))
+    editor.preexisting_finished()
     editor.create(URIRef(subject), URIRef(predicate), object_value)
+    editor.save()
     return redirect(url_for('show_triples', subject=subject))
 
 @app.route('/search')
@@ -372,6 +380,7 @@ def restore_version(entity_uri, timestamp):
     inverted_query = invert_sparql_update(sum_update_queries)
     editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'], primary_source, app.config['DATASET_GENERATION_TIME'])
     editor.execute(inverted_query)
+    editor.save()
     query = f"""
         SELECT ?predicate ?object WHERE {{
             <{entity_uri}> ?predicate ?object.
@@ -414,17 +423,19 @@ def update_order():
     results = sparql.query().convert()
     old_order = order_by_next([(result["entity"]["value"], result["next"]["value"]) for result in results["results"]["bindings"]])
     editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'], app.config['PRIMARY_SOURCE'], app.config['DATASET_GENERATION_TIME'])
+    editor.import_entity(URIRef(subject))
     old_next_map = {entity: next_val for entity, next_val in zip(old_order, old_order[1:] + [None])}
+    for old_entity in old_order:
+        editor.import_entity(URIRef(old_entity))
+    editor.preexisting_finished()
+    for entity, next_val in old_next_map.items():
+        if next_val is not None:
+            editor.delete(URIRef(entity), URIRef(ordered_by), next_val)
     for idx, entity in enumerate(new_order):
-        if idx == len(new_order) - 1:
-            editor.delete(URIRef(entity), URIRef(ordered_by))
-        else:
+        if idx < len(new_order) - 1:
             next_entity = new_order[idx + 1]
-            old_next = old_next_map.get(entity)
-            if not old_next:
-                editor.create(URIRef(entity), URIRef(ordered_by), URIRef(next_entity))
-            elif old_next != next_entity:
-                editor.update(URIRef(entity), URIRef(ordered_by), URIRef(old_next), URIRef(next_entity))
+            editor.create(URIRef(entity), URIRef(ordered_by), URIRef(next_entity))
+    editor.save()
     return redirect(url_for('show_triples', subject=subject))
     
 @app.errorhandler(404)
@@ -504,10 +515,24 @@ def validate_new_triple(subject, predicate, new_value, old_value = None):
     return valid_value, old_value, ''
 
 def get_grouped_triples(subject, triples, subject_classes):
+    def get_ordered_sequence(order_results):
+        order_map = {}
+        for res in order_results:
+            next_value = res['nextValue']['value']
+            order_map[res['orderedEntity']['value']] = None if next_value == "NONE" else next_value
+        all_sequences = []
+        start_elements = set(order_map.keys()) - set(order_map.values())
+        while start_elements:
+            sequence = []
+            current_element = start_elements.pop()
+            while current_element in order_map:
+                sequence.append(current_element)
+                current_element = order_map[current_element]
+            all_sequences.append(sequence)
+        return all_sequences
     grouped_triples = OrderedDict()
     relevant_properties = set()
     subject_classes = [str(subject_class) for subject_class in subject_classes]
-    order_maps = dict() # Cache per le mappe di ordinamento
     fetched_values_map = dict() # Mappa dei valori originali ai valori restituiti dalla query
     for rule in display_rules:
         if rule['class'] in subject_classes:
@@ -526,7 +551,7 @@ def get_grouped_triples(subject, triples, subject_classes):
                                 if displayConfig['fetchValueFromQuery']:
                                     result, external_entity = execute_sparql_query(displayConfig['fetchValueFromQuery'], subject, triple[2])
                                     if result:
-                                        fetched_values_map[result] = triple[2]
+                                        fetched_values_map[result] = str(triple[2])
                                         grouped_triples[display_name]['external_entity'] = external_entity
                                         new_triple = (str(triple[0]), str(triple[1]), str(result))
                                         existing_values = [t['triple'][2] for t in grouped_triples[display_name]['triples']]
@@ -554,18 +579,20 @@ def get_grouped_triples(subject, triples, subject_classes):
                         grouped_triples[display_name]['ordered_by'] = prop['orderedBy']
                         order_property = prop['orderedBy']
                         order_query = f"""
-                            SELECT ?orderedEntity ?next
+                            SELECT ?orderedEntity (COALESCE(?next, "NONE") AS ?nextValue)
                             WHERE {{
                                 <{subject}> <{prop['property']}> ?orderedEntity.
-                                ?orderedEntity <{order_property}> ?next.
+                                OPTIONAL {{
+                                    ?orderedEntity <{order_property}> ?next.
+                                }}
                             }}
                         """
                         sparql.setQuery(order_query)
                         sparql.setReturnFormat(JSON)
                         order_results = sparql.query().convert().get("results", {}).get("bindings", [])
-                        order_maps[prop['property']] = {res['orderedEntity']['value']: res['next']['value'] for res in order_results}
-                    if prop['property'] in order_maps:
-                        grouped_triples[display_name]['triples'].sort(key=lambda x: order_maps[prop['property']].get(fetched_values_map.get(x['triple'][2], x['triple'][2]), fetched_values_map.get(x['triple'][2], x['triple'][2])))
+                        order_sequences = get_ordered_sequence(order_results)
+                        for sequence in order_sequences:
+                            grouped_triples[display_name]['triples'].sort(key=lambda x: sequence.index(fetched_values_map.get(x['triple'][2], x['triple'][2])) if fetched_values_map.get(x['triple'][2], x['triple'][2]) in sequence else float('inf'))
     ordered_display_names = sorted(grouped_triples.keys(), key=lambda k: property_order_index(grouped_triples[k]['property'], subject_classes))
     grouped_triples = OrderedDict((k, grouped_triples[k]) for k in ordered_display_names)
     return grouped_triples, relevant_properties
@@ -642,6 +669,7 @@ def invert_sparql_update(sparql_query: str) -> str:
 def execute_sparql_update(sparql_query: str):
     editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'], app.config['PRIMARY_SOURCE'], app.config['DATASET_GENERATION_TIME'])
     editor.execute(sparql_query)
+    editor.save()
 
 def prioritize_datatype(datatypes):
     for datatype in DATATYPE_MAPPING:

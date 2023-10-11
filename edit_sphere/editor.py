@@ -17,38 +17,27 @@ class Editor:
         self.resp_agent = resp_agent
         self.source = source
         self.c_time = self.to_posix_timestamp(c_time)
+        self.g_set = OCDMGraph(self.counter_handler)
 
     def create(self, subject: URIRef, predicate: URIRef, value: Literal|URIRef) -> None:
-        g_set = OCDMGraph(self.counter_handler)
-        Reader.import_entities_from_triplestore(g_set, self.dataset_endpoint, [subject])
-        g_set.preexisting_finished(self.resp_agent, self.source, self.c_time)
-        g_set.add((subject, predicate, value))
-        self.save(g_set)
+        self.g_set.add((subject, predicate, value))
 
     def update(self, subject: URIRef, predicate: URIRef, old_value: Literal|URIRef, new_value: Literal|URIRef) -> None:
-        g_set = OCDMGraph(self.counter_handler)
-        Reader.import_entities_from_triplestore(g_set, self.dataset_endpoint, [subject])
-        g_set.preexisting_finished(self.resp_agent, self.source, self.c_time)
-        g_set.remove((subject, predicate, old_value))
-        g_set.add((subject, predicate, new_value))
-        self.save(g_set)
+        self.g_set.remove((subject, predicate, old_value))
+        self.g_set.add((subject, predicate, new_value))
 
     def delete(self, subject: str, predicate: str = None, value: str = None) -> None:
         subject = URIRef(subject)
         predicate = URIRef(predicate)
-        g_set = OCDMGraph(self.counter_handler)
-        Reader.import_entities_from_triplestore(g_set, self.dataset_endpoint, [subject])
-        g_set.preexisting_finished(self.resp_agent, self.source, self.c_time)
         if predicate:
             if value:
-                for triple in g_set.triples((None, predicate, None)):
+                for triple in self.g_set.triples((subject, predicate, None)):
                     if str(value) == str(triple[2]):
-                        g_set.remove(triple)
-        if len(g_set) == 0:
-            g_set.mark_as_deleted(subject)
-        self.save(g_set)
+                        self.g_set.remove(triple)
+        if len(self.g_set) == 0:
+            self.g_set.mark_as_deleted(subject)
 
-    def import_entity_from_triplestore(self, g_set: OCDMGraph, res_list: list):
+    def import_entity_from_triplestore(self, res_list: list):
         sparql: SPARQLWrapper = SPARQLWrapper(self.dataset_endpoint)
         query: str = f'''
             CONSTRUCT {{?s ?p ?o}} 
@@ -62,39 +51,43 @@ class Editor:
         result: ConjunctiveGraph = sparql.queryAndConvert()
         if result is not None:
             for triple in result.triples((None, None, None)):
-                g_set.add(triple)
+                self.g_set.add(triple)
 
     def execute(self, sparql_query: str) -> None:
         parsed = parseUpdate(sparql_query)
         translated = translateUpdate(parsed).algebra
-        g_set = OCDMGraph(self.counter_handler)
         entities_added = set()
         for operation in translated:
             for triple in operation.triples:
                 entity = triple[0]
                 if entity not in entities_added:
-                    Reader.import_entities_from_triplestore(g_set, self.dataset_endpoint, [entity])
+                    Reader.import_entities_from_triplestore(self.g_set, self.dataset_endpoint, [entity])
                     entities_added.add(entity)
-        g_set.preexisting_finished(self.resp_agent, self.source, self.c_time)
+        self.g_set.preexisting_finished(self.resp_agent, self.source, self.c_time)
         for operation in translated:
             if operation.name == "DeleteData":
                 for triple in operation.triples:
-                    g_set.remove(triple)
+                    self.g_set.remove(triple)
             elif operation.name == "InsertData":
                 for triple in operation.triples:
-                    g_set.add(triple)
-        for subject in g_set.subjects(unique=True):
-            if len(list(g_set.triples((subject, None, None)))) == 0:
-                g_set.mark_as_deleted(subject)
-        self.save(g_set)
+                    self.g_set.add(triple)
+        for subject in self.g_set.subjects(unique=True):
+            if len(list(self.g_set.triples((subject, None, None)))) == 0:
+                self.g_set.mark_as_deleted(subject)
 
-    def save(self, g_set: OCDMGraph):
-        g_set.generate_provenance()
-        dataset_storer = Storer(g_set)
-        prov_storer = Storer(g_set.provenance)
+    def import_entity(self, subject):
+        Reader.import_entities_from_triplestore(self.g_set, self.dataset_endpoint, [subject])
+    
+    def preexisting_finished(self):
+        self.g_set.preexisting_finished(self.resp_agent, self.source, self.c_time)
+    
+    def save(self):
+        self.g_set.generate_provenance()
+        dataset_storer = Storer(self.g_set)
+        prov_storer = Storer(self.g_set.provenance)
         dataset_storer.upload_all(self.dataset_endpoint)
         prov_storer.upload_all(self.provenance_endpoint)
-        g_set.commit_changes()
+        self.g_set.commit_changes()
 
     def to_posix_timestamp(self, value: str|datetime|None) -> float|None:
         if isinstance(value, datetime):
