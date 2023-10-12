@@ -12,8 +12,8 @@ from config import Config
 from edit_sphere.editor import Editor
 from edit_sphere.filters import *
 from edit_sphere.forms import *
-from flask import (Flask, abort, flash, redirect, render_template, request,
-                   session, url_for)
+from flask import (Flask, abort, flash, jsonify, redirect, render_template,
+                   request, session, url_for)
 from flask_babel import Babel, gettext, refresh
 from rdflib import RDF, XSD, Graph, Literal, URIRef
 from rdflib.plugins.sparql import prepareQuery
@@ -117,44 +117,6 @@ def show_triples(subject):
         create_form.predicate.choices = [(p, filter.human_readable_predicate(p, subject_classes)) for p in can_be_added]
     return render_template('triples.jinja', subject=decoded_subject, history=history, can_be_added=can_be_added, can_be_deleted=can_be_deleted, datatypes=datatypes, update_form=update_form, create_form=create_form, mandatory_values=mandatory_values, optional_values=optional_values, shacl=True if shacl else False, grouped_triples=grouped_triples, subject_classes=[str(s_class) for s_class in subject_classes], display_rules=display_rules)
 
-@app.route('/update_triple', methods=['POST'])
-def update_triple():
-    subject = request.form.get('subject')
-    predicate = request.form.get('predicate')
-    old_value = request.form.get('old_value')
-    new_value = request.form.get('new_value')
-    new_value, old_value, report_text = validate_new_triple(subject, predicate, new_value, old_value)
-    if shacl:
-        if new_value is None:
-            flash(report_text)
-            return redirect(url_for('show_triples', subject=subject))
-    else:
-        new_value = Literal(new_value, datatype=old_value.datatype) if old_value.datatype and isinstance(old_value, Literal) else Literal(new_value, datatype=XSD.string) if isinstance(old_value, Literal) else URIRef(new_value)
-    editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'], app.config['PRIMARY_SOURCE'], app.config['DATASET_GENERATION_TIME'])
-    editor.import_entity(URIRef(subject))
-    editor.preexisting_finished()
-    editor.update(URIRef(subject), URIRef(predicate), old_value, new_value)    
-    editor.save()
-    return redirect(url_for('show_triples', subject=subject))
-
-@app.route('/delete_triple', methods=['POST'])
-def delete_triple():
-    subject = request.form.get('subject')
-    predicate = request.form.get('predicate')
-    object_value = request.form.get('object')
-    if shacl:
-        data_graph = fetch_data_graph_for_subject(subject)
-        _, can_be_deleted, _, _, _, _ = get_valid_predicates(list(data_graph.triples((URIRef(subject), None, None))))
-        if predicate not in can_be_deleted:
-            flash(gettext('This property cannot be deleted'))
-            return redirect(url_for('show_triples', subject=subject))
-    editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'], app.config['PRIMARY_SOURCE'], app.config['DATASET_GENERATION_TIME'])
-    editor.import_entity(URIRef(subject))
-    editor.preexisting_finished()
-    editor.delete(subject, predicate, object_value)
-    editor.save()
-    return redirect(url_for('show_triples', subject=subject))
-
 @app.route('/add_triple', methods=['POST'])
 def add_triple():
     subject = request.form.get('subject')
@@ -178,6 +140,93 @@ def add_triple():
     editor.create(URIRef(subject), URIRef(predicate), object_value)
     editor.save()
     return redirect(url_for('show_triples', subject=subject))
+
+@app.route('/apply_changes', methods=['POST'])
+def apply_changes():
+    try:
+        changes = request.json
+        subject = changes[0]["subject"]
+        editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'], app.config['PRIMARY_SOURCE'], app.config['DATASET_GENERATION_TIME'])
+        editor.import_entity(URIRef(subject))
+        editor.preexisting_finished()
+        for change in changes:
+            action = change["action"]
+            predicate = change["predicate"]
+            object_value = change["object"]
+            if action == "create":
+                pass
+            elif action == "delete":
+                delete_logic(editor, subject, predicate, object_value)
+            elif action == "update":
+                new_object_value = change["newObject"]
+                update_logic(editor, subject, predicate, object_value, new_object_value)
+            elif action == "order":
+                new_order = change["object"]
+                ordered_by = change["newObject"]
+                order_logic(editor, subject, predicate, new_order, ordered_by)
+        editor.save()
+        return jsonify(status="success", message=gettext("Changes applied successfully")), 201
+    except Exception as e:
+        app.logger.error(f"Error while applying changes: {str(e)}")
+        return jsonify(status="error", message=gettext("An error occurred while applying changes")), 500
+
+def update_logic(editor: Editor, subject, predicate, old_value, new_value):
+    new_value, old_value, report_text = validate_new_triple(subject, predicate, new_value, old_value)
+    if shacl:
+        if new_value is None:
+            flash(report_text)
+            return redirect(url_for('show_triples', subject=subject))
+    else:
+        new_value = Literal(new_value, datatype=old_value.datatype) if old_value.datatype and isinstance(old_value, Literal) else Literal(new_value, datatype=XSD.string) if isinstance(old_value, Literal) else URIRef(new_value)
+    editor.update(URIRef(subject), URIRef(predicate), old_value, new_value)    
+
+def delete_logic(editor: Editor, subject, predicate, object_value):
+    if shacl:
+        data_graph = fetch_data_graph_for_subject(subject)
+        _, can_be_deleted, _, _, _, _ = get_valid_predicates(list(data_graph.triples((URIRef(subject), None, None))))
+        if predicate not in can_be_deleted:
+            flash(gettext('This property cannot be deleted'))
+            return redirect(url_for('show_triples', subject=subject))
+    editor.delete(subject, predicate, object_value)
+
+def order_logic(editor: Editor, subject, predicate, new_order, ordered_by):
+    def order_by_next(data):
+        # Costruisci una mappa dove la chiave è l'entity e il valore è il next
+        next_map = {entity: next_val for entity, next_val in data}
+        # Trova l'elemento iniziale (quello che non ha un predecessore)
+        start = None
+        for entity in next_map:
+            if entity not in next_map.values():
+                start = entity
+                break
+        # Ordina la lista seguendo la catena di next
+        ordered_list = []
+        while start:
+            ordered_list.append(start)
+            start = next_map.get(start)
+        return ordered_list
+    query_current_order = f'''
+        SELECT ?entity ?next
+        WHERE {{
+            <{subject}> <{predicate}> ?entity.
+            ?entity <{ordered_by}> ?next.
+        }}
+    '''
+    sparql.setQuery(query_current_order)
+    sparql.setReturnFormat(JSON)
+    results = sparql.query().convert()
+    old_order = order_by_next([(result["entity"]["value"], result["next"]["value"]) for result in results["results"]["bindings"]])
+    old_next_map = {entity: next_val for entity, next_val in zip(old_order, old_order[1:] + [None])}
+    for old_entity in old_order:
+        editor.import_entity(URIRef(old_entity))
+    editor.preexisting_finished()
+    for entity, next_val in old_next_map.items():
+        if next_val is not None:
+            editor.delete(URIRef(entity), URIRef(ordered_by), next_val)
+    for idx, entity in enumerate(new_order):
+        if idx < len(new_order) - 1:
+            next_entity = new_order[idx + 1]
+            editor.create(URIRef(entity), URIRef(ordered_by), URIRef(next_entity))
 
 @app.route('/search')
 def search():
@@ -389,54 +438,6 @@ def restore_version(entity_uri, timestamp):
     sparql.setQuery(query)
     sparql.setReturnFormat(JSON)
     return redirect(url_for('show_triples', subject=entity_uri))
-
-@app.route('/update_order', methods=['POST'])
-def update_order():
-    def order_by_next(data):
-        # Costruisci una mappa dove la chiave è l'entity e il valore è il next
-        next_map = {entity: next_val for entity, next_val in data}
-        # Trova l'elemento iniziale (quello che non ha un predecessore)
-        start = None
-        for entity in next_map:
-            if entity not in next_map.values():
-                start = entity
-                break
-        # Ordina la lista seguendo la catena di next
-        ordered_list = []
-        while start:
-            ordered_list.append(start)
-            start = next_map.get(start)
-        return ordered_list
-    subject = request.json.get('subject')
-    predicate = request.json.get('predicate')
-    ordered_by = request.json.get('ordered_by')
-    new_order = request.json.get('new_order', [])
-    query_current_order = f'''
-        SELECT ?entity ?next
-        WHERE {{
-            <{subject}> <{predicate}> ?entity.
-            ?entity <{ordered_by}> ?next.
-        }}
-    '''
-    sparql.setQuery(query_current_order)
-    sparql.setReturnFormat(JSON)
-    results = sparql.query().convert()
-    old_order = order_by_next([(result["entity"]["value"], result["next"]["value"]) for result in results["results"]["bindings"]])
-    editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'], app.config['PRIMARY_SOURCE'], app.config['DATASET_GENERATION_TIME'])
-    editor.import_entity(URIRef(subject))
-    old_next_map = {entity: next_val for entity, next_val in zip(old_order, old_order[1:] + [None])}
-    for old_entity in old_order:
-        editor.import_entity(URIRef(old_entity))
-    editor.preexisting_finished()
-    for entity, next_val in old_next_map.items():
-        if next_val is not None:
-            editor.delete(URIRef(entity), URIRef(ordered_by), next_val)
-    for idx, entity in enumerate(new_order):
-        if idx < len(new_order) - 1:
-            next_entity = new_order[idx + 1]
-            editor.create(URIRef(entity), URIRef(ordered_by), URIRef(next_entity))
-    editor.save()
-    return redirect(url_for('show_triples', subject=subject))
     
 @app.errorhandler(404)
 def page_not_found(e):

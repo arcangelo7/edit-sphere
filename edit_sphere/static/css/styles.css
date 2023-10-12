@@ -39,3 +39,32 @@ a {
 .drag-handle {
     cursor: move;
 }
+
+.word-wrap {
+    word-wrap: break-word;
+}
+
+.edit-mode {
+    background-color: #0d6efd;
+    color: #fff;
+    border-color: #0d6efd;
+}
+
+input[readonly], select[disabled], input[disabled] {
+    background-color: transparent !important;
+    border: none;                 
+    outline: none;              
+    box-shadow: none;     
+    cursor: default;           
+    color: inherit;            
+}
+
+input[readonly]:hover, select[disabled]:hover, input[readonly]:focus, select[disabled]:focus, input[disabled]:hover, input[disabled]:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.striked {
+    text-decoration: line-through;
+}
