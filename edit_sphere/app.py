@@ -98,16 +98,10 @@ def show_triples(subject):
         g.add((URIRef(decoded_subject), URIRef(triple['predicate']['value']), value))
     triples = list(g.triples((None, None, None)))
 
-    can_be_added, can_be_deleted, datatypes, mandatory_values, optional_values, subject_classes = get_valid_predicates(triples)
+    can_be_added, can_be_deleted, datatypes, mandatory_values, optional_values, subject_classes, valid_predicates = get_valid_predicates(triples)
 
-    if display_rules:
-        grouped_triples, relevant_properties = get_grouped_triples(subject, triples, subject_classes)
-    else:
-        grouped_triples = dict()
-        for triple in triples:
-            grouped_triples.setdefault((triple[1], filter.human_readable_predicate(triple[1], subject_classes, True), False), []).append(triple)
-        relevant_properties = set(triple[1] for triple in triples)
-    triples = [triple for triple in triples if triple[1] in relevant_properties]
+    grouped_triples, relevant_properties = get_grouped_triples(subject, triples, subject_classes, valid_predicates)
+
     can_be_added = [uri for uri in can_be_added if uri in relevant_properties]
     can_be_deleted = [uri for uri in can_be_deleted if uri in relevant_properties]
 
@@ -166,6 +160,8 @@ def apply_changes():
                 order_logic(editor, subject, predicate, new_order, ordered_by)
         editor.save()
         return jsonify(status="success", message=gettext("Changes applied successfully")), 201
+    except ValueError as ve:
+        return jsonify(status="error", message=str(ve)), 400 
     except Exception as e:
         app.logger.error(f"Error while applying changes: {str(e)}")
         return jsonify(status="error", message=gettext("An error occurred while applying changes")), 500
@@ -174,8 +170,7 @@ def update_logic(editor: Editor, subject, predicate, old_value, new_value):
     new_value, old_value, report_text = validate_new_triple(subject, predicate, new_value, old_value)
     if shacl:
         if new_value is None:
-            flash(report_text)
-            return redirect(url_for('show_triples', subject=subject))
+            raise ValueError(report_text)
     else:
         new_value = Literal(new_value, datatype=old_value.datatype) if old_value.datatype and isinstance(old_value, Literal) else Literal(new_value, datatype=XSD.string) if isinstance(old_value, Literal) else URIRef(new_value)
     editor.update(URIRef(subject), URIRef(predicate), old_value, new_value)    
@@ -185,8 +180,7 @@ def delete_logic(editor: Editor, subject, predicate, object_value):
         data_graph = fetch_data_graph_for_subject(subject)
         _, can_be_deleted, _, _, _, _ = get_valid_predicates(list(data_graph.triples((URIRef(subject), None, None))))
         if predicate not in can_be_deleted:
-            flash(gettext('This property cannot be deleted'))
-            return redirect(url_for('show_triples', subject=subject))
+            raise(ValueError, gettext('This property cannot be deleted'))
     editor.delete(subject, predicate, object_value)
 
 def order_logic(editor: Editor, subject, predicate, new_order, ordered_by):
@@ -348,7 +342,6 @@ def entity_version(entity_uri, timestamp):
         timestamp_dt = datetime.fromisoformat(generation_time)
     agnostic_entity = AgnosticEntity(res=entity_uri, config_path=change_tracking_config)
     history, metadata, other_snapshots_metadata = agnostic_entity.get_state_at_time(time=(None, timestamp), include_prov_metadata=True)
-    subject_classes = [subject_class[2] for subject_class in list(history.values())[0].triples((URIRef(entity_uri), RDF.type, None))]
     all_snapshots = list(metadata.items()) + list(other_snapshots_metadata.items())
     sorted_all_snapshots = sorted(all_snapshots, key=lambda x: x[1]['generatedAtTime'])
     last_snapshot_timestamp = sorted_all_snapshots[-1][1]['generatedAtTime'] if sorted_all_snapshots else None
@@ -366,14 +359,14 @@ def entity_version(entity_uri, timestamp):
     version: Graph = history[closest_timestamp]
     triples = list(version.triples((None, None, None)))
     relevant_properties = set()
+    _, _, _, _, _, subject_classes, valid_predicates = get_valid_predicates(triples)
     if display_rules:
-        grouped_triples, relevant_properties = get_grouped_triples(entity_uri, triples, subject_classes)
+        grouped_triples, relevant_properties = get_grouped_triples(entity_uri, triples, subject_classes, valid_predicates)
     else:
         grouped_triples = dict()
         for triple in triples:
             grouped_triples.setdefault((triple[1], filter.human_readable_predicate(triple[1], subject_classes, True), False), []).append(triple)
         relevant_properties = set(triple[1] for triple in triples)
-
     if relevant_properties:
         triples = [triple for triple in triples if str(triple[1]) in relevant_properties]
 
@@ -515,7 +508,7 @@ def validate_new_triple(subject, predicate, new_value, old_value = None):
     valid_value = Literal(new_value, datatype=old_value.datatype) if old_value.datatype and isinstance(old_value, Literal) else Literal(new_value) if isinstance(old_value, Literal) else URIRef(new_value)
     return valid_value, old_value, ''
 
-def get_grouped_triples(subject, triples, subject_classes):
+def get_grouped_triples(subject, triples, subject_classes, valid_predicates_info):
     def get_ordered_sequence(order_results):
         order_map = {}
         for res in order_results:
@@ -531,70 +524,105 @@ def get_grouped_triples(subject, triples, subject_classes):
                 current_element = order_map[current_element]
             all_sequences.append(sequence)
         return all_sequences
+
     grouped_triples = OrderedDict()
     relevant_properties = set()
-    subject_classes = [str(subject_class) for subject_class in subject_classes]
-    fetched_values_map = dict() # Mappa dei valori originali ai valori restituiti dalla query
-    for rule in display_rules:
-        if rule['class'] in subject_classes:
-            for prop in rule['displayProperties']:
-                relevant_properties.add(prop['property'])
-                for displayConfig in prop['values']:
-                    if displayConfig['shouldBeDisplayed']:
-                        for triple in triples:
-                            if str(triple[1]) == prop['property']:
-                                display_name = displayConfig['displayName']
-                                if display_name not in grouped_triples:
-                                    grouped_triples[display_name] = {
-                                        'property': prop['property'],
-                                        'triples': []
-                                    }
-                                if displayConfig['fetchValueFromQuery']:
-                                    result, external_entity = execute_sparql_query(displayConfig['fetchValueFromQuery'], subject, triple[2])
-                                    if result:
-                                        fetched_values_map[result] = str(triple[2])
-                                        grouped_triples[display_name]['external_entity'] = external_entity
-                                        new_triple = (str(triple[0]), str(triple[1]), str(result))
-                                        existing_values = [t['triple'][2] for t in grouped_triples[display_name]['triples']]
-                                        if new_triple[2] not in existing_values:
-                                            new_triple_data = {
-                                                'triple': (str(triple[0]), str(triple[1]), str(result)),
-                                                'external_entity': external_entity if displayConfig['fetchValueFromQuery'] else None,
-                                                'object': str(triple[2])
-                                            }
-                                            grouped_triples[display_name]['triples'].append(new_triple_data)
-                                else:
-                                    new_triple = (str(triple[0]), str(triple[1]), str(triple[2]))
-                                    existing_values = [t['triple'][2] for t in grouped_triples[display_name]['triples']]
-                                    if new_triple[2] not in existing_values:
+    fetched_values_map = dict()  # Mappa dei valori originali ai valori restituiti dalla query
+    primary_properties = valid_predicates_info
+    for prop_uri in primary_properties:
+        if display_rules:
+            matched_rules = [rule for rule in display_rules if URIRef(rule['class']) in subject_classes and any(p['property'] == prop_uri for p in rule['displayProperties'])]
+            if matched_rules:
+                rule = matched_rules[0]
+                for prop in rule['displayProperties']:
+                    if prop['property'] == prop_uri:
+                        for value in prop['values']:
+                            display_name = value['displayName']
+                            relevant_properties.add(prop_uri)
+                            for triple in triples:
+                                if str(triple[1]) == prop_uri:
+                                    if display_name not in grouped_triples:
+                                        grouped_triples[display_name] = {
+                                            'property': prop_uri,
+                                            'triples': []
+                                        }
+                                    if value.get('fetchValueFromQuery', False):
+                                        result, external_entity = execute_sparql_query(value['fetchValueFromQuery'], subject, triple[2])
+                                        if result:
+                                            fetched_values_map[result] = str(triple[2])
+                                            new_triple = (str(triple[0]), str(triple[1]), str(result))
+                                            existing_values = [t['triple'][2] for t in grouped_triples[display_name]['triples']]
+                                            if new_triple[2] not in existing_values:
+                                                new_triple_data = {
+                                                    'triple': new_triple,
+                                                    'external_entity': external_entity,
+                                                    'object': str(triple[2])
+                                                }
+                                                grouped_triples[display_name]['triples'].append(new_triple_data)
+                                    else:
                                         new_triple_data = {
                                             'triple': (str(triple[0]), str(triple[1]), str(triple[2])),
-                                            'external_entity': external_entity if displayConfig['fetchValueFromQuery'] else None,
                                             'object': str(triple[2])
                                         }
                                         grouped_triples[display_name]['triples'].append(new_triple_data)
-                    grouped_triples[display_name]['object'] = triple[2]
-                    grouped_triples[display_name]['is_draggable'] = False
-                    if prop['orderedBy']:
-                        grouped_triples[display_name]['is_draggable'] = True
-                        grouped_triples[display_name]['ordered_by'] = prop['orderedBy']
-                        order_property = prop['orderedBy']
-                        order_query = f"""
-                            SELECT ?orderedEntity (COALESCE(?next, "NONE") AS ?nextValue)
-                            WHERE {{
-                                <{subject}> <{prop['property']}> ?orderedEntity.
-                                OPTIONAL {{
-                                    ?orderedEntity <{order_property}> ?next.
-                                }}
-                            }}
-                        """
-                        sparql.setQuery(order_query)
-                        sparql.setReturnFormat(JSON)
-                        order_results = sparql.query().convert().get("results", {}).get("bindings", [])
-                        order_sequences = get_ordered_sequence(order_results)
-                        for sequence in order_sequences:
-                            grouped_triples[display_name]['triples'].sort(key=lambda x: sequence.index(fetched_values_map.get(x['triple'][2], x['triple'][2])) if fetched_values_map.get(x['triple'][2], x['triple'][2]) in sequence else float('inf'))
-    ordered_display_names = sorted(grouped_triples.keys(), key=lambda k: property_order_index(grouped_triples[k]['property'], subject_classes))
+                                    if prop.get('orderedBy'):
+                                        grouped_triples[display_name]['is_draggable'] = True
+                                        order_property = prop['orderedBy']
+                                        order_query = f"""
+                                            SELECT ?orderedEntity (COALESCE(?next, "NONE") AS ?nextValue)
+                                            WHERE {{
+                                                <{subject}> <{prop['property']}> ?orderedEntity.
+                                                OPTIONAL {{
+                                                    ?orderedEntity <{order_property}> ?next.
+                                                }}
+                                            }}
+                                        """
+                                        sparql.setQuery(order_query)
+                                        sparql.setReturnFormat(JSON)
+                                        order_results = sparql.query().convert().get("results", {}).get("bindings", [])
+                                        order_sequences = get_ordered_sequence(order_results)
+                                        for sequence in order_sequences:
+                                            grouped_triples[display_name]['triples'].sort(
+                                                key=lambda x: sequence.index(fetched_values_map.get(x['triple'][2], x['triple'][2])) if fetched_values_map.get(x['triple'][2], x['triple'][2]) in sequence else float('inf'))
+            else:
+                display_name = prop_uri
+                grouped_triples[display_name] = {
+                    'property': prop_uri,
+                    'triples': []
+                }
+                triples_for_prop = [triple for triple in triples if str(triple[1]) == prop_uri]
+                for triple in triples_for_prop:
+                    new_triple_data = {
+                        'triple': (str(triple[0]), str(triple[1]), str(triple[2])),
+                        'object': str(triple[2])
+                    }
+                    grouped_triples[display_name]['triples'].append(new_triple_data)
+        else:
+            display_name = prop_uri
+            grouped_triples[display_name] = {
+                'property': prop_uri,
+                'triples': []
+            }
+            triples_for_prop = [triple for triple in triples if str(triple[1]) == str(prop_uri)]
+            for triple in triples_for_prop:
+                new_triple_data = {
+                    'triple': (str(triple[0]), str(triple[1]), str(triple[2])),
+                    'object': str(triple[2])
+                }
+                grouped_triples[display_name]['triples'].append(new_triple_data)
+    if display_rules:
+        ordered_display_names = []
+        for rule in display_rules:
+            if URIRef(rule['class']) in subject_classes:
+                for prop in rule['displayProperties']:
+                    for value in prop['values']:
+                        if value['displayName'] in grouped_triples:
+                            ordered_display_names.append(value['displayName'])
+        for display_name in grouped_triples.keys():
+            if display_name not in ordered_display_names:
+                ordered_display_names.append(display_name)
+    else:
+        ordered_display_names = list(grouped_triples.keys())
     grouped_triples = OrderedDict((k, grouped_triples[k]) for k in ordered_display_names)
     return grouped_triples, relevant_properties
 
@@ -684,9 +712,9 @@ def get_valid_predicates(triples):
     default_datatypes = {str(predicate): XSD.string for predicate in existing_predicates}
     s_types = [triple[2] for triple in triples if triple[1] == RDF.type]
     if not s_types:
-        return existing_predicates, existing_predicates, default_datatypes, dict(), dict(), []
+        return existing_predicates, existing_predicates, default_datatypes, dict(), dict(), [], existing_predicates
     if not shacl:
-        return existing_predicates, existing_predicates, default_datatypes, dict(), dict(), s_types
+        return existing_predicates, existing_predicates, default_datatypes, dict(), dict(), s_types, existing_predicates
     query = prepareQuery(f"""
         SELECT ?predicate ?datatype ?maxCount ?minCount ?hasValue (GROUP_CONCAT(?optionalValue; separator=",") AS ?optionalValues) WHERE {{
             ?shape sh:targetClass ?type ;
@@ -750,7 +778,8 @@ def get_valid_predicates(triples):
         for predicate, ranges in valid_predicate.items():
             if "optionalValues" in ranges:
                 optional_values.setdefault(str(predicate), list()).extend(ranges["optionalValues"])
-    return list(can_be_added), list(can_be_deleted), dict(datatypes), mandatory_values, optional_values, s_types
+    print(list(can_be_added))
+    return list(can_be_added), list(can_be_deleted), dict(datatypes), mandatory_values, optional_values, s_types, {list(predicate_data.keys())[0] for predicate_data in valid_predicates}
 
 def execute_sparql_query(query: str, subject: str, value: str) -> Tuple[str, str]:
     query = query.replace('[[subject]]', f'<{subject}>')

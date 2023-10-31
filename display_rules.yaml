@@ -4,13 +4,7 @@
       values:
       - displayName: "Type"
         shouldBeDisplayed: true
-        fetchValueFromQuery: |
-            PREFIX fabio: <http://purl.org/spar/fabio/>
-            SELECT DISTINCT ?type
-            WHERE {
-                [[subject]] a ?type.
-                FILTER (?type != fabio:Expression)
-            }
+        fetchValueFromQuery: null
       orderedBy: null
     - property: "http://purl.org/dc/terms/title"
       values:
@@ -157,6 +151,20 @@
                 [[subject]] frbr:partOf+ ?journal.
                 ?journal a fabio:Journal;
                     dcterms:title ?journalName.
+            }
+      orderedBy: null
+    - property: "http://purl.org/spar/datacite/hasIdentifier"
+      values:
+      - displayName: "Identifiers"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: |
+            PREFIX datacite: <http://purl.org/spar/datacite/>
+            PREFIX literal: <http://www.essepuntato.it/2010/06/literalreification/>
+            SELECT (CONCAT(STRAFTER(STR(?scheme), "http://purl.org/spar/datacite/"), ":", ?literal) AS ?id) ?identifier
+            WHERE {
+                [[subject]] datacite:hasIdentifier ?identifier.
+                ?identifier datacite:usesIdentifierScheme ?scheme;
+                            literal:hasLiteralValue ?literal.
             }
       orderedBy: null
 

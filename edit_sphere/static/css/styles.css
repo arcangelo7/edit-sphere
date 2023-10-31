@@ -68,3 +68,8 @@ input[readonly]:hover, select[disabled]:hover, input[readonly]:focus, select[dis
 .striked {
     text-decoration: line-through;
 }
+
+.navbar, footer.bg-dark  {
+    background-color: black !important;
+}
+
