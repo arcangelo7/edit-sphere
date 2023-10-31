@@ -778,7 +778,6 @@ def get_valid_predicates(triples):
         for predicate, ranges in valid_predicate.items():
             if "optionalValues" in ranges:
                 optional_values.setdefault(str(predicate), list()).extend(ranges["optionalValues"])
-    print(list(can_be_added))
     return list(can_be_added), list(can_be_deleted), dict(datatypes), mandatory_values, optional_values, s_types, {list(predicate_data.keys())[0] for predicate_data in valid_predicates}
 
 def execute_sparql_query(query: str, subject: str, value: str) -> Tuple[str, str]:
