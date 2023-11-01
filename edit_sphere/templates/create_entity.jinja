@@ -1,0 +1,62 @@
+{% extends "_base.jinja" %}
+{% block content %}
+
+<div class="container mt-5"> <!-- Bootstrap Container -->
+
+    <form action="{{ url_for('create_entity') }}" method="post">
+
+        <div class="form-floating mb-3">
+            <select class="form-select" id="entity_type" name="entity_type">
+                <option value="" disabled selected>{{_('Select an entity type')}}</option>
+                {% for entity_type in entity_types %}
+                    <option value="{{ entity_type | human_readable_predicate(entity_types, False) | replace(' ', '_') }}">{{ entity_type | human_readable_predicate(entity_types, False) }}</option>
+                {% endfor %}
+            </select>
+            <label for="entity_type" class="form-label">{{_('Select an entity type')}}</label>
+        </div>
+
+        {% for entity_type, properties in form_fields.items() %}
+            {% set group_id = (entity_type | human_readable_predicate(entity_types, False) + "_group") | replace(" ", "_") %}
+            <div class="property-group mb-3" id="{{ group_id }}" style="display:none">
+                {% for prop, details in properties.items() %}
+
+                    {% set unique_id = (entity_type | human_readable_predicate(entity_types, False) | replace(" ", "_") + "_" + prop | human_readable_predicate(entity_types, False) | replace(" ", "_")) %}
+
+                    {% if details.optionalValues and details.optionalValues|length %}
+                        <div class="form-floating mb-3">
+                            <select class="form-select" id="{{ unique_id }}" name="{{ unique_id }}">
+                                {% for val in details.optionalValues %}
+                                    <option value="{{ val }}">{{ val | human_readable_predicate(entity_types, False) }}</option>
+                                {% endfor %}
+                            </select>
+                            <label for="{{ unique_id }}">{{ prop | human_readable_predicate(entity_types, False) }}</label>
+                        </div>
+                    {% else %}
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="{{ unique_id }}" name="{{ unique_id }}" placeholder="{{ prop | human_readable_predicate(entity_types, False)}}">
+                            <label for="{{ unique_id }}">{{ prop | human_readable_predicate(entity_types, False) }}</label>
+                        </div>
+                    {% endif %}
+
+                {% endfor %}
+            </div>
+        {% endfor %}
+
+        <div class="mb-3">
+            <input type="submit" value="Create" class="btn btn-primary">
+        </div>
+
+    </form>
+
+    <script>
+        $(document).ready(function(){
+            $('#entity_type').change(function(){
+                let selectedType = $(this).val().replace(" ", "_");
+                $('.property-group').hide();
+                $(`#${selectedType}_group`).show();
+            });
+        });
+    </script>
+</div>
+
+{% endblock %}

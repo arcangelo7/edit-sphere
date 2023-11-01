@@ -1,10 +1,25 @@
 - class: "http://purl.org/spar/fabio/Expression"
+  displayName: "Bibliographic Resource"
   displayProperties:
     - property: "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
       values:
       - displayName: "Type"
         shouldBeDisplayed: true
         fetchValueFromQuery: null
+      orderedBy: null
+    - property: "http://purl.org/spar/datacite/hasIdentifier"
+      values:
+      - displayName: "Identifiers"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: |
+            PREFIX datacite: <http://purl.org/spar/datacite/>
+            PREFIX literal: <http://www.essepuntato.it/2010/06/literalreification/>
+            SELECT (CONCAT(STRAFTER(STR(?scheme), "http://purl.org/spar/datacite/"), ":", ?literal) AS ?id) ?identifier
+            WHERE {
+                [[subject]] datacite:hasIdentifier ?identifier.
+                ?identifier datacite:usesIdentifierScheme ?scheme;
+                            literal:hasLiteralValue ?literal.
+            }
       orderedBy: null
     - property: "http://purl.org/dc/terms/title"
       values:
@@ -153,32 +168,13 @@
                     dcterms:title ?journalName.
             }
       orderedBy: null
-    - property: "http://purl.org/spar/datacite/hasIdentifier"
-      values:
-      - displayName: "Identifiers"
-        shouldBeDisplayed: true
-        fetchValueFromQuery: |
-            PREFIX datacite: <http://purl.org/spar/datacite/>
-            PREFIX literal: <http://www.essepuntato.it/2010/06/literalreification/>
-            SELECT (CONCAT(STRAFTER(STR(?scheme), "http://purl.org/spar/datacite/"), ":", ?literal) AS ?id) ?identifier
-            WHERE {
-                [[subject]] datacite:hasIdentifier ?identifier.
-                ?identifier datacite:usesIdentifierScheme ?scheme;
-                            literal:hasLiteralValue ?literal.
-            }
-      orderedBy: null
 
 - class: "http://purl.org/spar/datacite/Identifier"
+  displayName: "Identifier"
   displayProperties:
     - property: "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
       values:
       - displayName: "Type"
-        shouldBeDisplayed: true
-        fetchValueFromQuery: null
-      orderedBy: null
-    - property: "http://www.essepuntato.it/2010/06/literalreification/hasLiteralValue"
-      values:
-      - displayName: "Literal Value"
         shouldBeDisplayed: true
         fetchValueFromQuery: null
       orderedBy: null
@@ -188,8 +184,15 @@
         shouldBeDisplayed: true
         fetchValueFromQuery: null
       orderedBy: null
+    - property: "http://www.essepuntato.it/2010/06/literalreification/hasLiteralValue"
+      values:
+      - displayName: "Literal Value"
+        shouldBeDisplayed: true
+        fetchValueFromQuery: null
+      orderedBy: null
 
 - class: "http://purl.org/spar/pro/RoleInTime"
+  displayName: "Agent Role"
   displayProperties:
     - property: "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
       values:
@@ -217,6 +220,7 @@
       orderedBy: null
 
 - class: "http://purl.org/spar/fabio/Manifestation"
+  displayName: "Page"
   displayProperties:
     - property: "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
       values:
@@ -244,6 +248,7 @@
       orderedBy: null
 
 - class: "http://xmlns.com/foaf/0.1/Agent"
+  displayName: "Responsible Agent"
   displayProperties:
     - property: "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
       values:

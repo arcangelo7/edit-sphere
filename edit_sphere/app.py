@@ -83,6 +83,21 @@ def catalogue():
     subjects = sparql.query().convert().get("results", {}).get("bindings", [])
     return render_template('entities.jinja', subjects=subjects, page=page)
 
+@app.route('/create-entity', methods=['GET', 'POST'])
+def create_entity():
+    form_fields = get_form_fields_from_shacl()
+    entity_types = list(form_fields.keys())
+    if request.method == 'POST':
+        editor = Editor(dataset_endpoint, provenance_endpoint, app.config['COUNTER_HANDLER'], app.config['RESPONSIBLE_AGENT'], app.config['PRIMARY_SOURCE'], app.config['DATASET_GENERATION_TIME'])
+        # for entity_type, props in form_fields.items():
+        #     for prop, details in props.items():
+        #         if request.form.get(prop):
+        #             editor.create(URIRef(entity_type), URIRef(prop), Literal(request.form.get(prop)))
+        # editor.preexisting_finished()
+        # editor.save()
+        return redirect(url_for('success_page'))
+    return render_template('create_entity.jinja', entity_types=entity_types, form_fields=form_fields)
+
 @app.route('/triples/<path:subject>')
 def show_triples(subject):
     decoded_subject = urllib.parse.unquote(subject)
@@ -779,6 +794,58 @@ def get_valid_predicates(triples):
             if "optionalValues" in ranges:
                 optional_values.setdefault(str(predicate), list()).extend(ranges["optionalValues"])
     return list(can_be_added), list(can_be_deleted), dict(datatypes), mandatory_values, optional_values, s_types, {list(predicate_data.keys())[0] for predicate_data in valid_predicates}
+
+def get_form_fields_from_shacl():
+    if not shacl:
+        return dict()
+    query = prepareQuery(f"""
+        SELECT ?type ?predicate ?datatype ?maxCount ?minCount ?hasValue (GROUP_CONCAT(?optionalValue; separator=",") AS ?optionalValues) WHERE {{
+            ?shape sh:targetClass ?type ;
+                   sh:property ?property .
+            ?property sh:path ?predicate .
+            OPTIONAL {{?property sh:datatype ?datatype .}}
+            OPTIONAL {{?property sh:maxCount ?maxCount .}}
+            OPTIONAL {{?property sh:minCount ?minCount .}}
+            OPTIONAL {{?property sh:hasValue ?hasValue .}}
+            OPTIONAL {{
+                ?property sh:in ?list .
+                ?list rdf:rest*/rdf:first ?optionalValue .
+            }}
+            OPTIONAL {{
+                ?property sh:or ?orList .
+                ?orList rdf:rest*/rdf:first ?orConstraint .
+                ?orConstraint sh:datatype ?datatype .
+            }}
+            FILTER (isURI(?predicate))
+        }}
+        GROUP BY ?predicate ?datatype ?maxCount ?minCount ?hasValue
+    """, initNs={"sh": "http://www.w3.org/ns/shacl#", "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"})
+    results = shacl.query(query)
+    form_fields = defaultdict(dict)
+    for row in results:
+        if str(row.predicate) == "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" and not row.optionalValues:
+            continue
+        form_fields[str(row.type)][str(row.predicate)] = {
+            "datatype": row.datatype,
+            "min": None if row.minCount is None else str(row.minCount),
+            "max": None if row.maxCount is None else str(row.maxCount),
+            "hasValue": row.hasValue,
+            "optionalValues": row.optionalValues.split(",") if row.optionalValues else []
+        }
+    ordered_form_fields = OrderedDict()
+    if display_rules:
+        for rule in display_rules:
+            entity_class = rule.get('class')
+            if entity_class and entity_class in form_fields:
+                ordered_properties = [prop_rule['property'] for prop_rule in rule.get('displayProperties', [])]
+                ordered_form_fields[entity_class] = {prop: form_fields[entity_class][prop] for prop in ordered_properties if prop in form_fields[entity_class]}
+                for prop in form_fields[entity_class]:
+                    if prop not in ordered_properties:
+                        ordered_form_fields[entity_class][prop] = form_fields[entity_class][prop]
+    for entity_class in form_fields:
+        if entity_class not in ordered_form_fields:
+            ordered_form_fields[entity_class] = form_fields[entity_class]
+    return ordered_form_fields
 
 def execute_sparql_query(query: str, subject: str, value: str) -> Tuple[str, str]:
     query = query.replace('[[subject]]', f'<{subject}>')

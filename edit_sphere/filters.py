@@ -20,6 +20,8 @@ class Filter:
             for diplay_rule in self.display_rules:
                 for subject_class in subject_classes:
                     if subject_class in diplay_rule['class']:
+                        if url == subject_class:
+                            return diplay_rule['displayName']
                         for display_property in diplay_rule['displayProperties']:
                             if display_property['property'] == str(url):
                                 for value in display_property['values']:

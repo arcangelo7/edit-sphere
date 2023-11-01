@@ -308,11 +308,6 @@ schema:ResponsibleAgentShape
   ] ;
   sh:property
 	[
-    sh:path dcterms:relation ;
-    sh:nodeKind sh:IRI ;
-  ] ;
-  sh:property
-	[
     sh:path [sh:inversePath pro:isHeldBy] ;
     sh:class pro:RoleInTime;
   ] 
